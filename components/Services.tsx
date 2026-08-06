@@ -39,7 +39,7 @@ function ServiceCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.08, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-      className="card-surface flex h-full w-full flex-col p-7 sm:w-[calc(50%-0.75rem)] sm:p-9 lg:w-[calc(33.333%-1rem)]"
+      className="card-surface flex h-full w-full flex-col p-7 sm:p-9"
     >
       {/* Ícone com anel gradiente */}
       <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl"
@@ -59,27 +59,29 @@ function ServiceCard({
         {service.title}
       </h3>
 
-      <p className="mt-3 flex-1 text-sm leading-relaxed text-text-muted">
+      <p className="mt-3 text-sm leading-relaxed text-text-muted">
         {service.description}
       </p>
 
-      <div className="mt-5 space-y-1.5 border-t border-gold/12 pt-5 text-sm">
-        <p className="text-text-muted">
-          <span className="font-semibold text-ink">Duração:</span> {service.duration}
-        </p>
-        <p className="font-medium text-gold-dark">{service.price}</p>
-      </div>
+      <div className="mt-auto pt-5">
+        <div className="space-y-1.5 border-t border-gold/12 pt-5 text-sm">
+          <p className="text-text-muted">
+            <span className="font-semibold text-ink">Duração:</span> {service.duration}
+          </p>
+          <p className="font-medium text-gold-dark">{service.price}</p>
+        </div>
 
-      <a
-        href={buildWhatsAppUrl(
-          `Olá, Greice! Gostaria de saber mais sobre: ${service.whatsappTopic}`,
-        )}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="btn-ghost mt-6 w-full text-center"
-      >
-        Falar no WhatsApp
-      </a>
+        <a
+          href={buildWhatsAppUrl(
+            `Olá, Greice! Gostaria de saber mais sobre: ${service.whatsappTopic}`,
+          )}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-ghost mt-6 w-full text-center"
+        >
+          Falar no WhatsApp
+        </a>
+      </div>
     </motion.article>
   );
 }
@@ -98,7 +100,7 @@ export default function Services() {
           }
         />
 
-        <div className="flex flex-wrap justify-center gap-6">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {SERVICES.map((service, index) => (
             <ServiceCard key={service.id} service={service} index={index} />
           ))}

@@ -46,7 +46,7 @@ const topics: { icon: IconType; title: string; description: string }[] = [
     icon: HiUserGroup,
     title: "Gestão de pessoas com inteligência emocional",
     description:
-      "Liderança presente, comunicação empática e equipes mais saudáveis.",
+      "Liderança presente, comunicação empática e times mais coesos.",
   },
   {
     icon: HiEye,
@@ -74,7 +74,7 @@ export default function PalestrasContent() {
     <>
       <PageHero
         eyebrow="Palestras & Consultoria In Company"
-        title="Saúde mental e alta performance não são opostos: são aliadas."
+        title="Saúde mental e alta performance caminham juntas."
         subtitle="Levo para dentro das empresas conteúdos sobre mudança de vida, autoamor, gestão de pessoas e saúde emocional, para equipes mais saudáveis, presentes e produtivas."
       >
         <a
@@ -93,7 +93,7 @@ export default function PalestrasContent() {
             eyebrow="Por que trazer isso"
             title={
               <>
-                Bem-estar emocional onde as pessoas{" "}
+                Bem-estar onde as pessoas{" "}
                 <em className="italic text-gold-dark">vivem o dia a dia</em>
               </>
             }
@@ -106,9 +106,9 @@ export default function PalestrasContent() {
           >
             Muitas pessoas não têm acesso a um atendimento psicológico
             individualizado. As palestras corporativas são minha forma de levar
-            recursos reais de bem-estar emocional para o maior número de pessoas
-            possível, dentro do ambiente onde elas passam boa parte da vida: o
-            trabalho.
+            ferramentas práticas de bem-estar emocional para o maior número de
+            pessoas possível, dentro do ambiente onde elas passam boa parte da
+            vida: o trabalho.
           </motion.p>
         </div>
       </MotionSection>
