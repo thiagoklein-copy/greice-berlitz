@@ -19,7 +19,8 @@ export default function Footer() {
           <div>
             <Logo />
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-text-muted">
-              Terapia e palestras que transformam vidas — em Novo Hamburgo e além.
+              Terapia e palestras que fazem diferença na vida das pessoas — em
+              Novo Hamburgo e além.
             </p>
           </div>
 

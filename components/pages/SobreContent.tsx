@@ -22,10 +22,10 @@ const formation = [
 ];
 
 const values = [
-  { icon: HiHeart, label: "Propósito antes do retorno" },
+  { icon: HiHeart, label: "Vocação antes do retorno" },
   { icon: HiEye, label: "Presença total em cada atendimento" },
   { icon: HiLightBulb, label: "Conhecimento técnico com intuição" },
-  { icon: HiSparkles, label: "Autoamor como caminho de transformação" },
+  { icon: HiSparkles, label: "Autoamor como caminho de mudança" },
 ];
 
 export default function SobreContent() {
@@ -58,7 +58,7 @@ export default function SobreContent() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              Sempre fui uma pessoa muito empática — e meu maior sonho sempre foi
+              Sempre fui uma pessoa muito empática. Meu maior sonho sempre foi
               ajudar as pessoas a ficarem bem. Tive a sorte de poder escolher minha
               profissão pela vocação, não pelo retorno financeiro. E foi exatamente
               esse propósito que, com o tempo, trouxe os resultados.
@@ -71,11 +71,12 @@ export default function SobreContent() {
             >
               Ao longo de mais de 16 anos de prática clínica, vi pessoas chegarem
               até mim sem perspectiva de vida, sem vontade de seguir em frente,
-              cercadas por relacionamentos tóxicos — e se transformarem. Costumo
-              brincar com meus pacientes que, além de emocionalmente mais fortes,
-              eles saem mais bonitos e mais &ldquo;ricos&rdquo; depois de um período
-              de acompanhamento. O autoamor transforma vidas — e eu quero continuar
-              sendo parte dessa jornada para cada vez mais pessoas.
+              cercadas por relacionamentos tóxicos, e vi essas mesmas pessoas se
+              reconstruírem. Costumo brincar com meus pacientes que, além de
+              emocionalmente mais fortes, eles saem mais bonitos e mais
+              &ldquo;ricos&rdquo; depois de um período de acompanhamento. O autoamor
+              transforma vidas, e eu quero continuar fazendo parte disso para cada
+              vez mais pessoas.
             </motion.p>
           </div>
         </div>
@@ -110,13 +111,12 @@ export default function SobreContent() {
               viewport={{ once: true }}
               transition={{ delay: 0.08 }}
             >
-              Mantive o que pude da minha rotina, da minha família, do meu trabalho —
-              na medida do possível, mas sem nunca deixar de existir enquanto
-              cuidava. Hoje sigo minha vida com a certeza de que é possível
-              atravessar os momentos mais difíceis e, ainda assim, encontrar
-              propósito e alegria do outro lado. Se você está passando por algo
-              parecido, saiba: dá para se reconstruir. E eu posso te ajudar nesse
-              caminho.
+              Mantive o que pude da minha rotina, da minha família, do meu trabalho,
+              na medida do possível — sem deixar de cuidar de mim enquanto cuidava
+              deles. Hoje sigo minha vida com a certeza de que é possível atravessar
+              os momentos mais difíceis e, ainda assim, encontrar propósito e alegria
+              do outro lado. Se você está passando por algo parecido, saiba: dá para
+              se reconstruir. E eu posso te ajudar nesse caminho.
             </motion.p>
           </div>
         </div>
@@ -189,7 +189,7 @@ export default function SobreContent() {
               rel="noopener noreferrer"
               className="btn-primary"
             >
-              Quero fazer parte da sua jornada
+              Falar com a Greice
             </a>
           </div>
         </div>
