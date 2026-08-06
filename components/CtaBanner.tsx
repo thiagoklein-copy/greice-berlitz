@@ -36,7 +36,7 @@ export default function CtaBanner({
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <h2 className="font-serif text-3xl font-medium leading-tight text-white sm:text-4xl lg:text-5xl">
+                <h2 className="font-serif font-semibold leading-[1.08] tracking-[-0.015em] text-white" style={{ fontSize: "clamp(1.75rem, 4.5vw, 3.75rem)" }}>
                   {title}
                 </h2>
                 <p className="mt-4 max-w-md text-base text-white/80">{subtitle}</p>

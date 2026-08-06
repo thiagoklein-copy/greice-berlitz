@@ -39,7 +39,7 @@ export default function SobreContent() {
         imagePosition={IMAGES.greice.objectPosition}
       />
 
-      <MotionSection className="py-20 sm:py-28">
+      <MotionSection className="py-28 sm:py-36">
         <div className="section-container">
           <SectionHeader
             eyebrow="Quem eu sou"
@@ -86,7 +86,7 @@ export default function SobreContent() {
         BLOCO SENSÍVEL: confirmar com a cliente o nível de detalhe antes de publicar.
         Tom sóbrio, sem imagens ou elementos gráficos "tristes".
       */}
-      <MotionSection className="bg-gold-soft py-20 sm:py-28">
+      <MotionSection className="bg-gold-soft py-28 sm:py-36">
         <div className="section-container">
           <SectionHeader
             eyebrow="Resiliência"
@@ -122,7 +122,7 @@ export default function SobreContent() {
         </div>
       </MotionSection>
 
-      <MotionSection className="py-20 sm:py-28">
+      <MotionSection className="py-28 sm:py-36">
         <div className="section-container">
           <SectionHeader
             eyebrow="Formação"
@@ -152,7 +152,7 @@ export default function SobreContent() {
         </div>
       </MotionSection>
 
-      <MotionSection className="bg-sand-dark/50 py-20 sm:py-28">
+      <MotionSection className="bg-sand-dark/50 py-28 sm:py-36">
         <div className="section-container">
           <SectionHeader
             eyebrow="O que me move"

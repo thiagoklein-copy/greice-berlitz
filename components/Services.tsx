@@ -35,25 +35,37 @@ function ServiceCard({
   return (
     <motion.article
       id={service.id}
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ delay: index * 0.08, duration: 0.5 }}
-      className="card-surface flex h-full w-full flex-col p-6 sm:w-[calc(50%-0.75rem)] sm:p-8 lg:w-[calc(33.333%-1rem)]"
+      transition={{ delay: index * 0.08, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+      className="card-surface flex h-full w-full flex-col p-7 sm:w-[calc(50%-0.75rem)] sm:p-9 lg:w-[calc(33.333%-1rem)]"
     >
-      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-gold/15 text-gold-dark">
-        <Icon className="h-6 w-6" />
+      {/* Ícone com anel gradiente */}
+      <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl"
+        style={{
+          background: "linear-gradient(#ffffff, #ffffff) padding-box, linear-gradient(135deg, rgba(201,162,75,0.5), rgba(232,206,140,0.3)) border-box",
+          border: "1px solid transparent",
+          boxShadow: "0 4px 16px rgba(201,162,75,0.12)",
+        }}
+      >
+        <Icon
+          className="h-6 w-6"
+          style={{ color: "#8A6B2E" }}
+        />
       </div>
 
-      <h3 className="font-serif text-xl font-medium text-ink">{service.title}</h3>
+      <h3 className="font-serif text-xl font-semibold text-ink sm:text-[1.3rem]">
+        {service.title}
+      </h3>
 
       <p className="mt-3 flex-1 text-sm leading-relaxed text-text-muted">
         {service.description}
       </p>
 
-      <div className="mt-4 space-y-1 border-t border-gold/15 pt-4 text-sm">
+      <div className="mt-5 space-y-1.5 border-t border-gold/12 pt-5 text-sm">
         <p className="text-text-muted">
-          <span className="font-medium text-ink">Duração:</span> {service.duration}
+          <span className="font-semibold text-ink">Duração:</span> {service.duration}
         </p>
         <p className="font-medium text-gold-dark">{service.price}</p>
       </div>
@@ -64,7 +76,7 @@ function ServiceCard({
         )}
         target="_blank"
         rel="noopener noreferrer"
-        className="btn-ghost mt-5 w-full text-center text-sm"
+        className="btn-ghost mt-6 w-full text-center"
       >
         Falar no WhatsApp
       </a>
@@ -74,7 +86,7 @@ function ServiceCard({
 
 export default function Services() {
   return (
-    <MotionSection id="como-posso-ajudar" className="py-20 sm:py-28">
+    <MotionSection id="como-posso-ajudar" className="py-28 sm:py-36">
       <div className="section-container">
         <SectionHeader
           eyebrow="Como posso te ajudar"
@@ -92,7 +104,7 @@ export default function Services() {
           ))}
         </div>
 
-        <p className="mx-auto mt-10 max-w-2xl text-center text-sm text-text-muted">
+        <p className="mx-auto mt-12 max-w-2xl text-center text-sm text-text-muted">
           Valores sob consulta. Atendimento presencial em Novo Hamburgo.
         </p>
       </div>

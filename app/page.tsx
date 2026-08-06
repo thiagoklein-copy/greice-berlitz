@@ -85,7 +85,7 @@ export default function HomePage() {
         </motion.ul>
       </PageHero>
 
-      <MotionSection id="dois-caminhos" className="py-20 sm:py-28">
+      <MotionSection id="dois-caminhos" className="py-28 sm:py-36">
         <div className="section-container">
           <SectionHeader
             eyebrow="Como posso ajudar"
@@ -106,7 +106,7 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.55 }}
-                className="card-surface flex flex-col bg-gradient-to-br from-white via-sand to-gold-light/25 p-8 sm:p-10"
+                className="card-surface flex flex-col p-8 sm:p-10"
               >
                 <h3 className="font-serif text-2xl font-medium text-ink sm:text-3xl">
                   {path.title}
@@ -123,7 +123,7 @@ export default function HomePage() {
         </div>
       </MotionSection>
 
-      <MotionSection className="bg-sand-dark/50 py-20 sm:py-28">
+      <MotionSection className="bg-sand-dark/50 py-28 sm:py-36">
         <div className="section-container">
           <div className="mx-auto max-w-3xl text-center">
             <SectionHeader

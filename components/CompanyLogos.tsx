@@ -17,7 +17,7 @@ export default function CompanyLogos({
   id,
 }: CompanyLogosProps) {
   return (
-    <MotionSection id={id} className="py-16 sm:py-24">
+    <MotionSection id={id} className="py-24 sm:py-32">
       <div className="section-container">
         <SectionHeader eyebrow="Prova social" title={title} subtitle={supportText} />
 
@@ -25,13 +25,13 @@ export default function CompanyLogos({
           {COMPANIES.map((name, index) => (
             <motion.div
               key={name}
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.06, duration: 0.45 }}
-              className="flex items-center justify-center rounded-2xl border border-gold/20 bg-gradient-to-br from-white via-sand to-gold-light/20 px-6 py-8 text-center shadow-soft"
+              transition={{ delay: index * 0.07, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              className="card-surface flex items-center justify-center px-7 py-9 text-center"
             >
-              <span className="font-serif text-lg font-medium text-ink sm:text-xl">
+              <span className="font-serif text-xl font-semibold text-ink">
                 {name}
               </span>
             </motion.div>

@@ -87,7 +87,7 @@ export default function PalestrasContent() {
         </a>
       </PageHero>
 
-      <MotionSection className="py-20 sm:py-28">
+      <MotionSection className="py-28 sm:py-36">
         <div className="section-container">
           <SectionHeader
             eyebrow="Por que trazer isso"
@@ -113,7 +113,7 @@ export default function PalestrasContent() {
         </div>
       </MotionSection>
 
-      <MotionSection className="bg-sand-dark/50 py-20 sm:py-28">
+      <MotionSection className="bg-sand-dark/50 py-28 sm:py-36">
         <div className="section-container">
           <SectionHeader
             eyebrow="Temas"
@@ -133,12 +133,19 @@ export default function PalestrasContent() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.06 }}
-                className="card-surface p-6 sm:p-8"
+                className="card-surface p-7 sm:p-9"
               >
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-gold/15 text-gold-dark">
-                  <Icon className="h-6 w-6" />
+                <div
+                  className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl"
+                  style={{
+                    background: "linear-gradient(#ffffff, #ffffff) padding-box, linear-gradient(135deg, rgba(201,162,75,0.5), rgba(232,206,140,0.3)) border-box",
+                    border: "1px solid transparent",
+                    boxShadow: "0 4px 16px rgba(201,162,75,0.12)",
+                  }}
+                >
+                  <Icon className="h-6 w-6" style={{ color: "#8A6B2E" }} />
                 </div>
-                <h3 className="font-serif text-xl font-medium text-ink">{title}</h3>
+                <h3 className="font-serif text-xl font-semibold text-ink">{title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-text-muted">
                   {description}
                 </p>
@@ -152,7 +159,7 @@ export default function PalestrasContent() {
         supportText="Com foco especial em empresas do setor da construção civil, mas aberta a qualquer organização que valorize o bem-estar das suas equipes."
       />
 
-      <MotionSection className="py-20 sm:py-28">
+      <MotionSection className="py-28 sm:py-36">
         <div className="section-container">
           <SectionHeader
             eyebrow="Formatos"
@@ -172,7 +179,7 @@ export default function PalestrasContent() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="rounded-3xl border border-gold/20 bg-gradient-to-br from-white to-gold-light/20 p-8 shadow-soft"
+                className="card-surface p-8"
               >
                 <h3 className="font-serif text-2xl font-medium text-ink">
                   {format.title}

@@ -8,45 +8,78 @@ import { TESTIMONIALS } from "@/lib/constants";
 
 export default function Testimonials() {
   return (
-    <MotionSection id="depoimentos" className="py-20 sm:py-28">
-      <div className="section-container">
+    <MotionSection id="depoimentos" className="relative overflow-hidden bg-ink py-28 sm:py-36">
+      {/* Glow ambiente */}
+      <div
+        className="pointer-events-none absolute left-1/2 top-0 h-[500px] w-[600px] -translate-x-1/2 rounded-full opacity-30"
+        style={{
+          background:
+            "radial-gradient(ellipse at 50% 20%, rgba(201,162,75,0.25) 0%, transparent 65%)",
+          filter: "blur(80px)",
+        }}
+        aria-hidden="true"
+      />
+
+      <div className="section-container relative">
         <SectionHeader
           eyebrow="Resultados reais"
+          light
           title={
             <>
               Quem já caminhou{" "}
-              <em className="italic text-gold-dark">comigo</em>
+              <em className="italic text-gold-light">comigo</em>
             </>
           }
         />
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {TESTIMONIALS.map((item, index) => (
             <motion.blockquote
               key={index}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.06, duration: 0.5 }}
-              className="card-surface flex flex-col p-6 sm:p-8"
+              transition={{ delay: index * 0.07, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+              className="card-dark relative flex flex-col p-7 sm:p-8"
             >
-              <Stars className="text-sm" />
-              <p className="mt-4 flex-1 text-sm leading-relaxed text-text-muted">
+              {/* Aspas decorativas */}
+              <span
+                className="pointer-events-none absolute right-6 top-4 select-none font-serif text-7xl leading-none text-gold/15"
+                aria-hidden="true"
+              >
+                &#8220;
+              </span>
+
+              <Stars className="relative text-sm text-gold" />
+
+              <p className="relative mt-4 flex-1 text-sm leading-relaxed text-white/70">
                 &ldquo;{item.quote}&rdquo;
               </p>
             </motion.blockquote>
           ))}
         </div>
 
-        <div className="mt-12 flex justify-center">
-          <div className="inline-flex items-center gap-4 rounded-full bg-white px-6 py-3 shadow-soft">
+        {/* Prova social — Google Reviews */}
+        <div className="mt-14 flex justify-center">
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+            className="inline-flex items-center gap-4 rounded-full border border-gold/25 px-7 py-3.5 backdrop-blur-sm"
+            style={{
+              background:
+                "linear-gradient(rgba(42,36,28,0.7), rgba(42,36,28,0.7)) padding-box, linear-gradient(135deg, rgba(201,162,75,0.3), rgba(232,206,140,0.2)) border-box",
+              borderColor: "transparent",
+            }}
+          >
             <ReviewAvatars />
             <div className="flex items-center gap-2">
-              <Stars />
-              <span className="text-sm font-medium text-ink">5,0</span>
-              <span className="text-sm text-text-muted">· 39 avaliações no Google</span>
+              <Stars className="text-gold" />
+              <span className="text-sm font-semibold text-white">5,0</span>
+              <span className="text-sm text-white/55">· 39 avaliações no Google</span>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </MotionSection>

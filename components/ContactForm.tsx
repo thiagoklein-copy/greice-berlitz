@@ -42,7 +42,7 @@ export default function ContactForm() {
   };
 
   return (
-    <MotionSection id="contato" className="bg-sand-dark/60 py-20 sm:py-28">
+    <MotionSection id="contato" className="bg-sand-dark/60 py-28 sm:py-36">
       <div className="section-container">
         <SectionHeader
           eyebrow="Contato"

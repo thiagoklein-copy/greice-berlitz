@@ -45,6 +45,12 @@ const config: Config = {
       borderRadius: {
         "4xl": "2rem",
       },
+      fontSize: {
+        "display-sm": ["2.25rem", { lineHeight: "1.08", letterSpacing: "-0.02em" }],
+        "display-md": ["3.25rem", { lineHeight: "1.06", letterSpacing: "-0.025em" }],
+        "display-lg": ["4.25rem", { lineHeight: "1.04", letterSpacing: "-0.03em" }],
+        "display-xl": ["5.25rem", { lineHeight: "1.02", letterSpacing: "-0.035em" }],
+      },
       backgroundImage: {
         "gold-gradient":
           "linear-gradient(135deg, #8A6B2E 0%, #C9A24B 45%, #E8CE8C 100%)",

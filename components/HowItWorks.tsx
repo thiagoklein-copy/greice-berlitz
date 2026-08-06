@@ -27,7 +27,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <MotionSection className="bg-ink-gold py-20 text-white sm:py-28">
+    <MotionSection className="bg-ink-gold py-28 text-white sm:py-36">
       <div className="section-container">
         <SectionHeader
           eyebrow="Como funciona"
@@ -44,23 +44,41 @@ export default function HowItWorks() {
           {steps.map((step, index) => (
             <motion.div
               key={step.number}
-              initial={{ opacity: 0, y: 24 }}
+              initial={{ opacity: 0, y: 28 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.12, duration: 0.5 }}
+              transition={{ delay: index * 0.14, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
               className="relative rounded-3xl border border-gold/20 bg-white/5 p-8 backdrop-blur-sm"
             >
-              <span className="font-serif text-5xl font-light text-gold-light/70">
+              {/* Número decorativo com gradiente */}
+              <span
+                className="block font-serif text-8xl font-extralight leading-none"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(135deg, rgba(138,107,46,0.8) 0%, rgba(201,162,75,0.9) 45%, rgba(232,206,140,0.6) 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+                aria-hidden="true"
+              >
                 {step.number}
               </span>
-              <h3 className="mt-4 font-serif text-xl font-medium">{step.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-white/75">
+              <h3 className="mt-3 font-serif text-xl font-semibold text-white">
+                {step.title}
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-white/65">
                 {step.description}
               </p>
 
+              {/* Conector entre steps */}
               {index < steps.length - 1 && (
                 <div
-                  className="absolute -right-4 top-1/2 hidden h-px w-8 bg-gradient-to-r from-gold-dark to-gold-light md:block"
+                  className="absolute -right-4 top-1/2 hidden h-px w-8 md:block"
+                  style={{
+                    background:
+                      "linear-gradient(to right, rgba(138,107,46,0.4), rgba(232,206,140,0.5))",
+                  }}
                   aria-hidden="true"
                 />
               )}
