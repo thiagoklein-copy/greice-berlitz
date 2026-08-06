@@ -13,31 +13,19 @@ import { FaInstagram } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="bg-ink">
-      {/* Linha gradiente dourada no topo */}
-      <div
-        className="h-px w-full"
-        style={{
-          background:
-            "linear-gradient(to right, transparent, rgba(201,162,75,0.7) 30%, rgba(232,206,140,0.8) 50%, rgba(201,162,75,0.7) 70%, transparent)",
-        }}
-        aria-hidden="true"
-      />
-
-      <div className="section-container py-24 lg:py-32">
+    <footer className="border-t border-sand/10 bg-ink">
+      <div className="section-container py-20 lg:py-24">
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr]">
-          {/* Coluna 1 — Marca */}
           <div>
             <Logo light />
-            <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/50">
+            <p className="mt-5 max-w-sm text-sm leading-relaxed text-sand/45">
               Terapia e palestras que fazem diferença na vida das pessoas, em
               Novo Hamburgo e além.
             </p>
           </div>
 
-          {/* Coluna 2 — Navegação */}
           <div>
-            <h3 className="mb-5 text-[11px] font-semibold uppercase tracking-[0.2em] text-gold/80">
+            <h3 className="mb-5 text-[11px] font-semibold uppercase tracking-[0.16em] text-sand/40">
               Navegação
             </h3>
             <ul className="space-y-3">
@@ -45,7 +33,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-white/50 transition-colors duration-200 hover:text-gold"
+                    className="text-sm text-sand/50 transition-colors hover:text-sand"
                   >
                     {link.label}
                   </Link>
@@ -54,13 +42,12 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Coluna 3 — Contato */}
           <div>
-            <h3 className="mb-5 text-[11px] font-semibold uppercase tracking-[0.2em] text-gold/80">
+            <h3 className="mb-5 text-[11px] font-semibold uppercase tracking-[0.16em] text-sand/40">
               Contato
             </h3>
             <address className="space-y-3 not-italic">
-              <p className="text-sm leading-relaxed text-white/50">{CLINIC_ADDRESS}</p>
+              <p className="text-sm leading-relaxed text-sand/50">{CLINIC_ADDRESS}</p>
               <p>
                 <a
                   href={buildWhatsAppUrl(
@@ -68,7 +55,7 @@ export default function Footer() {
                   )}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-white/50 transition-colors duration-200 hover:text-gold"
+                  className="text-sm text-sand/50 transition-colors hover:text-sand"
                 >
                   {CLINIC_PHONE}
                 </a>
@@ -78,37 +65,29 @@ export default function Footer() {
                   href={CLINIC_INSTAGRAM_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm text-white/50 transition-colors duration-200 hover:text-gold"
+                  className="inline-flex items-center gap-2 text-sm text-sand/50 transition-colors hover:text-sand"
                 >
                   <FaInstagram className="h-4 w-4" />
                   {CLINIC_INSTAGRAM}
                 </a>
               </p>
-              <p className="pt-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-gold/55">
+              <p className="pt-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-gold">
                 {PROFESSIONAL_CRP}
               </p>
             </address>
           </div>
         </div>
 
-        {/* Divider */}
-        <div
-          className="mt-16 h-px"
-          style={{
-            background:
-              "linear-gradient(to right, transparent, rgba(201,162,75,0.25), transparent)",
-          }}
-        />
-
-        {/* Base */}
-        <div className="flex flex-col gap-4 pt-8 sm:flex-row sm:items-start sm:justify-between">
-          <p className="text-sm text-white/35">
-            © 2026 Greice Berlitz. Todos os direitos reservados.
-          </p>
-          <p className="max-w-sm text-xs leading-relaxed text-white/50 sm:text-right">
-            Este site não substitui atendimento de urgência. Em caso de crise,
-            procure o CVV (188) ou o serviço de emergência mais próximo.
-          </p>
+        <div className="mt-14 border-t border-sand/10 pt-8">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+            <p className="text-sm text-sand/35">
+              © 2026 Greice Berlitz. Todos os direitos reservados.
+            </p>
+            <p className="max-w-sm text-xs leading-relaxed text-sand/40 sm:text-right">
+              Este site não substitui atendimento de urgência. Em caso de crise,
+              procure o CVV (188) ou o serviço de emergência mais próximo.
+            </p>
+          </div>
         </div>
       </div>
     </footer>

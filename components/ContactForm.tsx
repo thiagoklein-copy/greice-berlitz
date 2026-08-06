@@ -16,6 +16,9 @@ import {
 } from "@/lib/constants";
 import { formatPhoneMask } from "@/lib/phone";
 
+const fieldClass =
+  "block w-full rounded-md border border-ink/15 bg-white px-4 py-3 text-sm outline-none transition focus:border-ink focus:ring-1 focus:ring-ink/20";
+
 export default function ContactForm() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
@@ -42,23 +45,23 @@ export default function ContactForm() {
   };
 
   return (
-    <MotionSection id="contato" className="bg-sand-dark/60 py-28 sm:py-36">
+    <MotionSection id="contato" className="bg-sand py-24 sm:py-32">
       <div className="section-container">
         <SectionHeader
           eyebrow="Contato"
           title={
             <>
               Vamos conversar sobre o seu{" "}
-              <em className="italic text-gold-dark">próximo passo</em>
+              <span className="font-semibold text-text-muted">próximo passo</span>
             </>
           }
         />
 
-        <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-16">
+        <div className="grid items-start gap-8 lg:grid-cols-2 lg:gap-12">
           <motion.form
             onSubmit={handleSubmit}
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="card-surface flex w-full min-w-0 flex-col gap-5 p-6 sm:p-8"
           >
@@ -72,7 +75,7 @@ export default function ContactForm() {
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="block w-full rounded-2xl border border-gold/20 bg-sand/50 px-4 py-3 text-sm outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/15"
+                className={fieldClass}
                 placeholder="Seu nome"
               />
             </div>
@@ -87,7 +90,7 @@ export default function ContactForm() {
                 required
                 value={phone}
                 onChange={(e) => setPhone(formatPhoneMask(e.target.value))}
-                className="block w-full rounded-2xl border border-gold/20 bg-sand/50 px-4 py-3 text-sm outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/15"
+                className={fieldClass}
                 placeholder="(51) 99999-9999"
               />
             </div>
@@ -104,7 +107,7 @@ export default function ContactForm() {
                 required
                 value={objective}
                 onChange={(e) => setObjective(e.target.value)}
-                className="block w-full rounded-2xl border border-gold/20 bg-sand/50 px-4 py-3 text-sm outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/15"
+                className={fieldClass}
               >
                 <option value="" disabled>
                   Selecione uma opção
@@ -126,7 +129,7 @@ export default function ContactForm() {
                 rows={4}
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                className="block w-full resize-none rounded-2xl border border-gold/20 bg-sand/50 px-4 py-3 text-sm outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/15"
+                className={`${fieldClass} resize-none`}
                 placeholder="Conte um pouco sobre o que você está buscando..."
               />
             </div>
@@ -137,31 +140,31 @@ export default function ContactForm() {
           </motion.form>
 
           <motion.aside
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="space-y-6"
+            className="space-y-4"
           >
             <div className="card-surface space-y-5 p-6 sm:p-8">
               <div className="flex gap-3">
-                <FaMapMarkerAlt className="mt-1 h-5 w-5 shrink-0 text-gold" />
+                <FaMapMarkerAlt className="mt-1 h-4 w-4 shrink-0 text-ink" />
                 <div>
-                  <p className="text-sm font-medium text-ink">Endereço</p>
+                  <p className="text-sm font-semibold text-ink">Endereço</p>
                   <p className="mt-1 text-sm text-text-muted">{CLINIC_ADDRESS}</p>
                 </div>
               </div>
 
               <div className="flex gap-3">
-                <FaPhone className="mt-1 h-5 w-5 shrink-0 text-gold" />
+                <FaPhone className="mt-1 h-4 w-4 shrink-0 text-ink" />
                 <div>
-                  <p className="text-sm font-medium text-ink">Telefone / WhatsApp</p>
+                  <p className="text-sm font-semibold text-ink">Telefone / WhatsApp</p>
                   <a
                     href={buildWhatsAppUrl(
                       "Olá, Greice! Gostaria de mais informações.",
                     )}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-1 block text-sm text-text-muted hover:text-gold-dark"
+                    className="mt-1 block text-sm text-text-muted hover:text-ink"
                   >
                     {CLINIC_PHONE}
                   </a>
@@ -169,14 +172,14 @@ export default function ContactForm() {
               </div>
 
               <div className="flex gap-3">
-                <FaInstagram className="mt-1 h-5 w-5 shrink-0 text-gold" />
+                <FaInstagram className="mt-1 h-4 w-4 shrink-0 text-ink" />
                 <div>
-                  <p className="text-sm font-medium text-ink">Instagram</p>
+                  <p className="text-sm font-semibold text-ink">Instagram</p>
                   <a
                     href={CLINIC_INSTAGRAM_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-1 block text-sm text-text-muted hover:text-gold-dark"
+                    className="mt-1 block text-sm text-text-muted hover:text-ink"
                   >
                     {CLINIC_INSTAGRAM}
                   </a>
@@ -184,9 +187,9 @@ export default function ContactForm() {
               </div>
 
               <div className="flex gap-3">
-                <FaClock className="mt-1 h-5 w-5 shrink-0 text-gold" />
+                <FaClock className="mt-1 h-4 w-4 shrink-0 text-ink" />
                 <div>
-                  <p className="text-sm font-medium text-ink">Horário de atendimento</p>
+                  <p className="text-sm font-semibold text-ink">Horário de atendimento</p>
                   <p className="mt-1 text-sm text-text-muted">
                     De segunda a sexta, das 8:00 às 18:30
                   </p>
@@ -194,7 +197,7 @@ export default function ContactForm() {
               </div>
             </div>
 
-            <div className="overflow-hidden rounded-3xl border border-gold/15 shadow-soft">
+            <div className="overflow-hidden rounded-lg border border-ink/10">
               <iframe
                 src={MAPS_EMBED_URL}
                 width="100%"

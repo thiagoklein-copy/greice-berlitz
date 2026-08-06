@@ -36,8 +36,7 @@ export default function AtendimentoContent() {
         title={
           <>
             Você merece esse{" "}
-            <em className="italic text-gold-light">cuidado</em> com você
-            mesmo(a)
+            <span className="text-gold">cuidado</span> com você mesmo(a)
           </>
         }
         subtitle="Agende sua primeira conversa e dê o primeiro passo."

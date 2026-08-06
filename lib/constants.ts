@@ -65,13 +65,13 @@ export const COMPANIES = [
 export const IMAGES = {
   hero: {
     src: "/hero.jpg",
-    alt: "Ambiente acolhedor, representando calma e transformação",
-    objectPosition: "50% 35%",
+    alt: "Ambiente corporativo em preto e branco — placeholder até foto real",
+    objectPosition: "50% 40%",
   },
   ctaBanner: {
     src: "/cta-banner.jpg",
-    alt: "Pessoa em meditação vista de costas, em luz dourada",
-    objectPosition: "50% 22%",
+    alt: "Reunião profissional em preto e branco — placeholder até foto real",
+    objectPosition: "50% 35%",
   },
   greice: {
     src: "/team-luiza.jpg",

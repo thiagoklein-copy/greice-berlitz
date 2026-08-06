@@ -1,12 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  HiHeart,
-  HiEye,
-  HiLightBulb,
-  HiSparkles,
-} from "react-icons/hi2";
 import PageHero from "@/components/PageHero";
 import CtaBanner from "@/components/CtaBanner";
 import MotionSection from "@/components/ui/MotionSection";
@@ -22,10 +16,10 @@ const formation = [
 ];
 
 const values = [
-  { icon: HiHeart, label: "Vocação antes do retorno" },
-  { icon: HiEye, label: "Presença total em cada atendimento" },
-  { icon: HiLightBulb, label: "Conhecimento técnico com intuição" },
-  { icon: HiSparkles, label: "Autoamor como caminho de mudança" },
+  "Vocação antes do retorno",
+  "Presença total em cada atendimento",
+  "Conhecimento técnico com intuição",
+  "Autoamor como caminho de mudança",
 ];
 
 export default function SobreContent() {
@@ -38,7 +32,7 @@ export default function SobreContent() {
             <span className="block text-balance">
               Antes de ajudar os outros a se transformarem,
             </span>
-            <span className="mt-2 block text-balance font-normal italic text-gold-dark sm:mt-3">
+            <span className="mt-2 block text-balance font-semibold text-text-muted sm:mt-3">
               eu me transformei.
             </span>
           </>
@@ -48,22 +42,21 @@ export default function SobreContent() {
         imagePosition={IMAGES.greice.objectPosition}
       />
 
-      <MotionSection className="py-28 sm:py-36">
+      <MotionSection className="bg-sand py-24 sm:py-32">
         <div className="section-container">
           <SectionHeader
             eyebrow="Quem eu sou"
             title={
               <>
                 Vocação, presença e{" "}
-                <em className="italic text-gold-dark">propósito</em>
+                <span className="font-semibold text-text-muted">propósito</span>
               </>
             }
-            align="left"
           />
 
-          <div className="mx-auto max-w-3xl space-y-5 text-base leading-relaxed text-text-muted sm:text-lg">
+          <div className="max-w-3xl space-y-5 text-base leading-relaxed text-text-muted sm:text-lg">
             <motion.p
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
@@ -73,10 +66,10 @@ export default function SobreContent() {
               esse propósito que, com o tempo, trouxe os resultados.
             </motion.p>
             <motion.p
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.08 }}
+              transition={{ delay: 0.06 }}
             >
               Ao longo de mais de 16 anos de prática clínica, vi pessoas chegarem
               até mim sem perspectiva de vida, sem vontade de seguir em frente,
@@ -93,19 +86,18 @@ export default function SobreContent() {
 
       {/*
         BLOCO SENSÍVEL: confirmar com a cliente o nível de detalhe antes de publicar.
-        Tom sóbrio, sem imagens ou elementos gráficos "tristes".
       */}
-      <MotionSection className="bg-gold-soft py-28 sm:py-36">
+      <MotionSection className="bg-ink py-24 sm:py-32">
         <div className="section-container">
           <SectionHeader
             eyebrow="Resiliência"
             title="Uma prova de que é possível recomeçar"
-            align="left"
+            light
           />
 
-          <div className="mx-auto max-w-3xl space-y-5 text-base leading-relaxed text-text-muted sm:text-lg">
+          <div className="max-w-3xl space-y-5 text-base leading-relaxed text-sand/60 sm:text-lg">
             <motion.p
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
@@ -115,10 +107,10 @@ export default function SobreContent() {
               significa cuidar de si enquanto se cuida de quem se ama.
             </motion.p>
             <motion.p
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.08 }}
+              transition={{ delay: 0.06 }}
             >
               Mantive o que pude da minha rotina, da minha família, do meu trabalho,
               na medida do possível, sem deixar de cuidar de mim enquanto cuidava
@@ -131,29 +123,31 @@ export default function SobreContent() {
         </div>
       </MotionSection>
 
-      <MotionSection className="py-28 sm:py-36">
+      <MotionSection className="bg-sand py-24 sm:py-32">
         <div className="section-container">
           <SectionHeader
             eyebrow="Formação"
             title={
               <>
                 Base técnica, olhar{" "}
-                <em className="italic text-gold-dark">humano</em>
+                <span className="font-semibold text-text-muted">humano</span>
               </>
             }
           />
 
-          <ul className="mx-auto max-w-2xl space-y-3">
+          <ul className="max-w-2xl space-y-0 border border-ink/10">
             {formation.map((item, index) => (
               <motion.li
                 key={item}
-                initial={{ opacity: 0, x: -12 }}
+                initial={{ opacity: 0, x: -8 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.06 }}
-                className="flex items-start gap-3 rounded-2xl border border-gold/15 bg-white px-5 py-4 shadow-soft"
+                transition={{ delay: index * 0.04 }}
+                className="flex items-start gap-4 border-b border-ink/10 px-5 py-4 last:border-b-0"
               >
-                <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-gold-gradient" />
+                <span className="mt-0.5 font-sans text-xs font-bold tracking-[0.14em] text-gold">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
                 <span className="text-sm text-text-muted sm:text-base">{item}</span>
               </motion.li>
             ))}
@@ -161,37 +155,39 @@ export default function SobreContent() {
         </div>
       </MotionSection>
 
-      <MotionSection className="bg-sand-dark/50 py-28 sm:py-36">
+      <MotionSection className="border-t border-ink/8 bg-white py-24 sm:py-32">
         <div className="section-container">
           <SectionHeader
             eyebrow="O que me move"
             title={
               <>
                 Valores que guiam cada{" "}
-                <em className="italic text-gold-dark">encontro</em>
+                <span className="font-semibold text-text-muted">encontro</span>
               </>
             }
           />
 
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {values.map(({ icon: Icon, label }, index) => (
+          <div className="grid gap-0 border border-ink/10 sm:grid-cols-2">
+            {values.map((label, index) => (
               <motion.div
                 key={label}
-                initial={{ opacity: 0, y: 16 }}
+                initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.08 }}
-                className="flex flex-col items-center rounded-full border border-gold/20 bg-gradient-to-br from-white to-gold-light/20 px-6 py-8 text-center shadow-soft sm:rounded-3xl"
+                transition={{ delay: index * 0.05 }}
+                className="border-b border-ink/10 p-6 sm:odd:border-r sm:[&:nth-last-child(-n+2)]:border-b-0"
               >
-                <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-gold/15 text-gold-dark">
-                  <Icon className="h-6 w-6" />
-                </div>
-                <p className="text-sm font-medium text-ink">{label}</p>
+                <span className="font-sans text-sm font-bold tracking-[0.2em] text-gold">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <p className="mt-3 font-sans text-base font-semibold text-ink">
+                  {label}
+                </p>
               </motion.div>
             ))}
           </div>
 
-          <div className="mt-12 text-center">
+          <div className="mt-12">
             <a
               href={WHATSAPP_URL}
               target="_blank"
@@ -208,7 +204,7 @@ export default function SobreContent() {
         title={
           <>
             Quero fazer parte da sua jornada de{" "}
-            <em className="italic text-gold-light">transformação</em>
+            <span className="text-gold">transformação</span>
           </>
         }
         subtitle="Se algo aqui ressoou com você, vamos conversar."

@@ -3,13 +3,13 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import MotionSection from "@/components/ui/MotionSection";
-import { SectionHeader } from "@/components/ui/Shared";
 import { COMPANIES } from "@/lib/constants";
 
 interface CompanyLogosProps {
   title?: string;
   supportText?: string;
   id?: string;
+  bridgeToDark?: boolean;
 }
 
 export default function CompanyLogos({
@@ -18,30 +18,33 @@ export default function CompanyLogos({
   id,
 }: CompanyLogosProps) {
   return (
-    <MotionSection id={id} className="py-24 sm:py-32">
+    <MotionSection id={id} className="bg-sand py-20 sm:py-24">
       <div className="section-container">
-        <SectionHeader eyebrow="Prova social" title={title} subtitle={supportText} />
+        <p className="eyebrow mb-3">{title}</p>
+        {supportText && (
+          <p className="mb-10 max-w-2xl text-sm text-text-muted">{supportText}</p>
+        )}
 
-        <div className="grid grid-cols-2 items-center gap-x-8 gap-y-12 sm:grid-cols-3 lg:gap-x-12 lg:gap-y-16">
+        <div className="mt-8 flex flex-wrap items-center justify-start gap-x-10 gap-y-8 sm:gap-x-14">
           {COMPANIES.map((company, index) => (
             <motion.div
               key={company.name}
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.07, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              className="flex min-h-[4.5rem] items-center justify-center px-2"
+              transition={{ delay: index * 0.05, duration: 0.35 }}
+              className="flex h-12 items-center"
             >
               {"logo" in company && company.logo ? (
                 <Image
                   src={company.logo}
                   alt={company.name}
-                  width={220}
-                  height={88}
-                  className="h-11 w-auto max-h-16 max-w-[10.5rem] object-contain opacity-90 brightness-0 transition duration-300 hover:opacity-100 sm:h-14 sm:max-h-20 sm:max-w-[13rem]"
+                  width={160}
+                  height={48}
+                  className="h-8 w-auto max-w-[9rem] object-contain opacity-70 brightness-0 sm:h-9 sm:max-w-[11rem]"
                 />
               ) : (
-                <span className="font-serif text-xl font-semibold tracking-wide text-ink sm:text-2xl">
+                <span className="font-sans text-lg font-bold tracking-tight text-ink/70">
                   {company.name}
                 </span>
               )}

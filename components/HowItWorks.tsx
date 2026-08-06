@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import MotionSection from "@/components/ui/MotionSection";
-import { SectionHeader } from "@/components/ui/Shared";
 
 const steps = [
   {
@@ -27,61 +26,40 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <MotionSection className="bg-ink-gold py-28 text-white sm:py-36">
+    <MotionSection className="bg-ink py-24 text-sand sm:py-32">
       <div className="section-container">
-        <SectionHeader
-          eyebrow="Como funciona"
-          light
-          title={
-            <>
-              Três passos para começar a sua{" "}
-              <em className="italic text-gold-light">terapia</em>
-            </>
-          }
-        />
+        <div className="mb-12 max-w-2xl">
+          <p className="eyebrow mb-4 text-sand/45">Como funciona</p>
+          <h2
+            className="font-sans font-extrabold tracking-[-0.03em] text-sand"
+            style={{ fontSize: "clamp(1.75rem, 4vw, 3rem)", lineHeight: 1.08 }}
+          >
+            Três passos para começar a sua{" "}
+            <span className="font-semibold text-sand/70">terapia</span>
+          </h2>
+        </div>
 
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="grid gap-0 border border-sand/12 md:grid-cols-3">
           {steps.map((step, index) => (
             <motion.div
               key={step.number}
-              initial={{ opacity: 0, y: 28 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.14, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-              className="relative rounded-3xl border border-gold/20 bg-white/5 p-8 backdrop-blur-sm"
+              transition={{ delay: index * 0.08, duration: 0.4 }}
+              className={`p-8 ${
+                index < steps.length - 1 ? "border-b border-sand/12 md:border-b-0 md:border-r" : ""
+              }`}
             >
-              {/* Número decorativo com gradiente */}
-              <span
-                className="block font-serif text-8xl font-extralight leading-none"
-                style={{
-                  backgroundImage:
-                    "linear-gradient(135deg, rgba(138,107,46,0.8) 0%, rgba(201,162,75,0.9) 45%, rgba(232,206,140,0.6) 100%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                }}
-                aria-hidden="true"
-              >
+              <span className="font-sans text-sm font-bold tracking-[0.2em] text-gold">
                 {step.number}
               </span>
-              <h3 className="mt-3 font-serif text-xl font-semibold text-white">
+              <h3 className="mt-4 font-sans text-xl font-bold text-sand">
                 {step.title}
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-white/65">
+              <p className="mt-3 text-sm leading-relaxed text-sand/55">
                 {step.description}
               </p>
-
-              {/* Conector entre steps */}
-              {index < steps.length - 1 && (
-                <div
-                  className="absolute -right-4 top-1/2 hidden h-px w-8 md:block"
-                  style={{
-                    background:
-                      "linear-gradient(to right, rgba(138,107,46,0.4), rgba(232,206,140,0.5))",
-                  }}
-                  aria-hidden="true"
-                />
-              )}
             </motion.div>
           ))}
         </div>

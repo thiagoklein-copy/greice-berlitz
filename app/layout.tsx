@@ -2,34 +2,37 @@
  * CHECKLIST: confirmar com a Greice antes de publicar:
  * - [ ] Confirmar o nível de detalhe aceitável no bloco sobre a perda dos pais (página /sobre)
  * - [ ] Fotos reais dela (hero de cada página, seção "minha história", seção de palestras; idealmente foto em ambiente corporativo/palco)
- * - [ ] Confirmar se pode citar os nomes das empresas (Britasinos, Gerdau, FCC, ULBRA Saúde, Facat, Construtora Mosmam) publicamente, ou se precisa de autorização formal
- * - [ ] Valores de sessão e de palestra (hoje "sob consulta" em ambos)
- * - [ ] Vídeo do Instagram: perguntar se quer incorporar trecho/link na /sobre ou manter só como referência de tom
+ * - [ ] Confirmar se pode citar os nomes das empresas publicamente
+ * - [ ] Valores de sessão e de palestra (hoje "sob consulta")
  * - [ ] Confirmar handle oficial do Instagram
- * - [ ] Confirmar URL oficial do Google Business Profile (avaliações)
+ * - [ ] Confirmar URL oficial do Google Business Profile
+ *
+ * VISUAL (pivô SaaS): Inter bold + branco/navy + âmbar sólido.
+ * Ver resumo em app/globals.css e app/page.tsx.
  */
 import type { Metadata, Viewport } from "next";
-import { Fraunces, Sora } from "next/font/google";
+import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 import SiteShell from "@/components/SiteShell";
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#C9A24B",
+  themeColor: "#0D0D0F",
 };
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+  weight: ["400", "500", "600", "700", "800"],
+});
 
 const fraunces = Fraunces({
   subsets: ["latin"],
   variable: "--font-fraunces",
   display: "swap",
   style: ["normal", "italic"],
-});
-
-const sora = Sora({
-  subsets: ["latin"],
-  variable: "--font-sora",
-  display: "swap",
 });
 
 const title = "Greice Berlitz | Psicóloga em Novo Hamburgo — Psicoterapia e Palestras";
@@ -63,7 +66,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className={`${fraunces.variable} ${sora.variable}`}>
+    <html lang="pt-BR" className={`${inter.variable} ${fraunces.variable}`}>
       <body className="font-sans">
         <SiteShell>{children}</SiteShell>
       </body>

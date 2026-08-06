@@ -1,33 +1,22 @@
 /*
- * DESIGN SYSTEM — Greice Berlitz
+ * SISTEMA VISUAL — Greice Berlitz (pivô ago/2026)
  * ─────────────────────────────────────────────────────────────────
- * Decisões de design principais:
+ * Direção: SaaS/produto técnico (Ordina · Neative · Flowspark)
+ * NÃO é o padrão “terapeuta IA” (dourado gradient + serif itálico).
  *
- * 1. TIPOGRAFIA DISPLAY — Headlines de hero aumentadas para escala
- *    editorial (referência Whoop/HBR). Fraunces de 2.25rem (mobile)
- *    até 5rem+ (desktop). font-semibold para presença máxima.
- *
- * 2. CARDS COM BORDA GRADIENTE — card-surface usa a técnica
- *    background: gradient padding-box / gradient border-box para
- *    bordas douradas no hover. card-dark é a variante escura
- *    (seção depoimentos).
- *
- * 3. BOTÕES COM GRADIENTE DOURADO — btn-primary usa gradient fill
- *    (#C9A24B → #E8CE8C) + filter:brightness no hover para efeito
- *    metálico sofisticado sem troca brusca de cor.
- *
- * 4. SEÇÃO DEPOIMENTOS ESCURA — bg-ink com cards card-dark,
- *    criando alto contraste e sensação premium de editorial.
- *
- * 5. RODAPÉ ESCURO — bg-ink com linha gradiente dourada no topo,
- *    hierarquia visual clara e mais espaço vertical.
- *
- * 6. RESPIRO VERTICAL AMPLIADO — seções em py-28/py-36 vs py-20.
- *    section-container com padding horizontal maior em desktop.
- *
- * 7. EASING CUSTOMIZADO — [0.22, 1, 0.36, 1] mantido como padrão.
- *    Page transition recebe scale sutil (0.995→1) para sensação
- *    mais cinematográfica.
+ * DECISÕES:
+ * 1. PALETA — branco #FAFAF9 / navy #0D0D0F / texto #12110F /
+ *    âmbar sólido #C9982E só em CTA, underlines, stats e badges.
+ *    Zero gradientes lineares/radiais.
+ * 2. TIPOGRAFIA — Inter sans bold (700–800) em headlines.
+ *    Serif (Fraunces) só em citações/depoimentos.
+ *    Sem “palavra em itálico dourado”.
+ * 3. ESTRUTURA — cortes secos branco↔escuro; cards raio 6–8px,
+ *    borda 1px, sem sombra suave; stats editoriais; 01 02 03.
+ * 4. FOTO — placeholders B&W corporativos; sem yoga/praia/pôr do sol.
+ * 5. BOTÕES — cantos 6–8px, fill sólido, hover escurece (sem glow).
+ * 6. ÍCONES — removidos onde eram decoração de biblioteca;
+ *    hierarquia tipográfica / numeração no lugar.
  * ─────────────────────────────────────────────────────────────────
  */
 
@@ -51,8 +40,8 @@ body {
   width: 100%;
   min-height: 100vh;
   overflow-x: hidden;
-  background-color: #faf6ee;
-  color: #1f1b14;
+  background-color: #fafaf9;
+  color: #12110f;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -70,191 +59,115 @@ video {
 }
 
 @layer components {
-  /* ─── Container ─────────────────────────────────────────────── */
   .section-container {
     @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12;
   }
 
-  /* ─── Eyebrow / Label ────────────────────────────────────────── */
   .eyebrow {
-    @apply font-sans text-[11px] font-semibold uppercase text-gold-dark;
-    letter-spacing: 0.22em;
+    @apply font-sans text-[11px] font-semibold uppercase tracking-[0.18em] text-text-muted;
   }
 
-  /* ─── Primary button: gradient fill ─────────────────────────── */
+  /* CTA sólido âmbar — sem pill, sem glow */
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-full font-semibold;
-    padding: 0.875rem 1.75rem;
+    @apply inline-flex items-center justify-center font-semibold;
+    border-radius: 6px;
+    padding: 0.875rem 1.5rem;
     font-size: 13px;
-    letter-spacing: 0.025em;
-    color: #1a1610;
-    background-image: linear-gradient(135deg, #c9a24b 0%, #e8ce8c 65%);
-    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    letter-spacing: 0.02em;
+    color: #0d0d0f;
+    background: #c9982e;
+    transition: background 0.2s ease;
   }
   .btn-primary:hover {
-    transform: scale(1.02);
-    filter: brightness(1.09);
-    box-shadow: 0 0 34px rgba(232, 206, 140, 0.55);
-  }
-  .btn-primary:active {
-    transform: scale(0.985);
-    filter: brightness(1.0);
+    background: #a67b1f;
   }
 
-  /* ─── Accent button ──────────────────────────────────────────── */
   .btn-accent {
-    @apply inline-flex items-center justify-center rounded-full font-semibold;
-    padding: 0.875rem 1.75rem;
+    @apply inline-flex items-center justify-center font-semibold;
+    border-radius: 6px;
+    padding: 0.875rem 1.5rem;
     font-size: 13px;
-    letter-spacing: 0.025em;
-    color: #1a1610;
-    background-image: linear-gradient(135deg, #e8ce8c 0%, #c9a24b 100%);
-    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    letter-spacing: 0.02em;
+    color: #0d0d0f;
+    background: #c9982e;
+    transition: background 0.2s ease;
   }
   .btn-accent:hover {
-    transform: scale(1.02);
-    filter: brightness(1.06);
-    box-shadow: 0 0 34px rgba(232, 206, 140, 0.55);
-  }
-  .btn-accent:active {
-    transform: scale(0.985);
+    background: #e8d5a3;
   }
 
-  /* ─── Ghost button (fundos claros) ──────────────────────────── */
   .btn-ghost {
-    @apply inline-flex items-center justify-center rounded-full font-semibold;
-    padding: 0.875rem 1.75rem;
+    @apply inline-flex items-center justify-center font-semibold;
+    border-radius: 6px;
+    padding: 0.875rem 1.5rem;
     font-size: 13px;
-    letter-spacing: 0.025em;
-    color: #8a6b2e;
-    border: 1px solid rgba(201, 162, 75, 0.4);
+    letter-spacing: 0.02em;
+    color: #12110f;
+    border: 1px solid rgba(18, 17, 15, 0.18);
     background: transparent;
-    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: border-color 0.2s ease, background 0.2s ease;
   }
   .btn-ghost:hover {
-    transform: scale(1.02);
-    border-color: #c9a24b;
-    background: rgba(201, 162, 75, 0.08);
-    box-shadow: 0 0 22px rgba(201, 162, 75, 0.24);
-  }
-  .btn-ghost:active {
-    transform: scale(0.985);
+    border-color: #12110f;
+    background: rgba(18, 17, 15, 0.04);
   }
 
-  /* ─── Ghost button (fundos escuros) ──────────────────────────── */
   .btn-ghost-light {
-    @apply inline-flex items-center justify-center rounded-full font-semibold;
-    padding: 0.875rem 1.75rem;
+    @apply inline-flex items-center justify-center font-semibold;
+    border-radius: 6px;
+    padding: 0.875rem 1.5rem;
     font-size: 13px;
-    letter-spacing: 0.025em;
-    color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.28);
+    letter-spacing: 0.02em;
+    color: #f5f3ef;
+    border: 1px solid rgba(245, 243, 239, 0.28);
     background: transparent;
-    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: border-color 0.2s ease, background 0.2s ease;
   }
   .btn-ghost-light:hover {
-    transform: scale(1.02);
-    border-color: rgba(232, 206, 140, 0.7);
-    background: rgba(255, 255, 255, 0.08);
-    box-shadow: 0 0 22px rgba(232, 206, 140, 0.18);
-  }
-  .btn-ghost-light:active {
-    transform: scale(0.985);
+    border-color: rgba(245, 243, 239, 0.7);
+    background: rgba(245, 243, 239, 0.06);
   }
 
-  /* ─── Card padrão: borda gradiente dourada no hover ─────────── */
+  /* Cards secos — borda 1px, raio mínimo */
   .card-surface {
-    border-radius: 1.5rem;
-    background:
-      linear-gradient(#ffffff, #ffffff) padding-box,
-      linear-gradient(
-          to bottom right,
-          rgba(201, 162, 75, 0.12),
-          rgba(201, 162, 75, 0.04)
-        )
-        border-box;
-    border: 1px solid transparent;
-    box-shadow: 0 6px 24px rgba(138, 107, 46, 0.06);
-    transition:
-      transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-      background 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-      box-shadow 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border-radius: 8px;
+    background: #ffffff;
+    border: 1px solid rgba(18, 17, 15, 0.1);
+    box-shadow: none;
+    transition: border-color 0.2s ease;
   }
   .card-surface:hover {
-    transform: translateY(-5px);
-    background:
-      linear-gradient(#ffffff, #ffffff) padding-box,
-      linear-gradient(
-          135deg,
-          rgba(138, 107, 46, 0.7) 0%,
-          rgba(201, 162, 75, 0.88) 50%,
-          rgba(232, 206, 140, 0.88) 100%
-        )
-        border-box;
-    box-shadow: 0 22px 50px rgba(138, 107, 46, 0.13);
+    border-color: rgba(18, 17, 15, 0.22);
+    transform: none;
+    box-shadow: none;
+    background: #ffffff;
   }
 
-  /* ─── Card escuro: para depoimentos em fundo ink ────────────── */
   .card-dark {
-    border-radius: 1.5rem;
-    background:
-      linear-gradient(rgba(36, 30, 20, 0.9), rgba(36, 30, 20, 0.9)) padding-box,
-      linear-gradient(
-          to bottom right,
-          rgba(201, 162, 75, 0.1),
-          rgba(201, 162, 75, 0.03)
-        )
-        border-box;
-    border: 1px solid transparent;
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.32);
-    transition:
-      transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-      background 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-      box-shadow 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border-radius: 8px;
+    background: transparent;
+    border: 1px solid rgba(245, 243, 239, 0.14);
+    box-shadow: none;
+    transition: border-color 0.2s ease;
   }
   .card-dark:hover {
-    transform: translateY(-5px);
-    background:
-      linear-gradient(rgba(36, 30, 20, 0.95), rgba(36, 30, 20, 0.95)) padding-box,
-      linear-gradient(
-          135deg,
-          rgba(138, 107, 46, 0.6) 0%,
-          rgba(201, 162, 75, 0.8) 50%,
-          rgba(232, 206, 140, 0.7) 100%
-        )
-        border-box;
-    box-shadow: 0 22px 50px rgba(0, 0, 0, 0.42);
+    border-color: rgba(245, 243, 239, 0.28);
+    transform: none;
+    box-shadow: none;
+    background: transparent;
   }
 
-  /* ─── Linha divisória dourada ────────────────────────────────── */
   .gold-divider {
     height: 1px;
-    background: linear-gradient(
-      to right,
-      transparent,
-      rgba(201, 162, 75, 0.45),
-      transparent
-    );
+    background: rgba(201, 152, 46, 0.35);
   }
 
-  /* ─── Glow ambiente no hero ──────────────────────────────────── */
+  /* Compat: hero-glow removido (sem gradiente/blur) */
   .hero-glow {
-    position: absolute;
-    pointer-events: none;
-    left: 50%;
-    top: 28%;
-    width: 45vw;
-    max-width: 520px;
-    height: 45vw;
-    max-height: 520px;
-    transform: translateX(-50%);
-    border-radius: 50%;
-    background: radial-gradient(
-      ellipse at 50% 40%,
-      rgba(232, 206, 140, 0.26) 0%,
-      transparent 70%
-    );
-    filter: blur(72px);
-    opacity: 0.85;
+    display: none;
+  }
+
+  .surface-grain::after {
+    display: none;
   }
 }
