@@ -17,7 +17,7 @@ export default function CtaBanner({
   title = (
     <>
       Dar o primeiro passo já é parte da{" "}
-      <em className="italic text-gold-light">transformação</em>
+      <em className="italic text-gold-light">mudança</em>
     </>
   ),
   subtitle = "Fale comigo agora e vamos conversar sobre o que você precisa.",

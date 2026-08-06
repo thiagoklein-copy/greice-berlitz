@@ -48,7 +48,7 @@ export default function HomePage() {
             </span>
           </>
         }
-        subtitle="Há mais de 16 anos, ajudo pessoas a se reencontrarem através da terapia — e ajudo empresas a cuidarem de quem faz parte delas através de palestras que transformam."
+        subtitle="Há mais de 16 anos, ajudo pessoas a se reencontrarem na terapia e ajudo empresas a cuidarem de quem faz parte delas com palestras que fazem diferença."
       >
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
           <a
@@ -88,14 +88,14 @@ export default function HomePage() {
       <MotionSection id="dois-caminhos" className="py-20 sm:py-28">
         <div className="section-container">
           <SectionHeader
-            eyebrow="Dois caminhos"
+            eyebrow="Como posso ajudar"
             title={
               <>
                 Dois caminhos,{" "}
                 <em className="italic text-gold-dark">um propósito</em>
               </>
             }
-            subtitle="Seja no consultório ou na empresa, o objetivo é o mesmo: transformação real."
+            subtitle="Seja no consultório ou na empresa, o objetivo é o mesmo: fazer diferença de verdade."
           />
 
           <div className="grid gap-6 lg:grid-cols-2">
@@ -143,8 +143,8 @@ export default function HomePage() {
             >
               Sempre escolhi minha profissão pela vocação, não pelo retorno
               financeiro. Ao longo de mais de 16 anos, vi pessoas chegarem sem
-              perspectiva — e saírem transformadas. O autoamor transforma vidas, e
-              eu quero continuar sendo parte dessa jornada.
+              perspectiva e saírem com outra relação consigo mesmas. O autoamor
+              transforma vidas, e eu quero continuar fazendo parte disso.
             </motion.p>
             <Link href="/sobre" className="btn-ghost mt-8 inline-flex">
               Conhecer minha trajetória
