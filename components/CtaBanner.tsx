@@ -27,7 +27,7 @@ export default function CtaBanner({
 }: CtaBannerProps) {
   return (
     <MotionSection className="relative overflow-hidden bg-ink py-16 sm:py-20">
-      <InfinityWatermark />
+      <InfinityWatermark variant="right-bleed" />
       <div className="section-container relative z-[1]">
         <div className="grid items-center gap-10 rounded-xl border border-white/12 lg:grid-cols-2 lg:gap-0">
           <div className="p-8 sm:p-12 lg:p-16">

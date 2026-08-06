@@ -15,7 +15,7 @@ export default function Testimonials() {
         id="depoimentos"
         className="relative overflow-hidden bg-ink py-24 sm:py-32"
       >
-        <InfinityWatermark />
+        <InfinityWatermark variant="left-bleed" />
         <div className="section-container relative z-[1]">
           <div className="mb-12 max-w-2xl">
             <h2

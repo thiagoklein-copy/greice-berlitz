@@ -28,7 +28,7 @@ const steps = [
 export default function HowItWorks() {
   return (
     <MotionSection className="relative overflow-hidden bg-ink py-24 text-sand sm:py-32">
-      <InfinityWatermark />
+      <InfinityWatermark variant="bottom-left" />
       <div className="section-container relative z-[1]">
         <div className="mb-12 max-w-2xl">
           <p className="eyebrow mb-4 text-sand/45">Como funciona</p>

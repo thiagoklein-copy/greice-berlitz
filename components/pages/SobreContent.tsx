@@ -89,7 +89,7 @@ export default function SobreContent() {
         BLOCO SENSÍVEL: confirmar com a cliente o nível de detalhe antes de publicar.
       */}
       <MotionSection className="relative overflow-hidden bg-ink py-24 sm:py-32">
-        <InfinityWatermark />
+        <InfinityWatermark variant="tilt" />
         <div className="section-container relative z-[1]">
           <SectionHeader
             eyebrow="Resiliência"

@@ -9,7 +9,7 @@
  * 2. TIPOGRAFIA — Bricolage Grotesque nas headlines (caráter);
  *    Inter no body. Sem itálico decorativo.
  * 3. INFINITO (∞) — assinatura: logo maior; watermark sutil
- *    (~6%) em seções escuras; divisor entre claro/escuro;
+ *    em posições variadas (canto, bleed, tilt); divisor;
  *    easing de transição com curva “loop”.
  * 4. UI — cards raio 12px; CTA raio 14px (mais convidativo);
  *    bordas finas; carrossel de logos mantido.
@@ -159,23 +159,13 @@ video {
     display: none;
   }
 
-  /* Watermark ∞ em seções escuras */
+  /* Watermark ∞ em seções escuras — posição/rotação vêm do componente */
   .infinity-watermark {
     position: absolute;
     inset: 0;
     pointer-events: none;
     overflow: hidden;
     z-index: 0;
-  }
-  .infinity-watermark svg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: min(120vw, 1100px);
-    height: auto;
-    transform: translate(-50%, -52%);
-    opacity: 0.06;
-    color: #d4af37;
   }
 
   /* Carrossel infinito de logos */

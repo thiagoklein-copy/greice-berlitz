@@ -1,4 +1,5 @@
 /** Traço do infinito — watermark / divisor / marcador. Sempre sutil. */
+
 export function InfinityGlyph({
   className = "",
   strokeWidth = 1.25,
@@ -26,11 +27,47 @@ export function InfinityGlyph({
   );
 }
 
+/**
+ * Posições distintas — cada seção escura usa uma composição diferente
+ * para o ∞ não virar “selo central” repetido.
+ */
+export type InfinityWatermarkVariant =
+  | "center"
+  | "top-right"
+  | "bottom-left"
+  | "left-bleed"
+  | "right-bleed"
+  | "bottom-right"
+  | "tilt";
+
+const WATERMARK_LAYOUT: Record<InfinityWatermarkVariant, string> = {
+  center:
+    "left-1/2 top-1/2 w-[min(120vw,1100px)] -translate-x-1/2 -translate-y-[52%] opacity-[0.06]",
+  "top-right":
+    "right-[-14%] top-[-22%] w-[min(95vw,780px)] -rotate-[18deg] opacity-[0.07]",
+  "bottom-left":
+    "bottom-[-28%] left-[-20%] w-[min(110vw,920px)] rotate-[14deg] opacity-[0.055]",
+  "left-bleed":
+    "left-[-38%] top-[42%] w-[min(100vw,860px)] -translate-y-1/2 -rotate-[6deg] opacity-[0.06]",
+  "right-bleed":
+    "right-[-32%] top-[38%] w-[min(95vw,800px)] -translate-y-1/2 rotate-[16deg] opacity-[0.065]",
+  "bottom-right":
+    "bottom-[-18%] right-[-12%] w-[min(90vw,700px)] rotate-[9deg] opacity-[0.05]",
+  tilt: "left-[8%] top-[12%] w-[min(105vw,960px)] -rotate-[26deg] opacity-[0.05]",
+};
+
 /** Fundo watermark ∞ para seções escuras */
-export function InfinityWatermark() {
+export function InfinityWatermark({
+  variant = "center",
+}: {
+  variant?: InfinityWatermarkVariant;
+}) {
   return (
     <div className="infinity-watermark" aria-hidden="true">
-      <InfinityGlyph strokeWidth={0.8} />
+      <InfinityGlyph
+        className={`absolute h-auto text-gold ${WATERMARK_LAYOUT[variant]}`}
+        strokeWidth={0.8}
+      />
     </div>
   );
 }

@@ -35,7 +35,7 @@ export default function PageHero({
         dark ? "bg-ink text-white" : "bg-sand"
       }`}
     >
-      {dark && <InfinityWatermark />}
+      {dark && <InfinityWatermark variant="top-right" />}
 
       <div className="section-container relative z-[1] pb-16 lg:pb-24">
         <div
