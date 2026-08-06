@@ -38,10 +38,10 @@ export default function CompanyLogos({
                   alt={company.name}
                   width={220}
                   height={88}
-                  className="h-11 w-auto max-h-16 max-w-[10.5rem] object-contain opacity-80 grayscale transition duration-300 hover:opacity-100 sm:h-14 sm:max-h-20 sm:max-w-[13rem]"
+                  className="h-11 w-auto max-h-16 max-w-[10.5rem] object-contain opacity-90 brightness-0 transition duration-300 hover:opacity-100 sm:h-14 sm:max-h-20 sm:max-w-[13rem]"
                 />
               ) : (
-                <span className="font-serif text-xl font-semibold tracking-wide text-ink/55 sm:text-2xl">
+                <span className="font-serif text-xl font-semibold tracking-wide text-ink sm:text-2xl">
                   {company.name}
                 </span>
               )}
