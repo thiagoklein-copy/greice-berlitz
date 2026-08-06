@@ -29,7 +29,7 @@ const paths = [
   {
     title: "Palestras & Empresas",
     description:
-      "Levo saúde mental, gestão de pessoas e autoconhecimento para dentro das empresas — já estive com equipes da Gerdau, FCC, ULBRA Saúde e outras.",
+      "Levo saúde mental, gestão de pessoas e autoconhecimento para dentro das empresas. Já estive com equipes da Gerdau, FCC, ULBRA Saúde e outras.",
     href: "/palestras-empresas",
     cta: "Conhecer as palestras",
   },

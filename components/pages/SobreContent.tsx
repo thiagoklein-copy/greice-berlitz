@@ -14,9 +14,9 @@ import { SectionHeader } from "@/components/ui/Shared";
 import { IMAGES, PROFESSIONAL_CRP, WHATSAPP_URL } from "@/lib/constants";
 
 const formation = [
-  "Graduação em Psicologia — ULBRA (2007)",
-  "Pós-graduação em Terapia Cognitivo-Comportamental — UFRGS (2012)",
-  "Capacitação como Psicóloga do Trânsito — ULBRA",
+  "Graduação em Psicologia, ULBRA (2007)",
+  "Pós-graduação em Terapia Cognitivo-Comportamental, UFRGS (2012)",
+  "Capacitação como Psicóloga do Trânsito, ULBRA",
   PROFESSIONAL_CRP,
   "Experiência em Psicologia Clínica, Hospitalar e Organizacional",
 ];
@@ -83,7 +83,7 @@ export default function SobreContent() {
       </MotionSection>
 
       {/*
-        BLOCO SENSÍVEL — confirmar com a cliente o nível de detalhe antes de publicar.
+        BLOCO SENSÍVEL: confirmar com a cliente o nível de detalhe antes de publicar.
         Tom sóbrio, sem imagens ou elementos gráficos "tristes".
       */}
       <MotionSection className="bg-gold-soft py-20 sm:py-28">
@@ -102,7 +102,7 @@ export default function SobreContent() {
             >
               Em 2024 e 2025, vivi um dos períodos mais difíceis da minha vida:
               perdi meus dois pais, em um intervalo de poucos meses, para o câncer.
-              Foi um tempo de muita dor — e também de muito aprendizado sobre o que
+              Foi um tempo de muita dor, e também de muito aprendizado sobre o que
               significa cuidar de si enquanto se cuida de quem se ama.
             </motion.p>
             <motion.p
@@ -112,7 +112,7 @@ export default function SobreContent() {
               transition={{ delay: 0.08 }}
             >
               Mantive o que pude da minha rotina, da minha família, do meu trabalho,
-              na medida do possível — sem deixar de cuidar de mim enquanto cuidava
+              na medida do possível, sem deixar de cuidar de mim enquanto cuidava
               deles. Hoje sigo minha vida com a certeza de que é possível atravessar
               os momentos mais difíceis e, ainda assim, encontrar propósito e alegria
               do outro lado. Se você está passando por algo parecido, saiba: dá para

@@ -9,7 +9,7 @@ export default function ContatoContent() {
       <PageHero
         eyebrow="Vamos conversar"
         title="O primeiro passo pode ser uma mensagem."
-        subtitle="Conte o que você está buscando — terapia individual ou palestra para sua empresa — e eu retorno pelo WhatsApp."
+        subtitle="Conte o que você está buscando: terapia individual ou palestra para sua empresa. Eu retorno pelo WhatsApp."
         showImage={false}
       />
 

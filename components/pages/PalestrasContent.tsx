@@ -60,7 +60,7 @@ const formats = [
   {
     title: "Palestra avulsa",
     description:
-      "Evento único, com tema definido em conjunto — ideal para encontros, treinamentos e datas especiais.",
+      "Evento único, com tema definido em conjunto, ideal para encontros, treinamentos e datas especiais.",
   },
   {
     title: "Consultoria in company",
@@ -74,8 +74,8 @@ export default function PalestrasContent() {
     <>
       <PageHero
         eyebrow="Palestras & Consultoria In Company"
-        title="Saúde mental e alta performance não são opostos — são aliadas."
-        subtitle="Levo para dentro das empresas conteúdos sobre mudança de vida, autoamor, gestão de pessoas e saúde emocional — para equipes mais saudáveis, presentes e produtivas."
+        title="Saúde mental e alta performance não são opostos: são aliadas."
+        subtitle="Levo para dentro das empresas conteúdos sobre mudança de vida, autoamor, gestão de pessoas e saúde emocional, para equipes mais saudáveis, presentes e produtivas."
       >
         <a
           href={WHATSAPP_PALESTRAS_URL}
@@ -107,7 +107,7 @@ export default function PalestrasContent() {
             Muitas pessoas não têm acesso a um atendimento psicológico
             individualizado. As palestras corporativas são minha forma de levar
             recursos reais de bem-estar emocional para o maior número de pessoas
-            possível — dentro do ambiente onde elas passam boa parte da vida: o
+            possível, dentro do ambiente onde elas passam boa parte da vida: o
             trabalho.
           </motion.p>
         </div>

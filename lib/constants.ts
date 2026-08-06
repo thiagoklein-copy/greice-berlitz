@@ -121,7 +121,7 @@ export const SERVICES = [
     id: "autoestima-autoamor",
     title: "Autoestima e Autoamor",
     description:
-      "Trabalho para que você se reconecte com o seu valor e construa relações mais saudáveis — a começar pela relação com você mesmo(a).",
+      "Trabalho para que você se reconecte com o seu valor e construa relações mais saudáveis, a começar pela relação com você mesmo(a).",
     duration: "50 min",
     price: "Valores sob consulta",
     whatsappTopic: "Autoestima e Autoamor",
@@ -130,7 +130,7 @@ export const SERVICES = [
     id: "mudanca-vida",
     title: "Mudança de Vida e Relacionamentos",
     description:
-      "Para momentos de transição, decisões importantes ou relacionamentos que já não fazem sentido — te ajudo a enxergar com mais clareza o próximo passo.",
+      "Para momentos de transição, decisões importantes ou relacionamentos que já não fazem sentido. Te ajudo a enxergar com mais clareza o próximo passo.",
     duration: "50 min",
     price: "Valores sob consulta",
     whatsappTopic: "Mudança de Vida e Relacionamentos",

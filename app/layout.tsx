@@ -1,10 +1,10 @@
 /*
- * CHECKLIST — confirmar com a Greice antes de publicar:
+ * CHECKLIST: confirmar com a Greice antes de publicar:
  * - [ ] Confirmar o nível de detalhe aceitável no bloco sobre a perda dos pais (página /sobre)
- * - [ ] Fotos reais dela (hero de cada página, seção "minha história", seção de palestras — idealmente foto em ambiente corporativo/palco)
+ * - [ ] Fotos reais dela (hero de cada página, seção "minha história", seção de palestras; idealmente foto em ambiente corporativo/palco)
  * - [ ] Confirmar se pode citar os nomes das empresas (Britasinos, Gerdau, FCC, ULBRA Saúde, Facat, Construtora Mosmam) publicamente, ou se precisa de autorização formal
  * - [ ] Valores de sessão e de palestra (hoje "sob consulta" em ambos)
- * - [ ] Vídeo do Instagram — perguntar se quer incorporar trecho/link na /sobre ou manter só como referência de tom
+ * - [ ] Vídeo do Instagram: perguntar se quer incorporar trecho/link na /sobre ou manter só como referência de tom
  * - [ ] Confirmar handle oficial do Instagram
  * - [ ] Confirmar URL oficial do Google Business Profile (avaliações)
  */

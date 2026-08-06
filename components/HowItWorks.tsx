@@ -9,7 +9,7 @@ const steps = [
     number: "01",
     title: "Contato inicial",
     description:
-      "Você me escreve no WhatsApp contando, no seu ritmo, o que está buscando. Sem pressão — só uma conversa honesta.",
+      "Você me escreve no WhatsApp contando, no seu ritmo, o que está buscando. Sem pressão, só uma conversa honesta.",
   },
   {
     number: "02",
@@ -21,7 +21,7 @@ const steps = [
     number: "03",
     title: "Acompanhamento contínuo",
     description:
-      "Sessão a sessão, construímos mudanças reais — com ferramentas práticas, escuta e clareza sobre o próximo passo.",
+      "Sessão a sessão, construímos mudanças reais, com ferramentas práticas, escuta e clareza sobre o próximo passo.",
   },
 ];
 
