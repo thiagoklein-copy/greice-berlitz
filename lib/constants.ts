@@ -39,12 +39,15 @@ export const GOOGLE_REVIEWS_URL =
   "https://www.google.com/maps/search/?api=1&query=Greice+Berlitz+Psic%C3%B3loga+Novo+Hamburgo";
 
 export const COMPANIES = [
-  "Britasinos Concretos",
-  "Gerdau",
-  "FCC",
-  "ULBRA Saúde",
-  "Facat",
-  "Construtora Mosmam",
+  {
+    name: "Britasinos Concretos",
+    logo: "/logos/britasinos.png",
+  },
+  { name: "Gerdau" },
+  { name: "FCC" },
+  { name: "ULBRA Saúde" },
+  { name: "Facat" },
+  { name: "Construtora Mosmam" },
 ] as const;
 
 export const IMAGES = {
