@@ -43,10 +43,16 @@ export const COMPANIES = [
     name: "Britasinos Concretos",
     logo: "/logos/britasinos.png",
   },
-  { name: "Gerdau" },
+  {
+    name: "Gerdau",
+    logo: "/logos/gerdau.png",
+  },
   { name: "FCC" },
   { name: "ULBRA Saúde" },
-  { name: "Facat" },
+  {
+    name: "FACCAT",
+    logo: "/logos/faccat.png",
+  },
   { name: "Construtora Mosmam" },
 ] as const;
 

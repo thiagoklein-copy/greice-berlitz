@@ -54,15 +54,15 @@ export default function ContactForm() {
           }
         />
 
-        <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
+        <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-16">
           <motion.form
             onSubmit={handleSubmit}
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="card-surface space-y-5 p-6 sm:p-8"
+            className="card-surface flex w-full min-w-0 flex-col gap-5 p-6 sm:p-8"
           >
-            <div>
+            <div className="w-full">
               <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-ink">
                 Nome completo <span className="text-gold">*</span>
               </label>
@@ -72,12 +72,12 @@ export default function ContactForm() {
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full rounded-2xl border border-gold/20 bg-sand/50 px-4 py-3 text-sm outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/15"
+                className="block w-full rounded-2xl border border-gold/20 bg-sand/50 px-4 py-3 text-sm outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/15"
                 placeholder="Seu nome"
               />
             </div>
 
-            <div>
+            <div className="w-full">
               <label htmlFor="phone" className="mb-1.5 block text-sm font-medium text-ink">
                 Telefone / WhatsApp <span className="text-gold">*</span>
               </label>
@@ -87,12 +87,12 @@ export default function ContactForm() {
                 required
                 value={phone}
                 onChange={(e) => setPhone(formatPhoneMask(e.target.value))}
-                className="w-full rounded-2xl border border-gold/20 bg-sand/50 px-4 py-3 text-sm outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/15"
+                className="block w-full rounded-2xl border border-gold/20 bg-sand/50 px-4 py-3 text-sm outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/15"
                 placeholder="(51) 99999-9999"
               />
             </div>
 
-            <div>
+            <div className="w-full">
               <label
                 htmlFor="objective"
                 className="mb-1.5 block text-sm font-medium text-ink"
@@ -104,7 +104,7 @@ export default function ContactForm() {
                 required
                 value={objective}
                 onChange={(e) => setObjective(e.target.value)}
-                className="w-full rounded-2xl border border-gold/20 bg-sand/50 px-4 py-3 text-sm outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/15"
+                className="block w-full rounded-2xl border border-gold/20 bg-sand/50 px-4 py-3 text-sm outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/15"
               >
                 <option value="" disabled>
                   Selecione uma opção
@@ -117,7 +117,7 @@ export default function ContactForm() {
               </select>
             </div>
 
-            <div>
+            <div className="w-full">
               <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-ink">
                 Mensagem <span className="text-text-muted">(opcional)</span>
               </label>
@@ -126,12 +126,12 @@ export default function ContactForm() {
                 rows={4}
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                className="w-full resize-none rounded-2xl border border-gold/20 bg-sand/50 px-4 py-3 text-sm outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/15"
+                className="block w-full resize-none rounded-2xl border border-gold/20 bg-sand/50 px-4 py-3 text-sm outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/15"
                 placeholder="Conte um pouco sobre o que você está buscando..."
               />
             </div>
 
-            <button type="submit" className="btn-primary w-full">
+            <button type="submit" className="btn-primary mt-1 w-full max-w-none">
               Enviar e falar no WhatsApp
             </button>
           </motion.form>
@@ -187,7 +187,9 @@ export default function ContactForm() {
                 <FaClock className="mt-1 h-5 w-5 shrink-0 text-gold" />
                 <div>
                   <p className="text-sm font-medium text-ink">Horário de atendimento</p>
-                  <p className="mt-1 text-sm text-text-muted">Mediante agendamento</p>
+                  <p className="mt-1 text-sm text-text-muted">
+                    De segunda a sexta, das 8:00 às 18:30
+                  </p>
                 </div>
               </div>
             </div>
