@@ -6,7 +6,7 @@ import ParallaxImage from "@/components/ui/ParallaxImage";
 import { IMAGES } from "@/lib/constants";
 
 interface PageHeroProps {
-  eyebrow: string;
+  eyebrow?: string;
   title: ReactNode;
   subtitle?: string;
   children?: ReactNode;
@@ -68,19 +68,20 @@ export default function PageHero({
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className={showImage ? "order-2 lg:order-1" : ""}
           >
-            {/* Eyebrow tag */}
-            <motion.span
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
-              className={`mb-6 inline-flex items-center rounded-full border px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.22em] backdrop-blur-sm ${
-                dark
-                  ? "border-gold/30 bg-white/5 text-gold-light"
-                  : "border-gold/25 bg-white/70 text-gold-dark"
-              }`}
-            >
-              {eyebrow}
-            </motion.span>
+            {eyebrow && (
+              <motion.span
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
+                className={`mb-6 inline-flex items-center rounded-full border px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.22em] backdrop-blur-sm ${
+                  dark
+                    ? "border-gold/30 bg-white/5 text-gold-light"
+                    : "border-gold/25 bg-white/70 text-gold-dark"
+                }`}
+              >
+                {eyebrow}
+              </motion.span>
+            )}
 
             {/* Headline display — escala Whoop-style */}
             <h1

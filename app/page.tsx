@@ -39,7 +39,6 @@ export default function HomePage() {
   return (
     <>
       <PageHero
-        eyebrow="Psicoterapia · Palestras · Transformação"
         title={
           <>
             <span className="block text-balance">Sua vida pode ser diferente.</span>
