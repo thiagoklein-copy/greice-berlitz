@@ -15,7 +15,6 @@ const trustStats = [
   { value: 16, suffix: "+", label: "anos de experiência" },
   { value: 5.0, decimals: 1, suffix: " ⭐", label: "no Google" },
   { value: 39, suffix: "", label: "avaliações" },
-  { value: 6, suffix: "+", label: "empresas atendidas" },
 ] as const;
 
 const paths = [
@@ -67,7 +66,7 @@ export default function HomePage() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.35 }}
-          className="mt-8 grid grid-cols-2 gap-4 border-t border-gold/20 pt-6 sm:grid-cols-4"
+          className="mt-8 grid grid-cols-3 gap-4 border-t border-gold/20 pt-6"
         >
           {trustStats.map((stat) => (
             <li key={stat.label} className="text-center sm:text-left">
