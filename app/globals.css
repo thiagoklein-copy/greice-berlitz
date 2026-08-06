@@ -1,22 +1,12 @@
 /*
- * SISTEMA VISUAL — Greice Berlitz (pivô ago/2026)
+ * SISTEMA VISUAL — Greice Berlitz (pivô SaaS · Ordina/Neative/Bard)
  * ─────────────────────────────────────────────────────────────────
- * Direção: SaaS/produto técnico (Ordina · Neative · Flowspark)
- * NÃO é o padrão “terapeuta IA” (dourado gradient + serif itálico).
- *
- * DECISÕES:
- * 1. PALETA — branco #FAFAF9 / navy #0D0D0F / texto #12110F /
- *    âmbar sólido #C9982E só em CTA, underlines, stats e badges.
- *    Zero gradientes lineares/radiais.
- * 2. TIPOGRAFIA — Inter sans bold (700–800) em headlines.
- *    Serif (Fraunces) só em citações/depoimentos.
- *    Sem “palavra em itálico dourado”.
- * 3. ESTRUTURA — cortes secos branco↔escuro; cards raio 6–8px,
- *    borda 1px, sem sombra suave; stats editoriais; 01 02 03.
- * 4. FOTO — placeholders B&W corporativos; sem yoga/praia/pôr do sol.
- * 5. BOTÕES — cantos 6–8px, fill sólido, hover escurece (sem glow).
- * 6. ÍCONES — removidos onde eram decoração de biblioteca;
- *    hierarquia tipográfica / numeração no lugar.
+ * 1. PALETA — branco #FFF / navy #0B1424 / accent #E5B93C (punchy).
+ *    Zero gradientes. Cortes secos entre seções.
+ * 2. TIPOGRAFIA — Inter bold em tudo. Sem serif. Sem itálico decorativo.
+ * 3. UI — cards 8px + borda 1px; botões 6px sólidos; stats secos;
+ *    numeração 01 02 03; logos monocromáticos.
+ * 4. FOTO — B&W corporativo. Sem yoga/praia/pôr do sol.
  * ─────────────────────────────────────────────────────────────────
  */
 
@@ -40,8 +30,8 @@ body {
   width: 100%;
   min-height: 100vh;
   overflow-x: hidden;
-  background-color: #fafaf9;
-  color: #12110f;
+  background-color: #ffffff;
+  color: #0b1424;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -64,80 +54,73 @@ video {
   }
 
   .eyebrow {
-    @apply font-sans text-[11px] font-semibold uppercase tracking-[0.18em] text-text-muted;
+    @apply font-sans text-[13px] font-medium text-text-muted;
   }
 
-  /* CTA sólido âmbar — sem pill, sem glow */
   .btn-primary {
     @apply inline-flex items-center justify-center font-semibold;
     border-radius: 6px;
     padding: 0.875rem 1.5rem;
-    font-size: 13px;
-    letter-spacing: 0.02em;
-    color: #0d0d0f;
-    background: #c9982e;
-    transition: background 0.2s ease;
+    font-size: 14px;
+    color: #0b1424;
+    background: #e5b93c;
+    transition: background 0.15s ease;
   }
   .btn-primary:hover {
-    background: #a67b1f;
+    background: #c9982e;
   }
 
   .btn-accent {
     @apply inline-flex items-center justify-center font-semibold;
     border-radius: 6px;
     padding: 0.875rem 1.5rem;
-    font-size: 13px;
-    letter-spacing: 0.02em;
-    color: #0d0d0f;
-    background: #c9982e;
-    transition: background 0.2s ease;
+    font-size: 14px;
+    color: #0b1424;
+    background: #e5b93c;
+    transition: background 0.15s ease;
   }
   .btn-accent:hover {
-    background: #e8d5a3;
+    background: #f0d078;
   }
 
   .btn-ghost {
     @apply inline-flex items-center justify-center font-semibold;
     border-radius: 6px;
     padding: 0.875rem 1.5rem;
-    font-size: 13px;
-    letter-spacing: 0.02em;
-    color: #12110f;
-    border: 1px solid rgba(18, 17, 15, 0.18);
+    font-size: 14px;
+    color: #0b1424;
+    border: 1px solid rgba(11, 20, 36, 0.16);
     background: transparent;
-    transition: border-color 0.2s ease, background 0.2s ease;
+    transition: border-color 0.15s ease, background 0.15s ease;
   }
   .btn-ghost:hover {
-    border-color: #12110f;
-    background: rgba(18, 17, 15, 0.04);
+    border-color: #0b1424;
+    background: rgba(11, 20, 36, 0.04);
   }
 
   .btn-ghost-light {
     @apply inline-flex items-center justify-center font-semibold;
     border-radius: 6px;
     padding: 0.875rem 1.5rem;
-    font-size: 13px;
-    letter-spacing: 0.02em;
-    color: #f5f3ef;
-    border: 1px solid rgba(245, 243, 239, 0.28);
+    font-size: 14px;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.24);
     background: transparent;
-    transition: border-color 0.2s ease, background 0.2s ease;
+    transition: border-color 0.15s ease, background 0.15s ease;
   }
   .btn-ghost-light:hover {
-    border-color: rgba(245, 243, 239, 0.7);
-    background: rgba(245, 243, 239, 0.06);
+    border-color: rgba(255, 255, 255, 0.55);
+    background: rgba(255, 255, 255, 0.06);
   }
 
-  /* Cards secos — borda 1px, raio mínimo */
   .card-surface {
     border-radius: 8px;
     background: #ffffff;
-    border: 1px solid rgba(18, 17, 15, 0.1);
+    border: 1px solid rgba(11, 20, 36, 0.1);
     box-shadow: none;
-    transition: border-color 0.2s ease;
   }
   .card-surface:hover {
-    border-color: rgba(18, 17, 15, 0.22);
+    border-color: rgba(11, 20, 36, 0.2);
     transform: none;
     box-shadow: none;
     background: #ffffff;
@@ -146,12 +129,11 @@ video {
   .card-dark {
     border-radius: 8px;
     background: transparent;
-    border: 1px solid rgba(245, 243, 239, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     box-shadow: none;
-    transition: border-color 0.2s ease;
   }
   .card-dark:hover {
-    border-color: rgba(245, 243, 239, 0.28);
+    border-color: rgba(255, 255, 255, 0.24);
     transform: none;
     box-shadow: none;
     background: transparent;
@@ -159,10 +141,9 @@ video {
 
   .gold-divider {
     height: 1px;
-    background: rgba(201, 152, 46, 0.35);
+    background: rgba(229, 185, 60, 0.4);
   }
 
-  /* Compat: hero-glow removido (sem gradiente/blur) */
   .hero-glow {
     display: none;
   }

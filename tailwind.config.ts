@@ -14,27 +14,28 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Accent âmbar — uso contido (CTA, underline, badge, stat)
+        // Accent punchy (família Ordina/Neative) — só CTA, indicador, badge
         gold: {
-          DEFAULT: "#C9982E",
-          light: "#E8D5A3",
-          dark: "#A67B1F",
+          DEFAULT: "#E5B93C",
+          light: "#F0D078",
+          dark: "#C9982E",
         },
+        // Navy profundo (não preto puro)
         ink: {
-          DEFAULT: "#0D0D0F",
-          soft: "#10141C",
+          DEFAULT: "#0B1424",
+          soft: "#111B2E",
         },
         sand: {
-          DEFAULT: "#FAFAF9",
-          dark: "#F0EFED",
+          DEFAULT: "#FFFFFF",
+          dark: "#F4F5F7",
         },
         accent: {
-          DEFAULT: "#C9982E",
-          warm: "#C9982E",
+          DEFAULT: "#E5B93C",
+          warm: "#E5B93C",
         },
         text: {
-          dark: "#12110F",
-          muted: "#6B6A66",
+          dark: "#0B1424",
+          muted: "#5C6578",
         },
         whatsapp: "#25D366",
       },

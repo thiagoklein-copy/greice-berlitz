@@ -76,11 +76,11 @@ export default function HomePage() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.25 }}
-          className="mt-10 grid grid-cols-3 gap-6 border-t border-sand/15 pt-8"
+          className="mt-12 grid grid-cols-3 gap-8 border-t border-white/10 pt-8"
         >
           {trustStats.map((stat) => (
             <li key={stat.label}>
-              <p className="font-sans text-3xl font-extrabold tracking-tight text-sand sm:text-4xl">
+              <p className="font-sans text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
                 <AnimatedCounter
                   value={stat.value}
                   suffix={stat.suffix}
@@ -90,10 +90,7 @@ export default function HomePage() {
                   <span className="ml-1 text-gold">★</span>
                 )}
               </p>
-              <div className="mt-2 h-px w-8 bg-gold" />
-              <p className="mt-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-sand/45">
-                {stat.label}
-              </p>
+              <p className="mt-2 text-sm text-white/45">{stat.label}</p>
             </li>
           ))}
         </motion.ul>

@@ -13,7 +13,7 @@ export default function Logo({ className = "", light = false }: LogoProps) {
     >
       <span className="inline-flex items-baseline gap-2 font-sans font-bold tracking-tight">
         <span
-          className={light ? "text-sand" : "text-ink"}
+          className={light ? "text-white" : "text-ink"}
           style={{ fontSize: "clamp(1.05rem, 2.2vw, 1.25rem)" }}
         >
           Greice Berlitz
@@ -27,8 +27,8 @@ export default function Logo({ className = "", light = false }: LogoProps) {
         </span>
       </span>
       <span
-        className={`mt-1 text-[10px] font-medium uppercase tracking-[0.16em] sm:text-[11px] ${
-          light ? "text-sand/55" : "text-text-muted"
+        className={`mt-1 text-[10px] font-medium sm:text-[11px] ${
+          light ? "text-white/50" : "text-text-muted"
         }`}
       >
         Psicóloga · CRP 07/16250
@@ -65,13 +65,13 @@ export function SectionHeader({
   return (
     <div className={`mb-12 max-w-3xl ${alignClass}`}>
       {eyebrow && (
-        <p className={`eyebrow mb-4 ${light ? "text-sand/50" : ""}`}>
+        <p className={`eyebrow mb-4 ${light ? "text-white/50" : ""}`}>
           {eyebrow}
         </p>
       )}
       <h2
-        className={`font-sans font-bold tracking-[-0.03em] ${
-          light ? "text-sand" : "text-ink"
+        className={`font-sans font-extrabold tracking-[-0.03em] ${
+          light ? "text-white" : "text-ink"
         }`}
         style={{ fontSize: "clamp(1.75rem, 4vw, 3rem)", lineHeight: 1.08 }}
       >
@@ -80,7 +80,7 @@ export function SectionHeader({
       {subtitle && (
         <p
           className={`mt-4 text-base leading-relaxed sm:text-lg ${
-            light ? "text-sand/60" : "text-text-muted"
+            light ? "text-white/55" : "text-text-muted"
           }`}
         >
           {subtitle}

@@ -18,7 +18,7 @@ import SiteShell from "@/components/SiteShell";
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#0D0D0F",
+  themeColor: "#0B1424",
 };
 
 const inter = Inter({
