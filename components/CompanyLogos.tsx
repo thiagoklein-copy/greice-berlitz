@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import MotionSection from "@/components/ui/MotionSection";
 import { COMPANIES } from "@/lib/constants";
 
@@ -12,43 +11,66 @@ interface CompanyLogosProps {
   bridgeToDark?: boolean;
 }
 
+function LogoItem({
+  company,
+}: {
+  company: (typeof COMPANIES)[number];
+}) {
+  return (
+    <div className="flex h-16 shrink-0 items-center justify-center px-8 sm:h-20 sm:px-12">
+      {"logo" in company && company.logo ? (
+        <Image
+          src={company.logo}
+          alt={company.name}
+          width={220}
+          height={72}
+          className="h-12 w-auto max-w-[14rem] object-contain opacity-75 brightness-0 sm:h-14 sm:max-w-[16rem]"
+        />
+      ) : (
+        <span className="whitespace-nowrap font-sans text-2xl font-bold tracking-tight text-ink/70 sm:text-3xl">
+          {company.name}
+        </span>
+      )}
+    </div>
+  );
+}
+
 export default function CompanyLogos({
   title = "Empresas que já confiaram no meu trabalho",
   supportText,
   id,
 }: CompanyLogosProps) {
-  return (
-    <MotionSection id={id} className="bg-sand py-20 sm:py-24">
-      <div className="section-container">
-        <p className="eyebrow mb-3">{title}</p>
-        {supportText && (
-          <p className="mb-10 max-w-2xl text-sm text-text-muted">{supportText}</p>
-        )}
+  // Duplicar para loop contínuo sem salto
+  const track = [...COMPANIES, ...COMPANIES];
 
-        <div className="mt-8 flex flex-wrap items-center justify-start gap-x-10 gap-y-8 sm:gap-x-14">
-          {COMPANIES.map((company, index) => (
-            <motion.div
-              key={company.name}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.05, duration: 0.35 }}
-              className="flex h-12 items-center"
-            >
-              {"logo" in company && company.logo ? (
-                <Image
-                  src={company.logo}
-                  alt={company.name}
-                  width={160}
-                  height={48}
-                  className="h-8 w-auto max-w-[9rem] object-contain opacity-70 brightness-0 sm:h-9 sm:max-w-[11rem]"
-                />
-              ) : (
-                <span className="font-sans text-lg font-bold tracking-tight text-ink/70">
-                  {company.name}
-                </span>
-              )}
-            </motion.div>
+  return (
+    <MotionSection id={id} className="overflow-hidden bg-sand py-24 sm:py-28">
+      <div className="section-container text-center">
+        <p className="mx-auto max-w-2xl text-base font-medium text-text-muted sm:text-lg">
+          {title}
+        </p>
+        {supportText && (
+          <p className="mx-auto mt-3 max-w-xl text-sm text-text-muted/80">
+            {supportText}
+          </p>
+        )}
+      </div>
+
+      <div
+        className="logo-marquee relative mt-12 w-full"
+        style={{
+          maskImage:
+            "linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%)",
+          WebkitMaskImage:
+            "linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%)",
+        }}
+      >
+        <div className="logo-marquee-track flex w-max items-center">
+          {track.map((company, index) => (
+            <LogoItem
+              key={`${company.name}-${index}`}
+              company={company}
+            />
           ))}
         </div>
       </div>
