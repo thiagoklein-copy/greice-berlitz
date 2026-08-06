@@ -8,16 +8,31 @@ interface LogoProps {
 export default function Logo({ className = "", light = false }: LogoProps) {
   return (
     <span
-      className={`font-serif text-xl font-semibold tracking-tight sm:text-2xl ${light ? "text-white" : "text-forest"} ${className}`}
+      className={`inline-flex items-baseline gap-1.5 font-serif text-xl font-semibold tracking-tight sm:text-2xl ${className}`}
+      aria-label="Greice Berlitz"
     >
-      Greice Berlitz | Psicóloga
+      <span
+        className={
+          light
+            ? "bg-gold-gradient bg-clip-text text-transparent"
+            : "bg-gold-gradient bg-clip-text text-transparent"
+        }
+      >
+        Greice Berlitz
+      </span>
+      <span
+        className={`font-light leading-none ${light ? "text-gold-light" : "text-gold"}`}
+        aria-hidden="true"
+      >
+        ∞
+      </span>
     </span>
   );
 }
 
 export function Stars({ className = "" }: { className?: string }) {
   return (
-    <span className={`text-accent ${className}`} aria-label="5 estrelas">
+    <span className={`text-gold ${className}`} aria-label="5 estrelas">
       ★★★★★
     </span>
   );
@@ -42,9 +57,13 @@ export function SectionHeader({
 
   return (
     <div className={`mb-12 max-w-3xl ${alignClass}`}>
-      {eyebrow && <p className={`eyebrow mb-4 ${light ? "text-accent-warm" : ""}`}>{eyebrow}</p>}
+      {eyebrow && (
+        <p className={`eyebrow mb-4 ${light ? "text-gold-light" : ""}`}>
+          {eyebrow}
+        </p>
+      )}
       <h2
-        className={`font-serif text-3xl font-medium leading-tight sm:text-4xl lg:text-5xl ${light ? "text-white" : "text-forest"}`}
+        className={`font-serif text-3xl font-medium leading-tight sm:text-4xl lg:text-5xl ${light ? "text-white" : "text-ink"}`}
       >
         {title}
       </h2>

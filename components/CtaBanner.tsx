@@ -1,15 +1,33 @@
 "use client";
 
+import type { ReactNode } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import MotionSection from "@/components/ui/MotionSection";
 import { IMAGES, WHATSAPP_URL } from "@/lib/constants";
 
-export default function CtaBanner() {
+interface CtaBannerProps {
+  title?: ReactNode;
+  subtitle?: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+}
+
+export default function CtaBanner({
+  title = (
+    <>
+      Dar o primeiro passo já é parte da{" "}
+      <em className="italic text-gold-light">transformação</em>
+    </>
+  ),
+  subtitle = "Fale comigo agora e vamos conversar sobre o que você precisa.",
+  ctaLabel = "Falar no WhatsApp",
+  ctaHref = WHATSAPP_URL,
+}: CtaBannerProps) {
   return (
     <MotionSection className="py-8 sm:py-12">
       <div className="section-container">
-        <div className="overflow-hidden rounded-4xl bg-forest-dark shadow-card">
+        <div className="overflow-hidden rounded-4xl bg-ink-gold shadow-card">
           <div className="grid items-center lg:grid-cols-2">
             <div className="p-8 sm:p-12 lg:p-16">
               <motion.div
@@ -19,24 +37,21 @@ export default function CtaBanner() {
                 transition={{ duration: 0.6 }}
               >
                 <h2 className="font-serif text-3xl font-medium leading-tight text-white sm:text-4xl lg:text-5xl">
-                  Dar o primeiro passo já é parte do{" "}
-                  <em className="italic text-accent-warm">cuidado</em>
+                  {title}
                 </h2>
-                <p className="mt-4 max-w-md text-base text-white/80">
-                  Fale comigo agora e vamos agendar sua primeira sessão.
-                </p>
+                <p className="mt-4 max-w-md text-base text-white/80">{subtitle}</p>
                 <a
-                  href={WHATSAPP_URL}
+                  href={ctaHref}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-accent mt-8"
                 >
-                  Quero agendar pelo WhatsApp
+                  {ctaLabel}
                 </a>
               </motion.div>
             </div>
 
-            <div className="relative aspect-[3/4] sm:aspect-[4/3] lg:aspect-auto lg:min-h-[420px] lg:h-full">
+            <div className="relative aspect-[3/4] sm:aspect-[4/3] lg:aspect-auto lg:h-full lg:min-h-[420px]">
               <Image
                 src={IMAGES.ctaBanner.src}
                 alt={IMAGES.ctaBanner.alt}
@@ -45,6 +60,7 @@ export default function CtaBanner() {
                 style={{ objectPosition: IMAGES.ctaBanner.objectPosition }}
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
+              <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-ink/40" />
             </div>
           </div>
         </div>

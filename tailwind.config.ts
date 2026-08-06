@@ -9,37 +9,51 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        /* #6B4E8E inferido do 💜 da bio — CONFIRMAR com print real da identidade visual */
-        forest: {
-          DEFAULT: "#6B4E8E",
-          light: "#7E63A3",
-          dark: "#3D2B55",
+        gold: {
+          DEFAULT: "#C9A24B",
+          light: "#E8CE8C",
+          dark: "#8A6B2E",
+        },
+        ink: {
+          DEFAULT: "#1A1610",
+          soft: "#2A241C",
         },
         sand: {
-          DEFAULT: "#FAF7FB",
-          dark: "#F0EAF4",
+          DEFAULT: "#FAF6EE",
+          dark: "#F0E8D8",
         },
         accent: {
-          DEFAULT: "#B8956C",
-          warm: "#C9A67A",
+          DEFAULT: "#C9A24B",
+          warm: "#E8CE8C",
         },
         text: {
-          dark: "#1A1A1A",
-          muted: "#6B6B63",
+          dark: "#1F1B14",
+          muted: "#6B6358",
         },
         whatsapp: "#25D366",
       },
       fontFamily: {
         serif: ["var(--font-fraunces)", "Georgia", "serif"],
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        sans: ["var(--font-sora)", "system-ui", "sans-serif"],
       },
       boxShadow: {
-        soft: "0 8px 30px rgba(107, 78, 142, 0.08)",
-        card: "0 12px 40px rgba(107, 78, 142, 0.1)",
-        lift: "0 20px 50px rgba(107, 78, 142, 0.15)",
+        soft: "0 8px 30px rgba(138, 107, 46, 0.08)",
+        card: "0 12px 40px rgba(138, 107, 46, 0.1)",
+        lift: "0 20px 50px rgba(201, 162, 75, 0.22)",
+        glow: "0 0 24px rgba(232, 206, 140, 0.45)",
       },
       borderRadius: {
         "4xl": "2rem",
+      },
+      backgroundImage: {
+        "gold-gradient":
+          "linear-gradient(135deg, #8A6B2E 0%, #C9A24B 45%, #E8CE8C 100%)",
+        "gold-soft":
+          "linear-gradient(160deg, rgba(232,206,140,0.28) 0%, rgba(250,246,238,0.9) 45%, rgba(201,162,75,0.12) 100%)",
+        "gold-radial":
+          "radial-gradient(ellipse at 50% 40%, rgba(232,206,140,0.35) 0%, transparent 65%)",
+        "ink-gold":
+          "linear-gradient(145deg, #1A1610 0%, #2A241C 50%, #1A1610 100%)",
       },
     },
   },

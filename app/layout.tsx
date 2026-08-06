@@ -1,13 +1,22 @@
+/*
+ * CHECKLIST — confirmar com a Greice antes de publicar:
+ * - [ ] Confirmar o nível de detalhe aceitável no bloco sobre a perda dos pais (página /sobre)
+ * - [ ] Fotos reais dela (hero de cada página, seção "minha história", seção de palestras — idealmente foto em ambiente corporativo/palco)
+ * - [ ] Confirmar se pode citar os nomes das empresas (Britasinos, Gerdau, FCC, ULBRA Saúde, Facat, Construtora Mosmam) publicamente, ou se precisa de autorização formal
+ * - [ ] Valores de sessão e de palestra (hoje "sob consulta" em ambos)
+ * - [ ] Vídeo do Instagram — perguntar se quer incorporar trecho/link na /sobre ou manter só como referência de tom
+ * - [ ] Confirmar handle oficial do Instagram
+ * - [ ] Confirmar URL oficial do Google Business Profile (avaliações)
+ */
 import type { Metadata, Viewport } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import { Fraunces, Sora } from "next/font/google";
 import "./globals.css";
-import WhatsAppButton from "@/components/WhatsAppButton";
+import SiteShell from "@/components/SiteShell";
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  /* CONFIRMAR com print real da identidade visual antes de finalizar */
-  themeColor: "#6B4E8E",
+  themeColor: "#C9A24B",
 };
 
 const fraunces = Fraunces({
@@ -17,26 +26,29 @@ const fraunces = Fraunces({
   style: ["normal", "italic"],
 });
 
-const inter = Inter({
+const sora = Sora({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-sora",
   display: "swap",
 });
 
-const title = "Psicóloga Greice Berlitz | TCC em Novo Hamburgo - RS";
+const title = "Greice Berlitz | Psicoterapia e Palestras que Transformam";
 
 const description =
-  "Psicóloga especialista em Terapia Cognitivo-Comportamental, com 16 anos de experiência no tratamento de ansiedade, pânico, depressão e transtornos alimentares. Atendimento em Novo Hamburgo - RS.";
+  "Há mais de 16 anos, ajudo pessoas a se reencontrarem através da terapia — e empresas a cuidarem de quem faz parte delas através de palestras. Atendimento em Novo Hamburgo - RS.";
 
 export const metadata: Metadata = {
-  title,
+  title: {
+    default: title,
+    template: "%s | Greice Berlitz",
+  },
   description,
   openGraph: {
     title,
     description,
     locale: "pt_BR",
     type: "website",
-    siteName: "Psicóloga Greice Berlitz",
+    siteName: "Greice Berlitz",
   },
   twitter: {
     card: "summary_large_image",
@@ -51,10 +63,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className={`${fraunces.variable} ${inter.variable}`}>
+    <html lang="pt-BR" className={`${fraunces.variable} ${sora.variable}`}>
       <body className="font-sans">
-        {children}
-        <WhatsAppButton />
+        <SiteShell>{children}</SiteShell>
       </body>
     </html>
   );

@@ -5,85 +5,32 @@ import {
   HiHeart,
   HiSparkles,
   HiBeaker,
-  HiUserGroup,
   HiMoon,
+  HiArrowPath,
+  HiSun,
 } from "react-icons/hi2";
 import MotionSection from "@/components/ui/MotionSection";
 import { SectionHeader } from "@/components/ui/Shared";
-import { buildWhatsAppUrl } from "@/lib/constants";
+import { SERVICES, buildWhatsAppUrl } from "@/lib/constants";
 import type { IconType } from "react-icons";
 
-interface Service {
-  id: string;
-  icon: IconType;
-  title: string;
-  description: string;
-  duration: string;
-  price: string;
-  whatsappTopic: string;
-}
-
-const services: Service[] = [
-  {
-    id: "ansiedade-panico",
-    icon: HiSparkles,
-    title: "Ansiedade e Síndrome do Pânico",
-    description:
-      "Trabalho com TCC para quebrar o ciclo de crises de ansiedade e pânico, com técnicas práticas para o seu dia a dia.",
-    duration: "50 min",
-    price: "Valores sob consulta",
-    whatsappTopic: "tratamento de Ansiedade e Pânico",
-  },
-  {
-    id: "depressao",
-    icon: HiHeart,
-    title: "Depressão",
-    description:
-      "Acompanho você de forma estruturada e baseada em evidências para retomar a qualidade de vida e o bem-estar emocional.",
-    duration: "50 min",
-    price: "Valores sob consulta",
-    whatsappTopic: "tratamento de Depressão",
-  },
-  {
-    id: "transtornos-alimentares",
-    icon: HiUserGroup,
-    title: "Transtornos Alimentares",
-    description:
-      "Ajudo você a construir uma relação mais saudável com a alimentação e o corpo, com foco em resultado sustentável.",
-    duration: "50 min",
-    price: "Sob consulta",
-    whatsappTopic: "Transtornos Alimentares",
-  },
-  {
-    id: "avaliacao-neuropsicologica",
-    icon: HiBeaker,
-    title: "Avaliação Neuropsicológica",
-    description:
-      "Realizo uma avaliação completa das funções cognitivas para um diagnóstico preciso e o direcionamento terapêutico adequado.",
-    duration: "Sob avaliação",
-    price: "Sob consulta",
-    whatsappTopic: "Avaliação Neuropsicológica",
-  },
-  {
-    id: "hipnoterapia",
-    icon: HiMoon,
-    title: "Hipnoterapia",
-    description:
-      "Uso essa técnica complementar para acelerar processos terapêuticos e trabalhar padrões inconscientes de forma segura.",
-    duration: "50 min",
-    price: "Sob consulta",
-    whatsappTopic: "Hipnoterapia",
-  },
-];
+const ICONS: Record<string, IconType> = {
+  "ansiedade-panico": HiSparkles,
+  depressao: HiHeart,
+  "autoestima-autoamor": HiSun,
+  "mudanca-vida": HiArrowPath,
+  "avaliacao-neuropsicologica": HiBeaker,
+  hipnoterapia: HiMoon,
+};
 
 function ServiceCard({
   service,
   index,
 }: {
-  service: Service;
+  service: (typeof SERVICES)[number];
   index: number;
 }) {
-  const Icon = service.icon;
+  const Icon = ICONS[service.id] ?? HiHeart;
 
   return (
     <motion.article
@@ -94,21 +41,21 @@ function ServiceCard({
       transition={{ delay: index * 0.08, duration: 0.5 }}
       className="card-surface flex h-full w-full flex-col p-6 sm:w-[calc(50%-0.75rem)] sm:p-8 lg:w-[calc(33.333%-1rem)]"
     >
-      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-forest/10 text-forest">
+      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-gold/15 text-gold-dark">
         <Icon className="h-6 w-6" />
       </div>
 
-      <h3 className="font-serif text-xl font-medium text-forest">{service.title}</h3>
+      <h3 className="font-serif text-xl font-medium text-ink">{service.title}</h3>
 
       <p className="mt-3 flex-1 text-sm leading-relaxed text-text-muted">
         {service.description}
       </p>
 
-      <div className="mt-4 space-y-1 border-t border-forest/10 pt-4 text-sm">
+      <div className="mt-4 space-y-1 border-t border-gold/15 pt-4 text-sm">
         <p className="text-text-muted">
-          <span className="font-medium text-forest">Duração:</span> {service.duration}
+          <span className="font-medium text-ink">Duração:</span> {service.duration}
         </p>
-        <p className="font-medium text-accent">{service.price}</p>
+        <p className="font-medium text-gold-dark">{service.price}</p>
       </div>
 
       <a
@@ -119,7 +66,7 @@ function ServiceCard({
         rel="noopener noreferrer"
         className="btn-ghost mt-5 w-full text-center text-sm"
       >
-        Saiba mais
+        Falar no WhatsApp
       </a>
     </motion.article>
   );
@@ -127,32 +74,27 @@ function ServiceCard({
 
 export default function Services() {
   return (
-    <MotionSection id="atendimentos" className="py-20 sm:py-28">
+    <MotionSection id="como-posso-ajudar" className="py-20 sm:py-28">
       <div className="section-container">
         <SectionHeader
-          eyebrow="Áreas de atuação"
+          eyebrow="Como posso te ajudar"
           title={
             <>
-              Como posso te acompanhar em cada etapa da sua{" "}
-              <em className="not-italic text-accent">jornada</em>
+              Um acompanhamento sob medida para a sua{" "}
+              <em className="italic text-gold-dark">história</em>
             </>
           }
         />
 
-        {/* flex + justify-center: com 5 cards, a 2ª linha (2 itens) fica centralizada */}
         <div className="flex flex-wrap justify-center gap-6">
-          {services.map((service, index) => (
+          {SERVICES.map((service, index) => (
             <ServiceCard key={service.id} service={service} index={index} />
           ))}
         </div>
 
-        <div className="mx-auto mt-10 max-w-2xl space-y-2 text-center text-sm text-text-muted">
-          <p>
-            Valores podem variar conforme avaliação inicial. Consulte condições de
-            convênio e parcelamento.
-          </p>
-          <p>Atendo crianças, adolescentes e adultos.</p>
-        </div>
+        <p className="mx-auto mt-10 max-w-2xl text-center text-sm text-text-muted">
+          Valores sob consulta. Atendimento presencial em Novo Hamburgo.
+        </p>
       </div>
     </MotionSection>
   );

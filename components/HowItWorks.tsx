@@ -9,33 +9,33 @@ const steps = [
     number: "01",
     title: "Contato inicial",
     description:
-      "Você envia uma mensagem no WhatsApp contando um pouco sobre o que está buscando.",
+      "Você me escreve no WhatsApp contando, no seu ritmo, o que está buscando. Sem pressão — só uma conversa honesta.",
   },
   {
     number: "02",
     title: "Primeira sessão",
     description:
-      "Conheço sua história e definimos juntos a melhor abordagem de cuidado.",
+      "Conheço sua história com presença total e definimos juntos o caminho de cuidado que faz sentido para você.",
   },
   {
     number: "03",
     title: "Acompanhamento contínuo",
     description:
-      "Primeiros resultados percebidos em até 3 meses de acompanhamento — no seu ritmo, comigo.",
+      "Sessão a sessão, construímos mudanças reais — com ferramentas práticas, escuta e clareza sobre o próximo passo.",
   },
 ];
 
 export default function HowItWorks() {
   return (
-    <MotionSection className="bg-forest-dark py-20 text-white sm:py-28">
+    <MotionSection className="bg-ink-gold py-20 text-white sm:py-28">
       <div className="section-container">
         <SectionHeader
           eyebrow="Como funciona"
           light
           title={
             <>
-              Três passos para começar seu{" "}
-              <em className="italic text-accent-warm">cuidado</em>
+              Três passos para começar a sua{" "}
+              <em className="italic text-gold-light">jornada</em>
             </>
           }
         />
@@ -48,9 +48,9 @@ export default function HowItWorks() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.12, duration: 0.5 }}
-              className="relative rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm"
+              className="relative rounded-3xl border border-gold/20 bg-white/5 p-8 backdrop-blur-sm"
             >
-              <span className="font-serif text-5xl font-light text-accent-warm/60">
+              <span className="font-serif text-5xl font-light text-gold-light/70">
                 {step.number}
               </span>
               <h3 className="mt-4 font-serif text-xl font-medium">{step.title}</h3>
@@ -60,7 +60,7 @@ export default function HowItWorks() {
 
               {index < steps.length - 1 && (
                 <div
-                  className="absolute -right-4 top-1/2 hidden h-px w-8 bg-accent-warm/40 md:block"
+                  className="absolute -right-4 top-1/2 hidden h-px w-8 bg-gradient-to-r from-gold-dark to-gold-light md:block"
                   aria-hidden="true"
                 />
               )}
