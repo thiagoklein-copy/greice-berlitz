@@ -1,19 +1,19 @@
 /*
- * SISTEMA VISUAL — Greice Berlitz (meio-termo quente · ago/2026)
+ * SISTEMA VISUAL — Greice Berlitz (fase 3 · branco + ∞ marcador · ago/2026)
  * ─────────────────────────────────────────────────────────────────
- * Objetivo: sobriedade limpa SEM cara de SaaS B2B frio.
+ * Meio-termo: leveza do branco + credibilidade de consultora.
  *
- * 1. PALETA — claro #FAFAF8; escuro café #1C1712 (quente);
- *    dourado #D4AF37 que “acende” sobre o escuro. Texto muted
- *    bege/marrom #7A6E60 (zero azul). Sem gradientes.
- * 2. TIPOGRAFIA — Bricolage Grotesque nas headlines (caráter);
- *    Inter no body. Sem itálico decorativo.
- * 3. INFINITO (∞) — assinatura: logo maior; watermark sutil
- *    em posições variadas (canto, bleed, tilt); divisor;
- *    easing de transição com curva “loop”.
- * 4. UI — cards raio 12px; CTA raio 14px (mais convidativo);
- *    bordas finas; carrossel de logos mantido.
- * 5. FOTO — B&W corporativo mantido.
+ * 1. BASE — off-white #FEFCF8 predominante. Escuro café #1C1712
+ *    só em ≤2 momentos de impacto (ex.: CTA; bloco de nota no Sobre).
+ * 2. DOURADO #D4AF37 — só em palavras-chave, chips, CTA e ∞.
+ *    Nunca como fundo de seção.
+ * 3. ∞ — marcador decorativo (como asterisco de destaque): ao lado
+ *    de headlines, antes de eyebrows, chips, cantos sutis de cards,
+ *    divisor com curva. Nunca ilustração grande central.
+ * 4. UI — cards 12px, chips dourado suave, stats com número dourado
+ *    em fundo claro. Sem gradiente. Fotos P&B. Logos em carrossel.
+ * 5. TIPOGRAFIA — Bricolage headlines; Inter body; palavra de
+ *    destaque = bold + dourado.
  * ─────────────────────────────────────────────────────────────────
  */
 
@@ -37,7 +37,7 @@ body {
   width: 100%;
   min-height: 100vh;
   overflow-x: hidden;
-  background-color: #fafaf8;
+  background-color: #fefcf8;
   color: #1c1712;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -105,19 +105,20 @@ video {
     background: rgba(28, 23, 18, 0.04);
   }
 
+  /* Ghost em fundo claro (substitui o antigo ghost-light de seções escuras) */
   .btn-ghost-light {
     @apply inline-flex items-center justify-center font-semibold;
     border-radius: 12px;
     padding: 0.9rem 1.6rem;
     font-size: 14px;
-    color: #fafaf8;
-    border: 1px solid rgba(250, 250, 248, 0.28);
+    color: #1c1712;
+    border: 1px solid rgba(28, 23, 18, 0.16);
     background: transparent;
     transition: border-color 0.15s ease, background 0.15s ease;
   }
   .btn-ghost-light:hover {
-    border-color: rgba(250, 250, 248, 0.55);
-    background: rgba(250, 250, 248, 0.06);
+    border-color: #1c1712;
+    background: rgba(28, 23, 18, 0.04);
   }
 
   .card-surface {
@@ -127,23 +128,24 @@ video {
     box-shadow: none;
   }
   .card-surface:hover {
-    border-color: rgba(28, 23, 18, 0.2);
+    border-color: rgba(28, 23, 18, 0.18);
     transform: none;
     box-shadow: none;
     background: #ffffff;
   }
 
-  .card-dark {
+  .card-cream {
     border-radius: 12px;
-    background: transparent;
-    border: 1px solid rgba(250, 250, 248, 0.14);
+    background: #faf6ef;
+    border: 1px solid rgba(28, 23, 18, 0.08);
     box-shadow: none;
   }
-  .card-dark:hover {
-    border-color: rgba(250, 250, 248, 0.28);
-    transform: none;
+
+  .card-dark {
+    border-radius: 12px;
+    background: #1c1712;
+    border: 1px solid rgba(250, 250, 248, 0.1);
     box-shadow: none;
-    background: transparent;
   }
 
   .gold-divider {
@@ -157,15 +159,6 @@ video {
 
   .surface-grain::after {
     display: none;
-  }
-
-  /* Watermark ∞ em seções escuras — posição/rotação vêm do componente */
-  .infinity-watermark {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    overflow: hidden;
-    z-index: 0;
   }
 
   /* Carrossel infinito de logos */

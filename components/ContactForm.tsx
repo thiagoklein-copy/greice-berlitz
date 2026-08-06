@@ -4,7 +4,8 @@ import { useState, type FormEvent } from "react";
 import { motion } from "framer-motion";
 import { FaInstagram, FaMapMarkerAlt, FaPhone, FaClock } from "react-icons/fa";
 import MotionSection from "@/components/ui/MotionSection";
-import { SectionHeader } from "@/components/ui/Shared";
+import { GoldWord, SectionHeader } from "@/components/ui/Shared";
+import { InfinityAccent } from "@/components/ui/InfinityMark";
 import {
   buildWhatsAppUrl,
   CLINIC_ADDRESS,
@@ -52,7 +53,10 @@ export default function ContactForm() {
           title={
             <>
               Vamos conversar sobre o seu{" "}
-              <span className="font-semibold text-[#8B7A68]">próximo passo</span>
+              <GoldWord>
+                próximo passo
+                <InfinityAccent />
+              </GoldWord>
             </>
           }
         />

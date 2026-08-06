@@ -2,8 +2,12 @@
 
 import { motion } from "framer-motion";
 import MotionSection from "@/components/ui/MotionSection";
-import { SectionHeader } from "@/components/ui/Shared";
-import { InfinityStep } from "@/components/ui/InfinityMark";
+import { GoldWord, SectionHeader } from "@/components/ui/Shared";
+import {
+  InfinityAccent,
+  InfinityCorner,
+  InfinityStep,
+} from "@/components/ui/InfinityMark";
 import { SERVICES, buildWhatsAppUrl } from "@/lib/constants";
 
 function ServiceCard({
@@ -22,8 +26,9 @@ function ServiceCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.05, duration: 0.4 }}
-      className="card-surface flex h-full w-full flex-col p-7 sm:p-8"
+      className="card-surface relative flex h-full w-full flex-col overflow-hidden p-7 sm:p-8"
     >
+      {index === 0 && <InfinityCorner position="top-right" />}
       <InfinityStep number={number} />
 
       <h3 className="mt-4 font-display text-xl font-bold tracking-tight text-ink">
@@ -37,7 +42,8 @@ function ServiceCard({
       <div className="mt-auto pt-5">
         <div className="space-y-1.5 border-t border-ink/10 pt-5 text-sm">
           <p className="text-text-muted">
-            <span className="font-semibold text-ink">Duração:</span> {service.duration}
+            <span className="font-semibold text-ink">Duração:</span>{" "}
+            {service.duration}
           </p>
           <p className="font-medium text-ink">{service.price}</p>
         </div>
@@ -66,7 +72,10 @@ export default function Services() {
           title={
             <>
               Um acompanhamento sob medida para a sua{" "}
-              <span className="font-semibold text-[#8B7A68]">história</span>
+              <GoldWord>
+                história
+                <InfinityAccent />
+              </GoldWord>
             </>
           }
         />

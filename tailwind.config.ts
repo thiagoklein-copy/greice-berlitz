@@ -1,9 +1,8 @@
 import type { Config } from "tailwindcss";
 
 /**
- * SISTEMA VISUAL — Greice Berlitz (meio-termo quente)
- * Sóbrio + humano: escuro café, Bricolage Grotesque, ∞ como assinatura.
- * Mantém: limpeza, sem gradiente, logos B&W, stats secos, carrossel.
+ * SISTEMA VISUAL — Greice Berlitz (fase 3: branco + ∞ marcador)
+ * Base clara, dourado pontual, ∞ como pontuação visual.
  */
 const config: Config = {
   content: [
@@ -17,16 +16,16 @@ const config: Config = {
         gold: {
           DEFAULT: "#D4AF37",
           light: "#F0D78C",
+          soft: "#F5E9C4",
           dark: "#B8941F",
         },
-        // Escuro quente (café) — não navy frio
         ink: {
           DEFAULT: "#1C1712",
           soft: "#241E18",
         },
         sand: {
-          DEFAULT: "#FAFAF8",
-          dark: "#F3F0EB",
+          DEFAULT: "#FEFCF8",
+          dark: "#FAF6EF",
         },
         accent: {
           DEFAULT: "#D4AF37",
@@ -34,7 +33,6 @@ const config: Config = {
         },
         text: {
           dark: "#1C1712",
-          // bege/marrom — sem azul
           muted: "#7A6E60",
         },
         whatsapp: "#25D366",

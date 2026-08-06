@@ -1,4 +1,6 @@
-/** Traço do infinito — watermark / divisor / marcador. Sempre sutil. */
+import type { ReactNode } from "react";
+
+/** Traço do infinito — sempre sutil e funcional (marcador, não ilustração). */
 
 export function InfinityGlyph({
   className = "",
@@ -27,70 +29,53 @@ export function InfinityGlyph({
   );
 }
 
-/**
- * Posições distintas — cada seção escura usa uma composição diferente
- * para o ∞ não virar “selo central” repetido.
- */
-export type InfinityWatermarkVariant =
-  | "center"
-  | "top-right"
-  | "bottom-left"
-  | "left-bleed"
-  | "right-bleed"
-  | "bottom-right"
-  | "tilt";
-
-const WATERMARK_LAYOUT: Record<InfinityWatermarkVariant, string> = {
-  center:
-    "left-1/2 top-1/2 w-[min(120vw,1100px)] -translate-x-1/2 -translate-y-[52%] opacity-[0.06]",
-  "top-right":
-    "right-[-14%] top-[-22%] w-[min(95vw,780px)] -rotate-[18deg] opacity-[0.07]",
-  "bottom-left":
-    "bottom-[-28%] left-[-20%] w-[min(110vw,920px)] rotate-[14deg] opacity-[0.055]",
-  "left-bleed":
-    "left-[-38%] top-[42%] w-[min(100vw,860px)] -translate-y-1/2 -rotate-[6deg] opacity-[0.06]",
-  "right-bleed":
-    "right-[-32%] top-[38%] w-[min(95vw,800px)] -translate-y-1/2 rotate-[16deg] opacity-[0.065]",
-  "bottom-right":
-    "bottom-[-18%] right-[-12%] w-[min(90vw,700px)] rotate-[9deg] opacity-[0.05]",
-  tilt: "left-[8%] top-[12%] w-[min(105vw,960px)] -rotate-[26deg] opacity-[0.05]",
-};
-
-/** Fundo watermark ∞ para seções escuras */
-export function InfinityWatermark({
-  variant = "center",
-}: {
-  variant?: InfinityWatermarkVariant;
-}) {
+/** ∞ flutuando após palavra de destaque (estilo asterisco) */
+export function InfinityAccent({ className = "" }: { className?: string }) {
   return (
-    <div className="infinity-watermark" aria-hidden="true">
-      <InfinityGlyph
-        className={`absolute h-auto text-gold ${WATERMARK_LAYOUT[variant]}`}
-        strokeWidth={0.8}
-      />
-    </div>
+    <InfinityGlyph
+      className={`ml-1 inline-block h-3 w-6 -translate-y-[0.55em] align-baseline text-gold sm:h-3.5 sm:w-7 ${className}`}
+      strokeWidth={1.9}
+    />
   );
 }
 
-/** Divisor sutil entre seções (curva do infinito) */
-export function InfinityDivider({
+/** Eyebrow com ∞ como prefixo */
+export function InfinityEyebrow({
+  children,
   className = "",
-  light = false,
 }: {
+  children: ReactNode;
   className?: string;
-  light?: boolean;
 }) {
   return (
-    <div className={`flex justify-center py-2 ${className}`} aria-hidden="true">
-      <InfinityGlyph
-        className={`h-5 w-12 ${light ? "text-gold/40" : "text-gold/45"}`}
-        strokeWidth={1.4}
-      />
-    </div>
+    <p
+      className={`eyebrow mb-4 inline-flex items-center gap-2 ${className}`}
+    >
+      <InfinityGlyph className="h-2.5 w-6 shrink-0 text-gold" strokeWidth={2} />
+      <span>{children}</span>
+    </p>
   );
 }
 
-/** Marcador de passo: ∞ + número */
+/** Chip dourado suave (prova social / apoio) */
+export function InfinityChip({
+  children,
+  className = "",
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
+  return (
+    <span
+      className={`inline-flex items-center gap-1.5 rounded-full bg-gold/15 px-3 py-1 text-[12px] font-semibold text-ink ${className}`}
+    >
+      <InfinityGlyph className="h-2.5 w-5 text-gold" strokeWidth={2} />
+      {children}
+    </span>
+  );
+}
+
+/** Chip de passo: ∞ + 01/02 */
 export function InfinityStep({
   number,
   light = false,
@@ -99,18 +84,62 @@ export function InfinityStep({
   light?: boolean;
 }) {
   return (
-    <span className="inline-flex items-center gap-2">
+    <span
+      className={`inline-flex items-center gap-1.5 rounded-lg px-2.5 py-1 ${
+        light ? "bg-white/10" : "bg-gold/15"
+      }`}
+    >
       <InfinityGlyph
-        className={`h-3.5 w-8 ${light ? "text-gold/70" : "text-gold"}`}
-        strokeWidth={1.6}
+        className={`h-2.5 w-5 ${light ? "text-gold/80" : "text-gold"}`}
+        strokeWidth={2}
       />
       <span
-        className={`font-display text-sm font-bold tracking-[0.16em] ${
-          light ? "text-gold/90" : "text-gold"
+        className={`font-display text-xs font-bold tracking-[0.14em] ${
+          light ? "text-sand" : "text-ink"
         }`}
       >
         {number}
       </span>
     </span>
+  );
+}
+
+/** ∞ fino no canto de um bloco (assinatura, ~12% opacidade) */
+export function InfinityCorner({
+  position = "top-right",
+}: {
+  position?: "top-right" | "bottom-left" | "top-left" | "bottom-right";
+}) {
+  const map = {
+    "top-right": "right-[-10%] top-[-18%] -rotate-[14deg]",
+    "bottom-left": "bottom-[-20%] left-[-12%] rotate-[10deg]",
+    "top-left": "left-[-10%] top-[-16%] rotate-[12deg]",
+    "bottom-right": "bottom-[-18%] right-[-10%] -rotate-[8deg]",
+  } as const;
+
+  return (
+    <InfinityGlyph
+      className={`pointer-events-none absolute h-14 w-28 text-gold opacity-[0.12] sm:h-16 sm:w-32 ${map[position]}`}
+      strokeWidth={0.9}
+    />
+  );
+}
+
+/** Divisor: linha fina que se curva no ∞ central */
+export function InfinityDivider({
+  className = "",
+}: {
+  className?: string;
+  light?: boolean;
+}) {
+  return (
+    <div
+      className={`flex items-center gap-3 px-5 sm:px-8 lg:px-12 ${className}`}
+      aria-hidden="true"
+    >
+      <span className="h-px flex-1 bg-ink/10" />
+      <InfinityGlyph className="h-4 w-10 shrink-0 text-gold/55" strokeWidth={1.5} />
+      <span className="h-px flex-1 bg-ink/10" />
+    </div>
   );
 }

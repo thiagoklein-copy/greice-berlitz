@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * HOME — meio-termo quente (café + Bricolage + ∞).
+ * HOME — fase 3: branco predominante, dourado pontual, ∞ marcador.
  * Ver decisões em app/globals.css. Copy intacta.
  */
 
@@ -13,7 +13,13 @@ import Testimonials from "@/components/Testimonials";
 import CtaBanner from "@/components/CtaBanner";
 import MotionSection from "@/components/ui/MotionSection";
 import AnimatedCounter from "@/components/ui/AnimatedCounter";
-import { InfinityStep } from "@/components/ui/InfinityMark";
+import {
+  InfinityAccent,
+  InfinityCorner,
+  InfinityEyebrow,
+  InfinityStep,
+} from "@/components/ui/InfinityMark";
+import { GoldWord } from "@/components/ui/Shared";
 import { WHATSAPP_URL } from "@/lib/constants";
 
 const trustStats = [
@@ -47,11 +53,13 @@ export default function HomePage() {
   return (
     <>
       <PageHero
-        dark
         title={
           <>
-            <span className="block text-balance">Sua vida pode ser diferente.</span>
-            <span className="mt-2 block text-balance font-semibold text-sand/75 sm:mt-3">
+            <span className="block text-balance">
+              Sua vida pode ser <GoldWord>diferente</GoldWord>
+              <InfinityAccent />
+            </span>
+            <span className="mt-2 block text-balance font-medium text-text-muted sm:mt-3">
               A mudança começa com você.
             </span>
           </>
@@ -67,7 +75,7 @@ export default function HomePage() {
           >
             Falar no WhatsApp
           </a>
-          <a href="#dois-caminhos" className="btn-ghost-light text-center">
+          <a href="#dois-caminhos" className="btn-ghost text-center">
             Conhecer meu trabalho ↓
           </a>
         </div>
@@ -76,11 +84,11 @@ export default function HomePage() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.25 }}
-          className="mt-12 grid grid-cols-3 gap-8 border-t border-white/10 pt-8"
+          className="mt-12 grid grid-cols-3 gap-6 border-t border-ink/10 pt-8 sm:gap-8"
         >
           {trustStats.map((stat) => (
             <li key={stat.label}>
-              <p className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
+              <p className="font-display text-3xl font-bold tracking-tight text-gold sm:text-4xl">
                 <AnimatedCounter
                   value={stat.value}
                   suffix={stat.suffix}
@@ -90,22 +98,25 @@ export default function HomePage() {
                   <span className="ml-1 text-gold">★</span>
                 )}
               </p>
-              <p className="mt-2 text-sm text-white/45">{stat.label}</p>
+              <p className="mt-2 text-sm text-text-muted">{stat.label}</p>
             </li>
           ))}
         </motion.ul>
       </PageHero>
 
-      <MotionSection id="dois-caminhos" className="bg-sand py-24 sm:py-32">
+      <MotionSection id="dois-caminhos" className="bg-white py-24 sm:py-32">
         <div className="section-container">
           <div className="mb-12 max-w-2xl">
-            <p className="eyebrow mb-4">Como posso ajudar</p>
+            <InfinityEyebrow>Como posso ajudar</InfinityEyebrow>
             <h2
-              className="font-display font-bold tracking-[-0.02em] text-ink"
+              className="font-display font-medium tracking-[-0.02em] text-ink"
               style={{ fontSize: "clamp(1.75rem, 4vw, 3rem)", lineHeight: 1.1 }}
             >
-              Dois caminhos,{" "}
-              <span className="font-semibold text-[#8B7A68]">um propósito</span>
+              Dois caminhos, um{" "}
+              <GoldWord>
+                propósito
+                <InfinityAccent />
+              </GoldWord>
             </h2>
             <p className="mt-4 text-base leading-relaxed text-text-muted sm:text-lg">
               Seja no consultório ou na empresa, o objetivo é o mesmo: fazer
@@ -121,8 +132,11 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.08, duration: 0.45 }}
-                className="card-surface flex flex-col p-8 sm:p-10"
+                className="card-surface relative flex flex-col overflow-hidden p-8 sm:p-10"
               >
+                <InfinityCorner
+                  position={index === 0 ? "bottom-right" : "top-right"}
+                />
                 <InfinityStep number={path.number} />
                 <h3
                   className={`mt-4 font-display font-bold tracking-tight text-ink ${
@@ -148,16 +162,17 @@ export default function HomePage() {
         </div>
       </MotionSection>
 
-      <MotionSection className="border-y border-ink/8 bg-white py-24 sm:py-32">
+      <MotionSection className="border-y border-ink/8 bg-sand py-24 sm:py-32">
         <div className="section-container">
           <div className="grid items-start gap-12 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,0.7fr)] lg:gap-20">
             <div>
-              <p className="eyebrow mb-4">Prévia da minha história</p>
+              <InfinityEyebrow>Prévia da minha história</InfinityEyebrow>
               <h2
-                className="font-display font-bold tracking-[-0.02em] text-ink"
+                className="font-display font-medium tracking-[-0.02em] text-ink"
                 style={{ fontSize: "clamp(1.75rem, 4vw, 3rem)", lineHeight: 1.1 }}
               >
-                Propósito antes do retorno
+                <GoldWord>Propósito</GoldWord> antes do retorno
+                <InfinityAccent />
               </h2>
               <motion.p
                 initial={{ opacity: 0, y: 12 }}
@@ -175,8 +190,9 @@ export default function HomePage() {
               </Link>
             </div>
 
-            <aside className="border-l-2 border-gold pl-8">
-              <p className="font-display text-6xl font-bold tracking-tight text-ink sm:text-7xl">
+            <aside className="card-cream relative overflow-hidden border-l-0 p-8">
+              <InfinityCorner position="bottom-left" />
+              <p className="font-display text-6xl font-bold tracking-tight text-gold sm:text-7xl">
                 16+
               </p>
               <p className="mt-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-text-muted">

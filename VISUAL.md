@@ -1,16 +1,15 @@
 /**
  * SISTEMA VISUAL — Greice Berlitz
  * ─────────────────────────────────────────────────────────────
- * Meio-termo: sóbrio e limpo, sem cara de SaaS B2B frio.
+ * Fase 3 (ago/2026): branco predominante + ∞ como marcador.
  *
- * Decisões (ago/2026):
- * - Escuro: café quente #1C1712 (não navy). Dourado #D4AF37 “acende”
- *   como brasa sobre esse fundo.
- * - Headlines: Bricolage Grotesque (caráter). Body: Inter.
- * - ∞: assinatura (logo maior, watermark em posições variadas nas
- *   seções escuras — canto, bleed, tilt —, divisor, InfinityStep,
- *   easing de transição em loop).
- * - Cards 12px; CTA 14px. Sem gradiente. Fotos P&B. Logos em carrossel.
+ * - Base #FEFCF8; escuro #1C1712 só em ≤2 momentos de impacto
+ *   (CTA; opcional bloco narrativo no Sobre).
+ * - Dourado #D4AF37 só em palavras-chave, chips, botão CTA e ∞.
+ * - ∞ = pontuação visual (eyebrow, headline, chip, canto, divisor),
+ *   nunca ilustração grande central.
+ * - Cards 12px, stats com número dourado, fotos P&B, logos B&W.
+ * - Tipografia: Bricolage + Inter; destaque = bold + dourado.
  *
- * Detalhe completo: app/globals.css
+ * Detalhe: app/globals.css
  */

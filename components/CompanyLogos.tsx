@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import MotionSection from "@/components/ui/MotionSection";
+import { InfinityChip } from "@/components/ui/InfinityMark";
 import { COMPANIES } from "@/lib/constants";
 
 interface CompanyLogosProps {
@@ -40,12 +41,12 @@ export default function CompanyLogos({
   supportText,
   id,
 }: CompanyLogosProps) {
-  // Duplicar para loop contínuo sem salto
   const track = [...COMPANIES, ...COMPANIES];
 
   return (
-    <MotionSection id={id} className="overflow-hidden bg-sand py-24 sm:py-28">
+    <MotionSection id={id} className="overflow-hidden bg-white py-24 sm:py-28">
       <div className="section-container text-center">
+        <InfinityChip className="mb-5">Confiam no meu trabalho</InfinityChip>
         <p className="mx-auto max-w-2xl text-base font-medium text-text-muted sm:text-lg">
           {title}
         </p>
@@ -67,10 +68,7 @@ export default function CompanyLogos({
       >
         <div className="logo-marquee-track flex w-max items-center">
           {track.map((company, index) => (
-            <LogoItem
-              key={`${company.name}-${index}`}
-              company={company}
-            />
+            <LogoItem key={`${company.name}-${index}`} company={company} />
           ))}
         </div>
       </div>

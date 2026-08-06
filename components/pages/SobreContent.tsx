@@ -4,8 +4,12 @@ import { motion } from "framer-motion";
 import PageHero from "@/components/PageHero";
 import CtaBanner from "@/components/CtaBanner";
 import MotionSection from "@/components/ui/MotionSection";
-import { SectionHeader } from "@/components/ui/Shared";
-import { InfinityStep, InfinityWatermark } from "@/components/ui/InfinityMark";
+import { GoldWord, SectionHeader } from "@/components/ui/Shared";
+import {
+  InfinityAccent,
+  InfinityCorner,
+  InfinityStep,
+} from "@/components/ui/InfinityMark";
 import { IMAGES, PROFESSIONAL_CRP, WHATSAPP_URL } from "@/lib/constants";
 
 const formation = [
@@ -33,8 +37,9 @@ export default function SobreContent() {
             <span className="block text-balance">
               Antes de ajudar os outros a se transformarem,
             </span>
-            <span className="mt-2 block text-balance font-semibold text-[#8B7A68] sm:mt-3">
-              eu me transformei.
+            <span className="mt-2 block text-balance sm:mt-3">
+              eu me <GoldWord>transformei</GoldWord>
+              <InfinityAccent />
             </span>
           </>
         }
@@ -43,14 +48,17 @@ export default function SobreContent() {
         imagePosition={IMAGES.greice.objectPosition}
       />
 
-      <MotionSection className="bg-sand py-24 sm:py-32">
+      <MotionSection className="bg-white py-24 sm:py-32">
         <div className="section-container">
           <SectionHeader
             eyebrow="Quem eu sou"
             title={
               <>
                 Vocação, presença e{" "}
-                <span className="font-semibold text-[#8B7A68]">propósito</span>
+                <GoldWord>
+                  propósito
+                  <InfinityAccent />
+                </GoldWord>
               </>
             }
           />
@@ -87,13 +95,21 @@ export default function SobreContent() {
 
       {/*
         BLOCO SENSÍVEL: confirmar com a cliente o nível de detalhe antes de publicar.
+        Um dos ≤2 momentos escuros da página (junto com o CTA).
       */}
       <MotionSection className="relative overflow-hidden bg-ink py-24 sm:py-32">
-        <InfinityWatermark variant="tilt" />
         <div className="section-container relative z-[1]">
           <SectionHeader
             eyebrow="Resiliência"
-            title="Uma prova de que é possível recomeçar"
+            title={
+              <>
+                Uma prova de que é possível{" "}
+                <GoldWord>
+                  recomeçar
+                  <InfinityAccent />
+                </GoldWord>
+              </>
+            }
             light
           />
 
@@ -132,12 +148,15 @@ export default function SobreContent() {
             title={
               <>
                 Base técnica, olhar{" "}
-                <span className="font-semibold text-[#8B7A68]">humano</span>
+                <GoldWord>
+                  humano
+                  <InfinityAccent />
+                </GoldWord>
               </>
             }
           />
 
-          <ul className="max-w-2xl space-y-0 overflow-hidden rounded-xl border border-ink/10">
+          <ul className="card-surface max-w-2xl space-y-0 overflow-hidden p-0">
             {formation.map((item, index) => (
               <motion.li
                 key={item}
@@ -162,12 +181,15 @@ export default function SobreContent() {
             title={
               <>
                 Valores que guiam cada{" "}
-                <span className="font-semibold text-[#8B7A68]">encontro</span>
+                <GoldWord>
+                  encontro
+                  <InfinityAccent />
+                </GoldWord>
               </>
             }
           />
 
-          <div className="grid gap-0 overflow-hidden rounded-xl border border-ink/10 sm:grid-cols-2">
+          <div className="grid gap-4 sm:grid-cols-2">
             {values.map((label, index) => (
               <motion.div
                 key={label}
@@ -175,8 +197,9 @@ export default function SobreContent() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
-                className="border-b border-ink/10 p-6 sm:odd:border-r sm:[&:nth-last-child(-n+2)]:border-b-0"
+                className="card-surface relative overflow-hidden p-6"
               >
+                {index === 0 && <InfinityCorner position="bottom-right" />}
                 <InfinityStep number={String(index + 1).padStart(2, "0")} />
                 <p className="mt-3 font-display text-base font-semibold text-ink">
                   {label}
@@ -202,7 +225,10 @@ export default function SobreContent() {
         title={
           <>
             Quero fazer parte da sua jornada de{" "}
-            <span className="text-gold">transformação</span>
+            <GoldWord>
+              transformação
+              <InfinityAccent />
+            </GoldWord>
           </>
         }
         subtitle="Se algo aqui ressoou com você, vamos conversar."

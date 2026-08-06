@@ -1,5 +1,8 @@
 import type { ReactNode } from "react";
-import { InfinityGlyph } from "@/components/ui/InfinityMark";
+import {
+  InfinityGlyph,
+  InfinityEyebrow,
+} from "@/components/ui/InfinityMark";
 
 interface LogoProps {
   className?: string;
@@ -14,9 +17,7 @@ export default function Logo({ className = "", light = false }: LogoProps) {
     >
       <span className="inline-flex items-center gap-2.5">
         <InfinityGlyph
-          className={`h-7 w-14 shrink-0 sm:h-8 sm:w-16 ${
-            light ? "text-gold" : "text-gold"
-          }`}
+          className="h-7 w-14 shrink-0 text-gold sm:h-8 sm:w-16"
           strokeWidth={1.8}
         />
         <span
@@ -47,6 +48,19 @@ export function Stars({ className = "" }: { className?: string }) {
   );
 }
 
+/** Palavra de destaque: bold + dourado */
+export function GoldWord({
+  children,
+  className = "",
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
+  return (
+    <span className={`font-bold text-gold ${className}`}>{children}</span>
+  );
+}
+
 interface SectionHeaderProps {
   eyebrow?: string;
   title: ReactNode;
@@ -67,12 +81,12 @@ export function SectionHeader({
   return (
     <div className={`mb-12 max-w-3xl ${alignClass}`}>
       {eyebrow && (
-        <p className={`eyebrow mb-4 ${light ? "text-white/50" : ""}`}>
+        <InfinityEyebrow className={light ? "text-white/55" : ""}>
           {eyebrow}
-        </p>
+        </InfinityEyebrow>
       )}
       <h2
-        className={`font-display font-bold tracking-[-0.02em] ${
+        className={`font-display font-medium tracking-[-0.02em] ${
           light ? "text-white" : "text-ink"
         }`}
         style={{ fontSize: "clamp(1.75rem, 4vw, 3rem)", lineHeight: 1.1 }}

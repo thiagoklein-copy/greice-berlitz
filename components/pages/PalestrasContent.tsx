@@ -5,8 +5,12 @@ import PageHero from "@/components/PageHero";
 import CompanyLogos from "@/components/CompanyLogos";
 import CtaBanner from "@/components/CtaBanner";
 import MotionSection from "@/components/ui/MotionSection";
-import { SectionHeader } from "@/components/ui/Shared";
-import { InfinityStep } from "@/components/ui/InfinityMark";
+import { GoldWord, SectionHeader } from "@/components/ui/Shared";
+import {
+  InfinityAccent,
+  InfinityCorner,
+  InfinityStep,
+} from "@/components/ui/InfinityMark";
 import { WHATSAPP_PALESTRAS_URL } from "@/lib/constants";
 
 const topics = [
@@ -59,9 +63,17 @@ export default function PalestrasContent() {
   return (
     <>
       <PageHero
-        dark
         eyebrow="Palestras & Consultoria In Company"
-        title="Saúde mental e alta performance caminham juntas."
+        title={
+          <>
+            Saúde mental e alta performance caminham{" "}
+            <GoldWord>
+              juntas
+              <InfinityAccent />
+            </GoldWord>
+            .
+          </>
+        }
         subtitle="Levo para dentro das empresas conteúdos sobre mudança de vida, autoamor, gestão de pessoas e saúde emocional, para equipes mais saudáveis, presentes e produtivas."
       >
         <a
@@ -74,16 +86,17 @@ export default function PalestrasContent() {
         </a>
       </PageHero>
 
-      <MotionSection className="bg-sand py-24 sm:py-32">
+      <MotionSection className="bg-white py-24 sm:py-32">
         <div className="section-container">
           <SectionHeader
             eyebrow="Por que trazer isso"
             title={
               <>
                 Bem-estar onde as pessoas{" "}
-                <span className="font-semibold text-[#8B7A68]">
+                <GoldWord>
                   vivem o dia a dia
-                </span>
+                  <InfinityAccent />
+                </GoldWord>
               </>
             }
           />
@@ -102,14 +115,17 @@ export default function PalestrasContent() {
         </div>
       </MotionSection>
 
-      <MotionSection className="border-y border-ink/8 bg-white py-24 sm:py-32">
+      <MotionSection className="border-y border-ink/8 bg-sand py-24 sm:py-32">
         <div className="section-container">
           <SectionHeader
             eyebrow="Temas"
             title={
               <>
                 Temas de{" "}
-                <span className="font-semibold text-[#8B7A68]">palestra</span>
+                <GoldWord>
+                  palestra
+                  <InfinityAccent />
+                </GoldWord>
               </>
             }
           />
@@ -122,8 +138,9 @@ export default function PalestrasContent() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.04 }}
-                className="card-surface p-7"
+                className="card-surface relative overflow-hidden p-7"
               >
+                {index === 0 && <InfinityCorner position="top-right" />}
                 <InfinityStep number={String(index + 1).padStart(2, "0")} />
                 <h3 className="mt-4 font-display text-lg font-bold text-ink">
                   {title}
@@ -141,14 +158,17 @@ export default function PalestrasContent() {
         supportText="Com foco especial em empresas do setor da construção civil, mas aberta a qualquer organização que valorize o bem-estar das suas equipes."
       />
 
-      <MotionSection className="bg-sand py-24 sm:py-32">
+      <MotionSection className="bg-white py-24 sm:py-32">
         <div className="section-container">
           <SectionHeader
             eyebrow="Formatos"
             title={
               <>
                 Formatos{" "}
-                <span className="font-semibold text-[#8B7A68]">disponíveis</span>
+                <GoldWord>
+                  disponíveis
+                  <InfinityAccent />
+                </GoldWord>
               </>
             }
           />
@@ -161,7 +181,7 @@ export default function PalestrasContent() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.08 }}
-                className="card-surface p-8"
+                className="card-surface relative overflow-hidden p-8"
               >
                 <InfinityStep number={String(index + 1).padStart(2, "0")} />
                 <h3 className="mt-4 font-display text-xl font-bold text-ink">
@@ -180,7 +200,11 @@ export default function PalestrasContent() {
         title={
           <>
             Vamos levar isso para a sua{" "}
-            <span className="text-gold">empresa</span>?
+            <GoldWord>
+              empresa
+              <InfinityAccent />
+            </GoldWord>
+            ?
           </>
         }
         subtitle="Solicite um orçamento e vamos desenhar o formato ideal para a sua equipe."

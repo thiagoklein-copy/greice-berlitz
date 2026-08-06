@@ -2,13 +2,24 @@
 
 import PageHero from "@/components/PageHero";
 import ContactForm from "@/components/ContactForm";
+import { InfinityAccent } from "@/components/ui/InfinityMark";
+import { GoldWord } from "@/components/ui/Shared";
 
 export default function ContatoContent() {
   return (
     <>
       <PageHero
         eyebrow="Vamos conversar"
-        title="O primeiro passo pode ser uma mensagem."
+        title={
+          <>
+            O primeiro passo pode ser uma{" "}
+            <GoldWord>
+              mensagem
+              <InfinityAccent />
+            </GoldWord>
+            .
+          </>
+        }
         subtitle="Conte o que você está buscando: terapia individual ou palestra para sua empresa. Eu retorno pelo WhatsApp."
         showImage={false}
       />
