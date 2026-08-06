@@ -32,10 +32,10 @@ const sora = Sora({
   display: "swap",
 });
 
-const title = "Greice Berlitz | Psicoterapia e Palestras que Transformam";
+const title = "Greice Berlitz | Psicóloga em Novo Hamburgo — Psicoterapia e Palestras";
 
 const description =
-  "Há mais de 16 anos, ajudo pessoas a se reencontrarem na terapia e ajudo empresas a cuidarem de quem faz parte delas com palestras que fazem diferença. Atendimento em Novo Hamburgo - RS.";
+  "Greice Berlitz, psicóloga (CRP 07/16250), especialista em TCC com mais de 16 anos de experiência. Atendimento individual e palestras corporativas em Novo Hamburgo - RS.";
 
 export const metadata: Metadata = {
   title: {

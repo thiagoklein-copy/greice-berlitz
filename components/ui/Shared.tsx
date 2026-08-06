@@ -8,23 +8,26 @@ interface LogoProps {
 export default function Logo({ className = "", light = false }: LogoProps) {
   return (
     <span
-      className={`inline-flex items-baseline gap-1.5 font-serif text-xl font-semibold tracking-tight sm:text-2xl ${className}`}
-      aria-label="Greice Berlitz"
+      className={`inline-flex flex-col leading-none ${className}`}
+      aria-label="Greice Berlitz, Psicóloga, CRP 07/16250"
     >
-      <span
-        className={
-          light
-            ? "bg-gold-gradient bg-clip-text text-transparent"
-            : "bg-gold-gradient bg-clip-text text-transparent"
-        }
-      >
-        Greice Berlitz
+      <span className="inline-flex items-baseline gap-1.5 font-serif text-xl font-semibold tracking-tight sm:text-2xl">
+        <span className="bg-gold-gradient bg-clip-text text-transparent">
+          Greice Berlitz
+        </span>
+        <span
+          className={`font-light ${light ? "text-gold-light" : "text-gold"}`}
+          aria-hidden="true"
+        >
+          ∞
+        </span>
       </span>
       <span
-        className={`font-light leading-none ${light ? "text-gold-light" : "text-gold"}`}
-        aria-hidden="true"
+        className={`mt-0.5 text-[10px] font-medium uppercase tracking-[0.16em] sm:text-[11px] ${
+          light ? "text-gold-light/80" : "text-gold-dark/80"
+        }`}
       >
-        ∞
+        Psicóloga · CRP 07/16250
       </span>
     </span>
   );
