@@ -53,7 +53,10 @@ export const COMPANIES = [
     name: "FACCAT",
     logo: "/logos/faccat.png",
   },
-  { name: "Construtora Mosmam" },
+  {
+    name: "Mosmann Incorporações",
+    logo: "/logos/mosmann.png",
+  },
 ] as const;
 
 export const IMAGES = {
