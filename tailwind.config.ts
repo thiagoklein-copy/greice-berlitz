@@ -15,9 +15,9 @@ const config: Config = {
     extend: {
       colors: {
         gold: {
-          DEFAULT: "#C9982E",
-          light: "#E8D5A3",
-          dark: "#A67B1F",
+          DEFAULT: "#D4AF37",
+          light: "#F0D78C",
+          dark: "#B8941F",
         },
         // Escuro quente (café) — não navy frio
         ink: {
@@ -29,8 +29,8 @@ const config: Config = {
           dark: "#F3F0EB",
         },
         accent: {
-          DEFAULT: "#C9982E",
-          warm: "#C9982E",
+          DEFAULT: "#D4AF37",
+          warm: "#D4AF37",
         },
         text: {
           dark: "#1C1712",

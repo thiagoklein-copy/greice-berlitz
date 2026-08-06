@@ -4,7 +4,7 @@
  * Meio-termo: sóbrio e limpo, sem cara de SaaS B2B frio.
  *
  * Decisões (ago/2026):
- * - Escuro: café quente #1C1712 (não navy). Âmbar #C9982E “acende”
+ * - Escuro: café quente #1C1712 (não navy). Dourado #D4AF37 “acende”
  *   como brasa sobre esse fundo.
  * - Headlines: Bricolage Grotesque (caráter). Body: Inter.
  * - ∞: assinatura (logo maior, watermark ~6% em seções escuras,

@@ -4,7 +4,7 @@
  * Objetivo: sobriedade limpa SEM cara de SaaS B2B frio.
  *
  * 1. PALETA — claro #FAFAF8; escuro café #1C1712 (quente);
- *    âmbar #C9982E que “acende” sobre o escuro. Texto muted
+ *    dourado #D4AF37 que “acende” sobre o escuro. Texto muted
  *    bege/marrom #7A6E60 (zero azul). Sem gradientes.
  * 2. TIPOGRAFIA — Bricolage Grotesque nas headlines (caráter);
  *    Inter no body. Sem itálico decorativo.
@@ -70,11 +70,11 @@ video {
     padding: 0.9rem 1.6rem;
     font-size: 14px;
     color: #1c1712;
-    background: #c9982e;
+    background: #d4af37;
     transition: background 0.15s ease;
   }
   .btn-primary:hover {
-    background: #a67b1f;
+    background: #b8941f;
   }
 
   .btn-accent {
@@ -83,11 +83,11 @@ video {
     padding: 0.9rem 1.6rem;
     font-size: 14px;
     color: #1c1712;
-    background: #c9982e;
+    background: #d4af37;
     transition: background 0.15s ease;
   }
   .btn-accent:hover {
-    background: #e8d5a3;
+    background: #f0d78c;
   }
 
   .btn-ghost {
@@ -148,7 +148,7 @@ video {
 
   .gold-divider {
     height: 1px;
-    background: rgba(201, 152, 46, 0.35);
+    background: rgba(212, 175, 55, 0.35);
   }
 
   .hero-glow {
@@ -175,7 +175,7 @@ video {
     height: auto;
     transform: translate(-50%, -52%);
     opacity: 0.06;
-    color: #c9982e;
+    color: #d4af37;
   }
 
   /* Carrossel infinito de logos */
