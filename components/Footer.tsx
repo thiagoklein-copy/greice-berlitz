@@ -105,7 +105,7 @@ export default function Footer() {
           <p className="text-sm text-white/35">
             © 2026 Greice Berlitz. Todos os direitos reservados.
           </p>
-          <p className="max-w-sm text-xs leading-relaxed text-white/28 sm:text-right">
+          <p className="max-w-sm text-xs leading-relaxed text-white/50 sm:text-right">
             Este site não substitui atendimento de urgência. Em caso de crise,
             procure o CVV (188) ou o serviço de emergência mais próximo.
           </p>

@@ -15,13 +15,13 @@ const steps = [
     number: "02",
     title: "Primeira sessão",
     description:
-      "Conheço sua história com presença total e definimos juntos o caminho de cuidado que faz sentido para você.",
+      "Conheço sua história com presença total e definimos juntos a abordagem que faz mais sentido para você.",
   },
   {
     number: "03",
     title: "Acompanhamento contínuo",
     description:
-      "Sessão a sessão, construímos mudanças reais, com ferramentas práticas, escuta e clareza sobre o próximo passo.",
+      "Sessão a sessão, construímos mudanças reais, com ferramentas práticas e escuta genuína.",
   },
 ];
 
@@ -35,7 +35,7 @@ export default function HowItWorks() {
           title={
             <>
               Três passos para começar a sua{" "}
-              <em className="italic text-gold-light">jornada</em>
+              <em className="italic text-gold-light">terapia</em>
             </>
           }
         />

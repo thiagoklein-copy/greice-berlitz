@@ -35,11 +35,12 @@ export default function AtendimentoContent() {
       <CtaBanner
         title={
           <>
-            Você merece um espaço{" "}
-            <em className="italic text-gold-light">só seu</em>
+            Você merece esse{" "}
+            <em className="italic text-gold-light">cuidado</em> com você
+            mesmo(a)
           </>
         }
-        subtitle="Agende sua primeira conversa e dê o primeiro passo com presença e clareza."
+        subtitle="Agende sua primeira conversa e dê o primeiro passo."
       />
     </>
   );
