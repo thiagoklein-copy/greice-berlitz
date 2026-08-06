@@ -23,7 +23,7 @@ export default function Testimonials() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {TESTIMONIALS.map((item, index) => (
             <motion.blockquote
-              key={`${item.author}-${index}`}
+              key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -34,9 +34,6 @@ export default function Testimonials() {
               <p className="mt-4 flex-1 text-sm leading-relaxed text-text-muted">
                 &ldquo;{item.quote}&rdquo;
               </p>
-              <footer className="mt-6 border-t border-gold/15 pt-4">
-                <cite className="not-italic font-medium text-ink">{item.author}</cite>
-              </footer>
             </motion.blockquote>
           ))}
         </div>

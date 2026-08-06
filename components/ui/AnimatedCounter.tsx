@@ -51,7 +51,9 @@ export default function AnimatedCounter({
       animate={inView ? { opacity: 1 } : undefined}
     >
       {prefix}
-      {decimals > 0 ? display.toFixed(decimals) : Math.round(display)}
+      {decimals > 0
+        ? display.toFixed(decimals).replace(".", ",")
+        : Math.round(display)}
       {suffix}
     </motion.span>
   );
