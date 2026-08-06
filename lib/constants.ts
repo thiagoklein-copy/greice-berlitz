@@ -18,7 +18,6 @@ export const NAV_LINKS = [
   { label: "Minha História", href: "/sobre" },
   { label: "Terapia Individual", href: "/atendimento-individual" },
   { label: "Palestras & Empresas", href: "/palestras-empresas" },
-  { label: "Depoimentos", href: "/depoimentos" },
   { label: "Contato", href: "/contato" },
 ] as const;
 

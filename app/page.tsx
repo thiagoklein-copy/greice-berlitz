@@ -155,7 +155,7 @@ export default function HomePage() {
 
       <CompanyLogos />
 
-      <Testimonials limit={3} showAllLink />
+      <Testimonials />
 
       <CtaBanner />
     </>
