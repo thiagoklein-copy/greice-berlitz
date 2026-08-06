@@ -55,13 +55,8 @@ export default function HomePage() {
       <PageHero
         title={
           <>
-            <span className="block text-balance">
-              Sua vida pode ser <GoldWord>diferente</GoldWord>
-              <InfinityAccent />
-            </span>
-            <span className="mt-2 block text-balance font-medium text-ink sm:mt-3">
-              A mudança começa com você.
-            </span>
+            Tudo pode <GoldWord>mudar</GoldWord> com uma simples conversa
+            <InfinityAccent />
           </>
         }
         subtitle="Há mais de 16 anos, ajudo pessoas a se reencontrarem na terapia e ajudo empresas a cuidarem de quem faz parte delas com palestras que fazem diferença."
