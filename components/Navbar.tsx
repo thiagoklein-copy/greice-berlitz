@@ -12,8 +12,6 @@ export default function Navbar() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const darkHeroPaths = ["/", "/palestras-empresas"];
-  const onDarkHero = !scrolled && darkHeroPaths.includes(pathname);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 48);
@@ -43,7 +41,7 @@ export default function Navbar() {
     >
       <nav className="section-container flex h-[64px] items-center justify-between gap-6 sm:h-[72px]">
         <Link href="/" aria-label="Ir para o início" className="shrink-0">
-          <Logo light={onDarkHero} />
+          <Logo />
         </Link>
 
         <ul className="hidden items-center gap-0 lg:flex">
@@ -55,12 +53,8 @@ export default function Navbar() {
                   href={link.href}
                   className={`relative px-3 py-2 text-[13px] font-medium transition-colors xl:px-3.5 ${
                     active
-                      ? onDarkHero
-                        ? "text-sand"
-                        : "text-ink"
-                      : onDarkHero
-                        ? "text-sand/55 hover:text-sand"
-                        : "text-text-muted hover:text-ink"
+                      ? "text-ink"
+                      : "text-ink hover:text-ink"
                   }`}
                 >
                   {link.label}
@@ -89,9 +83,7 @@ export default function Navbar() {
 
         <button
           type="button"
-          className={`flex h-10 w-10 items-center justify-center lg:hidden ${
-            onDarkHero ? "text-sand" : "text-ink"
-          }`}
+          className="flex h-10 w-10 items-center justify-center text-ink lg:hidden"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label={mobileOpen ? "Fechar menu" : "Abrir menu"}
           aria-expanded={mobileOpen}
@@ -111,15 +103,12 @@ export default function Navbar() {
           >
             <ul className="section-container flex flex-col gap-0.5 py-4">
               {NAV_LINKS.map((link) => {
-                const active = pathname === link.href;
                 return (
                   <li key={link.href}>
                     <Link
                       href={link.href}
                       onClick={() => setMobileOpen(false)}
-                      className={`block px-4 py-3 text-base font-medium ${
-                        active ? "text-ink" : "text-text-muted"
-                      }`}
+                      className="block px-4 py-3 text-base font-medium text-ink"
                     >
                       {link.label}
                     </Link>

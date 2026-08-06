@@ -126,7 +126,7 @@ export default function ContactForm() {
 
             <div className="w-full">
               <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-ink">
-                Mensagem <span className="text-text-muted">(opcional)</span>
+                Mensagem <span className="text-ink">(opcional)</span>
               </label>
               <textarea
                 id="message"
@@ -154,7 +154,7 @@ export default function ContactForm() {
                 <FaMapMarkerAlt className="mt-1 h-4 w-4 shrink-0 text-ink" />
                 <div>
                   <p className="text-sm font-semibold text-ink">Endereço</p>
-                  <p className="mt-1 text-sm text-text-muted">{CLINIC_ADDRESS}</p>
+                  <p className="mt-1 text-sm text-ink">{CLINIC_ADDRESS}</p>
                 </div>
               </div>
 
@@ -168,7 +168,7 @@ export default function ContactForm() {
                     )}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-1 block text-sm text-text-muted hover:text-ink"
+                    className="mt-1 block text-sm text-ink hover:text-ink"
                   >
                     {CLINIC_PHONE}
                   </a>
@@ -183,7 +183,7 @@ export default function ContactForm() {
                     href={CLINIC_INSTAGRAM_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-1 block text-sm text-text-muted hover:text-ink"
+                    className="mt-1 block text-sm text-ink hover:text-ink"
                   >
                     {CLINIC_INSTAGRAM}
                   </a>
@@ -194,7 +194,7 @@ export default function ContactForm() {
                 <FaClock className="mt-1 h-4 w-4 shrink-0 text-ink" />
                 <div>
                   <p className="text-sm font-semibold text-ink">Horário de atendimento</p>
-                  <p className="mt-1 text-sm text-text-muted">
+                  <p className="mt-1 text-sm text-ink">
                     De segunda a sexta, das 8:00 às 18:30
                   </p>
                 </div>

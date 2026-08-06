@@ -35,13 +35,13 @@ function ServiceCard({
         {service.title}
       </h3>
 
-      <p className="mt-3 text-sm leading-relaxed text-text-muted">
+      <p className="mt-3 text-sm leading-relaxed text-ink">
         {service.description}
       </p>
 
       <div className="mt-auto pt-5">
         <div className="space-y-1.5 border-t border-ink/10 pt-5 text-sm">
-          <p className="text-text-muted">
+          <p className="text-ink">
             <span className="font-semibold text-ink">Duração:</span>{" "}
             {service.duration}
           </p>
@@ -86,7 +86,7 @@ export default function Services() {
           ))}
         </div>
 
-        <p className="mt-12 text-sm text-text-muted">
+        <p className="mt-12 text-sm text-ink">
           Valores sob consulta. Atendimento presencial em Novo Hamburgo.
         </p>
       </div>

@@ -63,7 +63,7 @@ export default function SobreContent() {
             }
           />
 
-          <div className="max-w-3xl space-y-5 text-base leading-relaxed text-text-muted sm:text-lg">
+          <div className="max-w-3xl space-y-5 text-base leading-relaxed text-ink sm:text-lg">
             <motion.p
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -113,7 +113,7 @@ export default function SobreContent() {
             light
           />
 
-          <div className="max-w-3xl space-y-5 text-base leading-relaxed text-sand/60 sm:text-lg">
+          <div className="max-w-3xl space-y-5 text-base leading-relaxed text-sand sm:text-lg">
             <motion.p
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -167,7 +167,7 @@ export default function SobreContent() {
                 className="flex items-start gap-4 border-b border-ink/10 px-5 py-4 last:border-b-0"
               >
                 <InfinityStep number={String(index + 1).padStart(2, "0")} />
-                <span className="text-sm text-text-muted sm:text-base">{item}</span>
+                <span className="text-sm text-ink sm:text-base">{item}</span>
               </motion.li>
             ))}
           </ul>

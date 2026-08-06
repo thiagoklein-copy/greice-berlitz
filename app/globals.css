@@ -12,8 +12,8 @@
  *    divisor com curva. Nunca ilustração grande central.
  * 4. UI — cards 12px, chips dourado suave, stats com número dourado
  *    em fundo claro. Sem gradiente. Fotos P&B. Logos em carrossel.
- * 5. TIPOGRAFIA — Bricolage headlines; Inter body; palavra de
- *    destaque = bold + dourado.
+ * 5. TIPOGRAFIA — Bricolage headlines; Inter body. Texto sempre
+ *    preto (#1C1712); dourado só em destaque. Sem cinzas de texto.
  * ─────────────────────────────────────────────────────────────────
  */
 
@@ -61,7 +61,7 @@ video {
   }
 
   .eyebrow {
-    @apply font-sans text-[13px] font-medium text-text-muted;
+    @apply font-sans text-[13px] font-medium text-ink;
   }
 
   .btn-primary {

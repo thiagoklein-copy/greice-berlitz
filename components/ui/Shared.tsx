@@ -31,7 +31,7 @@ export default function Logo({ className = "", light = false }: LogoProps) {
       </span>
       <span
         className={`mt-1.5 text-[10px] font-medium sm:text-[11px] ${
-          light ? "text-white/50" : "text-text-muted"
+          light ? "text-white" : "text-ink"
         }`}
       >
         Psicóloga · CRP 07/16250
@@ -81,7 +81,7 @@ export function SectionHeader({
   return (
     <div className={`mb-12 max-w-3xl ${alignClass}`}>
       {eyebrow && (
-        <InfinityEyebrow className={light ? "text-white/55" : ""}>
+        <InfinityEyebrow className={light ? "text-white" : ""}>
           {eyebrow}
         </InfinityEyebrow>
       )}
@@ -96,7 +96,7 @@ export function SectionHeader({
       {subtitle && (
         <p
           className={`mt-4 text-base leading-relaxed sm:text-lg ${
-            light ? "text-white/55" : "text-text-muted"
+            light ? "text-white" : "text-ink"
           }`}
         >
           {subtitle}

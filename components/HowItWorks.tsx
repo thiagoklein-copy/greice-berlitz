@@ -64,7 +64,7 @@ export default function HowItWorks() {
               <h3 className="mt-4 font-display text-xl font-bold text-ink">
                 {step.title}
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-text-muted">
+              <p className="mt-3 text-sm leading-relaxed text-ink">
                 {step.description}
               </p>
             </motion.div>

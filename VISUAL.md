@@ -9,7 +9,7 @@
  * - ∞ = pontuação visual (eyebrow, headline, chip, canto, divisor),
  *   nunca ilustração grande central.
  * - Cards 12px, stats com número dourado, fotos P&B, logos B&W.
- * - Tipografia: Bricolage + Inter; destaque = bold + dourado.
+ * - Tipografia: Bricolage + Inter. Texto preto; dourado só em destaque.
  *
  * Detalhe: app/globals.css
  */

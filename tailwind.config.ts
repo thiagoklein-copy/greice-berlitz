@@ -33,7 +33,8 @@ const config: Config = {
         },
         text: {
           dark: "#1C1712",
-          muted: "#7A6E60",
+          // Mesmo tom do ink — hierarquia por peso, não por cinza
+          muted: "#1C1712",
         },
         whatsapp: "#25D366",
       },

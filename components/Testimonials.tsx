@@ -44,7 +44,7 @@ export default function Testimonials() {
                 className="card-cream relative flex flex-col overflow-hidden p-6"
               >
                 {index % 3 === 0 && <InfinityCorner position="top-right" />}
-                <p className="flex-1 text-[15px] leading-relaxed text-text-muted">
+                <p className="flex-1 text-[15px] leading-relaxed text-ink">
                   &ldquo;{item.quote}&rdquo;
                 </p>
               </motion.blockquote>
@@ -61,7 +61,7 @@ export default function Testimonials() {
                 </p>
                 <div className="mt-2 flex items-center gap-2">
                   <Stars className="text-sm text-gold" />
-                  <span className="text-sm text-white/50">
+                  <span className="text-sm text-white">
                     39 avaliações no Google
                   </span>
                 </div>

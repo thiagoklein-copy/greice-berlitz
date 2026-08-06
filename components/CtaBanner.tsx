@@ -50,7 +50,7 @@ export default function CtaBanner({
               >
                 {title}
               </h2>
-              <p className="mt-4 max-w-md text-base text-white/55">{subtitle}</p>
+              <p className="mt-4 max-w-md text-base text-white">{subtitle}</p>
               <a
                 href={ctaHref}
                 target="_blank"

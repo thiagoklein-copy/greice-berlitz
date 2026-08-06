@@ -104,7 +104,7 @@ export default function PalestrasContent() {
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="max-w-3xl text-base leading-relaxed text-text-muted sm:text-lg"
+            className="max-w-3xl text-base leading-relaxed text-ink sm:text-lg"
           >
             Muitas pessoas não têm acesso a um atendimento psicológico
             individualizado. As palestras corporativas são minha forma de levar
@@ -145,7 +145,7 @@ export default function PalestrasContent() {
                 <h3 className="mt-4 font-display text-lg font-bold text-ink">
                   {title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-text-muted">
+                <p className="mt-3 text-sm leading-relaxed text-ink">
                   {description}
                 </p>
               </motion.article>
@@ -187,7 +187,7 @@ export default function PalestrasContent() {
                 <h3 className="mt-4 font-display text-xl font-bold text-ink">
                   {format.title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-text-muted sm:text-base">
+                <p className="mt-3 text-sm leading-relaxed text-ink sm:text-base">
                   {format.description}
                 </p>
               </motion.article>

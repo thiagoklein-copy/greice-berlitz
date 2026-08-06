@@ -59,7 +59,7 @@ export default function HomePage() {
               Sua vida pode ser <GoldWord>diferente</GoldWord>
               <InfinityAccent />
             </span>
-            <span className="mt-2 block text-balance font-medium text-text-muted sm:mt-3">
+            <span className="mt-2 block text-balance font-medium text-ink sm:mt-3">
               A mudança começa com você.
             </span>
           </>
@@ -98,7 +98,7 @@ export default function HomePage() {
                   <span className="ml-1 text-gold">★</span>
                 )}
               </p>
-              <p className="mt-2 text-sm text-text-muted">{stat.label}</p>
+              <p className="mt-2 text-sm text-ink">{stat.label}</p>
             </li>
           ))}
         </motion.ul>
@@ -118,7 +118,7 @@ export default function HomePage() {
                 <InfinityAccent />
               </GoldWord>
             </h2>
-            <p className="mt-4 text-base leading-relaxed text-text-muted sm:text-lg">
+            <p className="mt-4 text-base leading-relaxed text-ink sm:text-lg">
               Seja no consultório ou na empresa, o objetivo é o mesmo: fazer
               diferença de verdade.
             </p>
@@ -145,7 +145,7 @@ export default function HomePage() {
                 >
                   {path.title}
                 </h3>
-                <p className="mt-4 flex-1 text-base leading-relaxed text-text-muted">
+                <p className="mt-4 flex-1 text-base leading-relaxed text-ink">
                   {path.description}
                 </p>
                 <Link
@@ -178,7 +178,7 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="mt-6 text-base leading-relaxed text-text-muted sm:text-lg"
+                className="mt-6 text-base leading-relaxed text-ink sm:text-lg"
               >
                 Sempre escolhi minha profissão pela vocação, não pelo retorno
                 financeiro. Ao longo de mais de 16 anos, vi pessoas chegarem sem
@@ -195,7 +195,7 @@ export default function HomePage() {
               <p className="font-display text-6xl font-bold tracking-tight text-gold sm:text-7xl">
                 16+
               </p>
-              <p className="mt-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-text-muted">
+              <p className="mt-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-ink">
                 anos dedicados a transformar vidas
               </p>
             </aside>
