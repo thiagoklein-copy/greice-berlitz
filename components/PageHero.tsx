@@ -85,12 +85,12 @@ export default function PageHero({
 
             {/* Headline display — escala Whoop-style */}
             <h1
-              className={`relative font-serif font-semibold leading-[1.07] tracking-[-0.025em] ${
+              className={`relative font-serif font-semibold leading-[1.12] tracking-[-0.025em] text-balance ${
                 dark ? "text-white" : "text-ink"
               }`}
               style={{
-                fontSize: "clamp(2.1rem, 5.5vw, 5rem)",
-                lineHeight: 1.06,
+                fontSize: "clamp(2rem, 4.8vw, 4.25rem)",
+                lineHeight: 1.12,
               }}
             >
               {/* Glow atrás do título */}

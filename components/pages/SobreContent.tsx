@@ -33,7 +33,16 @@ export default function SobreContent() {
     <>
       <PageHero
         eyebrow="Minha história"
-        title="Antes de ajudar os outros a se transformarem, eu me transformei."
+        title={
+          <>
+            <span className="block text-balance">
+              Antes de ajudar os outros a se transformarem,
+            </span>
+            <span className="mt-2 block text-balance font-normal italic text-gold-dark sm:mt-3">
+              eu me transformei.
+            </span>
+          </>
+        }
         imageSrc={IMAGES.greice.src}
         imageAlt={IMAGES.greice.alt}
         imagePosition={IMAGES.greice.objectPosition}
