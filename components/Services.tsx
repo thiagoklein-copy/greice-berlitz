@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import MotionSection from "@/components/ui/MotionSection";
 import { SectionHeader } from "@/components/ui/Shared";
+import { InfinityStep } from "@/components/ui/InfinityMark";
 import { SERVICES, buildWhatsAppUrl } from "@/lib/constants";
 
 function ServiceCard({
@@ -23,11 +24,9 @@ function ServiceCard({
       transition={{ delay: index * 0.05, duration: 0.4 }}
       className="card-surface flex h-full w-full flex-col p-7 sm:p-8"
     >
-      <span className="font-sans text-sm font-bold tracking-[0.2em] text-gold">
-        {number}
-      </span>
+      <InfinityStep number={number} />
 
-      <h3 className="mt-4 font-sans text-xl font-bold tracking-tight text-ink">
+      <h3 className="mt-4 font-display text-xl font-bold tracking-tight text-ink">
         {service.title}
       </h3>
 
@@ -67,7 +66,7 @@ export default function Services() {
           title={
             <>
               Um acompanhamento sob medida para a sua{" "}
-              <span className="font-semibold text-text-muted">história</span>
+              <span className="font-semibold text-[#8B7A68]">história</span>
             </>
           }
         />

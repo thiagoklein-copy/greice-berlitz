@@ -1,38 +1,37 @@
 /*
  * CHECKLIST: confirmar com a Greice antes de publicar:
  * - [ ] Confirmar o nível de detalhe aceitável no bloco sobre a perda dos pais (página /sobre)
- * - [ ] Fotos reais dela (hero de cada página, seção "minha história", seção de palestras; idealmente foto em ambiente corporativo/palco)
+ * - [ ] Fotos reais dela (hero, história, palestras; ambiente corporativo/palco)
  * - [ ] Confirmar se pode citar os nomes das empresas publicamente
  * - [ ] Valores de sessão e de palestra (hoje "sob consulta")
  * - [ ] Confirmar handle oficial do Instagram
  * - [ ] Confirmar URL oficial do Google Business Profile
  *
- * VISUAL (pivô SaaS): Inter bold + branco/navy + âmbar sólido.
- * Ver resumo em app/globals.css e app/page.tsx.
+ * VISUAL: escuro café + Bricolage + ∞ assinatura. Ver app/globals.css.
  */
 import type { Metadata, Viewport } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import { Bricolage_Grotesque, Inter } from "next/font/google";
 import "./globals.css";
 import SiteShell from "@/components/SiteShell";
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#0B1424",
+  themeColor: "#1C1712",
 };
+
+const bricolage = Bricolage_Grotesque({
+  subsets: ["latin"],
+  variable: "--font-bricolage",
+  display: "swap",
+  weight: ["400", "500", "600", "700", "800"],
+});
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
-  weight: ["400", "500", "600", "700", "800"],
-});
-
-const fraunces = Fraunces({
-  subsets: ["latin"],
-  variable: "--font-fraunces",
-  display: "swap",
-  style: ["normal", "italic"],
+  weight: ["400", "500", "600", "700"],
 });
 
 const title = "Greice Berlitz | Psicóloga em Novo Hamburgo — Psicoterapia e Palestras";
@@ -66,7 +65,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className={`${inter.variable} ${fraunces.variable}`}>
+    <html lang="pt-BR" className={`${bricolage.variable} ${inter.variable}`}>
       <body className="font-sans">
         <SiteShell>{children}</SiteShell>
       </body>

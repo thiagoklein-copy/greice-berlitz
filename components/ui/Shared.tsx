@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { InfinityGlyph } from "@/components/ui/InfinityMark";
 
 interface LogoProps {
   className?: string;
@@ -11,23 +12,24 @@ export default function Logo({ className = "", light = false }: LogoProps) {
       className={`inline-flex flex-col leading-none ${className}`}
       aria-label="Greice Berlitz, Psicóloga, CRP 07/16250"
     >
-      <span className="inline-flex items-baseline gap-2 font-sans font-bold tracking-tight">
+      <span className="inline-flex items-center gap-2.5">
+        <InfinityGlyph
+          className={`h-7 w-14 shrink-0 sm:h-8 sm:w-16 ${
+            light ? "text-gold" : "text-gold"
+          }`}
+          strokeWidth={1.8}
+        />
         <span
-          className={light ? "text-white" : "text-ink"}
-          style={{ fontSize: "clamp(1.05rem, 2.2vw, 1.25rem)" }}
+          className={`font-display font-bold tracking-tight ${
+            light ? "text-white" : "text-ink"
+          }`}
+          style={{ fontSize: "clamp(1.05rem, 2.2vw, 1.3rem)" }}
         >
           Greice Berlitz
         </span>
-        <span
-          className={light ? "text-gold" : "text-gold"}
-          aria-hidden="true"
-          style={{ fontSize: "clamp(0.95rem, 1.8vw, 1.1rem)" }}
-        >
-          ∞
-        </span>
       </span>
       <span
-        className={`mt-1 text-[10px] font-medium sm:text-[11px] ${
+        className={`mt-1.5 text-[10px] font-medium sm:text-[11px] ${
           light ? "text-white/50" : "text-text-muted"
         }`}
       >
@@ -70,10 +72,10 @@ export function SectionHeader({
         </p>
       )}
       <h2
-        className={`font-sans font-extrabold tracking-[-0.03em] ${
+        className={`font-display font-bold tracking-[-0.02em] ${
           light ? "text-white" : "text-ink"
         }`}
-        style={{ fontSize: "clamp(1.75rem, 4vw, 3rem)", lineHeight: 1.08 }}
+        style={{ fontSize: "clamp(1.75rem, 4vw, 3rem)", lineHeight: 1.1 }}
       >
         {title}
       </h2>

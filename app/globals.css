@@ -1,12 +1,19 @@
 /*
- * SISTEMA VISUAL — Greice Berlitz (pivô SaaS · Ordina/Neative/Bard)
+ * SISTEMA VISUAL — Greice Berlitz (meio-termo quente · ago/2026)
  * ─────────────────────────────────────────────────────────────────
- * 1. PALETA — branco #FFF / navy #0B1424 / accent #E5B93C (punchy).
- *    Zero gradientes. Cortes secos entre seções.
- * 2. TIPOGRAFIA — Inter bold em tudo. Sem serif. Sem itálico decorativo.
- * 3. UI — cards 8px + borda 1px; botões 6px sólidos; stats secos;
- *    numeração 01 02 03; logos monocromáticos.
- * 4. FOTO — B&W corporativo. Sem yoga/praia/pôr do sol.
+ * Objetivo: sobriedade limpa SEM cara de SaaS B2B frio.
+ *
+ * 1. PALETA — claro #FAFAF8; escuro café #1C1712 (quente);
+ *    âmbar #C9982E que “acende” sobre o escuro. Texto muted
+ *    bege/marrom #7A6E60 (zero azul). Sem gradientes.
+ * 2. TIPOGRAFIA — Bricolage Grotesque nas headlines (caráter);
+ *    Inter no body. Sem itálico decorativo.
+ * 3. INFINITO (∞) — assinatura: logo maior; watermark sutil
+ *    (~6%) em seções escuras; divisor entre claro/escuro;
+ *    easing de transição com curva “loop”.
+ * 4. UI — cards raio 12px; CTA raio 14px (mais convidativo);
+ *    bordas finas; carrossel de logos mantido.
+ * 5. FOTO — B&W corporativo mantido.
  * ─────────────────────────────────────────────────────────────────
  */
 
@@ -30,8 +37,8 @@ body {
   width: 100%;
   min-height: 100vh;
   overflow-x: hidden;
-  background-color: #ffffff;
-  color: #0b1424;
+  background-color: #fafaf8;
+  color: #1c1712;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -59,81 +66,81 @@ video {
 
   .btn-primary {
     @apply inline-flex items-center justify-center font-semibold;
-    border-radius: 6px;
-    padding: 0.875rem 1.5rem;
+    border-radius: 14px;
+    padding: 0.9rem 1.6rem;
     font-size: 14px;
-    color: #0b1424;
-    background: #e5b93c;
+    color: #1c1712;
+    background: #c9982e;
     transition: background 0.15s ease;
   }
   .btn-primary:hover {
-    background: #c9982e;
+    background: #a67b1f;
   }
 
   .btn-accent {
     @apply inline-flex items-center justify-center font-semibold;
-    border-radius: 6px;
-    padding: 0.875rem 1.5rem;
+    border-radius: 14px;
+    padding: 0.9rem 1.6rem;
     font-size: 14px;
-    color: #0b1424;
-    background: #e5b93c;
+    color: #1c1712;
+    background: #c9982e;
     transition: background 0.15s ease;
   }
   .btn-accent:hover {
-    background: #f0d078;
+    background: #e8d5a3;
   }
 
   .btn-ghost {
     @apply inline-flex items-center justify-center font-semibold;
-    border-radius: 6px;
-    padding: 0.875rem 1.5rem;
+    border-radius: 12px;
+    padding: 0.9rem 1.6rem;
     font-size: 14px;
-    color: #0b1424;
-    border: 1px solid rgba(11, 20, 36, 0.16);
+    color: #1c1712;
+    border: 1px solid rgba(28, 23, 18, 0.16);
     background: transparent;
     transition: border-color 0.15s ease, background 0.15s ease;
   }
   .btn-ghost:hover {
-    border-color: #0b1424;
-    background: rgba(11, 20, 36, 0.04);
+    border-color: #1c1712;
+    background: rgba(28, 23, 18, 0.04);
   }
 
   .btn-ghost-light {
     @apply inline-flex items-center justify-center font-semibold;
-    border-radius: 6px;
-    padding: 0.875rem 1.5rem;
+    border-radius: 12px;
+    padding: 0.9rem 1.6rem;
     font-size: 14px;
-    color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.24);
+    color: #fafaf8;
+    border: 1px solid rgba(250, 250, 248, 0.28);
     background: transparent;
     transition: border-color 0.15s ease, background 0.15s ease;
   }
   .btn-ghost-light:hover {
-    border-color: rgba(255, 255, 255, 0.55);
-    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(250, 250, 248, 0.55);
+    background: rgba(250, 250, 248, 0.06);
   }
 
   .card-surface {
-    border-radius: 8px;
+    border-radius: 12px;
     background: #ffffff;
-    border: 1px solid rgba(11, 20, 36, 0.1);
+    border: 1px solid rgba(28, 23, 18, 0.1);
     box-shadow: none;
   }
   .card-surface:hover {
-    border-color: rgba(11, 20, 36, 0.2);
+    border-color: rgba(28, 23, 18, 0.2);
     transform: none;
     box-shadow: none;
     background: #ffffff;
   }
 
   .card-dark {
-    border-radius: 8px;
+    border-radius: 12px;
     background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(250, 250, 248, 0.14);
     box-shadow: none;
   }
   .card-dark:hover {
-    border-color: rgba(255, 255, 255, 0.24);
+    border-color: rgba(250, 250, 248, 0.28);
     transform: none;
     box-shadow: none;
     background: transparent;
@@ -141,7 +148,7 @@ video {
 
   .gold-divider {
     height: 1px;
-    background: rgba(229, 185, 60, 0.4);
+    background: rgba(201, 152, 46, 0.35);
   }
 
   .hero-glow {
@@ -150,6 +157,25 @@ video {
 
   .surface-grain::after {
     display: none;
+  }
+
+  /* Watermark ∞ em seções escuras */
+  .infinity-watermark {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+  }
+  .infinity-watermark svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: min(120vw, 1100px);
+    height: auto;
+    transform: translate(-50%, -52%);
+    opacity: 0.06;
+    color: #c9982e;
   }
 
   /* Carrossel infinito de logos */

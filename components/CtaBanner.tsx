@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import MotionSection from "@/components/ui/MotionSection";
+import { InfinityWatermark } from "@/components/ui/InfinityMark";
 import { IMAGES, WHATSAPP_URL } from "@/lib/constants";
 
 interface CtaBannerProps {
@@ -25,26 +26,27 @@ export default function CtaBanner({
   ctaHref = WHATSAPP_URL,
 }: CtaBannerProps) {
   return (
-    <MotionSection className="bg-ink py-16 sm:py-20">
-      <div className="section-container">
-        <div className="grid items-center gap-10 border border-sand/15 lg:grid-cols-2 lg:gap-0">
+    <MotionSection className="relative overflow-hidden bg-ink py-16 sm:py-20">
+      <InfinityWatermark />
+      <div className="section-container relative z-[1]">
+        <div className="grid items-center gap-10 rounded-xl border border-white/12 lg:grid-cols-2 lg:gap-0">
           <div className="p-8 sm:p-12 lg:p-16">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.5, ease: [0.45, 0, 0.2, 1] }}
             >
               <h2
-                className="font-sans font-extrabold tracking-[-0.03em] text-sand"
+                className="font-display font-bold tracking-[-0.02em] text-white"
                 style={{
                   fontSize: "clamp(1.75rem, 4vw, 3rem)",
-                  lineHeight: 1.08,
+                  lineHeight: 1.1,
                 }}
               >
                 {title}
               </h2>
-              <p className="mt-4 max-w-md text-base text-sand/60">{subtitle}</p>
+              <p className="mt-4 max-w-md text-base text-white/55">{subtitle}</p>
               <a
                 href={ctaHref}
                 target="_blank"
@@ -56,8 +58,8 @@ export default function CtaBanner({
             </motion.div>
           </div>
 
-          <div className="relative aspect-[4/3] border-t border-sand/15 lg:aspect-auto lg:min-h-[380px] lg:border-l lg:border-t-0">
-            {/* SUBSTITUIR: foto em ambiente de trabalho / palestra / reunião. P&B ou baixa saturação. Evitar meditação, praia, contemplação. */}
+          <div className="relative aspect-[4/3] border-t border-white/12 lg:aspect-auto lg:min-h-[380px] lg:border-l lg:border-t-0">
+            {/* SUBSTITUIR: foto em ambiente de trabalho / palestra. P&B. */}
             <Image
               src={IMAGES.ctaBanner.src}
               alt={IMAGES.ctaBanner.alt}
@@ -66,7 +68,7 @@ export default function CtaBanner({
               style={{ objectPosition: IMAGES.ctaBanner.objectPosition }}
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
-            <div className="absolute inset-0 bg-ink/35" />
+            <div className="absolute inset-0 bg-ink/30" />
           </div>
         </div>
       </div>

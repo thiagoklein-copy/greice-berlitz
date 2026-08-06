@@ -1,9 +1,9 @@
 import type { Config } from "tailwindcss";
 
 /**
- * SISTEMA VISUAL — Greice Berlitz (pivô SaaS / técnico)
- * Referências: Ordina, Neative, Flowspark
- * Branco × navy seco · sans bold · âmbar sólido só em acentos · zero gradiente
+ * SISTEMA VISUAL — Greice Berlitz (meio-termo quente)
+ * Sóbrio + humano: escuro café, Bricolage Grotesque, ∞ como assinatura.
+ * Mantém: limpeza, sem gradiente, logos B&W, stats secos, carrossel.
  */
 const config: Config = {
   content: [
@@ -14,34 +14,35 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Accent punchy (família Ordina/Neative) — só CTA, indicador, badge
         gold: {
-          DEFAULT: "#E5B93C",
-          light: "#F0D078",
-          dark: "#C9982E",
+          DEFAULT: "#C9982E",
+          light: "#E8D5A3",
+          dark: "#A67B1F",
         },
-        // Navy profundo (não preto puro)
+        // Escuro quente (café) — não navy frio
         ink: {
-          DEFAULT: "#0B1424",
-          soft: "#111B2E",
+          DEFAULT: "#1C1712",
+          soft: "#241E18",
         },
         sand: {
-          DEFAULT: "#FFFFFF",
-          dark: "#F4F5F7",
+          DEFAULT: "#FAFAF8",
+          dark: "#F3F0EB",
         },
         accent: {
-          DEFAULT: "#E5B93C",
-          warm: "#E5B93C",
+          DEFAULT: "#C9982E",
+          warm: "#C9982E",
         },
         text: {
-          dark: "#0B1424",
-          muted: "#5C6578",
+          dark: "#1C1712",
+          // bege/marrom — sem azul
+          muted: "#7A6E60",
         },
         whatsapp: "#25D366",
       },
       fontFamily: {
-        serif: ["var(--font-fraunces)", "Georgia", "serif"],
+        display: ["var(--font-bricolage)", "system-ui", "sans-serif"],
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        serif: ["var(--font-bricolage)", "system-ui", "sans-serif"],
       },
       boxShadow: {
         soft: "none",
@@ -50,7 +51,7 @@ const config: Config = {
         glow: "none",
       },
       borderRadius: {
-        "4xl": "0.5rem",
+        "4xl": "0.75rem",
       },
     },
   },

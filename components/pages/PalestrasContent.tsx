@@ -6,6 +6,7 @@ import CompanyLogos from "@/components/CompanyLogos";
 import CtaBanner from "@/components/CtaBanner";
 import MotionSection from "@/components/ui/MotionSection";
 import { SectionHeader } from "@/components/ui/Shared";
+import { InfinityStep } from "@/components/ui/InfinityMark";
 import { WHATSAPP_PALESTRAS_URL } from "@/lib/constants";
 
 const topics = [
@@ -80,7 +81,7 @@ export default function PalestrasContent() {
             title={
               <>
                 Bem-estar onde as pessoas{" "}
-                <span className="font-semibold text-text-muted">
+                <span className="font-semibold text-[#8B7A68]">
                   vivem o dia a dia
                 </span>
               </>
@@ -108,7 +109,7 @@ export default function PalestrasContent() {
             title={
               <>
                 Temas de{" "}
-                <span className="font-semibold text-text-muted">palestra</span>
+                <span className="font-semibold text-[#8B7A68]">palestra</span>
               </>
             }
           />
@@ -123,10 +124,8 @@ export default function PalestrasContent() {
                 transition={{ delay: index * 0.04 }}
                 className="card-surface p-7"
               >
-                <span className="font-sans text-sm font-bold tracking-[0.2em] text-gold">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <h3 className="mt-4 font-sans text-lg font-bold text-ink">
+                <InfinityStep number={String(index + 1).padStart(2, "0")} />
+                <h3 className="mt-4 font-display text-lg font-bold text-ink">
                   {title}
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-text-muted">
@@ -149,7 +148,7 @@ export default function PalestrasContent() {
             title={
               <>
                 Formatos{" "}
-                <span className="font-semibold text-text-muted">disponíveis</span>
+                <span className="font-semibold text-[#8B7A68]">disponíveis</span>
               </>
             }
           />
@@ -164,10 +163,8 @@ export default function PalestrasContent() {
                 transition={{ delay: index * 0.08 }}
                 className="card-surface p-8"
               >
-                <span className="font-sans text-sm font-bold tracking-[0.2em] text-gold">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <h3 className="mt-4 font-sans text-xl font-bold text-ink">
+                <InfinityStep number={String(index + 1).padStart(2, "0")} />
+                <h3 className="mt-4 font-display text-xl font-bold text-ink">
                   {format.title}
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-text-muted sm:text-base">

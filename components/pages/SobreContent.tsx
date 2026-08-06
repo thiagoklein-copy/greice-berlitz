@@ -5,6 +5,7 @@ import PageHero from "@/components/PageHero";
 import CtaBanner from "@/components/CtaBanner";
 import MotionSection from "@/components/ui/MotionSection";
 import { SectionHeader } from "@/components/ui/Shared";
+import { InfinityStep, InfinityWatermark } from "@/components/ui/InfinityMark";
 import { IMAGES, PROFESSIONAL_CRP, WHATSAPP_URL } from "@/lib/constants";
 
 const formation = [
@@ -32,7 +33,7 @@ export default function SobreContent() {
             <span className="block text-balance">
               Antes de ajudar os outros a se transformarem,
             </span>
-            <span className="mt-2 block text-balance font-semibold text-text-muted sm:mt-3">
+            <span className="mt-2 block text-balance font-semibold text-[#8B7A68] sm:mt-3">
               eu me transformei.
             </span>
           </>
@@ -49,7 +50,7 @@ export default function SobreContent() {
             title={
               <>
                 Vocação, presença e{" "}
-                <span className="font-semibold text-text-muted">propósito</span>
+                <span className="font-semibold text-[#8B7A68]">propósito</span>
               </>
             }
           />
@@ -87,8 +88,9 @@ export default function SobreContent() {
       {/*
         BLOCO SENSÍVEL: confirmar com a cliente o nível de detalhe antes de publicar.
       */}
-      <MotionSection className="bg-ink py-24 sm:py-32">
-        <div className="section-container">
+      <MotionSection className="relative overflow-hidden bg-ink py-24 sm:py-32">
+        <InfinityWatermark />
+        <div className="section-container relative z-[1]">
           <SectionHeader
             eyebrow="Resiliência"
             title="Uma prova de que é possível recomeçar"
@@ -130,12 +132,12 @@ export default function SobreContent() {
             title={
               <>
                 Base técnica, olhar{" "}
-                <span className="font-semibold text-text-muted">humano</span>
+                <span className="font-semibold text-[#8B7A68]">humano</span>
               </>
             }
           />
 
-          <ul className="max-w-2xl space-y-0 border border-ink/10">
+          <ul className="max-w-2xl space-y-0 overflow-hidden rounded-xl border border-ink/10">
             {formation.map((item, index) => (
               <motion.li
                 key={item}
@@ -145,9 +147,7 @@ export default function SobreContent() {
                 transition={{ delay: index * 0.04 }}
                 className="flex items-start gap-4 border-b border-ink/10 px-5 py-4 last:border-b-0"
               >
-                <span className="mt-0.5 font-sans text-xs font-bold tracking-[0.14em] text-gold">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
+                <InfinityStep number={String(index + 1).padStart(2, "0")} />
                 <span className="text-sm text-text-muted sm:text-base">{item}</span>
               </motion.li>
             ))}
@@ -162,12 +162,12 @@ export default function SobreContent() {
             title={
               <>
                 Valores que guiam cada{" "}
-                <span className="font-semibold text-text-muted">encontro</span>
+                <span className="font-semibold text-[#8B7A68]">encontro</span>
               </>
             }
           />
 
-          <div className="grid gap-0 border border-ink/10 sm:grid-cols-2">
+          <div className="grid gap-0 overflow-hidden rounded-xl border border-ink/10 sm:grid-cols-2">
             {values.map((label, index) => (
               <motion.div
                 key={label}
@@ -177,10 +177,8 @@ export default function SobreContent() {
                 transition={{ delay: index * 0.05 }}
                 className="border-b border-ink/10 p-6 sm:odd:border-r sm:[&:nth-last-child(-n+2)]:border-b-0"
               >
-                <span className="font-sans text-sm font-bold tracking-[0.2em] text-gold">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <p className="mt-3 font-sans text-base font-semibold text-ink">
+                <InfinityStep number={String(index + 1).padStart(2, "0")} />
+                <p className="mt-3 font-display text-base font-semibold text-ink">
                   {label}
                 </p>
               </motion.div>

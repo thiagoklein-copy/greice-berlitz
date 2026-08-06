@@ -1,9 +1,8 @@
 "use client";
 
 /**
- * HOME — pivô visual SaaS (Ordina / Flowspark)
- * Ver decisões completas em app/globals.css.
- * Copy intacta; só sistema visual.
+ * HOME — meio-termo quente (café + Bricolage + ∞).
+ * Ver decisões em app/globals.css. Copy intacta.
  */
 
 import Link from "next/link";
@@ -14,6 +13,7 @@ import Testimonials from "@/components/Testimonials";
 import CtaBanner from "@/components/CtaBanner";
 import MotionSection from "@/components/ui/MotionSection";
 import AnimatedCounter from "@/components/ui/AnimatedCounter";
+import { InfinityStep } from "@/components/ui/InfinityMark";
 import { WHATSAPP_URL } from "@/lib/constants";
 
 const trustStats = [
@@ -51,7 +51,7 @@ export default function HomePage() {
         title={
           <>
             <span className="block text-balance">Sua vida pode ser diferente.</span>
-            <span className="mt-2 block text-balance font-semibold text-sand/80 sm:mt-3">
+            <span className="mt-2 block text-balance font-semibold text-sand/75 sm:mt-3">
               A mudança começa com você.
             </span>
           </>
@@ -80,7 +80,7 @@ export default function HomePage() {
         >
           {trustStats.map((stat) => (
             <li key={stat.label}>
-              <p className="font-sans text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+              <p className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
                 <AnimatedCounter
                   value={stat.value}
                   suffix={stat.suffix}
@@ -101,11 +101,11 @@ export default function HomePage() {
           <div className="mb-12 max-w-2xl">
             <p className="eyebrow mb-4">Como posso ajudar</p>
             <h2
-              className="font-sans font-extrabold tracking-[-0.03em] text-ink"
-              style={{ fontSize: "clamp(1.75rem, 4vw, 3rem)", lineHeight: 1.08 }}
+              className="font-display font-bold tracking-[-0.02em] text-ink"
+              style={{ fontSize: "clamp(1.75rem, 4vw, 3rem)", lineHeight: 1.1 }}
             >
               Dois caminhos,{" "}
-              <span className="font-semibold text-text-muted">um propósito</span>
+              <span className="font-semibold text-[#8B7A68]">um propósito</span>
             </h2>
             <p className="mt-4 text-base leading-relaxed text-text-muted sm:text-lg">
               Seja no consultório ou na empresa, o objetivo é o mesmo: fazer
@@ -121,16 +121,11 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.08, duration: 0.45 }}
-                className={`flex flex-col border border-ink/10 bg-white p-8 sm:p-10 ${
-                  path.featured ? "lg:row-span-1" : ""
-                }`}
-                style={{ borderRadius: 8 }}
+                className="card-surface flex flex-col p-8 sm:p-10"
               >
-                <span className="font-sans text-sm font-bold tracking-[0.2em] text-gold">
-                  {path.number}
-                </span>
+                <InfinityStep number={path.number} />
                 <h3
-                  className={`mt-4 font-sans font-bold tracking-tight text-ink ${
+                  className={`mt-4 font-display font-bold tracking-tight text-ink ${
                     path.featured ? "text-2xl sm:text-3xl" : "text-xl sm:text-2xl"
                   }`}
                 >
@@ -159,8 +154,8 @@ export default function HomePage() {
             <div>
               <p className="eyebrow mb-4">Prévia da minha história</p>
               <h2
-                className="font-sans font-extrabold tracking-[-0.03em] text-ink"
-                style={{ fontSize: "clamp(1.75rem, 4vw, 3rem)", lineHeight: 1.08 }}
+                className="font-display font-bold tracking-[-0.02em] text-ink"
+                style={{ fontSize: "clamp(1.75rem, 4vw, 3rem)", lineHeight: 1.1 }}
               >
                 Propósito antes do retorno
               </h2>
@@ -181,7 +176,7 @@ export default function HomePage() {
             </div>
 
             <aside className="border-l-2 border-gold pl-8">
-              <p className="font-sans text-6xl font-extrabold tracking-tight text-ink sm:text-7xl">
+              <p className="font-display text-6xl font-bold tracking-tight text-ink sm:text-7xl">
                 16+
               </p>
               <p className="mt-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-text-muted">

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import MotionSection from "@/components/ui/MotionSection";
+import { InfinityStep, InfinityWatermark } from "@/components/ui/InfinityMark";
 
 const steps = [
   {
@@ -26,20 +27,21 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <MotionSection className="bg-ink py-24 text-sand sm:py-32">
-      <div className="section-container">
+    <MotionSection className="relative overflow-hidden bg-ink py-24 text-sand sm:py-32">
+      <InfinityWatermark />
+      <div className="section-container relative z-[1]">
         <div className="mb-12 max-w-2xl">
           <p className="eyebrow mb-4 text-sand/45">Como funciona</p>
           <h2
-            className="font-sans font-extrabold tracking-[-0.03em] text-sand"
-            style={{ fontSize: "clamp(1.75rem, 4vw, 3rem)", lineHeight: 1.08 }}
+            className="font-display font-bold tracking-[-0.02em] text-sand"
+            style={{ fontSize: "clamp(1.75rem, 4vw, 3rem)", lineHeight: 1.1 }}
           >
             Três passos para começar a sua{" "}
-            <span className="font-semibold text-sand/70">terapia</span>
+            <span className="font-semibold text-sand/65">terapia</span>
           </h2>
         </div>
 
-        <div className="grid gap-0 border border-sand/12 md:grid-cols-3">
+        <div className="grid gap-0 overflow-hidden rounded-xl border border-sand/12 md:grid-cols-3">
           {steps.map((step, index) => (
             <motion.div
               key={step.number}
@@ -48,13 +50,13 @@ export default function HowItWorks() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.08, duration: 0.4 }}
               className={`p-8 ${
-                index < steps.length - 1 ? "border-b border-sand/12 md:border-b-0 md:border-r" : ""
+                index < steps.length - 1
+                  ? "border-b border-sand/12 md:border-b-0 md:border-r"
+                  : ""
               }`}
             >
-              <span className="font-sans text-sm font-bold tracking-[0.2em] text-gold">
-                {step.number}
-              </span>
-              <h3 className="mt-4 font-sans text-xl font-bold text-sand">
+              <InfinityStep number={step.number} light />
+              <h3 className="mt-4 font-display text-xl font-bold text-sand">
                 {step.title}
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-sand/55">

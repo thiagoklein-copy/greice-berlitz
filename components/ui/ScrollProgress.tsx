@@ -17,10 +17,21 @@ export default function ScrollProgress() {
   if (!mounted) return null;
 
   return (
-    <motion.div
-      className="fixed inset-x-0 top-0 z-[60] h-[2px] origin-left bg-gold"
-      style={{ scaleX }}
-      aria-hidden="true"
-    />
+    <div className="pointer-events-none fixed inset-x-0 top-0 z-[60] flex items-center">
+      {/* Caps suaves nas pontas — remete ao loop do ∞ */}
+      <span
+        className="absolute left-0 top-0 h-[3px] w-1.5 rounded-full bg-gold"
+        aria-hidden="true"
+      />
+      <motion.div
+        className="h-[2px] w-full origin-left bg-gold"
+        style={{ scaleX }}
+        aria-hidden="true"
+      />
+      <span
+        className="absolute right-0 top-0 h-[3px] w-1.5 rounded-full bg-gold opacity-80"
+        aria-hidden="true"
+      />
+    </div>
   );
 }

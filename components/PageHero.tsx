@@ -3,6 +3,7 @@
 import type { ReactNode } from "react";
 import { motion } from "framer-motion";
 import ParallaxImage from "@/components/ui/ParallaxImage";
+import { InfinityWatermark } from "@/components/ui/InfinityMark";
 import { IMAGES } from "@/lib/constants";
 
 interface PageHeroProps {
@@ -31,10 +32,12 @@ export default function PageHero({
   return (
     <section
       className={`relative overflow-hidden pt-28 sm:pt-36 lg:pt-40 ${
-        dark ? "bg-ink text-sand" : "bg-sand"
+        dark ? "bg-ink text-white" : "bg-sand"
       }`}
     >
-      <div className="section-container relative pb-16 lg:pb-24">
+      {dark && <InfinityWatermark />}
+
+      <div className="section-container relative z-[1] pb-16 lg:pb-24">
         <div
           className={`grid items-center gap-10 ${
             showImage
@@ -45,13 +48,13 @@ export default function PageHero({
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.65, ease: [0.45, 0, 0.2, 1] }}
             className={showImage ? "order-2 lg:order-1" : ""}
           >
             {eyebrow && (
               <p
-                className={`mb-5 text-[11px] font-semibold uppercase tracking-[0.18em] ${
-                  dark ? "text-sand/50" : "text-text-muted"
+                className={`mb-5 text-[13px] font-medium ${
+                  dark ? "text-white/50" : "text-text-muted"
                 }`}
               >
                 {eyebrow}
@@ -59,12 +62,12 @@ export default function PageHero({
             )}
 
             <h1
-              className={`relative font-sans font-extrabold tracking-[-0.035em] text-balance ${
-                dark ? "text-sand" : "text-ink"
+              className={`relative font-display font-bold tracking-[-0.025em] text-balance ${
+                dark ? "text-white" : "text-ink"
               }`}
               style={{
                 fontSize: "clamp(2.25rem, 5vw, 4rem)",
-                lineHeight: 1.05,
+                lineHeight: 1.06,
               }}
             >
               {title}
@@ -73,7 +76,7 @@ export default function PageHero({
             {subtitle && (
               <p
                 className={`mt-6 max-w-xl text-base leading-relaxed sm:text-lg ${
-                  dark ? "text-sand/65" : "text-text-muted"
+                  dark ? "text-white/60" : "text-text-muted"
                 }`}
               >
                 {subtitle}
@@ -87,11 +90,11 @@ export default function PageHero({
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.7, delay: 0.08, ease: [0.45, 0, 0.2, 1] }}
               className="relative order-1 mx-auto w-full max-w-sm lg:order-2 lg:max-w-none"
             >
-              <div className="relative aspect-[5/4] overflow-hidden rounded-lg border border-ink/10 sm:aspect-[4/3] lg:aspect-[5/6]">
-                {/* SUBSTITUIR: foto da Greice em ambiente profissional/corporativo ou palestra. Preferir P&B ou baixa saturação. Evitar yoga, praia, natureza genérica. */}
+              <div className="relative aspect-[5/4] overflow-hidden rounded-xl border border-ink/10 sm:aspect-[4/3] lg:aspect-[5/6]">
+                {/* SUBSTITUIR: foto da Greice em ambiente profissional/corporativo ou palestra. P&B. Evitar yoga/praia. */}
                 <ParallaxImage
                   src={imageSrc}
                   alt={imageAlt}
@@ -100,7 +103,7 @@ export default function PageHero({
                   className="absolute inset-0 h-full w-full grayscale"
                   sizes="(max-width: 1024px) 90vw, 45vw"
                 />
-                <div className="absolute inset-0 bg-ink/20" />
+                <div className="absolute inset-0 bg-ink/15" />
               </div>
             </motion.div>
           )}
