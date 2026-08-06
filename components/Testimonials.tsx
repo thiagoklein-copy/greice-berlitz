@@ -22,12 +22,11 @@ export default function Testimonials() {
 
       <div className="section-container relative">
         <SectionHeader
-          eyebrow="Resultados reais"
           light
           title={
             <>
-              Quem já caminhou{" "}
-              <em className="italic text-gold-light">comigo</em>
+              O que dizem sobre o meu{" "}
+              <em className="italic text-gold-light">trabalho</em>
             </>
           }
         />
