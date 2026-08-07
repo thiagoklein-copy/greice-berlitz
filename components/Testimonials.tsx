@@ -3,8 +3,7 @@
 import { motion } from "framer-motion";
 import MotionSection from "@/components/ui/MotionSection";
 import { GoldWord, Stars } from "@/components/ui/Shared";
-import {InfinityCorner,
-  InfinityDivider } from "@/components/ui/InfinityMark";
+import { InfinityDivider } from "@/components/ui/InfinityMark";
 import ReviewAvatars from "@/components/ui/ReviewAvatars";
 import { TESTIMONIALS } from "@/lib/constants";
 
@@ -22,10 +21,7 @@ export default function Testimonials() {
               className="font-display font-medium tracking-[-0.02em] text-ink"
               style={{ fontSize: "clamp(1.75rem, 4vw, 3rem)", lineHeight: 1.1 }}
             >
-              O que dizem sobre o meu{" "}
-              <GoldWord>
-                trabalho
-              </GoldWord>
+              O que dizem sobre o meu <GoldWord>trabalho</GoldWord>
             </h2>
           </div>
 
@@ -37,9 +33,8 @@ export default function Testimonials() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.04, duration: 0.35 }}
-                className="card-cream relative flex flex-col overflow-hidden p-6"
+                className="card-cream flex flex-col p-6"
               >
-                {index % 3 === 0 && <InfinityCorner position="top-right" />}
                 <p className="flex-1 text-[15px] leading-relaxed text-ink">
                   &ldquo;{item.quote}&rdquo;
                 </p>
@@ -47,9 +42,7 @@ export default function Testimonials() {
             ))}
           </div>
 
-          {/* Único contraste escuro pontual da seção */}
           <div className="card-dark relative mt-12 overflow-hidden p-8 sm:p-10">
-            <InfinityCorner position="bottom-right" />
             <div className="relative z-[1] flex flex-wrap items-end gap-8">
               <div>
                 <p className="font-display text-5xl font-bold tracking-tight text-gold">
