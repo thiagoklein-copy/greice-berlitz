@@ -3,17 +3,13 @@
 import { motion } from "framer-motion";
 import MotionSection from "@/components/ui/MotionSection";
 import { GoldWord, SectionHeader } from "@/components/ui/Shared";
-import {
-  InfinityAccent,
-  InfinityCorner,
-  InfinityStep,
-} from "@/components/ui/InfinityMark";
+import {InfinityCorner,
+  InfinityStep } from "@/components/ui/InfinityMark";
 import { SERVICES, buildWhatsAppUrl } from "@/lib/constants";
 
 function ServiceCard({
   service,
-  index,
-}: {
+  index }: {
   service: (typeof SERVICES)[number];
   index: number;
 }) {
@@ -74,7 +70,6 @@ export default function Services() {
               Um acompanhamento sob medida para a sua{" "}
               <GoldWord>
                 história
-                <InfinityAccent />
               </GoldWord>
             </>
           }

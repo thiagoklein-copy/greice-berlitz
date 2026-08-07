@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import MotionSection from "@/components/ui/MotionSection";
-import { InfinityCorner, InfinityAccent } from "@/components/ui/InfinityMark";
+import { InfinityCorner} from "@/components/ui/InfinityMark";
 import { GoldWord } from "@/components/ui/Shared";
 import { IMAGES, WHATSAPP_URL } from "@/lib/constants";
 
@@ -21,14 +21,12 @@ export default function CtaBanner({
       Dar o primeiro passo já é parte da{" "}
       <GoldWord>
         mudança
-        <InfinityAccent className="text-gold" />
       </GoldWord>
     </>
   ),
   subtitle = "Fale comigo agora e vamos conversar sobre o que você precisa.",
   ctaLabel = "Falar no WhatsApp",
-  ctaHref = WHATSAPP_URL,
-}: CtaBannerProps) {
+  ctaHref = WHATSAPP_URL }: CtaBannerProps) {
   return (
     <MotionSection className="relative overflow-hidden bg-ink py-16 sm:py-20">
       <div className="section-container relative z-[1]">
@@ -45,8 +43,7 @@ export default function CtaBanner({
                 className="font-display font-medium tracking-[-0.02em] text-white"
                 style={{
                   fontSize: "clamp(1.75rem, 4vw, 3rem)",
-                  lineHeight: 1.1,
-                }}
+                  lineHeight: 1.1 }}
               >
                 {title}
               </h2>

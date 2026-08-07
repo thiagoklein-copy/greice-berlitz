@@ -29,24 +29,7 @@ export function InfinityGlyph({
   );
 }
 
-/** ∞ flutuando após palavra de destaque (estilo asterisco).
- * position absolute: não empurra pontuação nem quebra linha.
- */
-export function InfinityAccent({ className = "" }: { className?: string }) {
-  return (
-    <span
-      className={`relative ml-0.5 inline-block h-[0.55em] w-[1.15em] align-baseline ${className}`}
-      aria-hidden="true"
-    >
-      <InfinityGlyph
-        className="absolute bottom-[0.15em] left-0 h-[0.7em] w-[1.35em] text-gold"
-        strokeWidth={1.9}
-      />
-    </span>
-  );
-}
-
-/** Eyebrow com ∞ como prefixo */
+/** Eyebrow com ∞ como prefixo (não usado nos títulos de seção) */
 export function InfinityEyebrow({
   children,
   className = "",
@@ -55,16 +38,14 @@ export function InfinityEyebrow({
   className?: string;
 }) {
   return (
-    <p
-      className={`eyebrow mb-4 inline-flex items-center gap-2 ${className}`}
-    >
+    <p className={`eyebrow mb-4 inline-flex items-center gap-2 ${className}`}>
       <InfinityGlyph className="h-2.5 w-6 shrink-0 text-gold" strokeWidth={2} />
       <span>{children}</span>
     </p>
   );
 }
 
-/** Chip dourado suave (prova social / apoio) */
+/** Chip dourado suave */
 export function InfinityChip({
   children,
   className = "",
@@ -111,7 +92,7 @@ export function InfinityStep({
   );
 }
 
-/** ∞ fino no canto de um bloco (assinatura, ~12% opacidade) */
+/** ∞ fino no canto de um bloco */
 export function InfinityCorner({
   position = "top-right",
 }: {
@@ -132,13 +113,8 @@ export function InfinityCorner({
   );
 }
 
-/** Divisor: linha fina que se curva no ∞ central */
-export function InfinityDivider({
-  className = "",
-}: {
-  className?: string;
-  light?: boolean;
-}) {
+/** Divisor: linha fina com ∞ central */
+export function InfinityDivider({ className = "" }: { className?: string }) {
   return (
     <div
       className={`flex items-center gap-3 px-5 sm:px-8 lg:px-12 ${className}`}

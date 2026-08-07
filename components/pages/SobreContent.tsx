@@ -5,11 +5,8 @@ import PageHero from "@/components/PageHero";
 import CtaBanner from "@/components/CtaBanner";
 import MotionSection from "@/components/ui/MotionSection";
 import { GoldWord, SectionHeader } from "@/components/ui/Shared";
-import {
-  InfinityAccent,
-  InfinityCorner,
-  InfinityStep,
-} from "@/components/ui/InfinityMark";
+import {InfinityCorner,
+  InfinityStep } from "@/components/ui/InfinityMark";
 import { IMAGES, PROFESSIONAL_CRP, WHATSAPP_URL } from "@/lib/constants";
 
 const formation = [
@@ -39,7 +36,6 @@ export default function SobreContent() {
             </span>
             <span className="mt-2 block text-balance sm:mt-3">
               eu me <GoldWord>transformei</GoldWord>
-              <InfinityAccent />
             </span>
           </>
         }
@@ -57,7 +53,6 @@ export default function SobreContent() {
                 Vocação, presença e{" "}
                 <GoldWord>
                   propósito
-                  <InfinityAccent />
                 </GoldWord>
               </>
             }
@@ -106,7 +101,6 @@ export default function SobreContent() {
                 Uma prova de que é possível{" "}
                 <GoldWord>
                   recomeçar
-                  <InfinityAccent />
                 </GoldWord>
               </>
             }
@@ -150,7 +144,6 @@ export default function SobreContent() {
                 Base técnica, olhar{" "}
                 <GoldWord>
                   humano
-                  <InfinityAccent />
                 </GoldWord>
               </>
             }
@@ -183,7 +176,6 @@ export default function SobreContent() {
                 Valores que guiam cada{" "}
                 <GoldWord>
                   encontro
-                  <InfinityAccent />
                 </GoldWord>
               </>
             }
@@ -227,7 +219,6 @@ export default function SobreContent() {
             Quero fazer parte da sua jornada de{" "}
             <GoldWord>
               transformação
-              <InfinityAccent />
             </GoldWord>
           </>
         }

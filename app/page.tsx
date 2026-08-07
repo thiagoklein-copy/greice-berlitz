@@ -13,11 +13,8 @@ import Testimonials from "@/components/Testimonials";
 import CtaBanner from "@/components/CtaBanner";
 import MotionSection from "@/components/ui/MotionSection";
 import AnimatedCounter from "@/components/ui/AnimatedCounter";
-import {
-  InfinityAccent,
-  InfinityCorner,
-  InfinityStep,
-} from "@/components/ui/InfinityMark";
+import {InfinityCorner,
+  InfinityStep } from "@/components/ui/InfinityMark";
 import { GoldWord } from "@/components/ui/Shared";
 import { WHATSAPP_URL } from "@/lib/constants";
 
@@ -35,8 +32,7 @@ const paths = [
       "Um espaço de escuta para você se reencontrar, superar a ansiedade, a depressão e reconstruir o amor-próprio.",
     href: "/atendimento-individual",
     cta: "Conhecer a terapia individual",
-    featured: true,
-  },
+    featured: true },
   {
     number: "02",
     title: "Palestras",
@@ -44,8 +40,7 @@ const paths = [
       "Levo saúde mental, gestão de pessoas e autoconhecimento para dentro das empresas. Já estive com equipes da Gerdau, FCC, ULBRA Saúde e outras.",
     href: "/palestras-empresas",
     cta: "Conhecer as palestras",
-    featured: false,
-  },
+    featured: false },
 ] as const;
 
 export default function HomePage() {
@@ -55,7 +50,6 @@ export default function HomePage() {
         title={
           <>
             Tudo pode <GoldWord>mudar</GoldWord> com uma simples conversa
-            <InfinityAccent />
           </>
         }
         subtitle="Há mais de 16 anos, ajudo pessoas a se reencontrarem na terapia e ajudo empresas a cuidarem de quem faz parte delas com palestras que fazem diferença."
@@ -108,7 +102,6 @@ export default function HomePage() {
               Dois caminhos, um{" "}
               <GoldWord>
                 propósito
-                <InfinityAccent />
               </GoldWord>
             </h2>
             <p className="mt-4 text-base leading-relaxed text-ink sm:text-lg">
@@ -164,7 +157,6 @@ export default function HomePage() {
                 style={{ fontSize: "clamp(1.75rem, 4vw, 3rem)", lineHeight: 1.1 }}
               >
                 <GoldWord>Propósito</GoldWord> antes do retorno
-                <InfinityAccent />
               </h2>
               <motion.p
                 initial={{ opacity: 0, y: 12 }}

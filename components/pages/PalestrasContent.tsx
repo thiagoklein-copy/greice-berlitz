@@ -6,57 +6,46 @@ import CompanyLogos from "@/components/CompanyLogos";
 import CtaBanner from "@/components/CtaBanner";
 import MotionSection from "@/components/ui/MotionSection";
 import { GoldWord, SectionHeader } from "@/components/ui/Shared";
-import {
-  InfinityAccent,
-  InfinityCorner,
-  InfinityStep,
-} from "@/components/ui/InfinityMark";
+import {InfinityCorner,
+  InfinityStep } from "@/components/ui/InfinityMark";
 import { WHATSAPP_PALESTRAS_URL } from "@/lib/constants";
 
 const topics = [
   {
     title: "Mudança de vida",
     description:
-      "Como atravessar transições com clareza, coragem e um novo olhar sobre si.",
-  },
+      "Como atravessar transições com clareza, coragem e um novo olhar sobre si." },
   {
     title: "Autoamor e autoconhecimento",
     description:
-      "Ferramentas para fortalecer a relação consigo e, a partir disso, com o trabalho e com o outro.",
-  },
+      "Ferramentas para fortalecer a relação consigo e, a partir disso, com o trabalho e com o outro." },
   {
     title: "Depressão: como reconhecer e apoiar",
     description:
-      "Sinais, acolhimento e o papel da equipe e da liderança no cuidado emocional.",
-  },
+      "Sinais, acolhimento e o papel da equipe e da liderança no cuidado emocional." },
   {
     title: "Ansiedade no ambiente de trabalho",
     description:
-      "Estratégias práticas para lidar com pressão, sobrecarga e desempenho sustentável.",
-  },
+      "Estratégias práticas para lidar com pressão, sobrecarga e desempenho sustentável." },
   {
     title: "Gestão de pessoas com inteligência emocional",
     description:
-      "Liderança presente, comunicação empática e times mais coesos.",
-  },
+      "Liderança presente, comunicação empática e times mais coesos." },
   {
     title: "Autopercepção: como você se vê muda como você vive",
     description:
-      "A conexão entre identidade, autoimagem e resultados na vida e no trabalho.",
-  },
+      "A conexão entre identidade, autoimagem e resultados na vida e no trabalho." },
 ];
 
 const formats = [
   {
     title: "Palestra avulsa",
     description:
-      "Evento único, com tema definido em conjunto, ideal para encontros, treinamentos e datas especiais.",
-  },
+      "Evento único, com tema definido em conjunto, ideal para encontros, treinamentos e datas especiais." },
   {
     title: "Consultoria in company",
     description:
-      "Formato personalizado, sob consulta, para demandas específicas da sua organização.",
-  },
+      "Formato personalizado, sob consulta, para demandas específicas da sua organização." },
 ];
 
 export default function PalestrasContent() {
@@ -69,7 +58,6 @@ export default function PalestrasContent() {
             Saúde mental e alta performance caminham{" "}
             <GoldWord>
               juntas
-              <InfinityAccent />
             </GoldWord>
             .
           </>
@@ -95,7 +83,6 @@ export default function PalestrasContent() {
                 Bem-estar onde as pessoas{" "}
                 <GoldWord>
                   vivem o dia a dia
-                  <InfinityAccent />
                 </GoldWord>
               </>
             }
@@ -124,7 +111,6 @@ export default function PalestrasContent() {
                 Temas de{" "}
                 <GoldWord>
                   palestra
-                  <InfinityAccent />
                 </GoldWord>
               </>
             }
@@ -166,7 +152,6 @@ export default function PalestrasContent() {
                 Formatos{" "}
                 <GoldWord>
                   disponíveis
-                  <InfinityAccent />
                 </GoldWord>
               </>
             }

@@ -2,11 +2,8 @@
 
 import { motion } from "framer-motion";
 import MotionSection from "@/components/ui/MotionSection";
-import {
-  InfinityAccent,
-  InfinityCorner,
-  InfinityStep,
-} from "@/components/ui/InfinityMark";
+import {InfinityCorner,
+  InfinityStep } from "@/components/ui/InfinityMark";
 import { GoldWord } from "@/components/ui/Shared";
 
 const steps = [
@@ -14,20 +11,17 @@ const steps = [
     number: "01",
     title: "Contato inicial",
     description:
-      "Você me escreve no WhatsApp contando, no seu ritmo, o que está buscando. Sem pressão, só uma conversa honesta.",
-  },
+      "Você me escreve no WhatsApp contando, no seu ritmo, o que está buscando. Sem pressão, só uma conversa honesta." },
   {
     number: "02",
     title: "Primeira sessão",
     description:
-      "Conheço sua história com presença total e definimos juntos a abordagem que faz mais sentido para você.",
-  },
+      "Conheço sua história com presença total e definimos juntos a abordagem que faz mais sentido para você." },
   {
     number: "03",
     title: "Acompanhamento contínuo",
     description:
-      "Sessão a sessão, construímos mudanças reais, com ferramentas práticas e escuta genuína.",
-  },
+      "Sessão a sessão, construímos mudanças reais, com ferramentas práticas e escuta genuína." },
 ];
 
 export default function HowItWorks() {
@@ -42,7 +36,6 @@ export default function HowItWorks() {
             Três passos para começar a sua{" "}
             <GoldWord>
               terapia
-              <InfinityAccent />
             </GoldWord>
           </h2>
         </div>

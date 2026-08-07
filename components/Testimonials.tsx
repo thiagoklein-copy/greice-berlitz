@@ -3,11 +3,8 @@
 import { motion } from "framer-motion";
 import MotionSection from "@/components/ui/MotionSection";
 import { GoldWord, Stars } from "@/components/ui/Shared";
-import {
-  InfinityAccent,
-  InfinityCorner,
-  InfinityDivider,
-} from "@/components/ui/InfinityMark";
+import {InfinityCorner,
+  InfinityDivider } from "@/components/ui/InfinityMark";
 import ReviewAvatars from "@/components/ui/ReviewAvatars";
 import { TESTIMONIALS } from "@/lib/constants";
 
@@ -28,7 +25,6 @@ export default function Testimonials() {
               O que dizem sobre o meu{" "}
               <GoldWord>
                 trabalho
-                <InfinityAccent />
               </GoldWord>
             </h2>
           </div>

@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import { FaInstagram, FaMapMarkerAlt, FaPhone, FaClock } from "react-icons/fa";
 import MotionSection from "@/components/ui/MotionSection";
 import { GoldWord, SectionHeader } from "@/components/ui/Shared";
-import { InfinityAccent } from "@/components/ui/InfinityMark";
 import {
   buildWhatsAppUrl,
   CLINIC_ADDRESS,
@@ -13,8 +12,7 @@ import {
   CLINIC_INSTAGRAM_URL,
   CLINIC_PHONE,
   CONTACT_OBJECTIVES,
-  MAPS_EMBED_URL,
-} from "@/lib/constants";
+  MAPS_EMBED_URL } from "@/lib/constants";
 import { formatPhoneMask } from "@/lib/phone";
 
 const fieldClass =
@@ -55,7 +53,6 @@ export default function ContactForm() {
               Vamos conversar sobre o seu{" "}
               <GoldWord>
                 próximo passo
-                <InfinityAccent />
               </GoldWord>
             </>
           }

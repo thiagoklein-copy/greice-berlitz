@@ -4,7 +4,6 @@ import PageHero from "@/components/PageHero";
 import Services from "@/components/Services";
 import HowItWorks from "@/components/HowItWorks";
 import CtaBanner from "@/components/CtaBanner";
-import { InfinityAccent } from "@/components/ui/InfinityMark";
 import { GoldWord } from "@/components/ui/Shared";
 import { WHATSAPP_URL } from "@/lib/constants";
 
@@ -18,7 +17,6 @@ export default function AtendimentoContent() {
             Um espaço só seu, para se{" "}
             <GoldWord>
               reencontrar
-              <InfinityAccent />
             </GoldWord>
             .
           </>
@@ -49,7 +47,6 @@ export default function AtendimentoContent() {
             Você merece esse{" "}
             <GoldWord>
               cuidado
-              <InfinityAccent />
             </GoldWord>{" "}
             com você mesmo(a)
           </>

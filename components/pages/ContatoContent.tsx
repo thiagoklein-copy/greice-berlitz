@@ -2,7 +2,6 @@
 
 import PageHero from "@/components/PageHero";
 import ContactForm from "@/components/ContactForm";
-import { InfinityAccent } from "@/components/ui/InfinityMark";
 import { GoldWord } from "@/components/ui/Shared";
 
 export default function ContatoContent() {
@@ -15,7 +14,6 @@ export default function ContatoContent() {
             O primeiro passo pode ser uma{" "}
             <GoldWord>
               mensagem
-              <InfinityAccent />
             </GoldWord>
             .
           </>
