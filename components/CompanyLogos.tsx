@@ -40,12 +40,15 @@ export default function CompanyLogos({
   return (
     <MotionSection id={id} className="overflow-hidden bg-white py-24 sm:py-28">
       <div className="section-container text-center">
-        <InfinityChip className="mb-5">Confiam no meu trabalho</InfinityChip>
-        <p className="mx-auto max-w-2xl text-base font-medium text-ink sm:text-lg">
+        <InfinityChip className="mb-6 text-sm">Confiam no meu trabalho</InfinityChip>
+        <h2
+          className="mx-auto max-w-3xl font-display font-medium tracking-[-0.02em] text-ink"
+          style={{ fontSize: "clamp(1.75rem, 4vw, 2.75rem)", lineHeight: 1.15 }}
+        >
           {title}
-        </p>
+        </h2>
         {supportText && (
-          <p className="mx-auto mt-3 max-w-xl text-sm text-ink">
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-ink sm:text-lg">
             {supportText}
           </p>
         )}
