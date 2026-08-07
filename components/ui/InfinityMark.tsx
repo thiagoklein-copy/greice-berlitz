@@ -29,13 +29,20 @@ export function InfinityGlyph({
   );
 }
 
-/** ∞ flutuando após palavra de destaque (estilo asterisco) */
+/** ∞ flutuando após palavra de destaque (estilo asterisco).
+ * position absolute: não empurra pontuação nem quebra linha.
+ */
 export function InfinityAccent({ className = "" }: { className?: string }) {
   return (
-    <InfinityGlyph
-      className={`ml-1 inline-block h-3 w-6 -translate-y-[0.55em] align-baseline text-gold sm:h-3.5 sm:w-7 ${className}`}
-      strokeWidth={1.9}
-    />
+    <span
+      className={`relative ml-0.5 inline-block h-[0.55em] w-[1.15em] align-baseline ${className}`}
+      aria-hidden="true"
+    >
+      <InfinityGlyph
+        className="absolute bottom-[0.15em] left-0 h-[0.7em] w-[1.35em] text-gold"
+        strokeWidth={1.9}
+      />
+    </span>
   );
 }
 
