@@ -47,7 +47,10 @@ export const COMPANIES = [
     name: "Gerdau",
     logo: "/logos/gerdau.png",
   },
-  { name: "FCC" },
+  {
+    name: "FCC",
+    logo: "/logos/fcc.png",
+  },
   {
     name: "ULBRA Saúde",
     logo: "/logos/ulbra.png",
