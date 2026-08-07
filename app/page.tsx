@@ -178,7 +178,6 @@ export default function HomePage() {
             </div>
 
             <aside className="card-cream relative overflow-hidden border-l-0 p-8">
-              <InfinityCorner position="bottom-left" />
               <p className="font-display text-6xl font-bold tracking-tight text-gold sm:text-7xl">
                 16+
               </p>
