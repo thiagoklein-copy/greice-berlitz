@@ -19,19 +19,13 @@ function LogoItem({
 }) {
   return (
     <div className="flex h-16 shrink-0 items-center justify-center px-8 sm:h-20 sm:px-12">
-      {"logo" in company && company.logo ? (
-        <Image
-          src={company.logo}
-          alt={company.name}
-          width={220}
-          height={72}
-          className="h-12 w-auto max-w-[14rem] object-contain opacity-75 brightness-0 sm:h-14 sm:max-w-[16rem]"
-        />
-      ) : (
-        <span className="whitespace-nowrap font-sans text-2xl font-bold tracking-tight text-ink sm:text-3xl">
-          {company.name}
-        </span>
-      )}
+      <Image
+        src={company.logo}
+        alt={company.name}
+        width={220}
+        height={72}
+        className="h-12 w-auto max-w-[14rem] object-contain opacity-75 brightness-0 sm:h-14 sm:max-w-[16rem]"
+      />
     </div>
   );
 }
