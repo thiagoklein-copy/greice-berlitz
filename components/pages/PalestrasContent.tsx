@@ -8,7 +8,7 @@ import MotionSection from "@/components/ui/MotionSection";
 import { GoldWord, SectionHeader } from "@/components/ui/Shared";
 import {InfinityCorner,
   InfinityStep } from "@/components/ui/InfinityMark";
-import { WHATSAPP_PALESTRAS_URL } from "@/lib/constants";
+import { WHATSAPP_PALESTRAS_URL, IMAGES } from "@/lib/constants";
 
 const topics = [
   {
@@ -56,13 +56,13 @@ export default function PalestrasContent() {
         title={
           <>
             Saúde mental e alta performance caminham{" "}
-            <GoldWord>
-              juntas
-            </GoldWord>
-            .
+            <GoldWord>juntas</GoldWord>.
           </>
         }
         subtitle="Levo para dentro das empresas conteúdos sobre mudança de vida, autoamor, gestão de pessoas e saúde emocional, para equipes mais saudáveis, presentes e produtivas."
+        imageSrc={IMAGES.palestrasHero.src}
+        imageAlt={IMAGES.palestrasHero.alt}
+        imagePosition={IMAGES.palestrasHero.objectPosition}
       >
         <a
           href={WHATSAPP_PALESTRAS_URL}
