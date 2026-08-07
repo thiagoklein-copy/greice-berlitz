@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import MotionSection from "@/components/ui/MotionSection";
-import { InfinityChip } from "@/components/ui/InfinityMark";
 import { COMPANIES } from "@/lib/constants";
 
 interface CompanyLogosProps {
@@ -40,7 +39,6 @@ export default function CompanyLogos({
   return (
     <MotionSection id={id} className="overflow-hidden bg-white py-24 sm:py-28">
       <div className="section-container text-center">
-        <InfinityChip className="mb-6 text-sm">Confiam no meu trabalho</InfinityChip>
         <h2
           className="mx-auto max-w-3xl font-display font-medium tracking-[-0.02em] text-ink"
           style={{ fontSize: "clamp(1.75rem, 4vw, 2.75rem)", lineHeight: 1.15 }}

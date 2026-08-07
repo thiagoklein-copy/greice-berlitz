@@ -5,7 +5,6 @@ import MotionSection from "@/components/ui/MotionSection";
 import {
   InfinityAccent,
   InfinityCorner,
-  InfinityEyebrow,
   InfinityStep,
 } from "@/components/ui/InfinityMark";
 import { GoldWord } from "@/components/ui/Shared";
@@ -36,7 +35,6 @@ export default function HowItWorks() {
     <MotionSection className="relative overflow-hidden bg-white py-24 sm:py-32">
       <div className="section-container relative z-[1]">
         <div className="mb-12 max-w-2xl">
-          <InfinityEyebrow>Como funciona</InfinityEyebrow>
           <h2
             className="font-display font-medium tracking-[-0.02em] text-ink"
             style={{ fontSize: "clamp(1.75rem, 4vw, 3rem)", lineHeight: 1.1 }}

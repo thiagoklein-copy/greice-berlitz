@@ -3,10 +3,7 @@
 import type { ReactNode } from "react";
 import { motion } from "framer-motion";
 import ParallaxImage from "@/components/ui/ParallaxImage";
-import {
-  InfinityCorner,
-  InfinityEyebrow,
-} from "@/components/ui/InfinityMark";
+import { InfinityCorner } from "@/components/ui/InfinityMark";
 import { IMAGES } from "@/lib/constants";
 
 interface PageHeroProps {
@@ -23,7 +20,6 @@ interface PageHeroProps {
 }
 
 export default function PageHero({
-  eyebrow,
   title,
   subtitle,
   children,
@@ -48,8 +44,6 @@ export default function PageHero({
             transition={{ duration: 0.65, ease: [0.45, 0, 0.2, 1] }}
             className={showImage ? "order-2 lg:order-1" : ""}
           >
-            {eyebrow && <InfinityEyebrow>{eyebrow}</InfinityEyebrow>}
-
             <h1
               className="relative font-display font-medium tracking-[-0.025em] text-balance text-ink"
               style={{

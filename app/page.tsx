@@ -16,7 +16,6 @@ import AnimatedCounter from "@/components/ui/AnimatedCounter";
 import {
   InfinityAccent,
   InfinityCorner,
-  InfinityEyebrow,
   InfinityStep,
 } from "@/components/ui/InfinityMark";
 import { GoldWord } from "@/components/ui/Shared";
@@ -102,7 +101,6 @@ export default function HomePage() {
       <MotionSection id="dois-caminhos" className="bg-white py-24 sm:py-32">
         <div className="section-container">
           <div className="mb-12 max-w-2xl">
-            <InfinityEyebrow>Como posso ajudar</InfinityEyebrow>
             <h2
               className="font-display font-medium tracking-[-0.02em] text-ink"
               style={{ fontSize: "clamp(1.75rem, 4vw, 3rem)", lineHeight: 1.1 }}
@@ -161,7 +159,6 @@ export default function HomePage() {
         <div className="section-container">
           <div className="grid items-start gap-12 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,0.7fr)] lg:gap-20">
             <div>
-              <InfinityEyebrow>Prévia da minha história</InfinityEyebrow>
               <h2
                 className="font-display font-medium tracking-[-0.02em] text-ink"
                 style={{ fontSize: "clamp(1.75rem, 4vw, 3rem)", lineHeight: 1.1 }}

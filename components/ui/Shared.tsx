@@ -1,8 +1,5 @@
 import type { ReactNode } from "react";
-import {
-  InfinityGlyph,
-  InfinityEyebrow,
-} from "@/components/ui/InfinityMark";
+import { InfinityGlyph } from "@/components/ui/InfinityMark";
 
 interface LogoProps {
   className?: string;
@@ -62,6 +59,7 @@ export function GoldWord({
 }
 
 interface SectionHeaderProps {
+  /** Ignorado — badges/eyebrows removidos do site */
   eyebrow?: string;
   title: ReactNode;
   subtitle?: string;
@@ -70,7 +68,6 @@ interface SectionHeaderProps {
 }
 
 export function SectionHeader({
-  eyebrow,
   title,
   subtitle,
   align = "left",
@@ -80,11 +77,6 @@ export function SectionHeader({
 
   return (
     <div className={`mb-12 max-w-3xl ${alignClass}`}>
-      {eyebrow && (
-        <InfinityEyebrow className={light ? "text-white" : ""}>
-          {eyebrow}
-        </InfinityEyebrow>
-      )}
       <h2
         className={`font-display font-medium tracking-[-0.02em] ${
           light ? "text-white" : "text-ink"
