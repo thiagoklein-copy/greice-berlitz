@@ -49,7 +49,7 @@ export const COMPANIES = [
   },
   {
     name: "FCC",
-    logo: "/logos/fcc.png",
+    logo: "/logos/fcc-logo.png",
   },
   {
     name: "ULBRA Saúde",
