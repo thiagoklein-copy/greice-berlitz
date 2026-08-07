@@ -74,12 +74,12 @@ export function InfinityStep({
   return (
     <span
       className={`inline-flex items-center gap-1.5 rounded-lg px-2.5 py-1 ${
-        light ? "bg-white/10" : "bg-gold/15"
+        light ? "bg-white/10" : "bg-gold/20"
       }`}
     >
       <InfinityGlyph
-        className={`h-2.5 w-5 ${light ? "text-gold/80" : "text-gold"}`}
-        strokeWidth={2}
+        className={`h-3 w-6 ${light ? "text-gold" : "text-gold"}`}
+        strokeWidth={2.25}
       />
       <span
         className={`font-display text-xs font-bold tracking-[0.14em] ${
@@ -92,23 +92,23 @@ export function InfinityStep({
   );
 }
 
-/** ∞ fino no canto de um bloco */
+/** ∞ no canto de um bloco — assinatura visível, sem competir com o texto */
 export function InfinityCorner({
   position = "top-right",
 }: {
   position?: "top-right" | "bottom-left" | "top-left" | "bottom-right";
 }) {
   const map = {
-    "top-right": "right-[-10%] top-[-18%] -rotate-[14deg]",
-    "bottom-left": "bottom-[-20%] left-[-12%] rotate-[10deg]",
-    "top-left": "left-[-10%] top-[-16%] rotate-[12deg]",
-    "bottom-right": "bottom-[-18%] right-[-10%] -rotate-[8deg]",
+    "top-right": "right-[-8%] top-[-14%] -rotate-[14deg]",
+    "bottom-left": "bottom-[-16%] left-[-10%] rotate-[10deg]",
+    "top-left": "left-[-8%] top-[-14%] rotate-[12deg]",
+    "bottom-right": "bottom-[-14%] right-[-8%] -rotate-[8deg]",
   } as const;
 
   return (
     <InfinityGlyph
-      className={`pointer-events-none absolute h-14 w-28 text-gold opacity-[0.12] sm:h-16 sm:w-32 ${map[position]}`}
-      strokeWidth={0.9}
+      className={`pointer-events-none absolute h-16 w-32 text-gold opacity-40 sm:h-[4.5rem] sm:w-36 ${map[position]}`}
+      strokeWidth={1.5}
     />
   );
 }
@@ -121,7 +121,7 @@ export function InfinityDivider({ className = "" }: { className?: string }) {
       aria-hidden="true"
     >
       <span className="h-px flex-1 bg-ink/10" />
-      <InfinityGlyph className="h-4 w-10 shrink-0 text-gold/55" strokeWidth={1.5} />
+      <InfinityGlyph className="h-5 w-12 shrink-0 text-gold" strokeWidth={1.9} />
       <span className="h-px flex-1 bg-ink/10" />
     </div>
   );

@@ -128,10 +128,34 @@ export default function SobreContent() {
               na medida do possível, sem deixar de cuidar de mim enquanto cuidava
               deles. Hoje sigo minha vida com a certeza de que é possível atravessar
               os momentos mais difíceis e, ainda assim, encontrar propósito e alegria
-              do outro lado. Se você está passando por algo parecido, saiba: dá para
-              se reconstruir. E eu posso te ajudar nesse caminho.
+              do outro lado.
             </motion.p>
           </div>
+
+          <motion.blockquote
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.12, duration: 0.5 }}
+            className="relative mx-auto mt-16 max-w-3xl px-4 text-center sm:mt-20"
+          >
+            <span
+              className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 -translate-y-[35%] font-display text-[clamp(5rem,14vw,9rem)] leading-none text-gold/55"
+              aria-hidden="true"
+            >
+              &ldquo;
+            </span>
+            <p
+              className="relative z-[1] font-display font-medium tracking-[-0.02em] text-sand"
+              style={{
+                fontSize: "clamp(1.35rem, 3.2vw, 2rem)",
+                lineHeight: 1.35,
+              }}
+            >
+              Se você está passando por algo parecido, saiba: dá para se
+              reconstruir. E eu posso te ajudar nesse caminho.
+            </p>
+          </motion.blockquote>
         </div>
       </MotionSection>
 

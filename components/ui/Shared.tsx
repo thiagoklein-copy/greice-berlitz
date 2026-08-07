@@ -14,8 +14,8 @@ export default function Logo({ className = "", light = false }: LogoProps) {
     >
       <span className="inline-flex items-center gap-2.5">
         <InfinityGlyph
-          className="h-7 w-14 shrink-0 text-gold sm:h-8 sm:w-16"
-          strokeWidth={1.8}
+          className="h-8 w-16 shrink-0 text-gold sm:h-9 sm:w-[4.5rem]"
+          strokeWidth={2.1}
         />
         <span
           className={`font-display font-bold tracking-tight ${
