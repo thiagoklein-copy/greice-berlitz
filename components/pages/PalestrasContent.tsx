@@ -161,7 +161,6 @@ export default function PalestrasContent() {
       <MotionSection className="bg-white py-24 sm:py-32">
         <div className="section-container">
           <SectionHeader
-            eyebrow="Formatos"
             title={
               <>
                 Formatos{" "}
