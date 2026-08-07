@@ -200,10 +200,7 @@ export default function PalestrasContent() {
         title={
           <>
             Vamos levar isso para a sua{" "}
-            <span className="whitespace-nowrap">
-              <GoldWord>empresa?</GoldWord>
-              <InfinityAccent />
-            </span>
+            <GoldWord className="whitespace-nowrap">empresa?</GoldWord>
           </>
         }
         subtitle="Solicite um orçamento e vamos desenhar o formato ideal para a sua equipe."
