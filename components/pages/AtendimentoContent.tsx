@@ -5,7 +5,7 @@ import Services from "@/components/Services";
 import HowItWorks from "@/components/HowItWorks";
 import CtaBanner from "@/components/CtaBanner";
 import { GoldWord } from "@/components/ui/Shared";
-import { WHATSAPP_URL } from "@/lib/constants";
+import { WHATSAPP_URL, IMAGES } from "@/lib/constants";
 
 export default function AtendimentoContent() {
   return (
@@ -14,14 +14,13 @@ export default function AtendimentoContent() {
         eyebrow="Terapia Individual"
         title={
           <>
-            Um espaço só seu, para se{" "}
-            <GoldWord>
-              reencontrar
-            </GoldWord>
-            .
+            Um espaço só seu, para se <GoldWord>reencontrar</GoldWord>.
           </>
         }
         subtitle="Atendimento presencial em Novo Hamburgo, com base em Terapia Cognitivo-Comportamental (TCC) e um olhar humano e intuitivo sobre a sua história."
+        imageSrc={IMAGES.terapiaHero.src}
+        imageAlt={IMAGES.terapiaHero.alt}
+        imagePosition={IMAGES.terapiaHero.objectPosition}
       >
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
           <a

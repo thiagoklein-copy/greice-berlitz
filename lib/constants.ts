@@ -76,6 +76,11 @@ export const IMAGES = {
     alt: "Palestra em auditório com plateia e tela de projeção",
     objectPosition: "50% 45%",
   },
+  terapiaHero: {
+    src: "/terapia-hero.png",
+    alt: "Sessão de terapia — mãos entrelaçadas e escuta profissional",
+    objectPosition: "45% 40%",
+  },
   ctaBanner: {
     src: "/cta-banner.jpg",
     alt: "Reunião profissional em preto e branco — placeholder até foto real",
