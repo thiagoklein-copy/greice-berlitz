@@ -35,7 +35,7 @@ export default function SobreContent() {
               Antes de ajudar os outros a se transformarem,
             </span>
             <span className="mt-2 block text-balance sm:mt-3">
-              eu me <GoldWord>transformei</GoldWord>
+              eu me <GoldWord>transformei</GoldWord>.
             </span>
           </>
         }
