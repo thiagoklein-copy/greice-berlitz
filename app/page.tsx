@@ -47,6 +47,9 @@ export default function HomePage() {
   return (
     <>
       <PageHero
+        showImage={false}
+        align="center"
+        showBrand
         title={
           <>
             Tudo pode <GoldWord>mudar</GoldWord> com uma simples conversa
@@ -54,7 +57,7 @@ export default function HomePage() {
         }
         subtitle="Há mais de 16 anos, ajudo pessoas a se reencontrarem na terapia e ajudo empresas a cuidarem de quem faz parte delas com palestras que fazem diferença."
       >
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+        <div className="flex w-full flex-col items-center gap-3 sm:flex-row sm:justify-center">
           <a
             href={WHATSAPP_URL}
             target="_blank"
@@ -72,10 +75,10 @@ export default function HomePage() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.25 }}
-          className="mt-12 grid grid-cols-3 gap-6 border-t border-ink/10 pt-8 sm:gap-8"
+          className="mt-12 grid w-full max-w-2xl grid-cols-3 gap-6 border-t border-ink/10 pt-8 sm:gap-8"
         >
           {trustStats.map((stat) => (
-            <li key={stat.label}>
+            <li key={stat.label} className="text-center">
               <p className="font-display text-3xl font-bold tracking-tight text-gold sm:text-4xl">
                 <AnimatedCounter
                   value={stat.value}

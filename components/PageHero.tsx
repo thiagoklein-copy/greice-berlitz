@@ -3,7 +3,7 @@
 import type { ReactNode } from "react";
 import { motion } from "framer-motion";
 import ParallaxImage from "@/components/ui/ParallaxImage";
-import { InfinityCorner } from "@/components/ui/InfinityMark";
+import { InfinityCorner, InfinityGlyph } from "@/components/ui/InfinityMark";
 import { IMAGES } from "@/lib/constants";
 
 interface PageHeroProps {
@@ -12,6 +12,10 @@ interface PageHeroProps {
   subtitle?: string;
   children?: ReactNode;
   showImage?: boolean;
+  /** Centraliza conteúdo (hero da home) */
+  align?: "left" | "center";
+  /** Marca Greice + ∞ acima do título */
+  showBrand?: boolean;
   /** @deprecated Hero é sempre claro na fase 3 */
   dark?: boolean;
   imageSrc?: string;
@@ -24,19 +28,25 @@ export default function PageHero({
   subtitle,
   children,
   showImage = true,
+  align = "left",
+  showBrand = false,
   imageSrc = IMAGES.hero.src,
   imageAlt = IMAGES.hero.alt,
   imagePosition = IMAGES.hero.objectPosition,
 }: PageHeroProps) {
+  const centered = align === "center";
+
   return (
     <section className="relative overflow-hidden bg-sand pt-28 text-ink sm:pt-36 lg:pt-40">
       <div className="section-container relative z-[1] pb-16 lg:pb-24">
         <div
-          className={`grid items-center gap-10 ${
+          className={
             showImage
-              ? "lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-16 xl:gap-20"
-              : "max-w-3xl"
-          }`}
+              ? "grid items-center gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-16 xl:gap-20"
+              : centered
+                ? "mx-auto max-w-3xl text-center"
+                : "max-w-3xl"
+          }
         >
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -44,8 +54,35 @@ export default function PageHero({
             transition={{ duration: 0.65, ease: [0.45, 0, 0.2, 1] }}
             className={showImage ? "order-2 lg:order-1" : ""}
           >
+            {showBrand && (
+              <div
+                className={`mb-8 inline-flex flex-col leading-none sm:mb-10 ${
+                  centered ? "items-center" : "items-start"
+                }`}
+                aria-label="Greice Berlitz, Psicóloga, CRP 07/16250"
+              >
+                <span className="inline-flex items-center gap-3">
+                  <InfinityGlyph
+                    className="h-9 w-[4.5rem] shrink-0 text-gold sm:h-11 sm:w-24"
+                    strokeWidth={2.2}
+                  />
+                  <span
+                    className="font-display font-bold tracking-tight text-ink"
+                    style={{ fontSize: "clamp(1.35rem, 3vw, 1.85rem)" }}
+                  >
+                    Greice Berlitz
+                  </span>
+                </span>
+                <span className="mt-2 text-[11px] font-medium text-ink sm:text-xs">
+                  Psicóloga · CRP 07/16250
+                </span>
+              </div>
+            )}
+
             <h1
-              className="relative font-display font-medium tracking-[-0.025em] text-balance text-ink"
+              className={`relative font-display font-medium tracking-[-0.025em] text-balance text-ink ${
+                centered ? "mx-auto" : ""
+              }`}
               style={{
                 fontSize: "clamp(2.25rem, 5vw, 4rem)",
                 lineHeight: 1.06,
@@ -55,12 +92,24 @@ export default function PageHero({
             </h1>
 
             {subtitle && (
-              <p className="mt-6 max-w-xl text-base leading-relaxed text-ink sm:text-lg">
+              <p
+                className={`mt-6 text-base leading-relaxed text-ink sm:text-lg ${
+                  centered ? "mx-auto max-w-2xl" : "max-w-xl"
+                }`}
+              >
                 {subtitle}
               </p>
             )}
 
-            {children && <div className="mt-8 sm:mt-10">{children}</div>}
+            {children && (
+              <div
+                className={`mt-8 sm:mt-10 ${
+                  centered ? "flex flex-col items-center" : ""
+                }`}
+              >
+                {children}
+              </div>
+            )}
           </motion.div>
 
           {showImage && (
