@@ -7,7 +7,7 @@ import MotionSection from "@/components/ui/MotionSection";
 import { GoldWord, SectionHeader } from "@/components/ui/Shared";
 import {InfinityCorner,
   InfinityStep } from "@/components/ui/InfinityMark";
-import { IMAGES, PROFESSIONAL_CRP, WHATSAPP_URL } from "@/lib/constants";
+import { PROFESSIONAL_CRP, WHATSAPP_URL } from "@/lib/constants";
 
 const formation = [
   "Graduação em Psicologia, ULBRA (2007)",
@@ -39,9 +39,7 @@ export default function SobreContent() {
             </span>
           </>
         }
-        imageSrc={IMAGES.greice.src}
-        imageAlt={IMAGES.greice.alt}
-        imagePosition={IMAGES.greice.objectPosition}
+        imagePlaceholder
       />
 
       <MotionSection className="bg-white py-24 sm:py-32">

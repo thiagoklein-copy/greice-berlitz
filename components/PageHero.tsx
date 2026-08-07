@@ -16,6 +16,8 @@ interface PageHeroProps {
   align?: "left" | "center";
   /** Marca Greice + ∞ acima do título */
   showBrand?: boolean;
+  /** Bloco aguardando foto real (ex.: Greice) */
+  imagePlaceholder?: boolean;
   /** @deprecated Hero é sempre claro na fase 3 */
   dark?: boolean;
   imageSrc?: string;
@@ -30,6 +32,7 @@ export default function PageHero({
   showImage = true,
   align = "left",
   showBrand = false,
+  imagePlaceholder = false,
   imageSrc = IMAGES.hero.src,
   imageAlt = IMAGES.hero.alt,
   imagePosition = IMAGES.hero.objectPosition,
@@ -124,17 +127,39 @@ export default function PageHero({
               className="relative order-1 mx-auto w-full max-w-sm lg:order-2 lg:max-w-none"
             >
               <div className="relative aspect-[5/4] overflow-hidden rounded-2xl border border-ink/10 sm:aspect-[4/3] lg:aspect-[5/6]">
-                <InfinityCorner position="top-right" />
-                {/* SUBSTITUIR: foto da Greice em ambiente profissional/corporativo ou palestra. P&B. */}
-                <ParallaxImage
-                  src={imageSrc}
-                  alt={imageAlt}
-                  objectPosition={imagePosition}
-                  priority
-                  className="absolute inset-0 h-full w-full grayscale"
-                  sizes="(max-width: 1024px) 90vw, 45vw"
-                />
-                <div className="absolute inset-0 bg-ink/10" />
+                {imagePlaceholder ? (
+                  <div
+                    className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-sand-dark px-6 text-center"
+                    role="img"
+                    aria-label="Espaço reservado para foto da Greice Berlitz"
+                  >
+                    <InfinityGlyph
+                      className="h-12 w-24 text-gold sm:h-14 sm:w-28"
+                      strokeWidth={1.8}
+                    />
+                    <div>
+                      <p className="font-display text-lg font-semibold text-ink sm:text-xl">
+                        Foto da Greice
+                      </p>
+                      <p className="mt-1.5 text-sm text-ink">
+                        Aguardando imagem profissional
+                      </p>
+                    </div>
+                  </div>
+                ) : (
+                  <>
+                    <InfinityCorner position="top-right" />
+                    <ParallaxImage
+                      src={imageSrc}
+                      alt={imageAlt}
+                      objectPosition={imagePosition}
+                      priority
+                      className="absolute inset-0 h-full w-full grayscale"
+                      sizes="(max-width: 1024px) 90vw, 45vw"
+                    />
+                    <div className="absolute inset-0 bg-ink/10" />
+                  </>
+                )}
               </div>
             </motion.div>
           )}

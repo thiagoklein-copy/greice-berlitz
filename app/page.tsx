@@ -123,9 +123,9 @@ export default function HomePage() {
                 transition={{ delay: index * 0.08, duration: 0.45 }}
                 className="card-surface relative flex flex-col overflow-hidden p-8 sm:p-10"
               >
-                <InfinityCorner
-                  position={index === 0 ? "bottom-right" : "top-right"}
-                />
+                {index === 0 && (
+                  <InfinityCorner position="bottom-right" />
+                )}
                 <InfinityStep number={path.number} />
                 <h3
                   className={`mt-4 font-display font-bold tracking-tight text-ink ${
