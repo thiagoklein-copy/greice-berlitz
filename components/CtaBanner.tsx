@@ -4,7 +4,6 @@ import type { ReactNode } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import MotionSection from "@/components/ui/MotionSection";
-import { InfinityCorner} from "@/components/ui/InfinityMark";
 import { GoldWord } from "@/components/ui/Shared";
 import { IMAGES, WHATSAPP_URL } from "@/lib/constants";
 
@@ -31,7 +30,6 @@ export default function CtaBanner({
     <MotionSection className="relative overflow-hidden bg-ink py-16 sm:py-20">
       <div className="section-container relative z-[1]">
         <div className="relative grid items-center gap-10 overflow-hidden rounded-2xl border border-white/12 lg:grid-cols-2 lg:gap-0">
-          <InfinityCorner position="top-left" />
           <div className="relative z-[1] p-8 sm:p-12 lg:p-16">
             <motion.div
               initial={{ opacity: 0, y: 16 }}

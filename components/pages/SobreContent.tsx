@@ -5,8 +5,7 @@ import PageHero from "@/components/PageHero";
 import CtaBanner from "@/components/CtaBanner";
 import MotionSection from "@/components/ui/MotionSection";
 import { GoldWord, SectionHeader } from "@/components/ui/Shared";
-import {InfinityCorner,
-  InfinityStep } from "@/components/ui/InfinityMark";
+import { InfinityStep } from "@/components/ui/InfinityMark";
 import { PROFESSIONAL_CRP, WHATSAPP_URL } from "@/lib/constants";
 
 const formation = [
@@ -213,7 +212,6 @@ export default function SobreContent() {
                 transition={{ delay: index * 0.05 }}
                 className="card-surface relative overflow-hidden p-6"
               >
-                {index === 0 && <InfinityCorner position="bottom-right" />}
                 <InfinityStep number={String(index + 1).padStart(2, "0")} />
                 <p className="mt-3 font-display text-base font-semibold text-ink">
                   {label}

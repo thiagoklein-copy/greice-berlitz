@@ -86,12 +86,6 @@ export const IMAGES = {
     alt: "Reunião profissional em preto e branco — placeholder até foto real",
     objectPosition: "50% 35%",
   },
-  greice: {
-    // SUBSTITUIR quando houver foto real da Greice
-    src: "/team-luiza.jpg",
-    alt: "Placeholder — aguardando foto da Greice Berlitz",
-    objectPosition: "50% 45%",
-  },
 } as const;
 
 export const TESTIMONIALS = [

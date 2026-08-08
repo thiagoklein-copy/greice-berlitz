@@ -6,8 +6,7 @@ import CompanyLogos from "@/components/CompanyLogos";
 import CtaBanner from "@/components/CtaBanner";
 import MotionSection from "@/components/ui/MotionSection";
 import { GoldWord, SectionHeader } from "@/components/ui/Shared";
-import {InfinityCorner,
-  InfinityStep } from "@/components/ui/InfinityMark";
+import { InfinityStep } from "@/components/ui/InfinityMark";
 import { WHATSAPP_PALESTRAS_URL, IMAGES } from "@/lib/constants";
 
 const topics = [
@@ -126,7 +125,6 @@ export default function PalestrasContent() {
                 transition={{ delay: index * 0.04 }}
                 className="card-surface relative overflow-hidden p-7"
               >
-                {index === 0 && <InfinityCorner position="top-right" />}
                 <InfinityStep number={String(index + 1).padStart(2, "0")} />
                 <h3 className="mt-4 font-display text-lg font-bold text-ink">
                   {title}

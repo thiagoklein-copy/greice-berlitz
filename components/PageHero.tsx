@@ -3,7 +3,7 @@
 import type { ReactNode } from "react";
 import { motion } from "framer-motion";
 import ParallaxImage from "@/components/ui/ParallaxImage";
-import { InfinityCorner, InfinityGlyph } from "@/components/ui/InfinityMark";
+import { InfinityGlyph } from "@/components/ui/InfinityMark";
 import { IMAGES } from "@/lib/constants";
 
 interface PageHeroProps {
@@ -148,7 +148,6 @@ export default function PageHero({
                   </div>
                 ) : (
                   <>
-                    <InfinityCorner position="top-right" />
                     <ParallaxImage
                       src={imageSrc}
                       alt={imageAlt}

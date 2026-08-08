@@ -1,6 +1,4 @@
-import type { ReactNode } from "react";
-
-/** Traço do infinito — sempre sutil e funcional (marcador, não ilustração). */
+/** Traço do infinito — logo, chips de passo e divisor. */
 
 export function InfinityGlyph({
   className = "",
@@ -29,40 +27,6 @@ export function InfinityGlyph({
   );
 }
 
-/** Eyebrow com ∞ como prefixo (não usado nos títulos de seção) */
-export function InfinityEyebrow({
-  children,
-  className = "",
-}: {
-  children: ReactNode;
-  className?: string;
-}) {
-  return (
-    <p className={`eyebrow mb-4 inline-flex items-center gap-2 ${className}`}>
-      <InfinityGlyph className="h-2.5 w-6 shrink-0 text-gold" strokeWidth={2} />
-      <span>{children}</span>
-    </p>
-  );
-}
-
-/** Chip dourado suave */
-export function InfinityChip({
-  children,
-  className = "",
-}: {
-  children: ReactNode;
-  className?: string;
-}) {
-  return (
-    <span
-      className={`inline-flex items-center gap-1.5 rounded-full bg-gold/15 px-3 py-1 text-[12px] font-semibold text-ink ${className}`}
-    >
-      <InfinityGlyph className="h-2.5 w-5 text-gold" strokeWidth={2} />
-      {children}
-    </span>
-  );
-}
-
 /** Chip de passo: ∞ + 01/02 */
 export function InfinityStep({
   number,
@@ -77,10 +41,7 @@ export function InfinityStep({
         light ? "bg-white/10" : "bg-gold/20"
       }`}
     >
-      <InfinityGlyph
-        className={`h-3 w-6 ${light ? "text-gold" : "text-gold"}`}
-        strokeWidth={2.25}
-      />
+      <InfinityGlyph className="h-3 w-6 text-gold" strokeWidth={2.25} />
       <span
         className={`font-display text-xs font-bold tracking-[0.14em] ${
           light ? "text-sand" : "text-ink"
@@ -89,27 +50,6 @@ export function InfinityStep({
         {number}
       </span>
     </span>
-  );
-}
-
-/** ∞ no canto de um bloco — assinatura visível, sem competir com o texto */
-export function InfinityCorner({
-  position = "top-right",
-}: {
-  position?: "top-right" | "bottom-left" | "top-left" | "bottom-right";
-}) {
-  const map = {
-    "top-right": "right-[-8%] top-[-14%] -rotate-[14deg]",
-    "bottom-left": "bottom-[-16%] left-[-10%] rotate-[10deg]",
-    "top-left": "left-[-8%] top-[-14%] rotate-[12deg]",
-    "bottom-right": "bottom-[-14%] right-[-8%] -rotate-[8deg]",
-  } as const;
-
-  return (
-    <InfinityGlyph
-      className={`pointer-events-none absolute h-16 w-32 text-gold opacity-40 sm:h-[4.5rem] sm:w-36 ${map[position]}`}
-      strokeWidth={1.5}
-    />
   );
 }
 

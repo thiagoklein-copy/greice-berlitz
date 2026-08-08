@@ -13,8 +13,7 @@ import Testimonials from "@/components/Testimonials";
 import CtaBanner from "@/components/CtaBanner";
 import MotionSection from "@/components/ui/MotionSection";
 import AnimatedCounter from "@/components/ui/AnimatedCounter";
-import {InfinityCorner,
-  InfinityStep } from "@/components/ui/InfinityMark";
+import { InfinityStep } from "@/components/ui/InfinityMark";
 import { GoldWord } from "@/components/ui/Shared";
 import { WHATSAPP_URL } from "@/lib/constants";
 
@@ -123,9 +122,6 @@ export default function HomePage() {
                 transition={{ delay: index * 0.08, duration: 0.45 }}
                 className="card-surface relative flex flex-col overflow-hidden p-8 sm:p-10"
               >
-                {index === 0 && (
-                  <InfinityCorner position="bottom-right" />
-                )}
                 <InfinityStep number={path.number} />
                 <h3
                   className={`mt-4 font-display font-bold tracking-tight text-ink ${

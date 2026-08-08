@@ -2,8 +2,7 @@
 
 import { motion } from "framer-motion";
 import MotionSection from "@/components/ui/MotionSection";
-import {InfinityCorner,
-  InfinityStep } from "@/components/ui/InfinityMark";
+import { InfinityStep } from "@/components/ui/InfinityMark";
 import { GoldWord } from "@/components/ui/Shared";
 
 const steps = [
@@ -48,9 +47,8 @@ export default function HowItWorks() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.08, duration: 0.4 }}
-              className="card-surface relative overflow-hidden p-8"
+              className="card-surface p-8"
             >
-              {index === 0 && <InfinityCorner position="top-right" />}
               <InfinityStep number={step.number} />
               <h3 className="mt-4 font-display text-xl font-bold text-ink">
                 {step.title}
