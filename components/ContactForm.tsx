@@ -58,84 +58,86 @@ export default function ContactForm() {
           }
         />
 
-        <div className="grid items-start gap-8 lg:grid-cols-2 lg:gap-12">
+        <div className="grid items-stretch gap-8 lg:grid-cols-2 lg:gap-12">
           <motion.form
             onSubmit={handleSubmit}
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="card-surface flex w-full min-w-0 flex-col gap-5 p-6 sm:p-8"
+            className="card-surface flex h-full min-h-0 w-full min-w-0 flex-col p-6 sm:p-8"
           >
-            <div className="w-full">
-              <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-ink">
-                Nome completo <span className="text-gold">*</span>
-              </label>
-              <input
-                id="name"
-                type="text"
-                required
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                className={fieldClass}
-                placeholder="Seu nome"
-              />
-            </div>
+            <div className="flex min-h-0 flex-1 flex-col gap-5">
+              <div className="w-full">
+                <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-ink">
+                  Nome completo <span className="text-gold">*</span>
+                </label>
+                <input
+                  id="name"
+                  type="text"
+                  required
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className={fieldClass}
+                  placeholder="Seu nome"
+                />
+              </div>
 
-            <div className="w-full">
-              <label htmlFor="phone" className="mb-1.5 block text-sm font-medium text-ink">
-                Telefone / WhatsApp <span className="text-gold">*</span>
-              </label>
-              <input
-                id="phone"
-                type="tel"
-                required
-                value={phone}
-                onChange={(e) => setPhone(formatPhoneMask(e.target.value))}
-                className={fieldClass}
-                placeholder="(51) 99999-9999"
-              />
-            </div>
+              <div className="w-full">
+                <label htmlFor="phone" className="mb-1.5 block text-sm font-medium text-ink">
+                  Telefone / WhatsApp <span className="text-gold">*</span>
+                </label>
+                <input
+                  id="phone"
+                  type="tel"
+                  required
+                  value={phone}
+                  onChange={(e) => setPhone(formatPhoneMask(e.target.value))}
+                  className={fieldClass}
+                  placeholder="(51) 99999-9999"
+                />
+              </div>
 
-            <div className="w-full">
-              <label
-                htmlFor="objective"
-                className="mb-1.5 block text-sm font-medium text-ink"
-              >
-                Qual o seu objetivo? <span className="text-gold">*</span>
-              </label>
-              <select
-                id="objective"
-                required
-                value={objective}
-                onChange={(e) => setObjective(e.target.value)}
-                className={fieldClass}
-              >
-                <option value="" disabled>
-                  Selecione uma opção
-                </option>
-                {CONTACT_OBJECTIVES.map((opt) => (
-                  <option key={opt} value={opt}>
-                    {opt}
+              <div className="w-full">
+                <label
+                  htmlFor="objective"
+                  className="mb-1.5 block text-sm font-medium text-ink"
+                >
+                  Qual o seu objetivo? <span className="text-gold">*</span>
+                </label>
+                <select
+                  id="objective"
+                  required
+                  value={objective}
+                  onChange={(e) => setObjective(e.target.value)}
+                  className={fieldClass}
+                >
+                  <option value="" disabled>
+                    Selecione uma opção
                   </option>
-                ))}
-              </select>
+                  {CONTACT_OBJECTIVES.map((opt) => (
+                    <option key={opt} value={opt}>
+                      {opt}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <div className="flex min-h-0 w-full flex-1 flex-col">
+                <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-ink">
+                  Mensagem <span className="text-ink">(opcional)</span>
+                </label>
+                <textarea
+                  id="message"
+                  rows={4}
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  className={`${fieldClass} min-h-[7rem] flex-1 resize-none`}
+                  placeholder="Conte um pouco sobre o que você está buscando..."
+                />
+              </div>
             </div>
 
-            <div className="w-full">
-              <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-ink">
-                Mensagem <span className="text-ink">(opcional)</span>
-              </label>
-              <textarea
-                id="message"
-                rows={4}
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                className={`${fieldClass} resize-none`}
-                placeholder="Conte um pouco sobre o que você está buscando..."
-              />
-            </div>
-
-            <button type="submit" className="btn-primary mt-1 w-full max-w-none">
+            <button type="submit" className="btn-primary mt-8 w-full max-w-none shrink-0">
               Enviar e falar no WhatsApp
             </button>
           </motion.form>
@@ -144,7 +146,7 @@ export default function ContactForm() {
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="space-y-4"
+            className="flex h-full min-h-0 flex-col gap-4"
           >
             <div className="card-surface space-y-5 p-6 sm:p-8">
               <div className="flex gap-3">
@@ -198,17 +200,17 @@ export default function ContactForm() {
               </div>
             </div>
 
-            <div className="overflow-hidden rounded-xl border border-ink/10">
+            <div className="min-h-[280px] flex-1 overflow-hidden rounded-xl border border-ink/10">
               <iframe
                 src={MAPS_EMBED_URL}
                 width="100%"
-                height="280"
-                style={{ border: 0 }}
+                height="100%"
+                style={{ border: 0, minHeight: 280 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Localização do consultório no mapa"
-                className="w-full"
+                className="h-full min-h-[280px] w-full"
               />
             </div>
           </motion.aside>
