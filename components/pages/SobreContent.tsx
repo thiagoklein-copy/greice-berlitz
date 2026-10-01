@@ -53,9 +53,7 @@ export default function SobreContent() {
             <GoldWord>transformei</GoldWord>.
           </>
         }
-        imageSrc={IMAGES.retrato.src}
-        imageAlt={IMAGES.retrato.alt}
-        imagePosition={IMAGES.retrato.objectPosition}
+        showImage={false}
       />
 
       {/* ── 01 Quem eu sou ─────────────────────────────────── */}
@@ -67,9 +65,18 @@ export default function SobreContent() {
 
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-12">
             <div className="lg:col-span-4">
-              <h2 className="t-h2 text-ink lg:sticky lg:top-32">
-                Vocação, presença e <GoldWord>propósito</GoldWord>
-              </h2>
+              <div className="lg:sticky lg:top-32">
+                <h2 className="t-h2 text-ink">
+                  Vocação, presença e <GoldWord>propósito</GoldWord>
+                </h2>
+                <FramedImage
+                  src={IMAGES.retrato.src}
+                  alt={IMAGES.retrato.alt}
+                  objectPosition={IMAGES.retrato.objectPosition}
+                  aspect="aspect-[4/5]"
+                  className="mr-4 mt-16 max-w-sm sm:mr-6"
+                />
+              </div>
             </div>
 
             <div className="space-y-10 lg:col-span-7 lg:col-start-6">
