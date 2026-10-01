@@ -7,10 +7,10 @@
  * - [ ] Confirmar handle oficial do Instagram
  * - [ ] Confirmar URL oficial do Google Business Profile
  *
- * VISUAL: escuro café + Bricolage + ∞ assinatura. Ver app/globals.css.
+ * VISUAL: off-white + Cormorant/Jost + ∞ assinatura. Ver app/globals.css.
  */
 import type { Metadata, Viewport } from "next";
-import { Bricolage_Grotesque, Inter } from "next/font/google";
+import { Cormorant_Garamond, Jost } from "next/font/google";
 import "./globals.css";
 import SiteShell from "@/components/SiteShell";
 
@@ -20,24 +20,25 @@ export const viewport: Viewport = {
   themeColor: "#1C1712",
 };
 
-const bricolage = Bricolage_Grotesque({
+const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
-  variable: "--font-bricolage",
+  variable: "--font-cormorant",
   display: "swap",
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
 });
 
-const inter = Inter({
+const jost = Jost({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-jost",
   display: "swap",
-  weight: ["400", "500", "600", "700"],
+  weight: ["300", "400", "500"],
 });
 
 const title = "Greice Berlitz | Psicóloga em Novo Hamburgo — Psicoterapia e Palestras";
 
 const description =
-  "Greice Berlitz, psicóloga (CRP 07/16250), especialista em TCC com mais de 16 anos de experiência. Atendimento individual e palestras corporativas em Novo Hamburgo - RS.";
+  "Greice Berlitz, psicóloga (CRP 07/16250), especialista em TCC com mais de 19 anos de experiência. Atendimento individual e palestras corporativas em Novo Hamburgo - RS.";
 
 export const metadata: Metadata = {
   title: {
@@ -72,7 +73,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className={`${bricolage.variable} ${inter.variable}`}>
+    <html lang="pt-BR" className={`${cormorant.variable} ${jost.variable}`}>
       <body className="font-sans">
         <SiteShell>{children}</SiteShell>
       </body>

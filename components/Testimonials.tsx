@@ -18,8 +18,8 @@ export default function Testimonials() {
         <div className="section-container relative z-[1]">
           <div className="mb-12 max-w-2xl">
             <h2
-              className="font-display font-medium tracking-[-0.02em] text-ink"
-              style={{ fontSize: "clamp(1.75rem, 4vw, 3rem)", lineHeight: 1.1 }}
+              className="font-display font-medium tracking-[-0.01em] text-ink"
+              style={{ fontSize: "clamp(2.1rem, 4.6vw, 3.5rem)", lineHeight: 1.1 }}
             >
               O que dizem sobre o meu <GoldWord>trabalho</GoldWord>
             </h2>
@@ -45,7 +45,7 @@ export default function Testimonials() {
           <div className="card-dark relative mt-12 overflow-hidden p-8 sm:p-10">
             <div className="relative z-[1] flex flex-wrap items-end gap-8">
               <div>
-                <p className="font-display text-5xl font-bold tracking-tight text-gold">
+                <p className="font-display text-5xl font-medium tracking-[-0.01em] text-gold">
                   5,0
                 </p>
                 <div className="mt-2 flex items-center gap-2">

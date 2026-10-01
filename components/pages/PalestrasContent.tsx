@@ -126,7 +126,7 @@ export default function PalestrasContent() {
                 className="card-surface relative overflow-hidden p-7"
               >
                 <InfinityStep number={String(index + 1).padStart(2, "0")} />
-                <h3 className="mt-4 font-display text-lg font-bold text-ink">
+                <h3 className="mt-4 font-display text-lg font-medium text-ink">
                   {title}
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-ink">
@@ -166,7 +166,7 @@ export default function PalestrasContent() {
                 className="card-surface relative overflow-hidden p-8"
               >
                 <InfinityStep number={String(index + 1).padStart(2, "0")} />
-                <h3 className="mt-4 font-display text-xl font-bold text-ink">
+                <h3 className="mt-4 font-display text-xl font-medium text-ink">
                   {format.title}
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-ink sm:text-base">

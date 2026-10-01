@@ -67,10 +67,10 @@ export default function PageHero({
                 <span className="inline-flex items-center gap-3">
                   <InfinityGlyph
                     className="h-9 w-[4.5rem] shrink-0 text-gold sm:h-11 sm:w-24"
-                    strokeWidth={2.2}
+
                   />
                   <span
-                    className="font-display font-bold tracking-tight text-ink"
+                    className="font-display font-medium tracking-[-0.01em] text-ink"
                     style={{ fontSize: "clamp(1.35rem, 3vw, 1.85rem)" }}
                   >
                     Greice Berlitz
@@ -83,11 +83,11 @@ export default function PageHero({
             )}
 
             <h1
-              className={`relative font-display font-medium tracking-[-0.025em] text-balance text-ink ${
+              className={`relative font-display font-medium tracking-[-0.01em] text-balance text-ink ${
                 centered ? "mx-auto" : ""
               }`}
               style={{
-                fontSize: "clamp(2.25rem, 5vw, 4rem)",
+                fontSize: "clamp(2.6rem, 5.6vw, 4.6rem)",
                 lineHeight: 1.06,
               }}
             >
@@ -126,7 +126,7 @@ export default function PageHero({
               }}
               className="relative order-1 mx-auto w-full max-w-sm lg:order-2 lg:max-w-none"
             >
-              <div className="relative aspect-[5/4] overflow-hidden rounded-2xl border border-ink/10 sm:aspect-[4/3] lg:aspect-[5/6]">
+              <div className="relative aspect-[5/4] overflow-hidden rounded-sm border border-ink/10 sm:aspect-[4/3] lg:aspect-[5/6]">
                 {imagePlaceholder ? (
                   <div
                     className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-sand-dark px-6 text-center"
@@ -135,10 +135,10 @@ export default function PageHero({
                   >
                     <InfinityGlyph
                       className="h-12 w-24 text-gold sm:h-14 sm:w-28"
-                      strokeWidth={1.8}
+
                     />
                     <div>
-                      <p className="font-display text-lg font-semibold text-ink sm:text-xl">
+                      <p className="font-display text-lg font-medium text-ink sm:text-xl">
                         Foto da Greice
                       </p>
                       <p className="mt-1.5 text-sm text-ink">

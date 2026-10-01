@@ -14,10 +14,10 @@ const config: Config = {
     extend: {
       colors: {
         gold: {
-          DEFAULT: "#D4AF37",
-          light: "#F0D78C",
-          soft: "#F5E9C4",
-          dark: "#B8941F",
+          DEFAULT: "#9C7A3C",
+          light: "#D9C08A",
+          soft: "#F1E8D6",
+          dark: "#7F6230",
         },
         ink: {
           DEFAULT: "#1C1712",
@@ -28,8 +28,8 @@ const config: Config = {
           dark: "#FAF6EF",
         },
         accent: {
-          DEFAULT: "#D4AF37",
-          warm: "#D4AF37",
+          DEFAULT: "#9C7A3C",
+          warm: "#9C7A3C",
         },
         text: {
           dark: "#1C1712",
@@ -39,9 +39,9 @@ const config: Config = {
         whatsapp: "#25D366",
       },
       fontFamily: {
-        display: ["var(--font-bricolage)", "system-ui", "sans-serif"],
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        serif: ["var(--font-bricolage)", "system-ui", "sans-serif"],
+        display: ["var(--font-cormorant)", "Georgia", "serif"],
+        sans: ["var(--font-jost)", "system-ui", "sans-serif"],
+        serif: ["var(--font-cormorant)", "Georgia", "serif"],
       },
       boxShadow: {
         soft: "none",

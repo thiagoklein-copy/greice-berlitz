@@ -29,7 +29,7 @@ export default function CtaBanner({
   return (
     <MotionSection className="relative overflow-hidden bg-ink py-16 sm:py-20">
       <div className="section-container relative z-[1]">
-        <div className="relative grid items-center gap-10 overflow-hidden rounded-2xl border border-white/12 lg:grid-cols-2 lg:gap-0">
+        <div className="relative grid items-center gap-10 overflow-hidden rounded-sm border border-white/12 lg:grid-cols-2 lg:gap-0">
           <div className="relative z-[1] p-8 sm:p-12 lg:p-16">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
@@ -38,9 +38,9 @@ export default function CtaBanner({
               transition={{ duration: 0.5, ease: [0.45, 0, 0.2, 1] }}
             >
               <h2
-                className="font-display font-medium tracking-[-0.02em] text-white"
+                className="font-display font-medium tracking-[-0.01em] text-white"
                 style={{
-                  fontSize: "clamp(1.75rem, 4vw, 3rem)",
+                  fontSize: "clamp(2.1rem, 4.6vw, 3.5rem)",
                   lineHeight: 1.1 }}
               >
                 {title}

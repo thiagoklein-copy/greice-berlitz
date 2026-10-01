@@ -9,6 +9,10 @@ export function buildWhatsAppUrl(message: string): string {
 
 export const WHATSAPP_URL = buildWhatsAppUrl(WHATSAPP_DEFAULT_MESSAGE);
 
+export const WHATSAPP_CONSULTA_URL = buildWhatsAppUrl(
+  "Olá, Greice! Gostaria de agendar uma consulta estratégica.",
+);
+
 export const WHATSAPP_PALESTRAS_URL = buildWhatsAppUrl(
   "Olá, Greice! Gostaria de solicitar um orçamento de palestra para minha empresa.",
 );
@@ -66,6 +70,16 @@ export const COMPANIES = [
 ] as const;
 
 export const IMAGES = {
+  retrato: {
+    src: "/greice-retrato.jpg",
+    alt: "Greice Berlitz, psicóloga, em seu consultório",
+    objectPosition: "50% 30%",
+  },
+  formatura: {
+    src: "/greice-formatura.jpg",
+    alt: "Greice Berlitz na formatura em Psicologia",
+    objectPosition: "50% 30%",
+  },
   hero: {
     src: "/hero.jpg",
     alt: "Ambiente corporativo em preto e branco — placeholder até foto real",
@@ -123,58 +137,31 @@ export const TESTIMONIALS = [
 
 export const SERVICES = [
   {
-    id: "ansiedade-panico",
-    title: "Ansiedade e Síndrome do Pânico",
+    id: "ansiedade-estresse",
+    title: "Ansiedade e Gestão de Estresse",
     description:
-      "Ajudo você a entender e quebrar o ciclo de crises de ansiedade e pânico, com ferramentas práticas para retomar o controle do seu dia a dia.",
+      "O excesso de futuro e a pressão por resultados constantes podem paralisar até as mentes mais brilhantes. Desenvolvemos estratégias cognitivas para desarmar o esgotamento, gerenciar o estresse crônico e devolver o controle emocional, permitindo a tomada de decisões complexas com serenidade e clareza mental.",
     duration: "50 min",
     price: "Valores sob consulta",
-    whatsappTopic: "Ansiedade e Síndrome do Pânico",
+    whatsappTopic: "Ansiedade e Gestão de Estresse",
   },
   {
-    id: "depressao",
-    title: "Depressão",
+    id: "depressao-proposito",
+    title: "Depressão e Resgate de Propósito",
     description:
-      "Um acompanhamento estruturado, baseado em evidências, para você reencontrar sentido, energia e qualidade de vida.",
+      "Mesmo carreiras consolidadas e vidas financeiramente estáveis enfrentam momentos de vazio, perda de sentido ou desânimo paralisante. Através de um suporte clínico altamente qualificado e humano, trabalhamos na ressignificação do sofrimento, na reconstrução da vitalidade e no realinhamento das suas ações com os seus valores fundamentais e espirituais.",
     duration: "50 min",
     price: "Valores sob consulta",
-    whatsappTopic: "Depressão",
+    whatsappTopic: "Depressão e Resgate de Propósito",
   },
   {
-    id: "autoestima-autoamor",
-    title: "Autoestima e Autoamor",
+    id: "transtornos-alimentares",
+    title: "Transtornos Alimentares e Autoimagem",
     description:
-      "Trabalho para que você se reconecte com o seu valor e construa relações mais saudáveis, a começar pela relação com você mesmo(a).",
+      "A relação disfuncional com a comida e com o corpo frequentemente reflete dinâmicas de controle, estresse e dores emocionais ocultas. Ofereço um ambiente seguro, analítico e totalmente livre de julgamentos para restaurar o equilíbrio, a paz com a alimentação e o respeito à sua própria identidade.",
     duration: "50 min",
     price: "Valores sob consulta",
-    whatsappTopic: "Autoestima e Autoamor",
-  },
-  {
-    id: "mudanca-vida",
-    title: "Mudança de Vida e Relacionamentos",
-    description:
-      "Para momentos de transição, decisões importantes ou relacionamentos que já não fazem sentido. Te ajudo a enxergar com mais clareza o próximo passo.",
-    duration: "50 min",
-    price: "Valores sob consulta",
-    whatsappTopic: "Mudança de Vida e Relacionamentos",
-  },
-  {
-    id: "avaliacao-neuropsicologica",
-    title: "Avaliação Neuropsicológica",
-    description:
-      "Avaliação completa das funções cognitivas para um diagnóstico preciso e direcionamento terapêutico adequado.",
-    duration: "Sob avaliação",
-    price: "Valores sob consulta",
-    whatsappTopic: "Avaliação Neuropsicológica",
-  },
-  {
-    id: "hipnoterapia",
-    title: "Hipnoterapia",
-    description:
-      "Técnica complementar para acelerar processos terapêuticos e trabalhar padrões inconscientes de forma segura.",
-    duration: "50 min",
-    price: "Valores sob consulta",
-    whatsappTopic: "Hipnoterapia",
+    whatsappTopic: "Transtornos Alimentares e Autoimagem",
   },
 ] as const;
 

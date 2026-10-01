@@ -1,12 +1,17 @@
-/** Traço do infinito — logo, chips de passo e divisor. */
+/**
+ * Traço do infinito — é o logo da Greice. Logo, chips de passo, divisor e
+ * placeholder usam este mesmo desenho e a mesma espessura: não passe
+ * strokeWidth por fora. Para mudar o ∞ do site inteiro, mude só aqui
+ * (e em public/favicon.svg, que repete o mesmo path).
+ */
 
-export function InfinityGlyph({
-  className = "",
-  strokeWidth = 1.25,
-}: {
-  className?: string;
-  strokeWidth?: number;
-}) {
+export const INFINITY_PATH =
+  "M60 28C72 12 82 6 94 6C106 6 114 16 114 28C114 40 106 50 94 50C82 50 72 44 60 28C48 12 38 6 26 6C14 6 6 16 6 28C6 40 14 50 26 50C38 50 48 44 60 28Z";
+
+/** Espessura única, em px de tela (não escala com o tamanho do ícone). */
+const INFINITY_STROKE = 1.5;
+
+export function InfinityGlyph({ className = "" }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 120 56"
@@ -16,10 +21,10 @@ export function InfinityGlyph({
       aria-hidden="true"
     >
       <path
-        d="M20 28C20 16 30 8 42 8C54 8 62 16 70 28C78 40 86 48 98 48C110 48 120 40 120 28C120 16 110 8 98 8C86 8 78 16 70 28C62 40 54 48 42 48C30 48 20 40 20 28Z"
-        transform="translate(-10 0) scale(0.9)"
+        d={INFINITY_PATH}
         stroke="currentColor"
-        strokeWidth={strokeWidth}
+        strokeWidth={INFINITY_STROKE}
+        vectorEffect="non-scaling-stroke"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
@@ -36,15 +41,11 @@ export function InfinityStep({
   light?: boolean;
 }) {
   return (
-    <span
-      className={`inline-flex items-center gap-1.5 rounded-lg px-2.5 py-1 ${
-        light ? "bg-white/10" : "bg-gold/20"
-      }`}
-    >
-      <InfinityGlyph className="h-3 w-6 text-gold" strokeWidth={2.25} />
+    <span className="inline-flex items-center gap-2">
+      <InfinityGlyph className="h-3.5 w-7 text-gold" />
       <span
-        className={`font-display text-xs font-bold tracking-[0.14em] ${
-          light ? "text-sand" : "text-ink"
+        className={`font-sans text-[11px] font-normal tracking-[0.24em] ${
+          light ? "text-sand" : "text-gold"
         }`}
       >
         {number}
@@ -61,7 +62,7 @@ export function InfinityDivider({ className = "" }: { className?: string }) {
       aria-hidden="true"
     >
       <span className="h-px flex-1 bg-ink/10" />
-      <InfinityGlyph className="h-5 w-12 shrink-0 text-gold" strokeWidth={1.9} />
+      <InfinityGlyph className="h-5 w-12 shrink-0 text-gold" />
       <span className="h-px flex-1 bg-ink/10" />
     </div>
   );

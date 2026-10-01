@@ -6,7 +6,8 @@ import CtaBanner from "@/components/CtaBanner";
 import MotionSection from "@/components/ui/MotionSection";
 import { GoldWord, SectionHeader } from "@/components/ui/Shared";
 import { InfinityStep } from "@/components/ui/InfinityMark";
-import { PROFESSIONAL_CRP, WHATSAPP_URL } from "@/lib/constants";
+import Image from "next/image";
+import { IMAGES, PROFESSIONAL_CRP, WHATSAPP_URL } from "@/lib/constants";
 
 const formation = [
   "Graduação em Psicologia, ULBRA (2007)",
@@ -16,11 +17,22 @@ const formation = [
   "Experiência em Psicologia Clínica, Hospitalar e Organizacional",
 ];
 
-const values = [
-  "Vocação antes do retorno",
-  "Presença total em cada atendimento",
-  "Conhecimento técnico com intuição",
-  "Autoamor como caminho de mudança",
+const pillars = [
+  {
+    title: "Psicoeducação Avançada e Alinhamento de Vida",
+    description:
+      "Para quem tem um intelecto apurado, não basta apenas receber orientações; é preciso compreender o porquê. Eu ensino os meus pacientes sobre os processos cognitivos que envolvem nossas reações fisiológicas e mentais. Pautados na história de cada indivíduo, identificamos juntos os pensamentos, sentimentos e comportamentos disfuncionais que geram os sintomas de diversas patologias ou que travam os projetos de vida. Atuamos diretamente nos desafios de carreira e no planejamento existencial, ajudando a recalibrar rotas profissionais. Quando você entende como a sua mente funciona diante das pressões, ganha o controle para transformá-la.",
+  },
+  {
+    title: "O Estilo de Vida como Base Científica",
+    description:
+      "A mente e o corpo são um sistema único. Minha abordagem pauta-se na extrema importância do cuidado integrado entre mente, corpo e espírito. Olhamos para a prática de atividade física regular e para uma alimentação regrada como bases biológicas indispensáveis para a regulação das emoções, do foco e dos neurotransmissores. Nós desenhamos juntos a sua “rotina de vida ideal e possível”, orientando e estruturando um cotidiano personalizado que protege a sua energia vital e o seu bem-estar.",
+  },
+  {
+    title: "Liderança pelo Exemplo",
+    description:
+      "Eu não receito o que não pratico. Tudo o que proponho aos meus pacientes — desde o manejo do estresse, a disciplina nos treinos, até o cultivo da espiritualidade e da resiliência diante dos desafios da vida — faz parte do meu próprio dia a dia. Minha bagagem profissional e minha rotina pessoal são os meus maiores avais de que este método funciona.",
+  },
 ];
 
 export default function SobreContent() {
@@ -38,7 +50,9 @@ export default function SobreContent() {
             </span>
           </>
         }
-        imagePlaceholder
+        imageSrc={IMAGES.retrato.src}
+        imageAlt={IMAGES.retrato.alt}
+        imagePosition={IMAGES.retrato.objectPosition}
       />
 
       <MotionSection className="bg-white py-24 sm:py-32">
@@ -61,10 +75,14 @@ export default function SobreContent() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              Sempre fui uma pessoa muito empática. Meu maior sonho sempre foi
-              ajudar as pessoas a ficarem bem. Tive a sorte de poder escolher minha
-              profissão pela vocação, não pelo retorno financeiro. E foi exatamente
-              esse propósito que, com o tempo, trouxe os resultados.
+              A verdadeira liderança e o sucesso sustentável não nascem apenas da
+              competência técnica, mas do equilíbrio emocional e da clareza de
+              propósito. Há mais de 19 anos, atuo na Psicologia Clínica guiada por
+              uma profunda convicção: a de que o consultório não é apenas um
+              espaço de cura, mas um acelerador do potencial humano. Minha escolha
+              profissional nunca foi financeira, mas sim baseada no privilégio de
+              guiar pessoas a reencontrarem sua máxima potência e o prazer genuíno
+              naquilo que realizam.
             </motion.p>
             <motion.p
               initial={{ opacity: 0, y: 12 }}
@@ -72,14 +90,19 @@ export default function SobreContent() {
               viewport={{ once: true }}
               transition={{ delay: 0.06 }}
             >
-              Ao longo de mais de 16 anos de prática clínica, vi pessoas chegarem
-              até mim sem perspectiva de vida, sem vontade de seguir em frente,
-              cercadas por relacionamentos tóxicos, e vi essas mesmas pessoas se
-              reconstruírem. Costumo brincar com meus pacientes que, além de
-              emocionalmente mais fortes, eles saem mais bonitos e mais
-              &ldquo;ricos&rdquo; depois de um período de acompanhamento. O autoamor
-              transforma vidas, e eu quero continuar fazendo parte disso para cada
-              vez mais pessoas.
+              Com especialização em Terapia Cognitivo-Comportamental (TCC) e uma
+              sólida trajetória que une as áreas Clínica, Hospitalar e
+              Organizacional, desenvolvi uma visão sistêmica sobre a mente humana.
+              Essa bagagem multifacetada me permite compreender com precisão a
+              rotina de alta exigência, as pressões de mercado e os desafios de
+              tomada de decisão enfrentados por empresários, profissionais
+              autônomos e líderes. Esse olhar atento estende-se também à jornada
+              múltipla de muitas mulheres, que equilibram com maestria as demandas
+              corporativas com a vida familiar. No meu consultório — avaliado com
+              nota máxima (5 estrelas) no Google —, traduzo a ciência em
+              estratégias práticas para quem busca lucratividade e sucesso sem
+              abdicar do seu verdadeiro propósito de vida. Sempre conectado à saúde
+              mental, ao bem-estar e à felicidade.
             </motion.p>
           </div>
         </div>
@@ -110,10 +133,13 @@ export default function SobreContent() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              Em 2024 e 2025, vivi um dos períodos mais difíceis da minha vida:
-              perdi meus dois pais, em um intervalo de poucos meses, para o câncer.
-              Foi um tempo de muita dor, e também de muito aprendizado sobre o que
-              significa cuidar de si enquanto se cuida de quem se ama.
+              Minha autoridade também foi construída pela experiência de vida.
+              Conheço os caminhos da depressão por tê-la superado na juventude, o
+              que me deu ferramentas práticas e uma empatia real. Diante do luto
+              complexo pela perda recente dos meus pais para o câncer, vivi o meu
+              maior laboratório de resiliência: transformei a dor profunda em
+              energia vital e em um compromisso ainda maior com o sofrimento do
+              outro.
             </motion.p>
             <motion.p
               initial={{ opacity: 0, y: 12 }}
@@ -121,11 +147,10 @@ export default function SobreContent() {
               viewport={{ once: true }}
               transition={{ delay: 0.06 }}
             >
-              Mantive o que pude da minha rotina, da minha família, do meu trabalho,
-              na medida do possível, sem deixar de cuidar de mim enquanto cuidava
-              deles. Hoje sigo minha vida com a certeza de que é possível atravessar
-              os momentos mais difíceis e, ainda assim, encontrar propósito e alegria
-              do outro lado.
+              Acredito que o sucesso sem propósito é vazio. Por isso, meu trabalho
+              integra a saúde emocional aos seus valores mais elevados, respeitando
+              sua individualidade e sua dimensão espiritual, para que você lidere a
+              sua vida com significado e plenitude.
             </motion.p>
           </div>
 
@@ -137,13 +162,13 @@ export default function SobreContent() {
             className="relative mx-auto mt-16 max-w-3xl px-4 text-center sm:mt-20"
           >
             <span
-              className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 -translate-y-[35%] font-display text-[clamp(5rem,14vw,9rem)] leading-none text-gold/55"
+              className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 -translate-y-[70%] font-display text-[clamp(5rem,14vw,9rem)] leading-none text-gold/55"
               aria-hidden="true"
             >
               &ldquo;
             </span>
             <p
-              className="relative z-[1] font-display font-medium tracking-[-0.02em] text-sand"
+              className="relative z-[1] font-display font-medium tracking-[-0.01em] text-sand"
               style={{
                 fontSize: "clamp(1.35rem, 3.2vw, 2rem)",
                 lineHeight: 1.35,
@@ -170,7 +195,8 @@ export default function SobreContent() {
             }
           />
 
-          <ul className="card-surface max-w-2xl space-y-0 overflow-hidden p-0">
+          <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] lg:gap-16">
+          <ul className="card-surface space-y-0 overflow-hidden p-0">
             {formation.map((item, index) => (
               <motion.li
                 key={item}
@@ -185,38 +211,72 @@ export default function SobreContent() {
               </motion.li>
             ))}
           </ul>
+
+          <figure className="mx-auto w-full max-w-sm lg:max-w-none">
+            <div className="relative aspect-square overflow-hidden rounded-sm border border-ink/10">
+              <Image
+                src={IMAGES.formatura.src}
+                alt={IMAGES.formatura.alt}
+                fill
+                sizes="(max-width: 1024px) 90vw, 35vw"
+                className="object-cover grayscale"
+                style={{ objectPosition: IMAGES.formatura.objectPosition }}
+              />
+            </div>
+            <figcaption className="mt-3 text-sm text-ink">
+              Formatura em Psicologia, ULBRA (2007)
+            </figcaption>
+          </figure>
+          </div>
         </div>
       </MotionSection>
 
       <MotionSection className="border-t border-ink/8 bg-white py-24 sm:py-32">
         <div className="section-container">
           <SectionHeader
-            eyebrow="O que me move"
             title={
               <>
-                Valores que guiam cada{" "}
-                <GoldWord>
-                  encontro
-                </GoldWord>
+                Alta Performance com <GoldWord>Equilíbrio</GoldWord>
               </>
             }
           />
 
-          <div className="grid gap-4 sm:grid-cols-2">
-            {values.map((label, index) => (
-              <motion.div
-                key={label}
+          <div className="max-w-3xl space-y-5 text-base leading-relaxed text-ink sm:text-lg">
+            <p>
+              Muitas mentes brilhantes vivem exaustas porque foram mal orientadas
+              a acreditar que o sucesso exige o sacrifício da saúde ou da paz. Eu
+              não acredito em fórmulas mágicas, mas sim em engenharia de rotina. A
+              verdadeira felicidade está em adequar o seu sentido real de vida e a
+              sua verdade às suas necessidades diárias. Ela reside no alinhamento
+              diário — e possível — de todas as esferas da sua vida: saúde física,
+              desenvolvimento intelectual, carreira, família e conexão espiritual,
+              utilizando pilares fundamentais embasados pelo conhecimento
+              científico.
+            </p>
+            <p>
+              No meu consultório, o processo terapêutico é ativo, integrativo e
+              baseado em três eixos essenciais:
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-4 lg:grid-cols-3">
+            {pillars.map((pillar, index) => (
+              <motion.article
+                key={pillar.title}
                 initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
-                className="card-surface relative overflow-hidden p-6"
+                className="card-surface relative overflow-hidden p-7 sm:p-8"
               >
                 <InfinityStep number={String(index + 1).padStart(2, "0")} />
-                <p className="mt-3 font-display text-base font-semibold text-ink">
-                  {label}
+                <h3 className="mt-4 font-display text-2xl font-medium text-ink">
+                  {pillar.title}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-ink sm:text-base">
+                  {pillar.description}
                 </p>
-              </motion.div>
+              </motion.article>
             ))}
           </div>
 

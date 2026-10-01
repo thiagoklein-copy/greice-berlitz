@@ -40,7 +40,7 @@ export default function CompanyLogos({
     <MotionSection id={id} className="overflow-hidden bg-white py-24 sm:py-28">
       <div className="section-container text-center">
         <h2
-          className="mx-auto max-w-3xl font-display font-medium tracking-[-0.02em] text-ink"
+          className="mx-auto max-w-3xl font-display font-medium tracking-[-0.01em] text-ink"
           style={{ fontSize: "clamp(1.75rem, 4vw, 2.75rem)", lineHeight: 1.15 }}
         >
           {title}

@@ -1,19 +1,20 @@
 /*
- * SISTEMA VISUAL — Greice Berlitz (fase 3 · branco + ∞ marcador · ago/2026)
+ * SISTEMA VISUAL — Greice Berlitz (fase 4 · chique · out/2026)
  * ─────────────────────────────────────────────────────────────────
- * Meio-termo: leveza do branco + credibilidade de consultora.
+ * A cliente achou a fase 3 "grotesca" (Bricolage Grotesque, dourado
+ * amarelo, botões gordos). Fase 4 = editorial, discreto, elegante.
  *
  * 1. BASE — off-white #FEFCF8 predominante. Escuro café #1C1712
- *    só em ≤2 momentos de impacto (ex.: CTA; bloco de nota no Sobre).
- * 2. DOURADO #D4AF37 — só em palavras-chave, chips, CTA e ∞.
- *    Nunca como fundo de seção.
- * 3. ∞ — marcador decorativo (como asterisco de destaque): ao lado
- *    de headlines, antes de eyebrows, chips, cantos sutis de cards,
- *    divisor com curva. Nunca ilustração grande central.
- * 4. UI — cards 12px, chips dourado suave, stats com número dourado
- *    em fundo claro. Sem gradiente. Fotos P&B. Logos em carrossel.
- * 5. TIPOGRAFIA — Bricolage headlines; Inter body. Texto sempre
- *    preto (#1C1712); dourado só em destaque. Sem cinzas de texto.
+ *    só em ≤2 momentos de impacto (CTA; bloco Resiliência no Sobre).
+ * 2. DOURADO — ouro velho #9C7A3C (texto/∞ em fundo claro, contraste
+ *    AA para títulos); #D9C08A em fundo escuro. Nunca fundo de seção.
+ * 3. ∞ — é o logo. Um único desenho e uma única espessura (1.5px),
+ *    definidos em components/ui/InfinityMark.tsx. Nunca passar
+ *    strokeWidth por fora.
+ * 4. UI — cantos quase retos (2px), bordas finas, sem sombra, sem
+ *    gradiente. Botões em caixa alta espaçada. Fotos P&B.
+ * 5. TIPOGRAFIA — Cormorant Garamond (títulos, peso 500, destaque em
+ *    itálico dourado) + Jost (texto, 300–500). Texto sempre #1C1712.
  * ─────────────────────────────────────────────────────────────────
  */
 
@@ -51,7 +52,7 @@ video {
 
 @layer base {
   body {
-    @apply bg-sand font-sans text-text-dark antialiased;
+    @apply bg-sand font-sans font-light text-text-dark antialiased;
   }
 }
 
@@ -61,88 +62,75 @@ video {
   }
 
   .eyebrow {
-    @apply font-sans text-[13px] font-medium text-ink;
+    @apply font-sans text-[11px] font-normal uppercase tracking-[0.24em] text-gold;
+  }
+
+  /* Botões: caixa alta espaçada, cantos quase retos, sem peso pesado */
+  .btn-primary,
+  .btn-accent,
+  .btn-ghost,
+  .btn-ghost-light {
+    @apply inline-flex items-center justify-center font-sans font-normal uppercase;
+    border-radius: 2px;
+    padding: 1rem 1.9rem;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center font-semibold;
-    border-radius: 14px;
-    padding: 0.9rem 1.6rem;
-    font-size: 14px;
-    color: #1c1712;
-    background: #d4af37;
-    transition: background 0.15s ease;
+    color: #fefcf8;
+    background: #1c1712;
+    border: 1px solid #1c1712;
   }
   .btn-primary:hover {
-    background: #b8941f;
+    background: #9c7a3c;
+    border-color: #9c7a3c;
   }
 
+  /* Para fundos escuros */
   .btn-accent {
-    @apply inline-flex items-center justify-center font-semibold;
-    border-radius: 14px;
-    padding: 0.9rem 1.6rem;
-    font-size: 14px;
     color: #1c1712;
-    background: #d4af37;
-    transition: background 0.15s ease;
+    background: #d9c08a;
+    border: 1px solid #d9c08a;
   }
   .btn-accent:hover {
-    background: #f0d78c;
+    background: #fefcf8;
+    border-color: #fefcf8;
   }
 
-  .btn-ghost {
-    @apply inline-flex items-center justify-center font-semibold;
-    border-radius: 12px;
-    padding: 0.9rem 1.6rem;
-    font-size: 14px;
-    color: #1c1712;
-    border: 1px solid rgba(28, 23, 18, 0.16);
-    background: transparent;
-    transition: border-color 0.15s ease, background 0.15s ease;
-  }
-  .btn-ghost:hover {
-    border-color: #1c1712;
-    background: rgba(28, 23, 18, 0.04);
-  }
-
-  /* Ghost em fundo claro (substitui o antigo ghost-light de seções escuras) */
+  .btn-ghost,
   .btn-ghost-light {
-    @apply inline-flex items-center justify-center font-semibold;
-    border-radius: 12px;
-    padding: 0.9rem 1.6rem;
-    font-size: 14px;
     color: #1c1712;
-    border: 1px solid rgba(28, 23, 18, 0.16);
+    border: 1px solid rgba(28, 23, 18, 0.22);
     background: transparent;
-    transition: border-color 0.15s ease, background 0.15s ease;
   }
+  .btn-ghost:hover,
   .btn-ghost-light:hover {
-    border-color: #1c1712;
-    background: rgba(28, 23, 18, 0.04);
+    border-color: #9c7a3c;
+    color: #7f6230;
   }
 
   .card-surface {
-    border-radius: 12px;
+    border-radius: 2px;
     background: #ffffff;
-    border: 1px solid rgba(28, 23, 18, 0.1);
+    border: 1px solid rgba(28, 23, 18, 0.08);
     box-shadow: none;
+    transition: border-color 0.2s ease;
   }
   .card-surface:hover {
-    border-color: rgba(28, 23, 18, 0.18);
-    transform: none;
-    box-shadow: none;
-    background: #ffffff;
+    border-color: rgba(156, 122, 60, 0.45);
   }
 
   .card-cream {
-    border-radius: 12px;
+    border-radius: 2px;
     background: #faf6ef;
-    border: 1px solid rgba(28, 23, 18, 0.08);
+    border: 1px solid rgba(28, 23, 18, 0.06);
     box-shadow: none;
   }
 
   .card-dark {
-    border-radius: 12px;
+    border-radius: 2px;
     background: #1c1712;
     border: 1px solid rgba(250, 250, 248, 0.1);
     box-shadow: none;
@@ -150,7 +138,7 @@ video {
 
   .gold-divider {
     height: 1px;
-    background: rgba(212, 175, 55, 0.35);
+    background: rgba(156, 122, 60, 0.35);
   }
 
   .hero-glow {
@@ -180,4 +168,12 @@ video {
       animation: none;
     }
   }
+}
+
+/* Em fundo escuro, o ouro velho clareia para manter contraste (∞ incluso) */
+.bg-ink .text-gold {
+  color: #d9c08a;
+}
+.bg-ink .hover\:text-gold:hover {
+  color: #d9c08a;
 }

@@ -16,7 +16,7 @@ import {
 import { formatPhoneMask } from "@/lib/phone";
 
 const fieldClass =
-  "block w-full rounded-xl border border-ink/15 bg-white px-4 py-3 text-sm outline-none transition focus:border-ink focus:ring-1 focus:ring-ink/20";
+  "block w-full rounded-sm border border-ink/15 bg-white px-4 py-3 text-sm outline-none transition focus:border-ink focus:ring-1 focus:ring-ink/20";
 
 export default function ContactForm() {
   const [name, setName] = useState("");
@@ -200,7 +200,7 @@ export default function ContactForm() {
               </div>
             </div>
 
-            <div className="min-h-[280px] flex-1 overflow-hidden rounded-xl border border-ink/10">
+            <div className="min-h-[280px] flex-1 overflow-hidden rounded-sm border border-ink/10">
               <iframe
                 src={MAPS_EMBED_URL}
                 width="100%"

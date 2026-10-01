@@ -3,6 +3,7 @@
 import PageHero from "@/components/PageHero";
 import Services from "@/components/Services";
 import HowItWorks from "@/components/HowItWorks";
+import Modalidades from "@/components/Modalidades";
 import CtaBanner from "@/components/CtaBanner";
 import { GoldWord } from "@/components/ui/Shared";
 import { WHATSAPP_URL, IMAGES } from "@/lib/constants";
@@ -17,7 +18,7 @@ export default function AtendimentoContent() {
             Um espaço só seu, para se <GoldWord>reencontrar</GoldWord>.
           </>
         }
-        subtitle="Atendimento presencial em Novo Hamburgo, com base em Terapia Cognitivo-Comportamental (TCC) e um olhar humano e intuitivo sobre a sua história."
+        subtitle="Atendimento presencial em Novo Hamburgo e online, no Brasil e no exterior, com base em Terapia Cognitivo-Comportamental (TCC) e um olhar humano e intuitivo sobre a sua história."
         imageSrc={IMAGES.terapiaHero.src}
         imageAlt={IMAGES.terapiaHero.alt}
         imagePosition={IMAGES.terapiaHero.objectPosition}
@@ -38,6 +39,7 @@ export default function AtendimentoContent() {
       </PageHero>
 
       <Services />
+      <Modalidades />
       <HowItWorks />
 
       <CtaBanner

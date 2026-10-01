@@ -29,8 +29,8 @@ export default function HowItWorks() {
       <div className="section-container relative z-[1]">
         <div className="mb-12 max-w-2xl">
           <h2
-            className="font-display font-medium tracking-[-0.02em] text-ink"
-            style={{ fontSize: "clamp(1.75rem, 4vw, 3rem)", lineHeight: 1.1 }}
+            className="font-display font-medium tracking-[-0.01em] text-ink"
+            style={{ fontSize: "clamp(2.1rem, 4.6vw, 3.5rem)", lineHeight: 1.1 }}
           >
             Três passos para começar a sua{" "}
             <GoldWord>
@@ -50,7 +50,7 @@ export default function HowItWorks() {
               className="card-surface p-8"
             >
               <InfinityStep number={step.number} />
-              <h3 className="mt-4 font-display text-xl font-bold text-ink">
+              <h3 className="mt-4 font-display text-xl font-medium text-ink">
                 {step.title}
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-ink">

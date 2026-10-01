@@ -15,10 +15,10 @@ export default function Logo({ className = "", light = false }: LogoProps) {
       <span className="inline-flex items-center gap-2.5">
         <InfinityGlyph
           className="h-8 w-16 shrink-0 text-gold sm:h-9 sm:w-[4.5rem]"
-          strokeWidth={2.1}
+
         />
         <span
-          className={`font-display font-bold tracking-tight ${
+          className={`font-display font-medium tracking-[-0.01em] ${
             light ? "text-white" : "text-ink"
           }`}
           style={{ fontSize: "clamp(1.05rem, 2.2vw, 1.3rem)" }}
@@ -45,7 +45,7 @@ export function Stars({ className = "" }: { className?: string }) {
   );
 }
 
-/** Palavra de destaque: bold + dourado */
+/** Palavra de destaque: itálico + dourado */
 export function GoldWord({
   children,
   className = "",
@@ -54,7 +54,7 @@ export function GoldWord({
   className?: string;
 }) {
   return (
-    <span className={`font-bold text-gold ${className}`}>{children}</span>
+    <span className={`italic text-gold ${className}`}>{children}</span>
   );
 }
 
@@ -78,10 +78,10 @@ export function SectionHeader({
   return (
     <div className={`mb-12 max-w-3xl ${alignClass}`}>
       <h2
-        className={`font-display font-medium tracking-[-0.02em] ${
+        className={`font-display font-medium tracking-[-0.01em] ${
           light ? "text-white" : "text-ink"
         }`}
-        style={{ fontSize: "clamp(1.75rem, 4vw, 3rem)", lineHeight: 1.1 }}
+        style={{ fontSize: "clamp(2.1rem, 4.6vw, 3.5rem)", lineHeight: 1.1 }}
       >
         {title}
       </h2>

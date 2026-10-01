@@ -2,7 +2,7 @@
 
 /**
  * HOME — fase 3: branco predominante, dourado pontual, ∞ marcador.
- * Ver decisões em app/globals.css. Copy intacta.
+ * Ver decisões em app/globals.css. Copy: conteúdo final enviado pela cliente (out/2026).
  */
 
 import Link from "next/link";
@@ -15,10 +15,10 @@ import MotionSection from "@/components/ui/MotionSection";
 import AnimatedCounter from "@/components/ui/AnimatedCounter";
 import { InfinityStep } from "@/components/ui/InfinityMark";
 import { GoldWord } from "@/components/ui/Shared";
-import { WHATSAPP_URL } from "@/lib/constants";
+import { WHATSAPP_CONSULTA_URL } from "@/lib/constants";
 
 const trustStats = [
-  { value: 16, suffix: "+", label: "anos de experiência" },
+  { value: 19, suffix: "+", label: "anos de experiência" },
   { value: 5.0, decimals: 1, suffix: "", label: "no Google" },
   { value: 39, suffix: "", label: "avaliações" },
 ] as const;
@@ -51,19 +51,31 @@ export default function HomePage() {
         showBrand
         title={
           <>
-            Tudo pode <GoldWord>mudar</GoldWord> com uma simples conversa
+            Saúde Mental, <GoldWord>Propósito</GoldWord> e Alta Performance
+            Humana
           </>
         }
-        subtitle="Há mais de 16 anos, ajudo pessoas a se reencontrarem na terapia e ajudo empresas a cuidarem de quem faz parte delas com palestras que fazem diferença."
+        subtitle="Adequar a sua vida à sua verdadeira essência é o único caminho para o equilíbrio real. Só quando descobrimos e seguimos a nossa verdade interna é que alcançamos o verdadeiro sucesso em todas as áreas da vida — na carreira, na família e no espírito."
       >
+        <blockquote className="mb-10 max-w-2xl border-y border-gold/40 py-6">
+          <p
+            className="font-display italic text-ink"
+            style={{ fontSize: "clamp(1.25rem, 2.6vw, 1.6rem)", lineHeight: 1.4 }}
+          >
+            &ldquo;A felicidade não é um evento isolado; é o equilíbrio da sua
+            rotina. Construa um estilo de vida onde o sucesso, a saúde e o
+            propósito caminhem juntos.&rdquo;
+          </p>
+        </blockquote>
+
         <div className="flex w-full flex-col items-center gap-3 sm:flex-row sm:justify-center">
           <a
-            href={WHATSAPP_URL}
+            href={WHATSAPP_CONSULTA_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary text-center"
           >
-            Falar no WhatsApp
+            Agendar Consulta Estratégica
           </a>
           <a href="#dois-caminhos" className="btn-ghost text-center">
             Conhecer meu trabalho ↓
@@ -78,7 +90,7 @@ export default function HomePage() {
         >
           {trustStats.map((stat) => (
             <li key={stat.label} className="text-center">
-              <p className="font-display text-3xl font-bold tracking-tight text-gold sm:text-4xl">
+              <p className="font-display text-3xl font-medium tracking-[-0.01em] text-gold sm:text-4xl">
                 <AnimatedCounter
                   value={stat.value}
                   suffix={stat.suffix}
@@ -98,8 +110,8 @@ export default function HomePage() {
         <div className="section-container">
           <div className="mb-12 max-w-2xl">
             <h2
-              className="font-display font-medium tracking-[-0.02em] text-ink"
-              style={{ fontSize: "clamp(1.75rem, 4vw, 3rem)", lineHeight: 1.1 }}
+              className="font-display font-medium tracking-[-0.01em] text-ink"
+              style={{ fontSize: "clamp(2.1rem, 4.6vw, 3.5rem)", lineHeight: 1.1 }}
             >
               Dois caminhos, um{" "}
               <GoldWord>
@@ -124,7 +136,7 @@ export default function HomePage() {
               >
                 <InfinityStep number={path.number} />
                 <h3
-                  className={`mt-4 font-display font-bold tracking-tight text-ink ${
+                  className={`mt-4 font-display font-medium tracking-[-0.01em] text-ink ${
                     path.featured ? "text-2xl sm:text-3xl" : "text-xl sm:text-2xl"
                   }`}
                 >
@@ -152,8 +164,8 @@ export default function HomePage() {
           <div className="grid items-start gap-12 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,0.7fr)] lg:gap-20">
             <div>
               <h2
-                className="font-display font-medium tracking-[-0.02em] text-ink"
-                style={{ fontSize: "clamp(1.75rem, 4vw, 3rem)", lineHeight: 1.1 }}
+                className="font-display font-medium tracking-[-0.01em] text-ink"
+                style={{ fontSize: "clamp(2.1rem, 4.6vw, 3.5rem)", lineHeight: 1.1 }}
               >
                 <GoldWord>Propósito</GoldWord> antes do retorno
               </h2>
@@ -163,10 +175,11 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 className="mt-6 text-base leading-relaxed text-ink sm:text-lg"
               >
-                Sempre escolhi minha profissão pela vocação, não pelo retorno
-                financeiro. Ao longo de mais de 16 anos, vi pessoas chegarem sem
-                perspectiva e saírem com outra relação consigo mesmas. O autoamor
-                transforma vidas, e eu quero continuar fazendo parte disso.
+                A verdadeira liderança e o sucesso sustentável não nascem apenas
+                da competência técnica, mas do equilíbrio emocional e da clareza
+                de propósito. Há mais de 19 anos, atuo na Psicologia Clínica
+                guiada por uma profunda convicção: a de que o consultório não é
+                apenas um espaço de cura, mas um acelerador do potencial humano.
               </motion.p>
               <Link href="/sobre" className="btn-ghost mt-8 inline-flex">
                 Conhecer minha trajetória
@@ -174,8 +187,8 @@ export default function HomePage() {
             </div>
 
             <aside className="card-cream relative overflow-hidden border-l-0 p-8">
-              <p className="font-display text-6xl font-bold tracking-tight text-gold sm:text-7xl">
-                16+
+              <p className="font-display text-6xl font-medium tracking-[-0.01em] text-gold sm:text-7xl">
+                19+
               </p>
               <p className="mt-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-ink">
                 anos dedicados a transformar vidas
