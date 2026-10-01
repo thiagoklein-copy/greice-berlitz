@@ -10,7 +10,7 @@
  * VISUAL: off-white + Cormorant/Jost + ∞ assinatura. Ver app/globals.css.
  */
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Jost } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import SiteShell from "@/components/SiteShell";
 
@@ -20,19 +20,32 @@ export const viewport: Viewport = {
   themeColor: "#1C1712",
 };
 
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
+/*
+ * Fontes hospedadas localmente (app/fonts): o Google Fonts serve parte dos
+ * arquivos em URLs sem extensão (/l/font?kit=...), o que quebra o
+ * next/font/google do Next 14 no build da Vercel.
+ */
+const cormorant = localFont({
   variable: "--font-cormorant",
   display: "swap",
-  weight: ["400", "500", "600"],
-  style: ["normal", "italic"],
+  src: [
+    { path: "./fonts/cormorant-garamond-400-normal.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/cormorant-garamond-500-normal.woff2", weight: "500", style: "normal" },
+    { path: "./fonts/cormorant-garamond-600-normal.woff2", weight: "600", style: "normal" },
+    { path: "./fonts/cormorant-garamond-400-italic.woff2", weight: "400", style: "italic" },
+    { path: "./fonts/cormorant-garamond-500-italic.woff2", weight: "500", style: "italic" },
+    { path: "./fonts/cormorant-garamond-600-italic.woff2", weight: "600", style: "italic" },
+  ],
 });
 
-const jost = Jost({
-  subsets: ["latin"],
+const jost = localFont({
   variable: "--font-jost",
   display: "swap",
-  weight: ["300", "400", "500"],
+  src: [
+    { path: "./fonts/jost-300-normal.woff2", weight: "300", style: "normal" },
+    { path: "./fonts/jost-400-normal.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/jost-500-normal.woff2", weight: "500", style: "normal" },
+  ],
 });
 
 const title = "Greice Berlitz | Psicóloga em Novo Hamburgo — Psicoterapia e Palestras";
