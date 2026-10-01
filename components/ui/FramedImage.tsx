@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import ParallaxImage from "@/components/ui/ParallaxImage";
 
 /**
@@ -14,6 +15,7 @@ export default function FramedImage({
   priority = false,
   sizes = "(max-width: 1024px) 90vw, 40vw",
   frame = "right",
+  parallax = true,
   caption,
   className = "",
 }: {
@@ -24,6 +26,8 @@ export default function FramedImage({
   priority?: boolean;
   sizes?: string;
   frame?: "right" | "left";
+  /** false = foto fixa na moldura (sem deslocamento), útil quando o topo não pode cortar */
+  parallax?: boolean;
   caption?: string;
   className?: string;
 }) {
@@ -40,14 +44,26 @@ export default function FramedImage({
           aria-hidden="true"
         />
         <div className={`relative overflow-hidden bg-sand-dark ${aspect}`}>
-          <ParallaxImage
-            src={src}
-            alt={alt}
-            objectPosition={objectPosition}
-            priority={priority}
-            sizes={sizes}
-            className="absolute inset-0 h-full w-full grayscale"
-          />
+          {parallax ? (
+            <ParallaxImage
+              src={src}
+              alt={alt}
+              objectPosition={objectPosition}
+              priority={priority}
+              sizes={sizes}
+              className="absolute inset-0 h-full w-full grayscale"
+            />
+          ) : (
+            <Image
+              src={src}
+              alt={alt}
+              fill
+              priority={priority}
+              sizes={sizes}
+              className="object-cover grayscale"
+              style={{ objectPosition }}
+            />
+          )}
         </div>
       </div>
       {caption && (

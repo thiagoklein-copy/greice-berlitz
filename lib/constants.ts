@@ -78,7 +78,7 @@ export const IMAGES = {
   formatura: {
     src: "/greice-formatura.jpg",
     alt: "Greice Berlitz na formatura em Psicologia",
-    objectPosition: "50% 30%",
+    objectPosition: "50% 0%",
   },
   hero: {
     src: "/hero.jpg",

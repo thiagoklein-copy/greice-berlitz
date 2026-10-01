@@ -173,6 +173,7 @@ export default function SobreContent() {
                 src={IMAGES.formatura.src}
                 alt={IMAGES.formatura.alt}
                 objectPosition={IMAGES.formatura.objectPosition}
+                parallax={false}
                 frame="left"
                 caption="Formatura em Psicologia, ULBRA (2007)"
                 className="ml-4 sm:ml-6"
