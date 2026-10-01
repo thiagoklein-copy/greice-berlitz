@@ -62,9 +62,6 @@ export default function Testimonials({ index = "04" }: { index?: string }) {
                     <p className="font-display text-[1.5rem] leading-[1.45] text-ink sm:text-[1.75rem]">
                       &ldquo;{item.quote}&rdquo;
                     </p>
-                    <footer className="t-label mt-6 text-gold">
-                      {item.author}
-                    </footer>
                   </blockquote>
                 </motion.li>
               ))}
