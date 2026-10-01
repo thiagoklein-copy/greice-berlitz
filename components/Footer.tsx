@@ -23,8 +23,7 @@ export default function Footer() {
           <div className="lg:col-span-5">
             <Logo />
             <p className="t-small mt-6 max-w-sm text-ink/85">
-              Terapia e palestras que fazem diferença na vida das pessoas, em
-              Novo Hamburgo e além.
+              Terapia e palestras que fazem diferença na vida das pessoas.
             </p>
           </div>
 
