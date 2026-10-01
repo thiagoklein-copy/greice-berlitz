@@ -1,9 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import MotionSection from "@/components/ui/MotionSection";
 import { GoldWord, SectionHeader } from "@/components/ui/Shared";
-import { InfinityStep } from "@/components/ui/InfinityMark";
 import { SERVICES, buildWhatsAppUrl } from "@/lib/constants";
 
 const RESULTS = [
@@ -19,62 +17,17 @@ const RESULTS = [
   },
 ];
 
-function ServiceCard({
-  service,
-  index }: {
-  service: (typeof SERVICES)[number];
-  index: number;
-}) {
-  const number = String(index + 1).padStart(2, "0");
+const ease: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
-  return (
-    <motion.article
-      id={service.id}
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: index * 0.05, duration: 0.4 }}
-      className="card-surface flex h-full w-full flex-col p-7 sm:p-8"
-    >
-      <InfinityStep number={number} />
-
-      <h3 className="mt-4 font-display text-xl font-medium tracking-[-0.01em] text-ink">
-        {service.title}
-      </h3>
-
-      <p className="mt-3 text-[15px] leading-relaxed text-ink">
-        {service.description}
-      </p>
-
-      <div className="mt-auto pt-5">
-        <div className="space-y-1.5 border-t border-ink/10 pt-5 text-sm">
-          <p className="text-ink">
-            <span className="font-semibold text-ink">Duração:</span>{" "}
-            {service.duration}
-          </p>
-          <p className="font-medium text-ink">{service.price}</p>
-        </div>
-
-        <a
-          href={buildWhatsAppUrl(
-            `Olá, Greice! Gostaria de saber mais sobre: ${service.whatsappTopic}`,
-          )}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn-ghost mt-6 w-full text-center"
-        >
-          Falar no WhatsApp
-        </a>
-      </div>
-    </motion.article>
-  );
-}
-
+/** Áreas de Atuação Estratégica: intro TCC, resultados e frentes em lista. */
 export default function Services() {
   return (
-    <MotionSection id="como-posso-ajudar" className="bg-sand py-24 sm:py-32">
+    <section id="como-posso-ajudar" className="section-pad scroll-mt-20 bg-sand">
       <div className="section-container">
         <SectionHeader
+          eyebrow="Áreas de atuação"
+          index="01"
+          split
           title={
             <>
               Áreas de Atuação <GoldWord>Estratégica</GoldWord>
@@ -83,38 +36,68 @@ export default function Services() {
           subtitle="Utilizo a Terapia Cognitivo-Comportamental (TCC) combinada a métodos integrativos. É uma abordagem padrão-ouro fundamentada em evidências científicas, focada em reestruturar padrões de pensamento para gerar mudanças comportamentais rápidas, mensuráveis e duradouras."
         />
 
-        <div className="mb-16 max-w-4xl">
-          <h3 className="font-display text-2xl font-medium text-ink sm:text-3xl">
-            Resultados do Processo Terapêutico
-          </h3>
-          <dl className="mt-6 grid gap-8 border-t border-ink/10 pt-6 sm:grid-cols-2">
+        {/* Resultados */}
+        <div className="bg-sand-dark px-6 py-14 sm:px-12 sm:py-16 lg:px-16">
+          <p className="t-label text-gold">Resultados do Processo Terapêutico</p>
+          <dl className="mt-10 grid gap-12 md:grid-cols-2 md:gap-16">
             {RESULTS.map((result) => (
-              <div key={result.title}>
-                <dt className="font-display text-xl font-medium text-gold">
-                  {result.title}
-                </dt>
-                <dd className="mt-2 text-base leading-relaxed text-ink">
-                  {result.description}
-                </dd>
+              <div key={result.title} className="border-t hairline pt-8">
+                <dt className="t-h3 text-ink">{result.title}</dt>
+                <dd className="t-body mt-4 text-ink/85">{result.description}</dd>
               </div>
             ))}
           </dl>
         </div>
 
-        <h3 className="mb-8 font-display text-2xl font-medium text-ink sm:text-3xl">
-          Frentes de Atendimento
-        </h3>
+        {/* Frentes */}
+        <div className="mt-24 sm:mt-32">
+          <h3 className="t-label text-ink">Frentes de Atendimento</h3>
 
-        <div className="grid gap-4 lg:grid-cols-3">
-          {SERVICES.map((service, index) => (
-            <ServiceCard key={service.id} service={service} index={index} />
-          ))}
+          <ol className="mt-10 border-t hairline">
+            {SERVICES.map((service, index) => (
+              <motion.li
+                key={service.id}
+                id={service.id}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.8, ease }}
+                className="grid gap-6 border-b hairline py-12 sm:py-16 lg:grid-cols-12 lg:gap-12"
+              >
+                <span className="t-number lg:col-span-1">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <h4 className="t-h3 text-ink lg:col-span-4">{service.title}</h4>
+                <div className="lg:col-span-6 lg:col-start-7">
+                  <p className="t-body text-ink/85">{service.description}</p>
+                  <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-4">
+                    <p className="t-label text-ink/60">
+                      {service.duration} · {service.price}
+                    </p>
+                    <a
+                      href={buildWhatsAppUrl(
+                        `Olá, Greice! Gostaria de saber mais sobre: ${service.whatsappTopic}`,
+                      )}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="link-arrow text-ink"
+                    >
+                      Falar no WhatsApp
+                      <span className="arrow" aria-hidden="true">
+                        →
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </motion.li>
+            ))}
+          </ol>
+
+          <p className="t-small mt-10 text-ink/60">
+            Valores sob consulta. Atendimento presencial em Novo Hamburgo e online.
+          </p>
         </div>
-
-        <p className="mt-12 text-sm text-ink">
-          Valores sob consulta. Atendimento presencial em Novo Hamburgo e online.
-        </p>
       </div>
-    </MotionSection>
+    </section>
   );
 }

@@ -1,65 +1,77 @@
 "use client";
 
 import { motion } from "framer-motion";
-import MotionSection from "@/components/ui/MotionSection";
-import { GoldWord, Stars } from "@/components/ui/Shared";
-import { InfinityDivider } from "@/components/ui/InfinityMark";
+import { GoldWord, SectionLabel, Stars } from "@/components/ui/Shared";
 import ReviewAvatars from "@/components/ui/ReviewAvatars";
-import { TESTIMONIALS } from "@/lib/constants";
+import { GOOGLE_REVIEWS_URL, TESTIMONIALS } from "@/lib/constants";
 
-export default function Testimonials() {
+/** Depoimentos: nota fixa à esquerda, citações em lista editorial à direita. */
+export default function Testimonials({ index = "04" }: { index?: string }) {
   return (
-    <>
-      <InfinityDivider className="bg-white py-8" />
-      <MotionSection
-        id="depoimentos"
-        className="relative overflow-hidden bg-sand py-24 sm:py-32"
-      >
-        <div className="section-container relative z-[1]">
-          <div className="mb-12 max-w-2xl">
-            <h2
-              className="font-display font-medium tracking-[-0.01em] text-ink"
-              style={{ fontSize: "clamp(2.1rem, 4.6vw, 3.5rem)", lineHeight: 1.1 }}
-            >
-              O que dizem sobre o meu <GoldWord>trabalho</GoldWord>
-            </h2>
-          </div>
+    <section id="depoimentos" className="section-pad bg-sand-dark">
+      <div className="section-container">
+        <SectionLabel index={index} className="mb-14 sm:mb-20">
+          Depoimentos
+        </SectionLabel>
 
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {TESTIMONIALS.map((item, index) => (
-              <motion.blockquote
-                key={index}
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.04, duration: 0.35 }}
-                className="card-cream flex flex-col p-6"
-              >
-                <p className="flex-1 text-[15px] leading-relaxed text-ink">
-                  &ldquo;{item.quote}&rdquo;
-                </p>
-              </motion.blockquote>
-            ))}
-          </div>
+        <div className="grid gap-16 lg:grid-cols-12 lg:gap-12">
+          <div className="lg:col-span-4">
+            <div className="lg:sticky lg:top-32">
+              <h2 className="t-h2 text-ink">
+                O que dizem sobre o meu <GoldWord>trabalho</GoldWord>
+              </h2>
 
-          <div className="card-dark relative mt-12 overflow-hidden p-8 sm:p-10">
-            <div className="relative z-[1] flex flex-wrap items-end gap-8">
-              <div>
-                <p className="font-display text-5xl font-medium tracking-[-0.01em] text-gold">
+              <div className="mt-12 border-t hairline pt-10">
+                <p className="font-display text-[5.5rem] leading-none text-gold">
                   5,0
                 </p>
-                <div className="mt-2 flex items-center gap-2">
-                  <Stars className="text-sm text-gold" />
-                  <span className="text-sm text-white">
-                    39 avaliações no Google
-                  </span>
+                <Stars className="mt-4 block text-sm" />
+                <p className="t-small mt-3 text-ink/85">
+                  39 avaliações no Google
+                </p>
+                <div className="mt-8 flex items-center gap-6">
+                  <ReviewAvatars />
+                  <a
+                    href={GOOGLE_REVIEWS_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="link-arrow text-ink"
+                  >
+                    Ver no Google
+                    <span className="arrow" aria-hidden="true">
+                      →
+                    </span>
+                  </a>
                 </div>
               </div>
-              <ReviewAvatars />
             </div>
           </div>
+
+          <div className="lg:col-span-7 lg:col-start-6">
+            <ul>
+              {TESTIMONIALS.map((item, index) => (
+                <motion.li
+                  key={item.author}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-60px" }}
+                  transition={{ duration: 0.7, delay: (index % 2) * 0.05 }}
+                  className="border-t hairline py-10 first:border-t-0 first:pt-0 sm:py-12"
+                >
+                  <blockquote>
+                    <p className="font-display text-[1.5rem] leading-[1.45] text-ink sm:text-[1.75rem]">
+                      &ldquo;{item.quote}&rdquo;
+                    </p>
+                    <footer className="t-label mt-6 text-gold">
+                      {item.author}
+                    </footer>
+                  </blockquote>
+                </motion.li>
+              ))}
+            </ul>
+          </div>
         </div>
-      </MotionSection>
-    </>
+      </div>
+    </section>
   );
 }

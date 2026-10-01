@@ -1,8 +1,7 @@
 import type { Config } from "tailwindcss";
 
 /**
- * SISTEMA VISUAL — Greice Berlitz (fase 3: branco + ∞ marcador)
- * Base clara, dourado pontual, ∞ como pontuação visual.
+ * SISTEMA VISUAL — Greice Berlitz (fase 5: editorial). Ver app/globals.css.
  */
 const config: Config = {
   content: [
@@ -42,6 +41,12 @@ const config: Config = {
         display: ["var(--font-cormorant)", "Georgia", "serif"],
         sans: ["var(--font-jost)", "system-ui", "sans-serif"],
         serif: ["var(--font-cormorant)", "Georgia", "serif"],
+      },
+      // Filetes finos usam /8, /12 e /14 (fora da escala padrão)
+      opacity: {
+        8: "0.08",
+        12: "0.12",
+        14: "0.14",
       },
       boxShadow: {
         soft: "none",

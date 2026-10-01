@@ -1,9 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import MotionSection from "@/components/ui/MotionSection";
-import { InfinityStep } from "@/components/ui/InfinityMark";
-import { GoldWord } from "@/components/ui/Shared";
+import { GoldWord, SectionHeader } from "@/components/ui/Shared";
 
 const steps = [
   {
@@ -25,41 +23,41 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <MotionSection className="relative overflow-hidden bg-white py-24 sm:py-32">
-      <div className="section-container relative z-[1]">
-        <div className="mb-12 max-w-2xl">
-          <h2
-            className="font-display font-medium tracking-[-0.01em] text-ink"
-            style={{ fontSize: "clamp(2.1rem, 4.6vw, 3.5rem)", lineHeight: 1.1 }}
-          >
-            Três passos para começar a sua{" "}
-            <GoldWord>
-              terapia
-            </GoldWord>
-          </h2>
-        </div>
+    <section className="section-pad bg-sand-dark">
+      <div className="section-container">
+        <SectionHeader
+          eyebrow="Como começar"
+          index="03"
+          title={
+            <>
+              Três passos para começar a sua <GoldWord>terapia</GoldWord>
+            </>
+          }
+        />
 
-        <div className="grid gap-4 md:grid-cols-3">
+        <ol className="relative grid gap-14 md:grid-cols-3 md:gap-10">
+          <span
+            className="absolute left-0 right-0 top-[1.75rem] hidden h-px bg-ink/12 md:block"
+            aria-hidden="true"
+          />
           {steps.map((step, index) => (
-            <motion.div
+            <motion.li
               key={step.number}
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.08, duration: 0.4 }}
-              className="card-surface p-8"
+              transition={{ delay: index * 0.12, duration: 0.8 }}
+              className="relative"
             >
-              <InfinityStep number={step.number} />
-              <h3 className="mt-4 font-display text-xl font-medium text-ink">
-                {step.title}
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-ink">
-                {step.description}
-              </p>
-            </motion.div>
+              <span className="t-number relative inline-block bg-sand-dark pr-6">
+                {step.number}
+              </span>
+              <h3 className="t-h3 mt-8 text-ink">{step.title}</h3>
+              <p className="t-body mt-4 text-ink/85">{step.description}</p>
+            </motion.li>
           ))}
-        </div>
+        </ol>
       </div>
-    </MotionSection>
+    </section>
   );
 }

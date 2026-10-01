@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Link from "next/link";
 import { InfinityGlyph } from "@/components/ui/InfinityMark";
 
 interface LogoProps {
@@ -9,29 +10,25 @@ interface LogoProps {
 export default function Logo({ className = "", light = false }: LogoProps) {
   return (
     <span
-      className={`inline-flex flex-col leading-none ${className}`}
+      className={`inline-flex items-center gap-3 leading-none ${className}`}
       aria-label="Greice Berlitz, Psicóloga, CRP 07/16250"
     >
-      <span className="inline-flex items-center gap-2.5">
-        <InfinityGlyph
-          className="h-8 w-16 shrink-0 text-gold sm:h-9 sm:w-[4.5rem]"
-
-        />
+      <InfinityGlyph className="h-5 w-10 shrink-0 text-gold" />
+      <span className="flex flex-col">
         <span
-          className={`font-display font-medium tracking-[-0.01em] ${
-            light ? "text-white" : "text-ink"
+          className={`font-display text-[1.4rem] font-medium tracking-[-0.01em] ${
+            light ? "text-sand" : "text-ink"
           }`}
-          style={{ fontSize: "clamp(1.05rem, 2.2vw, 1.3rem)" }}
         >
           Greice Berlitz
         </span>
-      </span>
-      <span
-        className={`mt-1.5 text-[10px] font-medium sm:text-[11px] ${
-          light ? "text-white" : "text-ink"
-        }`}
-      >
-        Psicóloga · CRP 07/16250
+        <span
+          className={`mt-1 text-[9px] font-normal uppercase tracking-[0.3em] ${
+            light ? "text-sand/70" : "text-ink/60"
+          }`}
+        >
+          Psicóloga · CRP 07/16250
+        </span>
       </span>
     </span>
   );
@@ -39,13 +36,16 @@ export default function Logo({ className = "", light = false }: LogoProps) {
 
 export function Stars({ className = "" }: { className?: string }) {
   return (
-    <span className={`text-gold ${className}`} aria-label="5 estrelas">
+    <span
+      className={`tracking-[0.2em] text-gold ${className}`}
+      aria-label="5 estrelas"
+    >
       ★★★★★
     </span>
   );
 }
 
-/** Palavra de destaque: itálico + dourado */
+/** Palavra de destaque: itálico + ouro velho */
 export function GoldWord({
   children,
   className = "",
@@ -58,42 +58,119 @@ export function GoldWord({
   );
 }
 
+/** Rótulo de seção: "01 — Rótulo" seguido de filete até a margem */
+export function SectionLabel({
+  index,
+  children,
+  light = false,
+  className = "",
+}: {
+  index?: string;
+  children: ReactNode;
+  light?: boolean;
+  className?: string;
+}) {
+  return (
+    <div className={`flex items-center gap-5 ${className}`}>
+      <p className="t-label shrink-0 text-gold">
+        {index && <span className="mr-3">{index}</span>}
+        {index && (
+          <span className={light ? "text-sand/40" : "text-ink/30"}>— </span>
+        )}
+        <span className={light ? "text-sand" : "text-ink"}>{children}</span>
+      </p>
+      <span
+        className={`h-px flex-1 ${light ? "bg-sand/15" : "bg-ink/12"}`}
+        aria-hidden="true"
+      />
+    </div>
+  );
+}
+
 interface SectionHeaderProps {
-  /** Ignorado — badges/eyebrows removidos do site */
+  /** Rótulo pequeno acima do título */
   eyebrow?: string;
+  /** Número da seção no rótulo ("01") */
+  index?: string;
   title: ReactNode;
   subtitle?: string;
   align?: "left" | "center";
   light?: boolean;
+  /** Título à esquerda e subtítulo à direita (desktop) */
+  split?: boolean;
 }
 
 export function SectionHeader({
+  eyebrow,
+  index,
   title,
   subtitle,
   align = "left",
   light = false,
+  split = false,
 }: SectionHeaderProps) {
-  const alignClass = align === "center" ? "text-center mx-auto" : "text-left";
+  const tone = light ? "text-sand" : "text-ink";
+  const centered = align === "center";
 
   return (
-    <div className={`mb-12 max-w-3xl ${alignClass}`}>
-      <h2
-        className={`font-display font-medium tracking-[-0.01em] ${
-          light ? "text-white" : "text-ink"
-        }`}
-        style={{ fontSize: "clamp(2.1rem, 4.6vw, 3.5rem)", lineHeight: 1.1 }}
-      >
-        {title}
-      </h2>
-      {subtitle && (
-        <p
-          className={`mt-4 text-base leading-relaxed sm:text-lg ${
-            light ? "text-white" : "text-ink"
-          }`}
-        >
-          {subtitle}
-        </p>
+    <div className="mb-16 sm:mb-20">
+      {eyebrow && (
+        <SectionLabel index={index} light={light} className="mb-10 sm:mb-14">
+          {eyebrow}
+        </SectionLabel>
       )}
+      <div
+        className={
+          split
+            ? "grid gap-8 lg:grid-cols-12 lg:gap-12"
+            : centered
+              ? "mx-auto max-w-4xl text-center"
+              : "max-w-4xl"
+        }
+      >
+        <h2 className={`t-h2 ${tone} ${split ? "lg:col-span-7" : ""}`}>
+          {title}
+        </h2>
+        {subtitle && (
+          <p
+            className={`t-body ${light ? "text-sand/80" : "text-ink/85"} ${
+              split
+                ? "self-end lg:col-span-5"
+                : centered
+                  ? "mx-auto mt-8 max-w-2xl"
+                  : "mt-8 max-w-2xl"
+            }`}
+          >
+            {subtitle}
+          </p>
+        )}
+      </div>
     </div>
+  );
+}
+
+/** Link editorial com filete e seta */
+export function ArrowLink({
+  href,
+  children,
+  external = false,
+  className = "",
+}: {
+  href: string;
+  children: ReactNode;
+  external?: boolean;
+  className?: string;
+}) {
+  return (
+    <Link
+      href={href}
+      className={`link-arrow ${className}`}
+      {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+    >
+      {children}
+      <span className="arrow" aria-hidden="true">
+        →
+      </span>
+    </Link>
   );
 }

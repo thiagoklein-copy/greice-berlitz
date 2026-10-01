@@ -3,10 +3,8 @@
 import { motion } from "framer-motion";
 import PageHero from "@/components/PageHero";
 import CtaBanner from "@/components/CtaBanner";
-import MotionSection from "@/components/ui/MotionSection";
-import { GoldWord, SectionHeader } from "@/components/ui/Shared";
-import { InfinityStep } from "@/components/ui/InfinityMark";
-import Image from "next/image";
+import FramedImage from "@/components/ui/FramedImage";
+import { GoldWord, SectionLabel } from "@/components/ui/Shared";
 import { IMAGES, PROFESSIONAL_CRP, WHATSAPP_URL } from "@/lib/constants";
 
 const formation = [
@@ -35,6 +33,15 @@ const pillars = [
   },
 ];
 
+const ease: [number, number, number, number] = [0.22, 1, 0.36, 1];
+
+const reveal = {
+  initial: { opacity: 0, y: 16 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: "-60px" },
+  transition: { duration: 0.8, ease },
+};
+
 export default function SobreContent() {
   return (
     <>
@@ -42,12 +49,8 @@ export default function SobreContent() {
         eyebrow="Minha história"
         title={
           <>
-            <span className="block text-balance">
-              Antes de ajudar os outros a se transformarem,
-            </span>
-            <span className="mt-2 block text-balance sm:mt-3">
-              eu me <GoldWord>transformei</GoldWord>.
-            </span>
+            Antes de ajudar os outros a se transformarem, eu me{" "}
+            <GoldWord>transformei</GoldWord>.
           </>
         }
         imageSrc={IMAGES.retrato.src}
@@ -55,232 +58,199 @@ export default function SobreContent() {
         imagePosition={IMAGES.retrato.objectPosition}
       />
 
-      <MotionSection className="bg-white py-24 sm:py-32">
+      {/* ── 01 Quem eu sou ─────────────────────────────────── */}
+      <section className="section-pad border-t hairline bg-sand">
         <div className="section-container">
-          <SectionHeader
-            eyebrow="Quem eu sou"
-            title={
-              <>
-                Vocação, presença e{" "}
-                <GoldWord>
-                  propósito
-                </GoldWord>
-              </>
-            }
-          />
+          <SectionLabel index="01" className="mb-14 sm:mb-20">
+            Quem eu sou
+          </SectionLabel>
 
-          <div className="max-w-3xl space-y-5 text-base leading-relaxed text-ink sm:text-lg">
-            <motion.p
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              A verdadeira liderança e o sucesso sustentável não nascem apenas da
-              competência técnica, mas do equilíbrio emocional e da clareza de
-              propósito. Há mais de 19 anos, atuo na Psicologia Clínica guiada por
-              uma profunda convicção: a de que o consultório não é apenas um
-              espaço de cura, mas um acelerador do potencial humano. Minha escolha
-              profissional nunca foi financeira, mas sim baseada no privilégio de
-              guiar pessoas a reencontrarem sua máxima potência e o prazer genuíno
-              naquilo que realizam.
-            </motion.p>
-            <motion.p
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.06 }}
-            >
-              Com especialização em Terapia Cognitivo-Comportamental (TCC) e uma
-              sólida trajetória que une as áreas Clínica, Hospitalar e
-              Organizacional, desenvolvi uma visão sistêmica sobre a mente humana.
-              Essa bagagem multifacetada me permite compreender com precisão a
-              rotina de alta exigência, as pressões de mercado e os desafios de
-              tomada de decisão enfrentados por empresários, profissionais
-              autônomos e líderes. Esse olhar atento estende-se também à jornada
-              múltipla de muitas mulheres, que equilibram com maestria as demandas
-              corporativas com a vida familiar. No meu consultório — avaliado com
-              nota máxima (5 estrelas) no Google —, traduzo a ciência em
-              estratégias práticas para quem busca lucratividade e sucesso sem
-              abdicar do seu verdadeiro propósito de vida. Sempre conectado à saúde
-              mental, ao bem-estar e à felicidade.
-            </motion.p>
+          <div className="grid gap-12 lg:grid-cols-12 lg:gap-12">
+            <div className="lg:col-span-4">
+              <h2 className="t-h2 text-ink lg:sticky lg:top-32">
+                Vocação, presença e <GoldWord>propósito</GoldWord>
+              </h2>
+            </div>
+
+            <div className="space-y-10 lg:col-span-7 lg:col-start-6">
+              <motion.p {...reveal} className="t-lead text-ink">
+                A verdadeira liderança e o sucesso sustentável não nascem apenas da
+                competência técnica, mas do equilíbrio emocional e da clareza de
+                propósito. Há mais de 19 anos, atuo na Psicologia Clínica guiada por
+                uma profunda convicção: a de que o consultório não é apenas um
+                espaço de cura, mas um acelerador do potencial humano. Minha escolha
+                profissional nunca foi financeira, mas sim baseada no privilégio de
+                guiar pessoas a reencontrarem sua máxima potência e o prazer genuíno
+                naquilo que realizam.
+              </motion.p>
+              <motion.p {...reveal} className="t-body border-t hairline pt-10 text-ink/85">
+                Com especialização em Terapia Cognitivo-Comportamental (TCC) e uma
+                sólida trajetória que une as áreas Clínica, Hospitalar e
+                Organizacional, desenvolvi uma visão sistêmica sobre a mente humana.
+                Essa bagagem multifacetada me permite compreender com precisão a
+                rotina de alta exigência, as pressões de mercado e os desafios de
+                tomada de decisão enfrentados por empresários, profissionais
+                autônomos e líderes. Esse olhar atento estende-se também à jornada
+                múltipla de muitas mulheres, que equilibram com maestria as demandas
+                corporativas com a vida familiar. No meu consultório — avaliado com
+                nota máxima (5 estrelas) no Google —, traduzo a ciência em
+                estratégias práticas para quem busca lucratividade e sucesso sem
+                abdicar do seu verdadeiro propósito de vida. Sempre conectado à saúde
+                mental, ao bem-estar e à felicidade.
+              </motion.p>
+            </div>
           </div>
         </div>
-      </MotionSection>
+      </section>
 
+      {/* ── 02 Resiliência (faixa café) ────────────────────── */}
       {/*
-        BLOCO SENSÍVEL: confirmar com a cliente o nível de detalhe antes de publicar.
-        Um dos ≤2 momentos escuros da página (junto com o CTA).
+        BLOCO SENSÍVEL: texto enviado pela cliente; confirmar antes de publicar
+        se o nível de detalhe sobre a perda dos pais está ok.
       */}
-      <MotionSection className="relative overflow-hidden bg-ink py-24 sm:py-32">
-        <div className="section-container relative z-[1]">
-          <SectionHeader
-            eyebrow="Resiliência"
-            title={
-              <>
-                Uma prova de que é possível{" "}
-                <GoldWord>
-                  recomeçar
-                </GoldWord>
-              </>
-            }
-            light
-          />
+      <section className="section-pad bg-ink">
+        <div className="section-container">
+          <SectionLabel index="02" light className="mb-14 sm:mb-20">
+            Resiliência
+          </SectionLabel>
 
-          <div className="max-w-3xl space-y-5 text-base leading-relaxed text-sand sm:text-lg">
-            <motion.p
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              Minha autoridade também foi construída pela experiência de vida.
-              Conheço os caminhos da depressão por tê-la superado na juventude, o
-              que me deu ferramentas práticas e uma empatia real. Diante do luto
-              complexo pela perda recente dos meus pais para o câncer, vivi o meu
-              maior laboratório de resiliência: transformei a dor profunda em
-              energia vital e em um compromisso ainda maior com o sofrimento do
-              outro.
-            </motion.p>
-            <motion.p
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.06 }}
-            >
-              Acredito que o sucesso sem propósito é vazio. Por isso, meu trabalho
-              integra a saúde emocional aos seus valores mais elevados, respeitando
-              sua individualidade e sua dimensão espiritual, para que você lidere a
-              sua vida com significado e plenitude.
-            </motion.p>
+          <div className="grid gap-12 lg:grid-cols-12 lg:gap-12">
+            <h2 className="t-h2 text-sand lg:col-span-5">
+              Uma prova de que é possível <GoldWord>recomeçar</GoldWord>
+            </h2>
+
+            <div className="t-body space-y-8 text-sand/80 lg:col-span-6 lg:col-start-7">
+              <motion.p {...reveal}>
+                Minha autoridade também foi construída pela experiência de vida.
+                Conheço os caminhos da depressão por tê-la superado na juventude, o
+                que me deu ferramentas práticas e uma empatia real. Diante do luto
+                complexo pela perda recente dos meus pais para o câncer, vivi o meu
+                maior laboratório de resiliência: transformei a dor profunda em
+                energia vital e em um compromisso ainda maior com o sofrimento do
+                outro.
+              </motion.p>
+              <motion.p {...reveal}>
+                Acredito que o sucesso sem propósito é vazio. Por isso, meu trabalho
+                integra a saúde emocional aos seus valores mais elevados, respeitando
+                sua individualidade e sua dimensão espiritual, para que você lidere a
+                sua vida com significado e plenitude.
+              </motion.p>
+            </div>
           </div>
 
           <motion.blockquote
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.12, duration: 0.5 }}
-            className="relative mx-auto mt-16 max-w-3xl px-4 text-center sm:mt-20"
+            {...reveal}
+            className="mx-auto mt-24 max-w-4xl border-y hairline-light py-14 text-center sm:mt-32"
           >
-            <span
-              className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 -translate-y-[70%] font-display text-[clamp(5rem,14vw,9rem)] leading-none text-gold/55"
-              aria-hidden="true"
-            >
-              &ldquo;
-            </span>
             <p
-              className="relative z-[1] font-display font-medium tracking-[-0.01em] text-sand"
-              style={{
-                fontSize: "clamp(1.35rem, 3.2vw, 2rem)",
-                lineHeight: 1.35,
-              }}
+              className="font-display italic text-sand"
+              style={{ fontSize: "clamp(1.6rem, 3.4vw, 2.6rem)", lineHeight: 1.3 }}
             >
-              Se você está passando por algo parecido, saiba: dá para se
-              reconstruir. E eu posso te ajudar nesse caminho.
+              &ldquo;Se você está passando por algo parecido, saiba: dá para se
+              reconstruir. E eu posso te ajudar nesse caminho.&rdquo;
             </p>
           </motion.blockquote>
         </div>
-      </MotionSection>
+      </section>
 
-      <MotionSection className="bg-sand py-24 sm:py-32">
+      {/* ── 03 Formação ─────────────────────────────────────── */}
+      <section className="section-pad bg-sand-dark">
         <div className="section-container">
-          <SectionHeader
-            eyebrow="Formação"
-            title={
-              <>
-                Base técnica, olhar{" "}
-                <GoldWord>
-                  humano
-                </GoldWord>
-              </>
-            }
-          />
+          <SectionLabel index="03" className="mb-14 sm:mb-20">
+            Formação
+          </SectionLabel>
 
-          <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] lg:gap-16">
-          <ul className="card-surface space-y-0 overflow-hidden p-0">
-            {formation.map((item, index) => (
-              <motion.li
-                key={item}
-                initial={{ opacity: 0, x: -8 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.04 }}
-                className="flex items-start gap-4 border-b border-ink/10 px-5 py-4 last:border-b-0"
-              >
-                <InfinityStep number={String(index + 1).padStart(2, "0")} />
-                <span className="text-sm text-ink sm:text-base">{item}</span>
-              </motion.li>
-            ))}
-          </ul>
-
-          <figure className="mx-auto w-full max-w-sm lg:max-w-none">
-            <div className="relative aspect-square overflow-hidden rounded-sm border border-ink/10">
-              <Image
+          <div className="grid items-start gap-16 lg:grid-cols-12 lg:gap-12">
+            <div className="mx-auto w-full max-w-sm lg:col-span-4 lg:max-w-none">
+              <FramedImage
                 src={IMAGES.formatura.src}
                 alt={IMAGES.formatura.alt}
-                fill
-                sizes="(max-width: 1024px) 90vw, 35vw"
-                className="object-cover grayscale"
-                style={{ objectPosition: IMAGES.formatura.objectPosition }}
+                objectPosition={IMAGES.formatura.objectPosition}
+                frame="left"
+                caption="Formatura em Psicologia, ULBRA (2007)"
+                className="ml-4 sm:ml-6"
               />
             </div>
-            <figcaption className="mt-3 text-sm text-ink">
-              Formatura em Psicologia, ULBRA (2007)
-            </figcaption>
-          </figure>
+
+            <div className="lg:col-span-7 lg:col-start-6">
+              <h2 className="t-h2 text-ink">
+                Base técnica, olhar <GoldWord>humano</GoldWord>
+              </h2>
+
+              <ol className="mt-14 border-t hairline">
+                {formation.map((item, index) => (
+                  <motion.li
+                    key={item}
+                    initial={{ opacity: 0, x: -8 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.05, duration: 0.6 }}
+                    className="flex items-baseline gap-6 border-b hairline py-6"
+                  >
+                    <span className="t-label w-8 shrink-0 text-gold">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <span className="font-display text-xl text-ink sm:text-2xl">
+                      {item}
+                    </span>
+                  </motion.li>
+                ))}
+              </ol>
+            </div>
           </div>
         </div>
-      </MotionSection>
+      </section>
 
-      <MotionSection className="border-t border-ink/8 bg-white py-24 sm:py-32">
+      {/* ── 04 Filosofia de trabalho ────────────────────────── */}
+      <section className="section-pad bg-sand">
         <div className="section-container">
-          <SectionHeader
-            title={
-              <>
-                Alta Performance com <GoldWord>Equilíbrio</GoldWord>
-              </>
-            }
-          />
+          <SectionLabel index="04" className="mb-14 sm:mb-20">
+            Minha filosofia de trabalho
+          </SectionLabel>
 
-          <div className="max-w-3xl space-y-5 text-base leading-relaxed text-ink sm:text-lg">
-            <p>
-              Muitas mentes brilhantes vivem exaustas porque foram mal orientadas
-              a acreditar que o sucesso exige o sacrifício da saúde ou da paz. Eu
-              não acredito em fórmulas mágicas, mas sim em engenharia de rotina. A
-              verdadeira felicidade está em adequar o seu sentido real de vida e a
-              sua verdade às suas necessidades diárias. Ela reside no alinhamento
-              diário — e possível — de todas as esferas da sua vida: saúde física,
-              desenvolvimento intelectual, carreira, família e conexão espiritual,
-              utilizando pilares fundamentais embasados pelo conhecimento
-              científico.
-            </p>
-            <p>
-              No meu consultório, o processo terapêutico é ativo, integrativo e
-              baseado em três eixos essenciais:
-            </p>
+          <div className="grid gap-12 lg:grid-cols-12 lg:gap-12">
+            <h2 className="t-h2 text-ink lg:col-span-5">
+              Alta Performance com <GoldWord>Equilíbrio</GoldWord>
+            </h2>
+
+            <div className="t-body space-y-6 text-ink/85 lg:col-span-6 lg:col-start-7">
+              <p>
+                Muitas mentes brilhantes vivem exaustas porque foram mal orientadas
+                a acreditar que o sucesso exige o sacrifício da saúde ou da paz. Eu
+                não acredito em fórmulas mágicas, mas sim em engenharia de rotina. A
+                verdadeira felicidade está em adequar o seu sentido real de vida e a
+                sua verdade às suas necessidades diárias. Ela reside no alinhamento
+                diário — e possível — de todas as esferas da sua vida: saúde física,
+                desenvolvimento intelectual, carreira, família e conexão espiritual,
+                utilizando pilares fundamentais embasados pelo conhecimento
+                científico.
+              </p>
+              <p className="font-display text-2xl italic text-ink">
+                No meu consultório, o processo terapêutico é ativo, integrativo e
+                baseado em três eixos essenciais:
+              </p>
+            </div>
           </div>
 
-          <div className="mt-12 grid gap-4 lg:grid-cols-3">
+          <ol className="mt-20 border-t hairline sm:mt-28">
             {pillars.map((pillar, index) => (
-              <motion.article
+              <motion.li
                 key={pillar.title}
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-                className="card-surface relative overflow-hidden p-7 sm:p-8"
+                {...reveal}
+                className="grid gap-6 border-b hairline py-12 sm:py-16 lg:grid-cols-12 lg:gap-12"
               >
-                <InfinityStep number={String(index + 1).padStart(2, "0")} />
-                <h3 className="mt-4 font-display text-2xl font-medium text-ink">
-                  {pillar.title}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-ink sm:text-base">
+                <span className="t-number lg:col-span-1">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <h3 className="t-h3 text-ink lg:col-span-4">{pillar.title}</h3>
+                <p className="t-body text-ink/85 lg:col-span-6 lg:col-start-7">
                   {pillar.description}
                 </p>
-              </motion.article>
+              </motion.li>
             ))}
-          </div>
+          </ol>
 
-          <div className="mt-12">
+          <div className="mt-16">
             <a
               href={WHATSAPP_URL}
               target="_blank"
@@ -291,15 +261,12 @@ export default function SobreContent() {
             </a>
           </div>
         </div>
-      </MotionSection>
+      </section>
 
       <CtaBanner
         title={
           <>
-            Quero fazer parte da sua jornada de{" "}
-            <GoldWord>
-              transformação
-            </GoldWord>
+            Quero fazer parte da sua jornada de <GoldWord>transformação</GoldWord>
           </>
         }
         subtitle="Se algo aqui ressoou com você, vamos conversar."

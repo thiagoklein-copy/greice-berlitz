@@ -2,9 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import { motion } from "framer-motion";
-import { FaInstagram, FaMapMarkerAlt, FaPhone, FaClock } from "react-icons/fa";
-import MotionSection from "@/components/ui/MotionSection";
-import { GoldWord, SectionHeader } from "@/components/ui/Shared";
+import { GoldWord, SectionLabel } from "@/components/ui/Shared";
 import {
   buildWhatsAppUrl,
   CLINIC_ADDRESS,
@@ -12,11 +10,12 @@ import {
   CLINIC_INSTAGRAM_URL,
   CLINIC_PHONE,
   CONTACT_OBJECTIVES,
-  MAPS_EMBED_URL } from "@/lib/constants";
+  MAPS_EMBED_URL,
+  WHATSAPP_URL,
+} from "@/lib/constants";
 import { formatPhoneMask } from "@/lib/phone";
 
-const fieldClass =
-  "block w-full rounded-sm border border-ink/15 bg-white px-4 py-3 text-sm outline-none transition focus:border-ink focus:ring-1 focus:ring-ink/20";
+const labelClass = "t-label block text-ink/70";
 
 export default function ContactForm() {
   const [name, setName] = useState("");
@@ -44,31 +43,28 @@ export default function ContactForm() {
   };
 
   return (
-    <MotionSection id="contato" className="bg-sand py-24 sm:py-32">
+    <section id="contato" className="section-pad border-t hairline bg-sand">
       <div className="section-container">
-        <SectionHeader
-          eyebrow="Contato"
-          title={
-            <>
-              Vamos conversar sobre o seu{" "}
-              <GoldWord>
-                próximo passo
-              </GoldWord>
-            </>
-          }
-        />
+        <SectionLabel index="01" className="mb-14 sm:mb-20">
+          Contato
+        </SectionLabel>
 
-        <div className="grid items-stretch gap-8 lg:grid-cols-2 lg:gap-12">
+        <div className="grid gap-20 lg:grid-cols-12 lg:gap-12">
           <motion.form
             onSubmit={handleSubmit}
-            initial={{ opacity: 0, y: 12 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="card-surface flex h-full min-h-0 w-full min-w-0 flex-col p-6 sm:p-8"
+            transition={{ duration: 0.8 }}
+            className="lg:col-span-6"
           >
-            <div className="flex min-h-0 flex-1 flex-col gap-5">
-              <div className="w-full">
-                <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-ink">
+            <h2 className="t-h2 text-ink">
+              Vamos conversar sobre o seu <GoldWord>próximo passo</GoldWord>
+            </h2>
+
+            <div className="mt-14 space-y-10">
+              <div>
+                <label htmlFor="name" className={labelClass}>
                   Nome completo <span className="text-gold">*</span>
                 </label>
                 <input
@@ -77,13 +73,13 @@ export default function ContactForm() {
                   required
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className={fieldClass}
+                  className="field"
                   placeholder="Seu nome"
                 />
               </div>
 
-              <div className="w-full">
-                <label htmlFor="phone" className="mb-1.5 block text-sm font-medium text-ink">
+              <div>
+                <label htmlFor="phone" className={labelClass}>
                   Telefone / WhatsApp <span className="text-gold">*</span>
                 </label>
                 <input
@@ -92,16 +88,13 @@ export default function ContactForm() {
                   required
                   value={phone}
                   onChange={(e) => setPhone(formatPhoneMask(e.target.value))}
-                  className={fieldClass}
+                  className="field"
                   placeholder="(51) 99999-9999"
                 />
               </div>
 
-              <div className="w-full">
-                <label
-                  htmlFor="objective"
-                  className="mb-1.5 block text-sm font-medium text-ink"
-                >
+              <div>
+                <label htmlFor="objective" className={labelClass}>
                   Qual o seu objetivo? <span className="text-gold">*</span>
                 </label>
                 <select
@@ -109,7 +102,7 @@ export default function ContactForm() {
                   required
                   value={objective}
                   onChange={(e) => setObjective(e.target.value)}
-                  className={fieldClass}
+                  className="field cursor-pointer"
                 >
                   <option value="" disabled>
                     Selecione uma opção
@@ -122,100 +115,88 @@ export default function ContactForm() {
                 </select>
               </div>
 
-              <div className="flex min-h-0 w-full flex-1 flex-col">
-                <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-ink">
-                  Mensagem <span className="text-ink">(opcional)</span>
+              <div>
+                <label htmlFor="message" className={labelClass}>
+                  Mensagem (opcional)
                 </label>
                 <textarea
                   id="message"
                   rows={4}
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
-                  className={`${fieldClass} min-h-[7rem] flex-1 resize-none`}
+                  className="field resize-none"
                   placeholder="Conte um pouco sobre o que você está buscando..."
                 />
               </div>
             </div>
 
-            <button type="submit" className="btn-primary mt-8 w-full max-w-none shrink-0">
+            <button type="submit" className="btn-primary mt-14 w-full sm:w-auto">
               Enviar e falar no WhatsApp
             </button>
           </motion.form>
 
           <motion.aside
-            initial={{ opacity: 0, y: 12 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex h-full min-h-0 flex-col gap-4"
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="lg:col-span-5 lg:col-start-8"
           >
-            <div className="card-surface space-y-5 p-6 sm:p-8">
-              <div className="flex gap-3">
-                <FaMapMarkerAlt className="mt-1 h-4 w-4 shrink-0 text-ink" />
-                <div>
-                  <p className="text-sm font-semibold text-ink">Endereço</p>
-                  <p className="mt-1 text-sm text-ink">{CLINIC_ADDRESS}</p>
-                </div>
+            <dl className="border-t hairline">
+              <div className="border-b hairline py-7">
+                <dt className="t-label text-gold">Endereço</dt>
+                <dd className="t-body mt-2 text-ink">{CLINIC_ADDRESS}</dd>
               </div>
-
-              <div className="flex gap-3">
-                <FaPhone className="mt-1 h-4 w-4 shrink-0 text-ink" />
-                <div>
-                  <p className="text-sm font-semibold text-ink">Telefone / WhatsApp</p>
+              <div className="border-b hairline py-7">
+                <dt className="t-label text-gold">Telefone / WhatsApp</dt>
+                <dd className="mt-2">
                   <a
-                    href={buildWhatsAppUrl(
-                      "Olá, Greice! Gostaria de mais informações.",
-                    )}
+                    href={WHATSAPP_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-1 block text-sm text-ink hover:text-ink"
+                    className="font-display text-2xl text-ink transition-colors hover:text-gold"
                   >
                     {CLINIC_PHONE}
                   </a>
-                </div>
+                </dd>
               </div>
-
-              <div className="flex gap-3">
-                <FaInstagram className="mt-1 h-4 w-4 shrink-0 text-ink" />
-                <div>
-                  <p className="text-sm font-semibold text-ink">Instagram</p>
+              <div className="border-b hairline py-7">
+                <dt className="t-label text-gold">Instagram</dt>
+                <dd className="mt-2">
                   <a
                     href={CLINIC_INSTAGRAM_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-1 block text-sm text-ink hover:text-ink"
+                    className="font-display text-2xl text-ink transition-colors hover:text-gold"
                   >
                     {CLINIC_INSTAGRAM}
                   </a>
-                </div>
+                </dd>
               </div>
-
-              <div className="flex gap-3">
-                <FaClock className="mt-1 h-4 w-4 shrink-0 text-ink" />
-                <div>
-                  <p className="text-sm font-semibold text-ink">Horário de atendimento</p>
-                  <p className="mt-1 text-sm text-ink">
-                    De segunda a sexta, das 8:00 às 18:30
-                  </p>
-                </div>
+              <div className="border-b hairline py-7">
+                <dt className="t-label text-gold">Horário de atendimento</dt>
+                <dd className="t-body mt-2 text-ink">
+                  De segunda a sexta, das 8:00 às 18:30
+                </dd>
               </div>
-            </div>
+            </dl>
 
-            <div className="min-h-[280px] flex-1 overflow-hidden rounded-sm border border-ink/10">
+            <div className="mt-10 aspect-[4/3] overflow-hidden bg-sand-dark">
               <iframe
                 src={MAPS_EMBED_URL}
                 width="100%"
                 height="100%"
-                style={{ border: 0, minHeight: 280 }}
+                style={{ border: 0, filter: "grayscale(1) contrast(0.95)" }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Localização do consultório no mapa"
-                className="h-full min-h-[280px] w-full"
+                className="h-full w-full"
               />
             </div>
           </motion.aside>
         </div>
       </div>
-    </MotionSection>
+    </section>
   );
 }

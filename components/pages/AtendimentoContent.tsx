@@ -5,8 +5,8 @@ import Services from "@/components/Services";
 import HowItWorks from "@/components/HowItWorks";
 import Modalidades from "@/components/Modalidades";
 import CtaBanner from "@/components/CtaBanner";
-import { GoldWord } from "@/components/ui/Shared";
-import { WHATSAPP_URL, IMAGES } from "@/lib/constants";
+import { ArrowLink, GoldWord } from "@/components/ui/Shared";
+import { WHATSAPP_CONSULTA_URL, IMAGES } from "@/lib/constants";
 
 export default function AtendimentoContent() {
   return (
@@ -23,18 +23,18 @@ export default function AtendimentoContent() {
         imageAlt={IMAGES.terapiaHero.alt}
         imagePosition={IMAGES.terapiaHero.objectPosition}
       >
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+        <div className="flex flex-col items-start gap-8 sm:flex-row sm:items-center">
           <a
-            href={WHATSAPP_URL}
+            href={WHATSAPP_CONSULTA_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-primary text-center"
+            className="btn-primary"
           >
-            Falar no WhatsApp
+            Agendar Consulta Estratégica
           </a>
-          <a href="#como-posso-ajudar" className="btn-ghost text-center">
-            Ver áreas de atuação ↓
-          </a>
+          <ArrowLink href="#como-posso-ajudar" className="text-ink">
+            Ver áreas de atuação
+          </ArrowLink>
         </div>
       </PageHero>
 
