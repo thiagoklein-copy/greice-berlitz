@@ -16,7 +16,6 @@ export default function FramedImage({
   sizes = "(max-width: 1024px) 90vw, 40vw",
   frame = "right",
   parallax = true,
-  soft = false,
   caption,
   className = "",
 }: {
@@ -29,8 +28,6 @@ export default function FramedImage({
   frame?: "right" | "left";
   /** false = foto fixa na moldura (sem deslocamento), útil quando o topo não pode cortar */
   parallax?: boolean;
-  /** Desfoque leve: a foto acompanha, sem pôr o rosto em evidência */
-  soft?: boolean;
   caption?: string;
   className?: string;
 }) {
@@ -38,9 +35,6 @@ export default function FramedImage({
     frame === "right"
       ? "translate-x-4 translate-y-4 sm:translate-x-6 sm:translate-y-6"
       : "-translate-x-4 translate-y-4 sm:-translate-x-6 sm:translate-y-6";
-
-  // scale evita a borda clara que o blur cria nas extremidades
-  const softClass = soft ? "scale-[1.04] blur-[1.5px] opacity-95" : "";
 
   return (
     <figure className={`relative ${className}`}>
@@ -57,7 +51,7 @@ export default function FramedImage({
               objectPosition={objectPosition}
               priority={priority}
               sizes={sizes}
-              className={`absolute inset-0 h-full w-full grayscale ${softClass}`}
+              className="absolute inset-0 h-full w-full grayscale"
             />
           ) : (
             <Image
@@ -66,7 +60,7 @@ export default function FramedImage({
               fill
               priority={priority}
               sizes={sizes}
-              className={`object-cover grayscale ${softClass}`}
+              className="object-cover grayscale"
               style={{ objectPosition }}
             />
           )}

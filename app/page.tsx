@@ -48,76 +48,70 @@ const paths = [
 export default function HomePage() {
   return (
     <>
-      {/* ── Hero ─────────────────────────────────────────────── */}
-      <section className="relative bg-sand pb-20 pt-36 sm:pt-44 lg:pb-28 lg:pt-48">
+      {/* ── Hero (só texto) ─────────────────────────────────── */}
+      <section className="relative bg-sand pb-20 pt-40 sm:pt-48 lg:pb-28 lg:pt-56">
         <div className="section-container">
-          <div className="grid items-end gap-16 lg:grid-cols-12 lg:gap-12">
-            <motion.div
-              initial={{ opacity: 0, y: 28 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, ease }}
-              className="lg:col-span-7 lg:pb-6"
+          <motion.div
+            initial={{ opacity: 0, y: 28 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease }}
+          >
+            <p className="t-label mb-12 flex items-center gap-4 text-ink">
+              <InfinityGlyph className="h-3.5 w-7 shrink-0 text-gold" />
+              Psicologia Clínica · TCC
+            </p>
+
+            <h1
+              className="font-display font-normal text-balance text-ink"
+              style={{
+                fontSize: "clamp(2.9rem, 7.6vw, 6.9rem)",
+                lineHeight: 0.96,
+                letterSpacing: "-0.025em",
+              }}
             >
-              <p className="t-label mb-10 flex items-center gap-4 text-ink">
-                <InfinityGlyph className="h-3.5 w-7 shrink-0 text-gold" />
-                Psicologia Clínica · TCC
-              </p>
+              Saúde Mental, <GoldWord>Propósito</GoldWord>
+              <br className="hidden lg:block" /> e Alta Performance Humana
+            </h1>
+          </motion.div>
 
-              <h1 className="t-display text-ink">
-                Saúde Mental, <GoldWord>Propósito</GoldWord> e Alta Performance
-                Humana
-              </h1>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.2, ease }}
+            className="mt-16 grid gap-12 border-t hairline pt-12 lg:mt-20 lg:grid-cols-12 lg:gap-12"
+          >
+            <p className="t-body text-ink/85 lg:col-span-6">
+              Adequar a sua vida à sua verdadeira essência é o único caminho
+              para o equilíbrio real. Só quando descobrimos e seguimos a nossa
+              verdade interna é que alcançamos o sucesso em todas as áreas da
+              vida — na carreira, na família e no espírito.
+            </p>
 
-              <p className="t-body mt-10 max-w-xl text-ink/85">
-                Adequar a sua vida à sua verdadeira essência é o único caminho
-                para o equilíbrio real. Só quando descobrimos e seguimos a nossa
-                verdade interna é que alcançamos o sucesso em todas as áreas da
-                vida — na carreira, na família e no espírito.
-              </p>
-
-              <div className="mt-12 flex flex-col items-start gap-8 sm:flex-row sm:items-center">
-                <a
-                  href={WHATSAPP_CONSULTA_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-primary"
-                >
-                  Agendar Consulta Estratégica
-                </a>
-                <ArrowLink href="#sobre" className="text-ink">
-                  Conhecer meu trabalho
-                </ArrowLink>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 36 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.1, delay: 0.15, ease }}
-              className="mx-auto w-full max-w-[15rem] sm:max-w-xs lg:col-span-4 lg:col-start-9 lg:max-w-none lg:translate-y-16"
-            >
-              <FramedImage
-                src={IMAGES.retrato.src}
-                alt={IMAGES.retrato.alt}
-                objectPosition={IMAGES.retrato.objectPosition}
-                priority
-                soft
-                sizes="(max-width: 1024px) 60vw, 25vw"
-                className="mr-4 sm:mr-6"
-              />
-            </motion.div>
-          </div>
+            <div className="flex flex-col items-start gap-8 lg:col-span-5 lg:col-start-8 lg:items-end lg:justify-end">
+              <a
+                href={WHATSAPP_CONSULTA_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+              >
+                Agendar Consulta Estratégica
+              </a>
+              <ArrowLink href="#sobre" className="text-ink">
+                Conhecer meu trabalho
+              </ArrowLink>
+            </div>
+          </motion.div>
 
           <motion.ul
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="mt-24 grid grid-cols-3 border-t hairline lg:mt-40"
+            className="mt-20 grid grid-cols-3 border-y hairline lg:mt-24"
           >
             {trustStats.map((stat, index) => (
               <li
                 key={stat.label}
-                className={`pt-8 ${index > 0 ? "border-l hairline pl-4 sm:pl-10" : ""}`}
+                className={`py-8 ${index > 0 ? "border-l hairline pl-4 sm:pl-10" : ""}`}
               >
                 <p className="font-display text-4xl leading-none text-ink sm:text-6xl">
                   <AnimatedCounter
@@ -171,10 +165,21 @@ export default function HomePage() {
             Sobre mim
           </SectionLabel>
 
-          <div className="grid gap-12 lg:grid-cols-12 lg:gap-12">
-            <h2 className="t-h2 text-ink lg:col-span-5">
-              <GoldWord>Propósito</GoldWord> antes do retorno
-            </h2>
+          <div className="grid items-center gap-16 lg:grid-cols-12 lg:gap-12">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 1, ease }}
+              className="mx-auto w-full max-w-sm lg:col-span-5 lg:max-w-none"
+            >
+              <FramedImage
+                src={IMAGES.retrato.src}
+                alt={IMAGES.retrato.alt}
+                objectPosition={IMAGES.retrato.objectPosition}
+                className="mr-4 sm:mr-6"
+              />
+            </motion.div>
 
             <motion.div
               initial={{ opacity: 0, y: 16 }}
@@ -183,7 +188,10 @@ export default function HomePage() {
               transition={{ duration: 0.8, ease }}
               className="lg:col-span-6 lg:col-start-7"
             >
-              <p className="t-lead text-ink">
+              <h2 className="t-h2 text-ink">
+                <GoldWord>Propósito</GoldWord> antes do retorno
+              </h2>
+              <p className="t-lead mt-10 text-ink">
                 A verdadeira liderança e o sucesso sustentável não nascem apenas
                 da competência técnica, mas do equilíbrio emocional e da clareza
                 de propósito. Há mais de 19 anos, atuo na Psicologia Clínica
