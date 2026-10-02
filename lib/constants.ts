@@ -42,33 +42,6 @@ export const MAPS_EMBED_URL =
 export const GOOGLE_REVIEWS_URL =
   "https://www.google.com/maps/search/?api=1&query=Greice+Berlitz+Psic%C3%B3loga+Novo+Hamburgo";
 
-export const COMPANIES = [
-  {
-    name: "Britasinos Concretos",
-    logo: "/logos/britasinos.png",
-  },
-  {
-    name: "Gerdau",
-    logo: "/logos/gerdau.png",
-  },
-  {
-    name: "FCC",
-    logo: "/logos/fcc-logo.png",
-  },
-  {
-    name: "ULBRA Saúde",
-    logo: "/logos/ulbra.png",
-  },
-  {
-    name: "FACCAT",
-    logo: "/logos/faccat.png",
-  },
-  {
-    name: "Mosmann Incorporações",
-    logo: "/logos/mosmann.png",
-  },
-] as const;
-
 export const IMAGES = {
   retrato: {
     src: "/greice-retrato.jpg",

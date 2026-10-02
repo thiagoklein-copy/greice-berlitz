@@ -8,7 +8,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import CompanyLogos from "@/components/CompanyLogos";
 import Testimonials from "@/components/Testimonials";
 import CtaBanner from "@/components/CtaBanner";
 import FramedImage from "@/components/ui/FramedImage";
@@ -39,7 +38,7 @@ const paths = [
     number: "02",
     title: "Palestras",
     description:
-      "Levo saúde mental, gestão de pessoas e autoconhecimento para dentro das empresas. Já estive com equipes da Gerdau, FCC, ULBRA Saúde e outras.",
+      "Levo saúde mental, gestão de pessoas e autoconhecimento para dentro das empresas.",
     href: "/palestras-empresas",
     cta: "Conhecer as palestras",
     image: IMAGES.palestrasHero,
@@ -72,8 +71,8 @@ export default function HomePage() {
               <p className="t-body mt-10 max-w-xl text-ink/85">
                 Adequar a sua vida à sua verdadeira essência é o único caminho
                 para o equilíbrio real. Só quando descobrimos e seguimos a nossa
-                verdade interna é que alcançamos o verdadeiro sucesso em todas
-                as áreas da vida — na carreira, na família e no espírito.
+                verdade interna é que alcançamos o sucesso em todas as áreas da
+                vida — na carreira, na família e no espírito.
               </p>
 
               <div className="mt-12 flex flex-col items-start gap-8 sm:flex-row sm:items-center">
@@ -95,13 +94,15 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 36 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.1, delay: 0.15, ease }}
-              className="mx-auto w-full max-w-md lg:col-span-5 lg:max-w-none"
+              className="mx-auto w-full max-w-[15rem] sm:max-w-xs lg:col-span-4 lg:col-start-9 lg:max-w-none lg:translate-y-16"
             >
               <FramedImage
                 src={IMAGES.retrato.src}
                 alt={IMAGES.retrato.alt}
                 objectPosition={IMAGES.retrato.objectPosition}
                 priority
+                soft
+                sizes="(max-width: 1024px) 60vw, 25vw"
                 className="mr-4 sm:mr-6"
               />
             </motion.div>
@@ -111,7 +112,7 @@ export default function HomePage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="mt-24 grid grid-cols-3 border-t hairline lg:mt-28"
+            className="mt-24 grid grid-cols-3 border-t hairline lg:mt-40"
           >
             {trustStats.map((stat, index) => (
               <li
@@ -252,8 +253,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      <CompanyLogos />
 
       <Testimonials index="03" />
 

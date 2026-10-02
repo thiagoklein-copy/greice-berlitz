@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import PageHero from "@/components/PageHero";
-import CompanyLogos from "@/components/CompanyLogos";
 import CtaBanner from "@/components/CtaBanner";
 import { ArrowLink, GoldWord, SectionLabel } from "@/components/ui/Shared";
 import { WHATSAPP_PALESTRAS_URL, IMAGES } from "@/lib/constants";
@@ -99,6 +98,11 @@ export default function PalestrasContent() {
               ferramentas práticas de bem-estar emocional para o maior número de
               pessoas possível, dentro do ambiente onde elas passam boa parte da
               vida: o trabalho.
+              <span className="t-body mt-8 block text-ink/85">
+                Com foco especial em empresas do setor da construção civil, mas
+                aberta a qualquer organização que valorize o bem-estar das suas
+                equipes.
+              </span>
             </motion.p>
           </div>
         </div>
@@ -136,8 +140,6 @@ export default function PalestrasContent() {
           </ol>
         </div>
       </section>
-
-      <CompanyLogos supportText="Com foco especial em empresas do setor da construção civil, mas aberta a qualquer organização que valorize o bem-estar das suas equipes." />
 
       {/* ── 03 Formatos ─────────────────────────────────────── */}
       <section className="section-pad border-t hairline bg-sand">

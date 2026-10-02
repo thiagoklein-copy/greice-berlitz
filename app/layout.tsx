@@ -2,7 +2,6 @@
  * CHECKLIST: confirmar com a Greice antes de publicar:
  * - [ ] Confirmar o nível de detalhe aceitável no bloco sobre a perda dos pais (página /sobre)
  * - [ ] Fotos reais dela (hero, história, palestras; ambiente corporativo/palco)
- * - [ ] Confirmar se pode citar os nomes das empresas publicamente
  * - [ ] Valores de sessão e de palestra (hoje "sob consulta")
  * - [ ] Confirmar handle oficial do Instagram
  * - [ ] Confirmar URL oficial do Google Business Profile

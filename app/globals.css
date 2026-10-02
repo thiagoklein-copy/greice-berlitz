@@ -214,26 +214,6 @@ video {
   .field::placeholder {
     color: rgba(28, 23, 18, 0.4);
   }
-
-  /* Carrossel infinito de logos */
-  .logo-marquee-track {
-    animation: logo-marquee 45s linear infinite;
-  }
-
-  @keyframes logo-marquee {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-50%);
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .logo-marquee-track {
-      animation: none;
-    }
-  }
 }
 
 /* Em fundo café, o ouro velho clareia para manter contraste (∞ incluso) */
