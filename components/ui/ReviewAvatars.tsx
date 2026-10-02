@@ -16,7 +16,7 @@ export default function ReviewAvatars() {
         <Image
           key={src}
           src={src}
-          alt=""
+          alt={`Foto de perfil de cliente ${index + 1}`}
           width={36}
           height={36}
           className="relative h-9 w-9 rounded-full border-2 border-sand-dark object-cover grayscale"

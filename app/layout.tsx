@@ -12,6 +12,12 @@ import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import SiteShell from "@/components/SiteShell";
+import {
+  CLINIC_INSTAGRAM_URL,
+  CLINIC_PHONE,
+  PROFESSIONAL_CRP,
+  SITE_URL,
+} from "@/lib/constants";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -52,7 +58,48 @@ const title = "Greice Berlitz | Psicóloga em Novo Hamburgo";
 const description =
   "Greice Berlitz, psicóloga (CRP 07/16250), especialista em TCC. Terapia individual e palestras corporativas em Novo Hamburgo - RS.";
 
+/* Dados estruturados (JSON-LD) para busca local. Só dados já públicos no site. */
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": `${SITE_URL}/#negocio`,
+      name: "Greice Berlitz – Psicóloga",
+      description,
+      url: SITE_URL,
+      image: `${SITE_URL}/greice-retrato.jpg`,
+      telephone: "+55 51 99820-4918",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Av. Cel. Frederico Linck, 714, Sala 205, Centro",
+        addressLocality: "Novo Hamburgo",
+        addressRegion: "RS",
+        postalCode: "93336-002",
+        addressCountry: "BR",
+      },
+      areaServed: { "@type": "City", name: "Novo Hamburgo" },
+      sameAs: [CLINIC_INSTAGRAM_URL],
+      founder: { "@id": `${SITE_URL}/#greice` },
+    },
+    {
+      "@type": "Person",
+      "@id": `${SITE_URL}/#greice`,
+      name: "Greice Berlitz",
+      jobTitle: "Psicóloga",
+      identifier: PROFESSIONAL_CRP,
+      telephone: CLINIC_PHONE,
+      url: SITE_URL,
+      image: `${SITE_URL}/greice-retrato.jpg`,
+      sameAs: [CLINIC_INSTAGRAM_URL],
+      worksFor: { "@id": `${SITE_URL}/#negocio` },
+    },
+  ],
+};
+
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  alternates: { canonical: "/" },
   title: {
     default: title,
     template: "%s | Greice Berlitz",
@@ -71,11 +118,14 @@ export const metadata: Metadata = {
     locale: "pt_BR",
     type: "website",
     siteName: "Greice Berlitz",
+    url: "/",
+    images: [{ url: "/og", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title,
     description,
+    images: ["/og"],
   },
 };
 
@@ -87,6 +137,10 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`${cormorant.variable} ${jost.variable}`}>
       <body className="font-sans">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <SiteShell>{children}</SiteShell>
       </body>
     </html>

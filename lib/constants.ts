@@ -55,7 +55,7 @@ export const IMAGES = {
   },
   hero: {
     src: "/hero.jpg",
-    alt: "Ambiente corporativo em preto e branco — placeholder até foto real",
+    alt: "Microfone em primeiro plano em um evento, em preto e branco",
     objectPosition: "50% 40%",
   },
   palestrasHero: {
@@ -70,7 +70,7 @@ export const IMAGES = {
   },
   ctaBanner: {
     src: "/cta-banner.jpg",
-    alt: "Reunião profissional em preto e branco — placeholder até foto real",
+    alt: "Reunião de trabalho: pessoas conversando em volta de uma mesa com notebook, caderno e celular, em preto e branco",
     objectPosition: "50% 35%",
   },
 } as const;
@@ -145,3 +145,10 @@ export const CONTACT_OBJECTIVES = [
   "Consultoria in company",
   "Ainda não sei, quero conversar",
 ] as const;
+
+/* URL pública do site. Ao trocar para domínio próprio, defina
+   NEXT_PUBLIC_SITE_URL na Vercel (ou edite aqui). Usada em canonical,
+   sitemap, Open Graph e dados estruturados. */
+export const SITE_URL = (
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://greice-berlitz.vercel.app"
+).replace(/\/$/, "");
