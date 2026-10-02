@@ -61,7 +61,7 @@ export default function PalestrasContent() {
         imageAlt={IMAGES.palestrasHero.alt}
         imagePosition={IMAGES.palestrasHero.objectPosition}
       >
-        <div className="flex flex-col items-start gap-8 sm:flex-row sm:items-center">
+        <div className="flex flex-wrap items-center gap-x-8 gap-y-6">
           <a
             href={WHATSAPP_PALESTRAS_URL}
             target="_blank"

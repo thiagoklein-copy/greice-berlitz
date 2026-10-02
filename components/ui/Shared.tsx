@@ -23,7 +23,7 @@ export default function Logo({ className = "", light = false }: LogoProps) {
           Greice Berlitz
         </span>
         <span
-          className={`mt-1 text-[9px] font-normal uppercase tracking-[0.3em] ${
+          className={`mt-1 text-[10px] font-normal uppercase tracking-[0.26em] ${
             light ? "text-sand/70" : "text-ink/60"
           }`}
         >
@@ -72,7 +72,7 @@ export function SectionLabel({
 }) {
   return (
     <div className={`flex items-center gap-5 ${className}`}>
-      <p className="t-label shrink-0 text-gold">
+      <p className="t-label min-w-0 text-gold">
         {index && <span className="mr-3">{index}</span>}
         {index && (
           <span className={light ? "text-sand/40" : "text-ink/30"}>— </span>
@@ -80,7 +80,7 @@ export function SectionLabel({
         <span className={light ? "text-sand" : "text-ink"}>{children}</span>
       </p>
       <span
-        className={`h-px flex-1 ${light ? "bg-sand/15" : "bg-ink/12"}`}
+        className={`h-px min-w-8 flex-1 ${light ? "bg-sand/15" : "bg-ink/12"}`}
         aria-hidden="true"
       />
     </div>

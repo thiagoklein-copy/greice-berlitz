@@ -29,13 +29,13 @@ export default function Testimonials({ index = "04" }: { index?: string }) {
                 <p className="t-small mt-3 text-ink/85">
                   39 avaliações no Google
                 </p>
-                <div className="mt-8 flex items-center gap-6">
+                <div className="mt-8 flex flex-wrap items-center gap-6">
                   <ReviewAvatars />
                   <a
                     href={GOOGLE_REVIEWS_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="link-arrow text-ink"
+                    className="link-arrow whitespace-nowrap text-ink"
                   >
                     Ver no Google
                     <span className="arrow" aria-hidden="true">

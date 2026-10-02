@@ -26,7 +26,7 @@ export const NAV_LINKS = [
 ] as const;
 
 export const CLINIC_ADDRESS =
-  "Av. Cel. Frederico Linck, 714, Sala 205, Centro, Novo Hamburgo - RS, CEP 93336-002";
+  "Av. Cel. Frederico Linck, 714, Sala 205, Centro, Novo Hamburgo - RS, CEP 93336‑002";
 
 export const CLINIC_PHONE = "(51) 99820-4918";
 /* CONFIRMAR handle oficial do Instagram antes de publicar */

@@ -29,12 +29,12 @@ export default function Footer() {
 
           <div className="lg:col-span-3">
             <p className="t-label mb-6 text-gold">Navegação</p>
-            <ul className="space-y-3">
+            <ul className="space-y-1">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="t-small text-ink transition-colors hover:text-gold"
+                    className="t-small inline-block py-2 text-ink transition-colors hover:text-gold"
                   >
                     {link.label}
                   </Link>
@@ -45,14 +45,14 @@ export default function Footer() {
 
           <div className="lg:col-span-4">
             <p className="t-label mb-6 text-gold">Contato</p>
-            <address className="t-small space-y-3 not-italic text-ink">
-              <p>{CLINIC_ADDRESS}</p>
+            <address className="t-small space-y-1 not-italic text-ink">
+              <p className="pb-2">{CLINIC_ADDRESS}</p>
               <p>
                 <a
                   href={WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="transition-colors hover:text-gold"
+                  className="inline-block py-2 transition-colors hover:text-gold"
                 >
                   {CLINIC_PHONE}
                 </a>
@@ -62,7 +62,7 @@ export default function Footer() {
                   href={CLINIC_INSTAGRAM_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="transition-colors hover:text-gold"
+                  className="inline-block py-2 transition-colors hover:text-gold"
                 >
                   {CLINIC_INSTAGRAM}
                 </a>

@@ -51,14 +51,14 @@ export default function Navbar() {
           <Logo />
         </Link>
 
-        <ul className="hidden items-center gap-9 lg:flex">
+        <ul className="hidden items-center gap-6 lg:flex xl:gap-9">
           {NAV_LINKS.map((link) => {
             const active = pathname === link.href;
             return (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className={`t-label relative py-2 transition-colors hover:text-gold ${
+                  className={`t-label relative whitespace-nowrap py-2 transition-colors hover:text-gold ${
                     active ? "text-gold" : "text-ink"
                   }`}
                 >
@@ -79,7 +79,7 @@ export default function Navbar() {
           href={WHATSAPP_CONSULTA_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="link-arrow hidden text-ink lg:inline-flex"
+          className="link-arrow hidden whitespace-nowrap text-ink xl:inline-flex"
         >
           Agendar
           <span className="arrow" aria-hidden="true">
