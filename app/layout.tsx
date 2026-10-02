@@ -47,10 +47,10 @@ const jost = localFont({
   ],
 });
 
-const title = "Greice Berlitz | Psicóloga em Novo Hamburgo — Psicoterapia e Palestras";
+const title = "Greice Berlitz | Psicóloga em Novo Hamburgo";
 
 const description =
-  "Greice Berlitz, psicóloga (CRP 07/16250), especialista em TCC com mais de 19 anos de experiência. Atendimento individual e palestras corporativas em Novo Hamburgo - RS.";
+  "Greice Berlitz, psicóloga (CRP 07/16250), especialista em TCC. Terapia individual e palestras corporativas em Novo Hamburgo - RS.";
 
 export const metadata: Metadata = {
   title: {
