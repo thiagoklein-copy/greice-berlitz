@@ -16,6 +16,7 @@ export default function FramedImage({
   sizes = "(max-width: 1024px) 90vw, 40vw",
   frame = "right",
   parallax = true,
+  quality = 80,
   caption,
   className = "",
 }: {
@@ -28,6 +29,7 @@ export default function FramedImage({
   frame?: "right" | "left";
   /** false = foto fixa na moldura (sem deslocamento), útil quando o topo não pode cortar */
   parallax?: boolean;
+  quality?: number;
   caption?: string;
   className?: string;
 }) {
@@ -59,6 +61,7 @@ export default function FramedImage({
               alt={alt}
               fill
               priority={priority}
+              quality={quality}
               sizes={sizes}
               className="object-cover grayscale"
               style={{ objectPosition }}

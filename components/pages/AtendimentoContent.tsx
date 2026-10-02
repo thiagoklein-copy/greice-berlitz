@@ -45,11 +45,8 @@ export default function AtendimentoContent() {
       <CtaBanner
         title={
           <>
-            Você merece esse{" "}
-            <GoldWord>
-              cuidado
-            </GoldWord>{" "}
-            com você mesmo(a)
+            Você merece esse cuidado com você mesmo(a). Seja a sua{" "}
+            <GoldWord>prioridade</GoldWord>!
           </>
         }
         subtitle="Agende sua primeira conversa e dê o primeiro passo."

@@ -11,7 +11,7 @@ export default function Logo({ className = "", light = false }: LogoProps) {
   return (
     <span
       className={`inline-flex items-center gap-3 leading-none ${className}`}
-      aria-label="Greice Berlitz, Psicóloga, CRP 07/16250"
+      aria-label="Greice Berlitz, psicóloga especialista em Terapia Cognitivo-Comportamental"
     >
       <InfinityGlyph className="h-5 w-10 shrink-0 text-gold" />
       <span className="flex flex-col">
@@ -23,11 +23,13 @@ export default function Logo({ className = "", light = false }: LogoProps) {
           Greice Berlitz
         </span>
         <span
-          className={`mt-1 text-[10px] font-normal uppercase tracking-[0.26em] ${
-            light ? "text-sand/70" : "text-ink/60"
+          className={`mt-1.5 text-[11px] font-normal leading-[1.35] tracking-[0.02em] ${
+            light ? "text-sand/70" : "text-ink/65"
           }`}
         >
-          Psicóloga · CRP 07/16250
+          Psicóloga especialista em
+          <br />
+          Terapia Cognitivo-Comportamental
         </span>
       </span>
     </span>

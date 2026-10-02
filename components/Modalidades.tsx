@@ -12,7 +12,7 @@ const modalidades = [
   {
     title: "Atendimento Online (Nacional e Internacional)",
     description:
-      "Consultas por videochamada criptografada para pacientes em qualquer lugar do Brasil e para profissionais e expatriados residentes no exterior.",
+      "Consultas por videochamada criptografada para pacientes em qualquer lugar do mundo.",
   },
 ];
 

@@ -83,7 +83,7 @@ export default function SobreContent() {
               <motion.p {...reveal} className="t-lead text-ink">
                 A verdadeira liderança e o sucesso sustentável não nascem apenas da
                 competência técnica, mas do equilíbrio emocional e da clareza de
-                propósito. Há mais de 19 anos, atuo na Psicologia Clínica guiada por
+                propósito. Há mais de 19 anos, atuo na Psicologia Clínica e Organizacional guiada por
                 uma profunda convicção: a de que o consultório não é apenas um
                 espaço de cura, mas um acelerador do potencial humano. Minha escolha
                 profissional nunca foi financeira, mas sim baseada no privilégio de

@@ -6,19 +6,22 @@ import { GoldWord, SectionHeader } from "@/components/ui/Shared";
 const steps = [
   {
     number: "01",
-    title: "Contato inicial",
+    title: "Alinhamento Inicial",
     description:
-      "Você me escreve no WhatsApp contando, no seu ritmo, o que está buscando. Sem pressão, só uma conversa honesta." },
+      "O primeiro contato ocorre via WhatsApp, onde você poderá expor brevemente e em seu próprio ritmo as suas demandas atuais. Este é um espaço de escuta inicial reservado, ético e isento de pressões.",
+  },
   {
     number: "02",
-    title: "Primeira sessão",
+    title: "Avaliação Clínica e Metas Metodológicas",
     description:
-      "Conheço sua história com presença total e definimos juntos a abordagem que faz mais sentido para você." },
+      "Em nossa primeira sessão, dedico presença total para compreender a complexidade da sua história. A partir dessa avaliação inicial, exponho de forma clara os principais pontos a serem trabalhados e estabelecemos juntos as metas de tratamento. Essa metodologia visa a obtenção de resultados mais rápidos e resolutivos através de um planejamento estruturado.",
+  },
   {
     number: "03",
-    title: "Acompanhamento contínuo",
+    title: "Desenvolvimento de Competências e Mudança Estrutural",
     description:
-      "Sessão a sessão, construímos mudanças reais, com ferramentas práticas e escuta genuína." },
+      "Ao longo do acompanhamento contínuo, unimos uma escuta clínica genuína ao desenvolvimento de competências emocionais específicas. Através de ferramentas práticas e científicas, viabilizamos a superação dos sintomas e a consolidação do equilíbrio real e sustentável.",
+  },
 ];
 
 export default function HowItWorks() {

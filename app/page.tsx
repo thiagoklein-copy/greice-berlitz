@@ -58,19 +58,19 @@ export default function HomePage() {
           >
             <p className="t-label mb-12 flex items-center gap-4 text-ink">
               <InfinityGlyph className="h-3.5 w-7 shrink-0 text-gold" />
-              Psicologia Clínica · TCC
+              Psicologia Clínica e Abordagens Integrativas
             </p>
 
             <h1
               className="font-display font-normal text-balance text-ink"
               style={{
-                fontSize: "clamp(2.9rem, 7.6vw, 6.9rem)",
+                fontSize: "clamp(2.6rem, 6.2vw, 5.9rem)",
                 lineHeight: 0.96,
                 letterSpacing: "-0.025em",
               }}
             >
-              Saúde Mental, <GoldWord>Propósito</GoldWord>
-              <br className="hidden lg:block" /> e Alta Performance Humana
+              Transforme o seu sofrimento em <GoldWord>força</GoldWord> para se
+              reerguer.
             </h1>
           </motion.div>
 
@@ -81,10 +81,15 @@ export default function HomePage() {
             className="mt-16 grid gap-12 border-t hairline pt-12 lg:mt-20 lg:grid-cols-12 lg:gap-12"
           >
             <p className="t-body text-ink/85 lg:col-span-6">
-              Adequar a sua vida à sua verdadeira essência é o único caminho
-              para o equilíbrio real. Só quando descobrimos e seguimos a nossa
-              verdade interna é que alcançamos o sucesso em todas as áreas da
-              vida — na carreira, na família e no espírito.
+              Se você se identifica com a sensação de estar constantemente
+              deprimido, ansioso ou frustrado por não sair do lugar, o
+              diagnóstico não define quem você é. É perfeitamente possível
+              superar a falta de motivação e a tristeza resgatando a sua
+              verdade interior. O equilíbrio que você busca começa quando você
+              decide alinhar sua vida à sua essência. Através do
+              desenvolvimento de competências práticas, ajudarei você a abrir o
+              seu verdadeiro caminho e conquistar o sucesso no seu trabalho, na
+              sua espiritualidade e nas suas relações afetivas.
             </p>
 
             <div className="flex flex-col items-start gap-8 lg:col-span-5 lg:col-start-8 lg:items-end lg:justify-end">
@@ -177,6 +182,9 @@ export default function HomePage() {
                 src={IMAGES.retrato.src}
                 alt={IMAGES.retrato.alt}
                 objectPosition={IMAGES.retrato.objectPosition}
+                parallax={false}
+                quality={95}
+                sizes="(max-width: 1024px) 90vw, 45vw"
                 className="mr-4 sm:mr-6"
               />
             </motion.div>
@@ -189,13 +197,13 @@ export default function HomePage() {
               className="lg:col-span-6 lg:col-start-7"
             >
               <h2 className="t-h2 text-ink">
-                <GoldWord>Propósito</GoldWord> antes do retorno
+                Clareza de propósito e <GoldWord>equilíbrio emocional</GoldWord>
               </h2>
               <p className="t-lead mt-10 text-ink">
                 A verdadeira liderança e o sucesso sustentável não nascem apenas
                 da competência técnica, mas do equilíbrio emocional e da clareza
-                de propósito. Há mais de 19 anos, atuo na Psicologia Clínica
-                guiada por uma profunda convicção: a de que o consultório não é
+                de propósito. Há mais de 19 anos, atuo na Psicologia Clínica e
+                Organizacional guiada por uma profunda convicção: a de que o consultório não é
                 apenas um espaço de cura, mas um acelerador do potencial humano.
               </p>
               <ArrowLink href="/sobre" className="mt-12 text-ink">

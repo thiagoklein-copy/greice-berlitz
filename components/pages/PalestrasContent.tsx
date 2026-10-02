@@ -98,11 +98,6 @@ export default function PalestrasContent() {
               ferramentas práticas de bem-estar emocional para o maior número de
               pessoas possível, dentro do ambiente onde elas passam boa parte da
               vida: o trabalho.
-              <span className="t-body mt-8 block text-ink/85">
-                Com foco especial em empresas do setor da construção civil, mas
-                aberta a qualquer organização que valorize o bem-estar das suas
-                equipes.
-              </span>
             </motion.p>
           </div>
         </div>
