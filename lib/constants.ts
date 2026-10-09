@@ -45,7 +45,7 @@ export const GOOGLE_REVIEWS_URL =
 export const IMAGES = {
   retrato: {
     src: "/greice-retrato.jpg",
-    alt: "Greice Berlitz, psicóloga, em seu consultório",
+    alt: "Greice Berlitz, psicóloga em Novo Hamburgo, em seu consultório",
     objectPosition: "50% 30%",
   },
   formatura: {
@@ -60,12 +60,12 @@ export const IMAGES = {
   },
   palestrasHero: {
     src: "/palestras-hero.png",
-    alt: "Palestra em auditório com plateia e tela de projeção",
+    alt: "Palestra corporativa sobre saúde mental, em auditório com plateia e tela de projeção",
     objectPosition: "50% 45%",
   },
   terapiaHero: {
     src: "/terapia-hero.png",
-    alt: "Sessão de terapia — mãos entrelaçadas e escuta profissional",
+    alt: "Sessão de terapia individual em Novo Hamburgo — mãos entrelaçadas e escuta profissional",
     objectPosition: "45% 40%",
   },
   ctaBanner: {

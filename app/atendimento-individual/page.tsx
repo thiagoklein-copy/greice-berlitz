@@ -4,7 +4,7 @@ import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata(
   "Terapia individual (TCC) em Novo Hamburgo",
-  "Atendimento presencial em Novo Hamburgo, com base em TCC e um olhar humano sobre a sua história. Ansiedade, depressão, autoestima e mais.",
+  "Terapia individual com base em TCC, presencial em Novo Hamburgo e online. Ansiedade, depressão, autoestima e mais, com um olhar humano sobre a sua história.",
   "/atendimento-individual"
 );
 

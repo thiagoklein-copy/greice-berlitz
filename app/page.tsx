@@ -29,7 +29,7 @@ const paths = [
     number: "01",
     title: "Terapia Individual",
     description:
-      "Um espaço de escuta para você se reencontrar, superar a ansiedade, a depressão e reconstruir o amor-próprio.",
+      "Um espaço de escuta em Novo Hamburgo e online para você se reencontrar, superar a ansiedade, a depressão e reconstruir o amor-próprio.",
     href: "/atendimento-individual",
     cta: "Conhecer a terapia individual",
     image: IMAGES.terapiaHero,
@@ -38,7 +38,7 @@ const paths = [
     number: "02",
     title: "Palestras",
     description:
-      "Levo saúde mental, gestão de pessoas e autoconhecimento para dentro das empresas.",
+      "Como psicóloga organizacional em Novo Hamburgo, levo saúde mental, gestão de pessoas e autoconhecimento para dentro das empresas.",
     href: "/palestras-empresas",
     cta: "Conhecer as palestras",
     image: IMAGES.palestrasHero,
@@ -58,7 +58,7 @@ export default function HomePage() {
           >
             <p className="t-label mb-12 flex items-center gap-4 text-ink">
               <InfinityGlyph className="h-3.5 w-7 shrink-0 text-gold" />
-              Psicologia Clínica e Abordagens Integrativas
+              Psicóloga em Novo Hamburgo
             </p>
 
             <h1

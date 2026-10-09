@@ -3,8 +3,8 @@ import SobreContent from "@/components/pages/SobreContent";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata(
-  "Formação e trajetória da psicóloga",
-  "Antes de ajudar os outros a se transformarem, eu me transformei. Conheça a trajetória, formação e valores de Greice Berlitz.",
+  "Psicóloga em Novo Hamburgo: formação e trajetória",
+  "Antes de ajudar os outros a se transformarem, eu me transformei. Conheça a trajetória, a formação em Psicologia e os valores de Greice Berlitz, psicóloga em Novo Hamburgo.",
   "/sobre"
 );
 

@@ -4,7 +4,7 @@ import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata(
   "Palestras corporativas sobre saúde mental",
-  "Palestras corporativas sobre saúde mental, autoamor, gestão de pessoas e autoconhecimento.",
+  "Palestras corporativas sobre saúde mental, autoamor, gestão de pessoas e autoconhecimento para empresas, com a psicóloga Greice Berlitz.",
   "/palestras-empresas"
 );
 
