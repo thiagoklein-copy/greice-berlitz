@@ -150,5 +150,5 @@ export const CONTACT_OBJECTIVES = [
    NEXT_PUBLIC_SITE_URL na Vercel (ou edite aqui). Usada em canonical,
    sitemap, Open Graph e dados estruturados. */
 export const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://greice-berlitz.vercel.app"
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://psigreiceberlitz.com.br"
 ).replace(/\/$/, "");
