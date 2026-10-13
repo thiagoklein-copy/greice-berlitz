@@ -21,7 +21,7 @@ const ease: [number, number, number, number] = [0.22, 1, 0.36, 1];
 const trustStats = [
   { value: 19, suffix: "+", label: "anos de experiência" },
   { value: 5.0, decimals: 1, suffix: "", label: "no Google", star: true },
-  { value: 39, suffix: "", label: "avaliações" },
+  { value: 45, suffix: "", label: "avaliações" },
 ] as const;
 
 const paths = [
@@ -70,7 +70,7 @@ export default function HomePage() {
               }}
             >
               Transforme o seu sofrimento em <GoldWord>força</GoldWord> para se
-              reerguer.
+              transformar.
             </h1>
           </motion.div>
 

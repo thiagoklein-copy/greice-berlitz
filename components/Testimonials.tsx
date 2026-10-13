@@ -27,7 +27,7 @@ export default function Testimonials({ index = "04" }: { index?: string }) {
                 </p>
                 <Stars className="mt-4 block text-sm" />
                 <p className="t-small mt-3 text-ink/85">
-                  39 avaliações no Google
+                  45 avaliações no Google
                 </p>
                 <div className="mt-8 flex flex-wrap items-center gap-6">
                   <ReviewAvatars />
